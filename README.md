@@ -15,11 +15,11 @@ All other routes remain controlled by WordPress and Divi. After publication, bot
 
 - `content/site.json`: brand, routes, labels, SEO metadata, WhatsApp and CDN hero image.
 - `content/services.json`: canonical bilingual service catalog.
-- `src/services.css`: visual system and responsive layout.
-- `src/services.js`: search, category filters, JSON loading and accessible service dialog.
+- `src/services.css`: visual system and responsive layout, embedded into each built page.
+- `src/services.js`: search, category filters, JSON loading and accessible service dialog, embedded into each built page.
 - `design/best-carriers-services-hero.webp`: retained design source. Public HTML uses the copy already uploaded through the authorized Best Carriers CDN client.
 
-The service cards are rendered into HTML during the build for SEO and a no-JavaScript fallback. JavaScript then fetches the localized JSON file to enhance search, filtering and the details dialog without reloading the page.
+The service cards are rendered into HTML during the build for SEO and a no-JavaScript fallback. Critical CSS and JavaScript are embedded because this WordPress host routes virtual `.css` and `.js` paths before WordPress. The embedded JavaScript fetches the localized JSON file to enhance search, filtering and the details dialog without reloading the page.
 
 ## Local build and validation
 

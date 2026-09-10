@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -7,6 +7,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = JSON.parse(await readFile(path.join(root, "content/site.json"), "utf8"));
 const services = JSON.parse(await readFile(path.join(root, "content/services.json"), "utf8"));
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
+const inlineCss = (await readFile(path.join(root, "src/services.css"), "utf8")).replaceAll("</style", "<\\/style");
+const inlineJs = (await readFile(path.join(root, "src/services.js"), "utf8")).replaceAll("</script", "<\\/script");
 const version = packageJson.version;
 const locales = ["es", "en"];
 
@@ -24,20 +26,15 @@ const files = [];
 for (const locale of locales) {
   const definition = pageDefinitions[locale];
   const destination = path.join(pagesRoot, definition.route);
-  await mkdir(path.join(destination, "assets"), { recursive: true });
   await mkdir(path.join(destination, "data"), { recursive: true });
 
   const htmlPath = path.join(destination, "index.html");
-  const cssPath = path.join(destination, "assets/services.css");
-  const jsPath = path.join(destination, "assets/services.js");
   const dataPath = path.join(destination, "data/services.json");
 
   await writeFile(htmlPath, renderPage(locale), "utf8");
-  await cp(path.join(root, "src/services.css"), cssPath);
-  await cp(path.join(root, "src/services.js"), jsPath);
   await writeFile(dataPath, `${JSON.stringify(localizedPayload(locale), null, 2)}\n`, "utf8");
 
-  files.push(htmlPath, cssPath, jsPath, dataPath);
+  files.push(htmlPath, dataPath);
 }
 
 const checksums = {};
@@ -155,9 +152,8 @@ function renderPage(locale) {
   <meta property="og:image" content="${escapeHtml(site.heroImage.url)}">
   <link rel="preconnect" href="https://bc.opin-x.com" crossorigin>
   <link rel="preload" as="image" href="${escapeHtml(site.heroImage.url)}" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="assets/services.css">
+  <style>${inlineCss}</style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
-  <script defer src="assets/services.js"></script>
   <script type="application/ld+json">${safeJson(schema)}</script>
 </head>
 <body data-locale="${locale}" data-release="${escapeHtml(version)}">
@@ -264,6 +260,7 @@ function renderPage(locale) {
       <a class="button button-primary dialog-cta" href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.dialogCta)}</span>${icon("arrow")}</a>
     </div>
   </dialog>
+  <script>${inlineJs}</script>
 </body>
 </html>\n`;
 }
