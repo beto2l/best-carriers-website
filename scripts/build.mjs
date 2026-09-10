@@ -155,9 +155,9 @@ function renderPage(locale) {
   <meta property="og:image" content="${escapeHtml(site.heroImage.url)}">
   <link rel="preconnect" href="https://bc.opin-x.com" crossorigin>
   <link rel="preload" as="image" href="${escapeHtml(site.heroImage.url)}" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="assets/services.css?v=${escapeHtml(version)}">
+  <link rel="stylesheet" href="assets/services.css">
   <script>document.documentElement.classList.replace("no-js","js");</script>
-  <script defer src="assets/services.js?v=${escapeHtml(version)}"></script>
+  <script defer src="assets/services.js"></script>
   <script type="application/ld+json">${safeJson(schema)}</script>
 </head>
 <body data-locale="${locale}" data-release="${escapeHtml(version)}">

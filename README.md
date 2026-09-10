@@ -44,4 +44,4 @@ Preview `http://127.0.0.1:8765/servicios/` and `http://127.0.0.1:8765/services/`
 6. Select **Publish reviewed version**.
 7. Verify both routes, WordPress Page records, the WhatsApp destination and the CDN asset.
 
-The requirements shown in release 1.0.0 are intentionally provisional. They must be replaced only after the owner supplies and approves the exact document requirements for each service.
+The requirements shown in the initial release are intentionally provisional. They must be replaced only after the owner supplies and approves the exact document requirements for each service.
