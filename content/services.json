@@ -1,0 +1,99 @@
+[
+  {
+    "id": "federal-tax-filing",
+    "category": "taxes",
+    "icon": "chart",
+    "es": {
+      "name": "Declaración de Impuestos Federales",
+      "price": "$490 – $2,500",
+      "priceNote": "Según estructura comercial",
+      "summary": "Preparación de la declaración federal para Single Member LLC o Partnership.",
+      "details": "El costo final depende del tamaño de la operación, número de camiones, cantidad de movimientos y cuentas bancarias.",
+      "variants": [
+        {"name": "Single Member LLC", "form": "Schedule C + Form 1040", "price": "$490 – $1,000", "deadline": "15 de abril", "extra": "K-1 no aplica"},
+        {"name": "Partnership", "form": "Form 1065", "price": "$1,000 – $2,500", "deadline": "15 de marzo", "extra": "Un K-1 por socio"}
+      ]
+    },
+    "en": {
+      "name": "Federal Tax Filing",
+      "price": "$490 – $2,500",
+      "priceNote": "Based on business structure",
+      "summary": "Federal tax return preparation for a Single Member LLC or Partnership.",
+      "details": "Final cost depends on operation size, number of trucks, transaction volume and bank accounts.",
+      "variants": [
+        {"name": "Single Member LLC", "form": "Schedule C + Form 1040", "price": "$490 – $1,000", "deadline": "April 15", "extra": "K-1 not applicable"},
+        {"name": "Partnership", "form": "Form 1065", "price": "$1,000 – $2,500", "deadline": "March 15", "extra": "One K-1 per partner"}
+      ]
+    }
+  },
+  {
+    "id": "form-1099",
+    "category": "taxes",
+    "icon": "document",
+    "es": {"name": "Form 1099", "price": "$75", "priceNote": "Por formulario", "summary": "Preparación y emisión de formularios para contratistas independientes.", "details": "Servicio individual por cada formulario 1099 solicitado."},
+    "en": {"name": "Form 1099", "price": "$75", "priceNote": "Per form", "summary": "Preparation and issuance of forms for independent contractors.", "details": "Individual service for each requested Form 1099."}
+  },
+  {
+    "id": "sales-tax",
+    "category": "taxes",
+    "icon": "receipt",
+    "es": {"name": "Sales Tax", "price": "$250", "priceNote": "Anual", "summary": "Declaración y reporte ante la autoridad tributaria.", "details": "Preparación del reporte anual de Sales Tax de acuerdo con la información proporcionada."},
+    "en": {"name": "Sales Tax Filing", "price": "$250", "priceNote": "Annual", "summary": "Filing and reporting with the applicable tax authority.", "details": "Preparation of the annual Sales Tax report using the information provided."}
+  },
+  {
+    "id": "filing-ifta",
+    "category": "compliance",
+    "icon": "fuel",
+    "es": {"name": "Filing IFTA", "price": "$375", "priceNote": "Anual por camión", "summary": "Reporte trimestral y declaración de impuestos de combustible.", "details": "Preparación de los reportes IFTA de la operación para el periodo correspondiente."},
+    "en": {"name": "IFTA Filing", "price": "$375", "priceNote": "Annual, per truck", "summary": "Quarterly reporting and fuel tax filing.", "details": "Preparation of the operation's IFTA reports for the applicable period."}
+  },
+  {
+    "id": "irp-ifta",
+    "category": "compliance",
+    "icon": "route",
+    "es": {"name": "IRP + IFTA", "price": "$1,500", "priceNote": "Apertura coordinada", "summary": "Apertura y registro coordinado de cuenta interestatal y combustible.", "details": "Configuración inicial coordinada de registros IRP e IFTA para la empresa de trucking."},
+    "en": {"name": "IRP + IFTA", "price": "$1,500", "priceNote": "Coordinated setup", "summary": "Coordinated setup and registration of interstate and fuel accounts.", "details": "Coordinated initial setup of IRP and IFTA registrations for the trucking company."}
+  },
+  {
+    "id": "llc-authority",
+    "category": "business",
+    "icon": "building",
+    "es": {"name": "Crear LLC + Autoridad", "price": "$1,400", "priceNote": "Fees oficiales incluidos", "summary": "Creación de la compañía y apertura de autoridad operativa.", "details": "Incluye los fees oficiales correspondientes a MC, UCR y BOC-3.", "includes": ["MC", "UCR", "BOC-3"]},
+    "en": {"name": "LLC + Operating Authority", "price": "$1,400", "priceNote": "Official fees included", "summary": "Company formation and operating authority setup.", "details": "Includes the applicable official fees for MC, UCR and BOC-3.", "includes": ["MC", "UCR", "BOC-3"]}
+  },
+  {
+    "id": "state-permits",
+    "category": "compliance",
+    "icon": "map",
+    "es": {"name": "Permisos Estatales", "price": "$150 – $750", "priceNote": "Según estado y trámite", "summary": "Trámites y registros estatales para operaciones de trucking.", "details": "Servicio disponible para California, Oregon, New Mexico, Kentucky y New York.", "includes": ["California (CA)", "Oregon (OR)", "New Mexico (NM)", "Kentucky (KY)", "New York (NY)"]},
+    "en": {"name": "State Permits", "price": "$150 – $750", "priceNote": "Based on state and filing", "summary": "State filings and registrations for trucking operations.", "details": "Service available for California, Oregon, New Mexico, Kentucky and New York.", "includes": ["California (CA)", "Oregon (OR)", "New Mexico (NM)", "Kentucky (KY)", "New York (NY)"]}
+  },
+  {
+    "id": "reinstate-mc-authority",
+    "category": "compliance",
+    "icon": "shield",
+    "es": {"name": "Reinstate MC Authority", "price": "$750", "priceNote": "Reactivación", "summary": "Reactivación de autoridad operativa ante FMCSA / DOT.", "details": "Acompañamiento para restablecer la autoridad MC de la operación."},
+    "en": {"name": "Reinstate MC Authority", "price": "$750", "priceNote": "Reactivation", "summary": "Operating authority reactivation with FMCSA / DOT.", "details": "Support to restore the operation's MC authority."}
+  },
+  {
+    "id": "migrate-motus",
+    "category": "business",
+    "icon": "sync",
+    "es": {"name": "Migrar a Motus", "price": "$250", "priceNote": "Configuración y transición", "summary": "Configuración, transición y sincronización de plataforma.", "details": "Asistencia para organizar la transición operativa a Motus."},
+    "en": {"name": "Migrate to Motus", "price": "$250", "priceNote": "Setup and transition", "summary": "Platform setup, transition and synchronization.", "details": "Assistance organizing the operational transition to Motus."}
+  },
+  {
+    "id": "close-trucking-company",
+    "category": "business",
+    "icon": "close",
+    "es": {"name": "Cerrar Empresa de Trucking", "price": "$1,000 – $2,500", "priceNote": "Según alcance", "summary": "Cierre coordinado de registros operativos y fiscales.", "details": "Puede incluir cancelación de DOT, MC, IFTA, IRP, cierres estatales y baja fiscal definitiva."},
+    "en": {"name": "Close a Trucking Company", "price": "$1,000 – $2,500", "priceNote": "Based on scope", "summary": "Coordinated closure of operational and tax registrations.", "details": "May include cancellation of DOT, MC, IFTA, IRP, state closures and final tax account closure."}
+  },
+  {
+    "id": "consulting",
+    "category": "business",
+    "icon": "chat",
+    "es": {"name": "Consultoría de Impuestos o Trucking", "price": "$150", "priceNote": "Por hora", "summary": "Asesoría estratégica individualizada con expertos en transporte.", "details": "Sesión enfocada en dudas fiscales, regulatorias u operativas de la empresa."},
+    "en": {"name": "Tax or Trucking Consulting", "price": "$150", "priceNote": "Per hour", "summary": "Individual strategic advice with transportation specialists.", "details": "A focused session for the company's tax, regulatory or operational questions."}
+  }
+]

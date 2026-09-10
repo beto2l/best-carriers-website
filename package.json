@@ -1,0 +1,11 @@
+{
+  "name": "best-carriers-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LuxWrap-managed pages for best-carriers.com",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "npm run build && npm run check"
+  }
+}

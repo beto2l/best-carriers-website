@@ -1,0 +1,37 @@
+{
+  "contract_version": 4,
+  "runtime": "static",
+  "scope": "pages",
+  "site": "best-carriers-website",
+  "version": "1.0.0",
+  "languages": [
+    "es",
+    "en"
+  ],
+  "pages": [
+    {
+      "id": "trucking-services-es",
+      "title": "Servicios de Trucking",
+      "route": "servicios",
+      "entry": "pages/servicios/index.html",
+      "language": "es"
+    },
+    {
+      "id": "trucking-services-en",
+      "title": "Trucking Services",
+      "route": "services",
+      "entry": "pages/services/index.html",
+      "language": "en"
+    }
+  ],
+  "files_sha256": {
+    "pages/services/assets/services.css": "9a351182103e9c0a676c4f7e8352dd97106fee702a2261e1c5efe4feb2651647",
+    "pages/services/assets/services.js": "46a853e3bae612aef3687de14b95956a38161a4534de6799b84ff2de7a1de55a",
+    "pages/services/data/services.json": "ffcd13d938031427d2f3240fa1467206765e9ade2ffee4f52584d237cd61c5cb",
+    "pages/services/index.html": "414e15868460ce149753811b0d08f678684c908ee56d2f54380508a6727d8691",
+    "pages/servicios/assets/services.css": "9a351182103e9c0a676c4f7e8352dd97106fee702a2261e1c5efe4feb2651647",
+    "pages/servicios/assets/services.js": "46a853e3bae612aef3687de14b95956a38161a4534de6799b84ff2de7a1de55a",
+    "pages/servicios/data/services.json": "3e1e15c07b283dd33d835a8ede7685c0b6071b919653abd417e60265f2b42596",
+    "pages/servicios/index.html": "fd16b336b722736aa77c1683ceb00c44b14673c5460cf513d34a830c1c396141"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "locale": "en",
+  "version": "1.0.0",
+  "whatsappUrl": "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking",
+  "requirements": "The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.",
+  "labels": {
+    "detailsEyebrow": "Service information",
+    "priceLabel": "Price",
+    "includesLabel": "Includes",
+    "variantsLabel": "Service options",
+    "requirementsLabel": "Information and requirements",
+    "priceNotice": "Prices valid through December 2026.",
+    "dialogCta": "I want this service",
+    "resultSingular": "service available",
+    "resultPlural": "services available"
+  },
+  "services": [
+    {
+      "id": "federal-tax-filing",
+      "category": "taxes",
+      "icon": "chart",
+      "name": "Federal Tax Filing",
+      "price": "$490 – $2,500",
+      "priceNote": "Based on business structure",
+      "summary": "Federal tax return preparation for a Single Member LLC or Partnership.",
+      "details": "Final cost depends on operation size, number of trucks, transaction volume and bank accounts.",
+      "variants": [
+        {
+          "name": "Single Member LLC",
+          "form": "Schedule C + Form 1040",
+          "price": "$490 – $1,000",
+          "deadline": "April 15",
+          "extra": "K-1 not applicable"
+        },
+        {
+          "name": "Partnership",
+          "form": "Form 1065",
+          "price": "$1,000 – $2,500",
+          "deadline": "March 15",
+          "extra": "One K-1 per partner"
+        }
+      ]
+    },
+    {
+      "id": "form-1099",
+      "category": "taxes",
+      "icon": "document",
+      "name": "Form 1099",
+      "price": "$75",
+      "priceNote": "Per form",
+      "summary": "Preparation and issuance of forms for independent contractors.",
+      "details": "Individual service for each requested Form 1099."
+    },
+    {
+      "id": "sales-tax",
+      "category": "taxes",
+      "icon": "receipt",
+      "name": "Sales Tax Filing",
+      "price": "$250",
+      "priceNote": "Annual",
+      "summary": "Filing and reporting with the applicable tax authority.",
+      "details": "Preparation of the annual Sales Tax report using the information provided."
+    },
+    {
+      "id": "filing-ifta",
+      "category": "compliance",
+      "icon": "fuel",
+      "name": "IFTA Filing",
+      "price": "$375",
+      "priceNote": "Annual, per truck",
+      "summary": "Quarterly reporting and fuel tax filing.",
+      "details": "Preparation of the operation's IFTA reports for the applicable period."
+    },
+    {
+      "id": "irp-ifta",
+      "category": "compliance",
+      "icon": "route",
+      "name": "IRP + IFTA",
+      "price": "$1,500",
+      "priceNote": "Coordinated setup",
+      "summary": "Coordinated setup and registration of interstate and fuel accounts.",
+      "details": "Coordinated initial setup of IRP and IFTA registrations for the trucking company."
+    },
+    {
+      "id": "llc-authority",
+      "category": "business",
+      "icon": "building",
+      "name": "LLC + Operating Authority",
+      "price": "$1,400",
+      "priceNote": "Official fees included",
+      "summary": "Company formation and operating authority setup.",
+      "details": "Includes the applicable official fees for MC, UCR and BOC-3.",
+      "includes": [
+        "MC",
+        "UCR",
+        "BOC-3"
+      ]
+    },
+    {
+      "id": "state-permits",
+      "category": "compliance",
+      "icon": "map",
+      "name": "State Permits",
+      "price": "$150 – $750",
+      "priceNote": "Based on state and filing",
+      "summary": "State filings and registrations for trucking operations.",
+      "details": "Service available for California, Oregon, New Mexico, Kentucky and New York.",
+      "includes": [
+        "California (CA)",
+        "Oregon (OR)",
+        "New Mexico (NM)",
+        "Kentucky (KY)",
+        "New York (NY)"
+      ]
+    },
+    {
+      "id": "reinstate-mc-authority",
+      "category": "compliance",
+      "icon": "shield",
+      "name": "Reinstate MC Authority",
+      "price": "$750",
+      "priceNote": "Reactivation",
+      "summary": "Operating authority reactivation with FMCSA / DOT.",
+      "details": "Support to restore the operation's MC authority."
+    },
+    {
+      "id": "migrate-motus",
+      "category": "business",
+      "icon": "sync",
+      "name": "Migrate to Motus",
+      "price": "$250",
+      "priceNote": "Setup and transition",
+      "summary": "Platform setup, transition and synchronization.",
+      "details": "Assistance organizing the operational transition to Motus."
+    },
+    {
+      "id": "close-trucking-company",
+      "category": "business",
+      "icon": "close",
+      "name": "Close a Trucking Company",
+      "price": "$1,000 – $2,500",
+      "priceNote": "Based on scope",
+      "summary": "Coordinated closure of operational and tax registrations.",
+      "details": "May include cancellation of DOT, MC, IFTA, IRP, state closures and final tax account closure."
+    },
+    {
+      "id": "consulting",
+      "category": "business",
+      "icon": "chat",
+      "name": "Tax or Trucking Consulting",
+      "price": "$150",
+      "priceNote": "Per hour",
+      "summary": "Individual strategic advice with transportation specialists.",
+      "details": "A focused session for the company's tax, regulatory or operational questions."
+    }
+  ]
+}

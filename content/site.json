@@ -1,0 +1,132 @@
+{
+  "brand": "Best Carriers",
+  "brandDescriptor": "Trucking Services",
+  "heroImage": {
+    "url": "https://bc.opin-x.com/best-carriers-services-hero.webp",
+    "width": 1920,
+    "height": 851,
+    "alt": {
+      "es": "Camión moderno circulando por una carretera interestatal al amanecer",
+      "en": "Modern semi truck traveling on an interstate at sunrise"
+    }
+  },
+  "whatsapp": {
+    "number": "12192396752",
+    "message": "Quiero un servicio de trucking"
+  },
+  "priceValidThrough": "2026-12-31",
+  "routes": {
+    "es": "https://best-carriers.com/servicios/",
+    "en": "https://best-carriers.com/services/"
+  },
+  "locales": {
+    "es": {
+      "metaTitle": "Servicios de Trucking en USA | Permisos, IFTA e Impuestos",
+      "metaDescription": "Servicios profesionales para empresas de trucking: impuestos, IFTA, IRP, autoridad, permisos estatales, Motus y consultoría.",
+      "skipLink": "Ir a los servicios",
+      "brandTagline": "Compliance, impuestos y operación",
+      "languageLink": "English",
+      "languageAria": "Ver la página en inglés",
+      "navCta": "WhatsApp",
+      "heroEyebrow": "Trucking & Tax Services",
+      "heroTitle": "Tu operación avanza.",
+      "heroTitleAccent": "Nosotros resolvemos el trámite.",
+      "heroDescription": "Impuestos, registros, permisos y compliance para owner-operators y flotas en Estados Unidos, con atención clara y bilingüe.",
+      "heroPrimaryCta": "Explorar servicios",
+      "heroSecondaryCta": "Solicitar asesoría",
+      "trustItems": [
+        "Especialistas en trucking",
+        "Servicio bilingüe",
+        "Atención personalizada"
+      ],
+      "sectionEyebrow": "Servicios",
+      "sectionTitle": "Lo complejo, explicado con claridad.",
+      "sectionDescription": "Busca el trámite que necesitas y consulta su precio e información esencial. Los requisitos exactos se confirmarán después de una evaluación breve.",
+      "searchLabel": "Buscar un servicio",
+      "searchPlaceholder": "Ej. IFTA, autoridad, impuestos...",
+      "filtersLabel": "Filtrar servicios",
+      "filters": {
+        "all": "Todos",
+        "taxes": "Impuestos",
+        "compliance": "Compliance",
+        "business": "Operación"
+      },
+      "resultSingular": "servicio disponible",
+      "resultPlural": "servicios disponibles",
+      "noResultsTitle": "No encontramos ese servicio",
+      "noResultsText": "Prueba otra búsqueda o escríbenos por WhatsApp.",
+      "cardAction": "Ver precio y detalles",
+      "fromLabel": "Desde",
+      "detailsEyebrow": "Información del servicio",
+      "priceLabel": "Precio",
+      "includesLabel": "Incluye",
+      "variantsLabel": "Opciones de servicio",
+      "requirementsLabel": "Información y requisitos",
+      "requirementsPending": "La documentación exacta depende de tu estructura, estado y situación operativa. La lista de requisitos se confirma después de una evaluación inicial.",
+      "priceNotice": "Precios vigentes hasta diciembre de 2026.",
+      "closeDialog": "Cerrar información",
+      "dialogCta": "Quiero este servicio",
+      "ctaEyebrow": "Asesoría inmediata",
+      "ctaTitle": "¿No sabes cuál trámite necesitas?",
+      "ctaText": "Cuéntanos qué está pasando con tu operación y te ayudaremos a identificar el servicio correcto.",
+      "ctaButton": "Hablar por WhatsApp",
+      "disclaimer": "El costo final puede variar según el tamaño de la flota, la estructura del negocio, el número de movimientos y los trámites necesarios. Después de una evaluación se confirma el precio final.",
+      "footerText": "Servicios profesionales para el sector de trucking en Estados Unidos.",
+      "copyright": "Best Carriers. Todos los derechos reservados."
+    },
+    "en": {
+      "metaTitle": "USA Trucking Services | Permits, IFTA and Tax Filing",
+      "metaDescription": "Professional services for trucking companies: tax filing, IFTA, IRP, operating authority, state permits, Motus and consulting.",
+      "skipLink": "Skip to services",
+      "brandTagline": "Compliance, taxes and operations",
+      "languageLink": "Español",
+      "languageAria": "View this page in Spanish",
+      "navCta": "WhatsApp",
+      "heroEyebrow": "Trucking & Tax Services",
+      "heroTitle": "Keep your operation moving.",
+      "heroTitleAccent": "We handle the filing.",
+      "heroDescription": "Tax, registration, permit and compliance services for U.S. owner-operators and fleets, with clear bilingual support.",
+      "heroPrimaryCta": "Explore services",
+      "heroSecondaryCta": "Request assistance",
+      "trustItems": [
+        "Trucking specialists",
+        "Bilingual service",
+        "Personalized support"
+      ],
+      "sectionEyebrow": "Services",
+      "sectionTitle": "Complex requirements, clearly explained.",
+      "sectionDescription": "Find the filing you need and review its price and essential information. Exact requirements will be confirmed after a brief evaluation.",
+      "searchLabel": "Search services",
+      "searchPlaceholder": "Try IFTA, authority, taxes...",
+      "filtersLabel": "Filter services",
+      "filters": {
+        "all": "All",
+        "taxes": "Taxes",
+        "compliance": "Compliance",
+        "business": "Operations"
+      },
+      "resultSingular": "service available",
+      "resultPlural": "services available",
+      "noResultsTitle": "No matching service found",
+      "noResultsText": "Try another search or contact us on WhatsApp.",
+      "cardAction": "View price and details",
+      "fromLabel": "From",
+      "detailsEyebrow": "Service information",
+      "priceLabel": "Price",
+      "includesLabel": "Includes",
+      "variantsLabel": "Service options",
+      "requirementsLabel": "Information and requirements",
+      "requirementsPending": "The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.",
+      "priceNotice": "Prices valid through December 2026.",
+      "closeDialog": "Close information",
+      "dialogCta": "I want this service",
+      "ctaEyebrow": "Immediate assistance",
+      "ctaTitle": "Not sure which filing you need?",
+      "ctaText": "Tell us what is happening with your operation and we will help you identify the right service.",
+      "ctaButton": "Chat on WhatsApp",
+      "disclaimer": "Final cost may vary based on fleet size, business structure, number of transactions and required filings. The final price is confirmed after an evaluation.",
+      "footerText": "Professional services for the U.S. trucking industry.",
+      "copyright": "Best Carriers. All rights reserved."
+    }
+  }
+}
