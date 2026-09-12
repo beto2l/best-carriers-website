@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "languages": [
     "es",
     "en"
@@ -25,9 +25,9 @@
     }
   ],
   "files_sha256": {
-    "pages/services/data/services.json": "bcb54acbc0727961ea865481c6cec7036bb6cd637d805398bcc6894d76b8b207",
-    "pages/services/index.html": "5c335e75208b6932be9d4780d16365c675b730610eb0ee55aacaddebf2db6006",
-    "pages/servicios/data/services.json": "a9bdc0204664e9dd64ef70be1d7943c2e51841637aaad951dbbc3f3eb135f6fd",
-    "pages/servicios/index.html": "fa95d9a8baf5ead32509c804ab90dd0a8fe5ed3c2cc5935cc4552843eeddf2a8"
+    "pages/services/data/services.json": "8766e38817d20215dab1b59ab296926e8eeef5aa853382be4c2576533c7bb66e",
+    "pages/services/index.html": "e42e2b93981ac0397f1cabbf382275bf15007ab11a972b3e0306cdcfadc68f5e",
+    "pages/servicios/data/services.json": "9e6557d4d0bec2648ba3bd596fc9e3f95435cc916815f1972973a8467cb3c1e5",
+    "pages/servicios/index.html": "1acb8f0e040f5241186791fb270a3dea559e5b924f9e89d9d246c93b1ea97d43"
   }
 }

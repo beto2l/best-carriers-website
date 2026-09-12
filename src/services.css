@@ -423,7 +423,7 @@ svg {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) auto;
+  grid-template-columns: minmax(280px, 1fr) auto auto;
   align-items: end;
   gap: 26px;
   margin-top: 62px;
@@ -512,6 +512,50 @@ svg {
   color: var(--white);
 }
 
+.view-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+}
+
+.view-switcher-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.view-toggle {
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.view-toggle:hover {
+  border-color: var(--border);
+  color: var(--ink);
+}
+
+.view-toggle.is-active {
+  border-color: var(--emerald-dark);
+  background: var(--emerald-dark);
+  color: var(--white);
+}
+
 .results-count {
   margin: 24px 0 18px;
   color: var(--muted);
@@ -524,6 +568,96 @@ svg {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.services-grid[hidden],
+.services-table-wrap[hidden],
+.service-card[hidden],
+.services-table tr[hidden] {
+  display: none;
+}
+
+.services-table-wrap {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: 0 8px 25px rgba(7, 21, 34, .035);
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.services-table th,
+.services-table td {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.services-table thead th {
+  padding: 17px 28px;
+  background: var(--mist);
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.services-table thead th:last-child,
+.services-table td:last-child {
+  width: 220px;
+  text-align: right;
+}
+
+.services-table tbody tr:last-child th,
+.services-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.services-table tbody tr:hover {
+  background: #fbfdfc;
+}
+
+.table-service {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 28px;
+  border: 0;
+  background: transparent;
+  color: var(--navy-900);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.table-service:hover {
+  color: var(--emerald-dark);
+}
+
+.table-service-number {
+  min-width: 27px;
+  color: #b6c0c5;
+  font-size: .85rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.services-table td {
+  padding: 18px 28px;
+  color: var(--emerald-dark);
+  font-size: 1.05rem;
+}
+
+.services-table td strong {
+  white-space: nowrap;
 }
 
 .service-card {
@@ -1016,6 +1150,10 @@ svg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .view-switcher {
+    justify-self: start;
+  }
+
   .contact-inner {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -1133,6 +1271,23 @@ svg {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-table thead th,
+  .table-service,
+  .services-table td {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .services-table thead th:last-child,
+  .services-table td:last-child {
+    width: 125px;
+  }
+
+  .table-service {
+    gap: 9px;
+    font-size: .98rem;
   }
 
   .service-card {

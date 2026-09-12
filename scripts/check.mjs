@@ -35,7 +35,8 @@ for (const page of release.pages) {
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }
-  if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 11) failures.push(`${page.entry} must contain 11 static service cards`);
+  if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 static service cards`);
+  if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
   if (/<script[^>]+src=["']https?:\/\//i.test(html)) failures.push(`${page.entry} loads external JavaScript`);
 }
 

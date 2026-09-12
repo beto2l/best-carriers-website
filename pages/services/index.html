@@ -444,7 +444,7 @@ svg {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) auto;
+  grid-template-columns: minmax(280px, 1fr) auto auto;
   align-items: end;
   gap: 26px;
   margin-top: 62px;
@@ -533,6 +533,50 @@ svg {
   color: var(--white);
 }
 
+.view-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+}
+
+.view-switcher-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.view-toggle {
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.view-toggle:hover {
+  border-color: var(--border);
+  color: var(--ink);
+}
+
+.view-toggle.is-active {
+  border-color: var(--emerald-dark);
+  background: var(--emerald-dark);
+  color: var(--white);
+}
+
 .results-count {
   margin: 24px 0 18px;
   color: var(--muted);
@@ -545,6 +589,96 @@ svg {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.services-grid[hidden],
+.services-table-wrap[hidden],
+.service-card[hidden],
+.services-table tr[hidden] {
+  display: none;
+}
+
+.services-table-wrap {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: 0 8px 25px rgba(7, 21, 34, .035);
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.services-table th,
+.services-table td {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.services-table thead th {
+  padding: 17px 28px;
+  background: var(--mist);
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.services-table thead th:last-child,
+.services-table td:last-child {
+  width: 220px;
+  text-align: right;
+}
+
+.services-table tbody tr:last-child th,
+.services-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.services-table tbody tr:hover {
+  background: #fbfdfc;
+}
+
+.table-service {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 28px;
+  border: 0;
+  background: transparent;
+  color: var(--navy-900);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.table-service:hover {
+  color: var(--emerald-dark);
+}
+
+.table-service-number {
+  min-width: 27px;
+  color: #b6c0c5;
+  font-size: .85rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.services-table td {
+  padding: 18px 28px;
+  color: var(--emerald-dark);
+  font-size: 1.05rem;
+}
+
+.services-table td strong {
+  white-space: nowrap;
 }
 
 .service-card {
@@ -1037,6 +1171,10 @@ svg {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .view-switcher {
+    justify-self: start;
+  }
+
   .contact-inner {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -1156,6 +1294,23 @@ svg {
     grid-template-columns: 1fr;
   }
 
+  .services-table thead th,
+  .table-service,
+  .services-table td {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .services-table thead th:last-child,
+  .services-table td:last-child {
+    width: 125px;
+  }
+
+  .table-service {
+    gap: 9px;
+    font-size: .98rem;
+  }
+
   .service-card {
     min-height: 360px;
   }
@@ -1213,9 +1368,9 @@ svg {
 }
 </style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Trucking Services","url":"https://best-carriers.com/services/","numberOfItems":11,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Federal Tax Filing","description":"Federal tax return preparation for a Single Member LLC or Partnership.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Form 1099","description":"Preparation and issuance of forms for independent contractors.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Sales Tax Filing","description":"Filing and reporting with the applicable tax authority.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"IFTA Filing","description":"Quarterly reporting and fuel tax filing.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":5,"item":{"@type":"Service","name":"IRP + IFTA","description":"Coordinated setup and registration of interstate and fuel accounts.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":6,"item":{"@type":"Service","name":"LLC + Operating Authority","description":"Company formation and operating authority setup.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":7,"item":{"@type":"Service","name":"State Permits","description":"State filings and registrations for trucking operations.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":8,"item":{"@type":"Service","name":"Reinstate MC Authority","description":"Operating authority reactivation with FMCSA / DOT.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":9,"item":{"@type":"Service","name":"Migrate to Motus","description":"Platform setup, transition and synchronization.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":10,"item":{"@type":"Service","name":"Close a Trucking Company","description":"Coordinated closure of operational and tax registrations.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":11,"item":{"@type":"Service","name":"Tax or Trucking Consulting","description":"Individual strategic advice with transportation specialists.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Trucking Services","url":"https://best-carriers.com/services/","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Federal Tax Filing","description":"Federal tax return preparation for a Single Member LLC or Partnership.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Form 1099","description":"Preparation and issuance of forms for independent contractors.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Sales Tax Filing","description":"Filing and reporting with the applicable tax authority.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"IFTA Filing","description":"Quarterly reporting and fuel tax filing.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":5,"item":{"@type":"Service","name":"IRP + IFTA","description":"Coordinated setup and registration of interstate and fuel accounts.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":6,"item":{"@type":"Service","name":"LLC + Operating Authority","description":"Company formation and operating authority setup.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":7,"item":{"@type":"Service","name":"State Permits","description":"State filings and registrations for trucking operations.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":8,"item":{"@type":"Service","name":"Obtain USDOT Number","description":"USDOT number application for your trucking company.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":9,"item":{"@type":"Service","name":"Reinstate MC Authority","description":"Operating authority reactivation with FMCSA / DOT.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":10,"item":{"@type":"Service","name":"Migrate to Motus","description":"Platform setup, transition and synchronization.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":11,"item":{"@type":"Service","name":"Close a Trucking Company","description":"Coordinated closure of operational and tax registrations.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":12,"item":{"@type":"Service","name":"Tax or Trucking Consulting","description":"Individual strategic advice with transportation specialists.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}}]}</script>
 </head>
-<body data-locale="en" data-release="1.0.2">
+<body data-locale="en" data-release="1.0.3">
   <a class="skip-link" href="#services-grid">Skip to services</a>
   <header class="site-header" data-header>
     <div class="shell header-inner">
@@ -1275,9 +1430,14 @@ svg {
             <button class="filter" type="button" data-filter="compliance" aria-pressed="false">Compliance</button>
             <button class="filter" type="button" data-filter="business" aria-pressed="false">Operations</button>
           </fieldset>
+          <div class="view-switcher" role="group" aria-label="Service view">
+            <span class="view-switcher-label">Service view</span>
+            <button class="view-toggle is-active" type="button" data-view="cards" aria-pressed="true">Cards</button>
+            <button class="view-toggle" type="button" data-view="table" aria-pressed="false">Table</button>
+          </div>
         </div>
 
-        <p class="results-count" aria-live="polite" data-results-count>11 services available</p>
+        <p class="results-count" aria-live="polite" data-results-count>12 services available</p>
         <div class="services-grid" id="services-grid" data-services-grid>
           <article class="service-card" data-service-card data-service-id="federal-tax-filing" data-category="taxes" style="--order:0">
             <div class="card-top">
@@ -1296,7 +1456,7 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
 <article class="service-card" data-service-card data-service-id="form-1099" data-category="taxes" style="--order:1">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-document" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 12h6m-6 4h6"/></svg></span>
@@ -1314,7 +1474,7 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
 <article class="service-card" data-service-card data-service-id="sales-tax" data-category="taxes" style="--order:2">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-receipt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12v19l-3-2-3 2-3-2-3 2V3Zm3 5h6m-6 4h6m-6 4h4"/></svg></span>
@@ -1332,7 +1492,7 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
 <article class="service-card" data-service-card data-service-id="filing-ifta" data-category="compliance" style="--order:3">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-fuel" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 22V3h10v19M3 22h14M8 7h4m5 3h2l2 2v6a2 2 0 0 1-4 0v-8Z"/></svg></span>
@@ -1350,7 +1510,7 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
 <article class="service-card" data-service-card data-service-id="irp-ifta" data-category="compliance" style="--order:4">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-route" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h3a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg></span>
@@ -1368,7 +1528,7 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
 <article class="service-card" data-service-card data-service-id="llc-authority" data-category="business" style="--order:5">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-building" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V5l8-3 8 3v16M9 9h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1M2 21h20"/></svg></span>
@@ -1386,7 +1546,7 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
 <article class="service-card" data-service-card data-service-id="state-permits" data-category="compliance" style="--order:6">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-map" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></svg></span>
@@ -1404,11 +1564,29 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
-<article class="service-card" data-service-card data-service-id="reinstate-mc-authority" data-category="compliance" style="--order:7">
+            </article>
+<article class="service-card" data-service-card data-service-id="obtain-usdot" data-category="compliance" style="--order:7">
+            <div class="card-top">
+              <span class="service-icon" aria-hidden="true"><svg class="icon icon-document" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 12h6m-6 4h6"/></svg></span>
+              <span class="service-number">08</span>
+            </div>
+            <div class="card-copy">
+              <h3>Obtain USDOT Number</h3>
+              <p>USDOT number application for your trucking company.</p>
+            </div>
+            <div class="card-price"><strong>$250</strong><span>Fixed price</span></div>
+            <button class="card-action" type="button" data-open-service="obtain-usdot" aria-haspopup="dialog"><span>View price and details</span><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <details class="service-fallback">
+              <summary>View price and details</summary>
+              <p>Support with applying for the company&#039;s USDOT number through FMCSA.</p>
+              <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
+              <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
+            </details>
+            </article>
+<article class="service-card" data-service-card data-service-id="reinstate-mc-authority" data-category="compliance" style="--order:8">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-shield" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-              <span class="service-number">08</span>
+              <span class="service-number">09</span>
             </div>
             <div class="card-copy">
               <h3>Reinstate MC Authority</h3>
@@ -1422,11 +1600,11 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
-<article class="service-card" data-service-card data-service-id="migrate-motus" data-category="business" style="--order:8">
+            </article>
+<article class="service-card" data-service-card data-service-id="migrate-motus" data-category="business" style="--order:9">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-sync" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7h-5V2M4 17h5v5M6.1 8A7 7 0 0 1 18 5l2 2M17.9 16A7 7 0 0 1 6 19l-2-2"/></svg></span>
-              <span class="service-number">09</span>
+              <span class="service-number">10</span>
             </div>
             <div class="card-copy">
               <h3>Migrate to Motus</h3>
@@ -1440,11 +1618,11 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
-<article class="service-card" data-service-card data-service-id="close-trucking-company" data-category="business" style="--order:9">
+            </article>
+<article class="service-card" data-service-card data-service-id="close-trucking-company" data-category="business" style="--order:10">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></span>
-              <span class="service-number">10</span>
+              <span class="service-number">11</span>
             </div>
             <div class="card-copy">
               <h3>Close a Trucking Company</h3>
@@ -1458,11 +1636,11 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
-<article class="service-card" data-service-card data-service-id="consulting" data-category="business" style="--order:10">
+            </article>
+<article class="service-card" data-service-card data-service-id="consulting" data-category="business" style="--order:11">
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-chat" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5.1A7.5 7.5 0 0 1 3 12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8v3Z"/></svg></span>
-              <span class="service-number">11</span>
+              <span class="service-number">12</span>
             </div>
             <div class="card-copy">
               <h3>Tax or Trucking Consulting</h3>
@@ -1476,7 +1654,60 @@ svg {
               <p><strong>Information and requirements:</strong> The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.</p>
               <a href="https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking" target="_blank" rel="noopener noreferrer">I want this service</a>
             </details>
-          </article>
+            </article>
+        </div>
+        <div class="services-table-wrap" data-services-table hidden>
+          <table class="services-table">
+            <thead><tr><th scope="col">Service name</th><th scope="col">Price</th></tr></thead>
+            <tbody><tr data-service-row data-service-id="federal-tax-filing" data-category="taxes">
+            <th scope="row"><button class="table-service" type="button" data-open-service="federal-tax-filing" aria-haspopup="dialog"><span class="table-service-number">01</span><span>Federal Tax Filing</span></button></th>
+            <td><strong>$490 – $2,500</strong></td>
+          </tr>
+<tr data-service-row data-service-id="form-1099" data-category="taxes">
+            <th scope="row"><button class="table-service" type="button" data-open-service="form-1099" aria-haspopup="dialog"><span class="table-service-number">02</span><span>Form 1099</span></button></th>
+            <td><strong>$75</strong></td>
+          </tr>
+<tr data-service-row data-service-id="sales-tax" data-category="taxes">
+            <th scope="row"><button class="table-service" type="button" data-open-service="sales-tax" aria-haspopup="dialog"><span class="table-service-number">03</span><span>Sales Tax Filing</span></button></th>
+            <td><strong>$250</strong></td>
+          </tr>
+<tr data-service-row data-service-id="filing-ifta" data-category="compliance">
+            <th scope="row"><button class="table-service" type="button" data-open-service="filing-ifta" aria-haspopup="dialog"><span class="table-service-number">04</span><span>IFTA Filing</span></button></th>
+            <td><strong>$375</strong></td>
+          </tr>
+<tr data-service-row data-service-id="irp-ifta" data-category="compliance">
+            <th scope="row"><button class="table-service" type="button" data-open-service="irp-ifta" aria-haspopup="dialog"><span class="table-service-number">05</span><span>IRP + IFTA</span></button></th>
+            <td><strong>$1,500</strong></td>
+          </tr>
+<tr data-service-row data-service-id="llc-authority" data-category="business">
+            <th scope="row"><button class="table-service" type="button" data-open-service="llc-authority" aria-haspopup="dialog"><span class="table-service-number">06</span><span>LLC + Operating Authority</span></button></th>
+            <td><strong>$1,400</strong></td>
+          </tr>
+<tr data-service-row data-service-id="state-permits" data-category="compliance">
+            <th scope="row"><button class="table-service" type="button" data-open-service="state-permits" aria-haspopup="dialog"><span class="table-service-number">07</span><span>State Permits</span></button></th>
+            <td><strong>$150 – $750</strong></td>
+          </tr>
+<tr data-service-row data-service-id="obtain-usdot" data-category="compliance">
+            <th scope="row"><button class="table-service" type="button" data-open-service="obtain-usdot" aria-haspopup="dialog"><span class="table-service-number">08</span><span>Obtain USDOT Number</span></button></th>
+            <td><strong>$250</strong></td>
+          </tr>
+<tr data-service-row data-service-id="reinstate-mc-authority" data-category="compliance">
+            <th scope="row"><button class="table-service" type="button" data-open-service="reinstate-mc-authority" aria-haspopup="dialog"><span class="table-service-number">09</span><span>Reinstate MC Authority</span></button></th>
+            <td><strong>$750</strong></td>
+          </tr>
+<tr data-service-row data-service-id="migrate-motus" data-category="business">
+            <th scope="row"><button class="table-service" type="button" data-open-service="migrate-motus" aria-haspopup="dialog"><span class="table-service-number">10</span><span>Migrate to Motus</span></button></th>
+            <td><strong>$250</strong></td>
+          </tr>
+<tr data-service-row data-service-id="close-trucking-company" data-category="business">
+            <th scope="row"><button class="table-service" type="button" data-open-service="close-trucking-company" aria-haspopup="dialog"><span class="table-service-number">11</span><span>Close a Trucking Company</span></button></th>
+            <td><strong>$1,000 – $2,500</strong></td>
+          </tr>
+<tr data-service-row data-service-id="consulting" data-category="business">
+            <th scope="row"><button class="table-service" type="button" data-open-service="consulting" aria-haspopup="dialog"><span class="table-service-number">12</span><span>Tax or Trucking Consulting</span></button></th>
+            <td><strong>$150</strong></td>
+          </tr></tbody>
+          </table>
         </div>
         <div class="no-results" data-no-results hidden>
           <svg class="icon icon-search" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
@@ -1528,8 +1759,11 @@ svg {
   const locale = body.dataset.locale || "es";
   const grid = document.querySelector("[data-services-grid]");
   const cards = [...document.querySelectorAll("[data-service-card]")];
+  const table = document.querySelector("[data-services-table]");
+  const tableRows = [...document.querySelectorAll("[data-service-row]")];
   const search = document.querySelector("[data-search]");
   const filters = [...document.querySelectorAll("[data-filter]")];
+  const viewToggles = [...document.querySelectorAll("[data-view]")];
   const resultsCount = document.querySelector("[data-results-count]");
   const noResults = document.querySelector("[data-no-results]");
   const dialog = document.querySelector("[data-service-dialog]");
@@ -1557,7 +1791,14 @@ svg {
     });
   });
 
-  grid.addEventListener("click", (event) => {
+  viewToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => setView(toggle.dataset.view || "cards"));
+  });
+
+  grid.addEventListener("click", openService);
+  table?.addEventListener("click", openService);
+
+  function openService(event) {
     const trigger = event.target.closest("[data-open-service]");
     if (!trigger || !catalog) return;
     const service = catalog.services.find((item) => item.id === trigger.dataset.openService);
@@ -1565,7 +1806,7 @@ svg {
     lastTrigger = trigger;
     populateDialog(service);
     if (typeof dialog.showModal === "function") dialog.showModal();
-  });
+  }
 
   closeDialog?.addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (event) => {
@@ -1593,15 +1834,26 @@ svg {
   function applyFilters() {
     const query = normalize(search.value);
     let visible = 0;
-    cards.forEach((card) => {
-      const categoryMatch = activeCategory === "all" || card.dataset.category === activeCategory;
-      const searchMatch = !query || normalize(card.textContent).includes(query);
+    [...cards, ...tableRows].forEach((item) => {
+      const categoryMatch = activeCategory === "all" || item.dataset.category === activeCategory;
+      const searchMatch = !query || normalize(item.textContent).includes(query);
       const shouldShow = categoryMatch && searchMatch;
-      card.hidden = !shouldShow;
-      if (shouldShow) visible += 1;
+      item.hidden = !shouldShow;
     });
+    cards.forEach((card) => { if (!card.hidden) visible += 1; });
     updateCount(visible);
     noResults.hidden = visible !== 0;
+  }
+
+  function setView(view) {
+    const tableActive = view === "table";
+    grid.hidden = tableActive;
+    if (table) table.hidden = !tableActive;
+    viewToggles.forEach((toggle) => {
+      const selected = (toggle.dataset.view || "cards") === view;
+      toggle.classList.toggle("is-active", selected);
+      toggle.setAttribute("aria-pressed", String(selected));
+    });
   }
 
   function updateCount(count) {

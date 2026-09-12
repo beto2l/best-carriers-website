@@ -5,8 +5,11 @@
   const locale = body.dataset.locale || "es";
   const grid = document.querySelector("[data-services-grid]");
   const cards = [...document.querySelectorAll("[data-service-card]")];
+  const table = document.querySelector("[data-services-table]");
+  const tableRows = [...document.querySelectorAll("[data-service-row]")];
   const search = document.querySelector("[data-search]");
   const filters = [...document.querySelectorAll("[data-filter]")];
+  const viewToggles = [...document.querySelectorAll("[data-view]")];
   const resultsCount = document.querySelector("[data-results-count]");
   const noResults = document.querySelector("[data-no-results]");
   const dialog = document.querySelector("[data-service-dialog]");
@@ -34,7 +37,14 @@
     });
   });
 
-  grid.addEventListener("click", (event) => {
+  viewToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => setView(toggle.dataset.view || "cards"));
+  });
+
+  grid.addEventListener("click", openService);
+  table?.addEventListener("click", openService);
+
+  function openService(event) {
     const trigger = event.target.closest("[data-open-service]");
     if (!trigger || !catalog) return;
     const service = catalog.services.find((item) => item.id === trigger.dataset.openService);
@@ -42,7 +52,7 @@
     lastTrigger = trigger;
     populateDialog(service);
     if (typeof dialog.showModal === "function") dialog.showModal();
-  });
+  }
 
   closeDialog?.addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (event) => {
@@ -70,15 +80,26 @@
   function applyFilters() {
     const query = normalize(search.value);
     let visible = 0;
-    cards.forEach((card) => {
-      const categoryMatch = activeCategory === "all" || card.dataset.category === activeCategory;
-      const searchMatch = !query || normalize(card.textContent).includes(query);
+    [...cards, ...tableRows].forEach((item) => {
+      const categoryMatch = activeCategory === "all" || item.dataset.category === activeCategory;
+      const searchMatch = !query || normalize(item.textContent).includes(query);
       const shouldShow = categoryMatch && searchMatch;
-      card.hidden = !shouldShow;
-      if (shouldShow) visible += 1;
+      item.hidden = !shouldShow;
     });
+    cards.forEach((card) => { if (!card.hidden) visible += 1; });
     updateCount(visible);
     noResults.hidden = visible !== 0;
+  }
+
+  function setView(view) {
+    const tableActive = view === "table";
+    grid.hidden = tableActive;
+    if (table) table.hidden = !tableActive;
+    viewToggles.forEach((toggle) => {
+      const selected = (toggle.dataset.view || "cards") === view;
+      toggle.classList.toggle("is-active", selected);
+      toggle.setAttribute("aria-pressed", String(selected));
+    });
   }
 
   function updateCount(count) {

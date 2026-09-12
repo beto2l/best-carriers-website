@@ -112,6 +112,7 @@ function renderPage(locale) {
   const canonical = site.routes[locale];
   const lang = locale === "es" ? "es-US" : "en-US";
   const cards = services.map((service, index) => renderCard(service, locale, index)).join("\n");
+  const tableRows = services.map((service, index) => renderTableRow(service, locale, index)).join("\n");
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -211,11 +212,22 @@ function renderPage(locale) {
             <legend>${escapeHtml(t.filtersLabel)}</legend>
             ${Object.entries(t.filters).map(([value, label], index) => `<button class="filter${index === 0 ? " is-active" : ""}" type="button" data-filter="${value}" aria-pressed="${index === 0 ? "true" : "false"}">${escapeHtml(label)}</button>`).join("\n            ")}
           </fieldset>
+          <div class="view-switcher" role="group" aria-label="${escapeHtml(t.viewLabel)}">
+            <span class="view-switcher-label">${escapeHtml(t.viewLabel)}</span>
+            <button class="view-toggle is-active" type="button" data-view="cards" aria-pressed="true">${escapeHtml(t.cardsView)}</button>
+            <button class="view-toggle" type="button" data-view="table" aria-pressed="false">${escapeHtml(t.tableView)}</button>
+          </div>
         </div>
 
         <p class="results-count" aria-live="polite" data-results-count>${services.length} ${escapeHtml(t.resultPlural)}</p>
         <div class="services-grid" id="services-grid" data-services-grid>
           ${cards}
+        </div>
+        <div class="services-table-wrap" data-services-table hidden>
+          <table class="services-table">
+            <thead><tr><th scope="col">${escapeHtml(t.tableNameLabel)}</th><th scope="col">${escapeHtml(t.tablePriceLabel)}</th></tr></thead>
+            <tbody>${tableRows}</tbody>
+          </table>
         </div>
         <div class="no-results" data-no-results hidden>
           ${icon("search")}
@@ -285,7 +297,15 @@ function renderCard(service, locale, index) {
               <p><strong>${escapeHtml(t.requirementsLabel)}:</strong> ${escapeHtml(t.requirementsPending)}</p>
               <a href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.dialogCta)}</a>
             </details>
-          </article>`;
+            </article>`;
+}
+
+function renderTableRow(service, locale, index) {
+  const item = service[locale];
+  return `<tr data-service-row data-service-id="${escapeHtml(service.id)}" data-category="${escapeHtml(service.category)}">
+            <th scope="row"><button class="table-service" type="button" data-open-service="${escapeHtml(service.id)}" aria-haspopup="dialog"><span class="table-service-number">${String(index + 1).padStart(2, "0")}</span><span>${escapeHtml(item.name)}</span></button></th>
+            <td><strong>${escapeHtml(item.price)}</strong></td>
+          </tr>`;
 }
 
 function whatsappUrl() {

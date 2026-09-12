@@ -69,6 +69,13 @@
     "en": {"name": "State Permits", "price": "$150 – $750", "priceNote": "Based on state and filing", "summary": "State filings and registrations for trucking operations.", "details": "Service available for California, Oregon, New Mexico, Kentucky and New York.", "includes": ["California (CA)", "Oregon (OR)", "New Mexico (NM)", "Kentucky (KY)", "New York (NY)"]}
   },
   {
+    "id": "obtain-usdot",
+    "category": "compliance",
+    "icon": "document",
+    "es": {"name": "Obtener USDOT", "price": "$250", "priceNote": "Precio fijo", "summary": "Solicitud del número USDOT para tu empresa de trucking.", "details": "Acompañamiento para solicitar el número USDOT de la empresa ante FMCSA."},
+    "en": {"name": "Obtain USDOT Number", "price": "$250", "priceNote": "Fixed price", "summary": "USDOT number application for your trucking company.", "details": "Support with applying for the company's USDOT number through FMCSA."}
+  },
+  {
     "id": "reinstate-mc-authority",
     "category": "compliance",
     "icon": "shield",
