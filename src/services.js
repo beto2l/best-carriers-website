@@ -5,6 +5,7 @@
   const locale = body.dataset.locale || "es";
   const grid = document.querySelector("[data-services-grid]");
   const cards = [...document.querySelectorAll("[data-service-card]")];
+  const serviceTriggers = [...document.querySelectorAll("[data-open-service]")];
   const table = document.querySelector("[data-services-table]");
   const tableRows = [...document.querySelectorAll("[data-service-row]")];
   const search = document.querySelector("[data-search]");
@@ -41,15 +42,13 @@
     toggle.addEventListener("click", () => setView(toggle.dataset.view || "cards"));
   });
 
-  grid.addEventListener("click", openService);
-  table?.addEventListener("click", openService);
+  serviceTriggers.forEach((trigger) => trigger.addEventListener("click", openService));
 
   async function openService(event) {
-    const trigger = event.target.closest("[data-open-service]");
-    if (!trigger) return;
+    const trigger = event.currentTarget;
     if (!catalog) await catalogReady;
     if (!catalog) return;
-    const service = catalog.services.find((item) => item.id === trigger.dataset.openService);
+    const service = catalog.services.find((item) => item.id === trigger.getAttribute("data-open-service"));
     if (!service) return;
     lastTrigger = trigger;
     populateDialog(service);

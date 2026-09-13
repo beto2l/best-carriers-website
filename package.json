@@ -1,6 +1,6 @@
 {
   "name": "best-carriers-website",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "description": "LuxWrap-managed pages for best-carriers.com",
   "scripts": {
