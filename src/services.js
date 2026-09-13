@@ -17,7 +17,9 @@
   const closeDialog = document.querySelector("[data-dialog-close]");
   const currentYear = document.querySelector("[data-current-year]");
   let activeCategory = "all";
-  let catalog = readStaticCatalog();
+  const staticCatalog = readStaticCatalog();
+  const staticServices = new Map((staticCatalog?.services || []).map((service) => [service.id, service]));
+  let catalog = staticCatalog;
   let lastTrigger = null;
 
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
@@ -48,7 +50,8 @@
     const trigger = event.currentTarget;
     if (!catalog) await catalogReady;
     if (!catalog) return;
-    const service = catalog.services.find((item) => item.id === trigger.getAttribute("data-open-service"));
+    const serviceId = trigger.getAttribute("data-open-service");
+    const service = staticServices.get(serviceId) || catalog.services.find((item) => item.id === serviceId);
     if (!service) return;
     lastTrigger = trigger;
     populateDialog(service);
@@ -69,7 +72,7 @@
       if (!response.ok) throw new Error(`Catalog returned ${response.status}`);
       const payload = await response.json();
       if (!Array.isArray(payload.services) || payload.locale !== locale) throw new Error("Catalog does not match this page.");
-      catalog = payload;
+      if (!catalog) catalog = payload;
       grid.dataset.enhanced = "true";
     } catch (error) {
       console.warn("Best Carriers interactive catalog could not load; static service information remains available.", error);
