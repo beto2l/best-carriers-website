@@ -109,12 +109,12 @@ function checkMotusSale(page, html) {
   for (const required of [
     `data-opinx-global-content="best-carriers-social-proof-${locale}"`,
     `data-opinx-global-content="motus-checkout-${locale}"`,
-    "https://www.fmcsa.dot.gov/registration/move-motus",
     '"@type":"Course"',
     '"@type":"FAQPage"',
     '"sameAs":["https://www.facebook.com/bestcarriers"',
     "data-video-card",
-    "data-motus-checkout"
+    "data-motus-checkout",
+    "https://i.ytimg.com/vi/"
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }
@@ -130,6 +130,9 @@ function checkMotusSale(page, html) {
   }
   if (!html.includes(locale === "es" ? "acceso de por vida" : "lifetime access")) failures.push(`${page.entry} is missing the lifetime-access promise`);
   if (!html.includes(locale === "es" ? "calificación reúne opiniones sobre distintos cursos" : "rating combines feedback about different Best Carriers courses")) failures.push(`${page.entry} must label reviews as brand-wide social proof`);
+  if (html.includes("www.fmcsa.dot.gov/registration/move-motus")) failures.push(`${page.entry} must not include the external FMCSA link`);
+  if (html.includes('class="site-header"')) failures.push(`${page.entry} must not include the fixed sales-page header`);
+  if (!html.includes(locale === "es" ? "Comprar el taller de Motus" : "Buy the MOTUS Workshop")) failures.push(`${page.entry} is missing the revised mobile purchase CTA`);
 }
 
 function checkMotusThanks(page, html) {

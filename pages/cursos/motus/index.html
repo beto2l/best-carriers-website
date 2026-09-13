@@ -23,18 +23,18 @@
   <link rel="preload" as="image" href="https://bc.opin-x.com/motus-recorded-course.webp" fetchpriority="high">
   <style>:root {
   color-scheme: light;
-  --ink: #07111e;
-  --ink-soft: #102338;
+  --ink: #001d4f;
+  --ink-soft: #052b61;
   --slate: #526171;
   --line: #dce4ea;
   --paper: #ffffff;
   --canvas: #f3f6f8;
   --canvas-warm: #f7f4ee;
-  --blue: #1689d8;
-  --blue-dark: #0868aa;
-  --blue-light: #93d6ff;
-  --amber: #f5b83c;
-  --amber-dark: #d99108;
+  --blue: #075fab;
+  --blue-dark: #004f94;
+  --blue-light: #9bcbf4;
+  --amber: #ffc72c;
+  --amber-dark: #d99b00;
   --green: #17a673;
   --danger: #b42318;
   --shadow: 0 24px 70px rgba(4, 18, 32, .13);
@@ -177,12 +177,12 @@ opinx-component { display: block; }
 .motus-hero {
   position: relative;
   overflow: hidden;
-  min-height: 700px;
+  min-height: 620px;
   display: grid;
   align-items: center;
   background:
-    radial-gradient(circle at 78% 28%, rgba(20,137,216,.18), transparent 31%),
-    linear-gradient(135deg, #06111f 0%, #0a1a2d 58%, #071421 100%);
+    radial-gradient(circle at 78% 28%, rgba(38,116,193,.32), transparent 31%),
+    linear-gradient(135deg, #00143a 0%, #002c68 58%, #001a4b 100%);
   color: #fff;
 }
 .motus-grid,
@@ -196,8 +196,8 @@ opinx-component { display: block; }
   mask-image: linear-gradient(to bottom, black, transparent 92%);
 }
 .motus-orb { position: absolute; border-radius: 999px; filter: blur(2px); pointer-events: none; }
-.motus-orb-one { right: -160px; top: 34px; width: 450px; height: 450px; border: 1px solid rgba(147,214,255,.16); }
-.motus-orb-two { right: 70px; top: 176px; width: 230px; height: 230px; border: 1px dashed rgba(245,184,60,.24); }
+.motus-orb-one { right: -160px; top: 34px; width: 450px; height: 450px; border: 1px solid rgba(155,203,244,.22); }
+.motus-orb-two { right: 70px; top: 176px; width: 230px; height: 230px; border: 1px dashed rgba(255,199,44,.35); }
 .hero-layout {
   position: relative;
   z-index: 1;
@@ -220,26 +220,25 @@ opinx-component { display: block; }
 .hero-note { display: flex; align-items: center; gap: 10px; margin: 22px 0 0; color: rgba(255,255,255,.62); font-size: 14px; font-weight: 700; }
 .hero-note .icon { color: var(--amber); }
 
-.hero-product { position: relative; max-width: 440px; justify-self: end; }
-.product-glow { position: absolute; inset: 12% 4% -3%; border-radius: 50%; background: rgba(22,137,216,.3); filter: blur(64px); }
+.hero-product { position: relative; max-width: 390px; justify-self: end; }
+.product-glow { position: absolute; inset: 12% 4% -3%; border-radius: 50%; background: rgba(22,95,171,.42); filter: blur(64px); }
 .product-window {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 22px;
-  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,199,44,.58);
+  border-radius: 18px;
+  background: #001d4f;
   box-shadow: 0 40px 100px rgba(0,0,0,.42);
   backdrop-filter: blur(18px);
-  transform: rotate(1.2deg);
 }
 .product-window-bar { min-height: 40px; display: flex; align-items: center; gap: 7px; padding: 0 14px; border-bottom: 1px solid rgba(255,255,255,.1); }
 .product-window-bar > span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.24); }
 .product-window-bar small { margin-left: auto; color: rgba(255,255,255,.46); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
-.product-window > img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #132337; }
-.product-window-copy { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 18px; }
-.product-window-copy p { margin: 0; color: var(--blue-light); font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.product-window > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #001d4f; }
+.product-window-copy { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 16px 18px; background: #001a47; }
+.product-window-copy p { margin: 0; color: #ffe08b; font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
 .product-window-copy strong { display: block; margin-top: 3px; line-height: 1.3; }
-.product-window-copy > span { padding: 5px 9px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; color: rgba(255,255,255,.75); font-size: 10px; white-space: nowrap; }
+.product-window-copy > span { padding: 5px 9px; border: 1px solid rgba(255,199,44,.45); border-radius: 999px; color: #fff3c6; font-size: 10px; white-space: nowrap; }
 .product-caption { position: relative; max-width: 360px; margin: 19px 10px 0 auto; color: rgba(255,255,255,.58); font-size: 13px; line-height: 1.55; }
 
 .trust-rail { border-bottom: 1px solid var(--line); background: #fff; }
@@ -297,8 +296,10 @@ opinx-component { display: block; }
 .audience-card h2 { font-size: clamp(34px, 4vw, 50px); }
 .independence-note { margin: 28px 0 0; padding-top: 22px; border-top: 1px solid var(--line); color: #718091; font-size: 12px; }
 .video-card { overflow: hidden; display: grid; grid-template-columns: .9fr 1.1fr; }
-.video-art { position: relative; min-height: 100%; overflow: hidden; display: grid; place-items: center; background: linear-gradient(145deg, #0b2945, #07111e); color: #fff; }
-.video-art::after { content: ""; position: absolute; width: 270px; height: 270px; border: 1px solid rgba(147,214,255,.24); border-radius: 50%; }
+.video-art { position: relative; min-height: 100%; overflow: hidden; display: grid; place-items: center; padding: 0; border: 0; background: #001d4f; color: #fff; cursor: pointer; isolation: isolate; }
+.video-thumbnail { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.video-shade { position: absolute; z-index: 1; inset: 0; background: linear-gradient(145deg, rgba(0,18,55,.12), rgba(0,20,61,.48)); }
+.video-art::after { content: ""; position: absolute; z-index: 1; width: 270px; height: 270px; border: 1px solid rgba(255,255,255,.42); border-radius: 50%; }
 .video-art .video-play { position: relative; z-index: 2; width: 72px; height: 72px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: rgba(255,255,255,.09); }
 .video-play .icon { width: 25px; height: 25px; margin-left: 3px; }
 .video-code { position: absolute; z-index: 2; top: 18px; left: 18px; font-size: 9px; font-weight: 900; letter-spacing: .18em; }
@@ -323,7 +324,7 @@ opinx-component { display: block; }
 .video-card-compact { grid-template-columns: .55fr 1.45fr; margin-top: 52px; box-shadow: none; }
 .video-card-compact .video-art { min-height: 270px; }
 .video-card-compact .video-copy { display: flex; flex-direction: column; justify-content: center; }
-.proof-runtime { margin-top: 22px; }
+.proof-runtime { margin-top: 34px; }
 .proof-runtime .rating-chip { width: max-content; max-width: 100%; margin: 0 0 22px auto; }
 .fallback-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 .fallback-reviews article { min-height: 220px; padding: 26px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 12px 35px rgba(4,18,32,.06); }
@@ -342,24 +343,32 @@ opinx-component { display: block; }
 .photo-grid figcaption strong { font-size: 12px; }
 .photo-grid figcaption span { color: var(--slate); font-size: 10px; }
 
-.opinx-social-proof > header { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 22px; }
-.opinx-social-proof > header strong { color: var(--ink); font-size: 32px; letter-spacing: -.04em; }
+.opinx-social-proof { display: flex; flex-direction: column; }
+.opinx-social-proof > header { order: 1; display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 22px; padding: 18px 20px; border: 1px solid #f0d37a; border-radius: 16px; background: #fff9e8; }
+.opinx-social-proof > header strong { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); font-size: 32px; letter-spacing: -.04em; }
+.opinx-social-proof > header strong::after { content: "★★★★★"; color: var(--amber-dark); font-size: 19px; letter-spacing: 2px; }
 .opinx-social-proof > header span { color: var(--slate); font-size: 12px; }
-.opinx-social-proof__reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.opinx-social-proof__reviews article { min-height: 210px; display: flex; flex-direction: column; padding: 26px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 12px 35px rgba(4,18,32,.06); }
+.opinx-social-proof__reviews { order: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.opinx-social-proof__reviews article { min-height: 0; display: flex; flex-direction: column; padding: 26px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 12px 35px rgba(4,18,32,.06); }
 .opinx-social-proof__reviews article > p { margin: 0; color: #344354; font-size: 15px; }
-.opinx-social-proof__reviews article footer { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); }
+.opinx-social-proof__reviews article footer { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
 .opinx-social-proof__reviews article footer strong { font-size: 13px; }
-.opinx-social-proof__reviews article footer span { color: var(--amber-dark); font-size: 11px; font-weight: 900; }
-.opinx-social-proof__photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 62px; }
+.opinx-social-proof__reviews article footer span { color: var(--amber-dark); font-size: 0; font-weight: 900; }
+.opinx-social-proof__reviews article footer span::before { content: "★★★★★"; font-size: 15px; letter-spacing: 1px; }
+.opinx-social-proof__more--reviews { order: 3; align-self: flex-start; margin: 22px 0 0; }
+.opinx-social-proof__photos-heading { order: 4; margin: 64px 0 22px; }
+.opinx-social-proof__photos-heading h3 { margin: 0; color: var(--ink); font-size: 32px; letter-spacing: -.04em; }
+.opinx-social-proof__photos-heading p { margin: 7px 0 0; color: var(--slate); font-size: 15px; }
+.opinx-social-proof__photos { order: 5; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 0; }
 .opinx-social-proof__photos figure { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
 .opinx-social-proof__photos img { width: 100%; aspect-ratio: 1.45; object-fit: cover; background: var(--canvas); }
 .opinx-social-proof__photos figcaption { padding: 13px 15px 15px; color: var(--slate); font-size: 11px; }
 .opinx-social-proof__more { width: max-content; display: flex; margin: 28px auto 0; color: var(--blue-dark); font-size: 14px; font-weight: 850; text-underline-offset: 4px; }
+.opinx-social-proof__more--photos { order: 6; }
 .opinx-social-proof__more[data-loading="1"] { opacity: .55; pointer-events: none; }
 
-.section-checkout { position: relative; overflow: hidden; background: linear-gradient(145deg, #06111f, #0b2138); color: #fff; }
-.section-checkout::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(22,137,216,.22), transparent 32%); }
+.section-checkout { position: relative; overflow: hidden; background: linear-gradient(145deg, #00153e, #003778); color: #fff; }
+.section-checkout::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(255,199,44,.22), transparent 32%); }
 .checkout-layout { position: relative; display: grid; grid-template-columns: 1fr minmax(390px, 500px); align-items: center; gap: clamp(58px, 9vw, 120px); }
 .checkout-copy > p:not(.eyebrow) { max-width: 610px; color: rgba(255,255,255,.63); font-size: 18px; }
 .checkout-copy li { border-color: rgba(255,255,255,.12); color: rgba(255,255,255,.75); }
@@ -582,13 +591,18 @@ opinx-component { display: block; }
   .header-inner nav .button { display: none; }
   .header-inner .language-link { padding-left: 0; border-left: 0; }
   .motus-hero { min-height: 0; }
-  .hero-layout { grid-template-columns: 1fr; padding-block: 72px 82px; }
+  .hero-layout { grid-template-columns: 1fr; padding-block: 60px 48px; gap: 30px; }
   .hero-copy h1 { font-size: clamp(43px, 13vw, 62px); }
   .hero-description { font-size: 17px; }
   .hero-actions { display: grid; }
   .hero-actions .button { width: 100%; }
-  .hero-product { max-width: 420px; justify-self: center; }
-  .product-caption { text-align: center; }
+  .hero-product { max-width: 280px; justify-self: center; }
+  .product-window-bar { display: none; }
+  .product-window > img { max-height: 210px; }
+  .product-window-copy { padding: 13px 14px; }
+  .product-window-copy p { font-size: 9px; }
+  .product-window-copy strong { font-size: 14px; }
+  .product-caption { margin: 12px 0 0; text-align: center; font-size: 12px; }
   .trust-grid { grid-template-columns: 1fr; }
   .trust-grid article { min-height: 0; border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
   .trust-grid article:first-child { border-top: 0; }
@@ -604,10 +618,15 @@ opinx-component { display: block; }
   .support-sales { padding: 22px 0 0; border-top: 1px solid rgba(255,255,255,.12); border-left: 0; }
   .audience-card { padding: 30px 24px; }
   .video-card, .video-card-compact { grid-template-columns: 1fr; min-height: 0; }
-  .video-art, .video-card-compact .video-art { min-height: 260px; }
+  .video-art, .video-card-compact .video-art { min-height: 220px; }
   .video-copy { padding: 30px 24px; }
   .video-card.is-playing, .video-card.is-playing iframe { min-height: 280px; }
   .rating-chip { width: max-content; max-width: 100%; }
+  .opinx-social-proof > header { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .opinx-social-proof > header strong { font-size: 30px; }
+  .opinx-social-proof > header strong::after { font-size: 16px; }
+  .opinx-social-proof__photos-heading { margin-top: 52px; }
+  .opinx-social-proof__photos-heading h3 { font-size: 27px; }
   .fallback-reviews { grid-template-columns: 1fr; }
   .opinx-social-proof__reviews { grid-template-columns: 1fr; }
   .photo-grid { grid-template-columns: 1fr; }
@@ -664,10 +683,8 @@ opinx-component { display: block; }
   <script>document.documentElement.classList.replace("no-js","js");</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://best-carriers.com/#organization","name":"Best Carriers","legalName":"Opin X LLC","url":"https://best-carriers.com/","logo":{"@type":"ImageObject","url":"https://c.opin-x.com/Logo-Best-Carriers-tm.png"},"sameAs":["https://www.facebook.com/bestcarriers","https://www.instagram.com/bestcarriersoficial/","https://www.youtube.com/@bestcarriers","https://www.linkedin.com/company/como-iniciar-tu-empresa-de-trucking/","https://www.tiktok.com/@bestcarriers"]},{"@type":"Course","@id":"https://best-carriers.com/cursos/motus/#course","name":"Curso práctico de MOTUS","description":"Aprende a usar el nuevo sistema FMCSA MOTUS: crea o reclama una cuenta, vincula un USDOT, realiza actualizaciones y evita errores comunes. Acceso de por vida.","url":"https://best-carriers.com/cursos/motus/","inLanguage":"es-US","courseMode":"online","provider":{"@id":"https://best-carriers.com/#organization"},"teaches":["Preparar el acceso con Login.gov y verificar el correo correcto.","Crear un perfil y una cuenta de empresa en MOTUS.","Reclamar y vincular un USDOT existente.","Navegar registros y actualizaciones sin perder el contexto del trámite.","Reconocer errores frecuentes y saber cuál es el siguiente paso."]},{"@type":"WebPage","@id":"https://best-carriers.com/cursos/motus/#webpage","url":"https://best-carriers.com/cursos/motus/","name":"Curso grabado de FMCSA MOTUS en español | Best Carriers","description":"Aprende a usar el nuevo sistema FMCSA MOTUS: crea o reclama una cuenta, vincula un USDOT, realiza actualizaciones y evita errores comunes. Acceso de por vida.","inLanguage":"es-US","mainEntity":{"@id":"https://best-carriers.com/cursos/motus/#course"},"isPartOf":{"@type":"WebSite","@id":"https://best-carriers.com/#website","url":"https://best-carriers.com/","name":"Best Carriers"}},{"@type":"FAQPage","@id":"https://best-carriers.com/cursos/motus/#faq","mainEntity":[{"@type":"Question","name":"¿El curso es en vivo?","acceptedAnswer":{"@type":"Answer","text":"No. Es una capacitación grabada para que puedas comenzar y avanzar a tu ritmo, sin esperar una fecha de clase."}},{"@type":"Question","name":"¿Cuánto tiempo tendré acceso?","acceptedAnswer":{"@type":"Answer","text":"El acceso es de por vida e incluye las actualizaciones que se incorporen a esta capacitación."}},{"@type":"Question","name":"¿Incluye un certificado?","acceptedAnswer":{"@type":"Answer","text":"Sí. Podrás recibir un certificado después de completar el contenido requerido del curso."}},{"@type":"Question","name":"¿Dónde recibo soporte?","acceptedAnswer":{"@type":"Answer","text":"El soporte incluido se ofrece en un grupo privado de Facebook. El acceso se entrega a los alumnos después de la compra."}},{"@type":"Question","name":"¿La consultoría individual está incluida?","acceptedAnswer":{"@type":"Answer","text":"No. La consultoría individual es opcional y tiene un costo adicional de $150."}},{"@type":"Question","name":"¿Puedo solicitar un reembolso?","acceptedAnswer":{"@type":"Answer","text":"No. Al tratarse de acceso digital, todas las ventas son finales. Revisa los términos antes de comprar."}},{"@type":"Question","name":"¿Best Carriers forma parte de la FMCSA?","acceptedAnswer":{"@type":"Answer","text":"No. Best Carriers es una marca educativa independiente. MOTUS, FMCSA, USDOT y Login.gov pertenecen a sus respectivos titulares."}}]}]}</script>
 </head>
-<body data-page="motus-sale" data-locale="es" data-release="1.1.1">
+<body data-page="motus-sale" data-locale="es" data-release="1.2.0">
   <a class="skip-link" href="#course-content">Ir al contenido del curso</a>
-  <header class="site-header" data-header><div class="motus-shell header-inner"><a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers"><img src="https://c.opin-x.com/Logo-Best-Carriers-tm.png" alt="Best Carriers"></a><nav aria-label="Navegación del curso"><a href="#curriculum">Contenido</a><a href="#reviews">Opiniones</a><a href="#faq">Preguntas</a><a class="language-link" href="https://best-carriers.com/en/courses/motus/" hreflang="en">English</a><a class="button button-small button-primary" href="#checkout">Ver acceso</a></nav></div></header>
-
   <main id="course-content">
     <section class="motus-hero" aria-labelledby="hero-title">
       <div class="motus-grid" aria-hidden="true"></div>
@@ -679,7 +696,7 @@ opinx-component { display: block; }
           <h1 id="hero-title">Entiende FMCSA MOTUS. <em>Trabaja con seguridad en el nuevo sistema.</em></h1>
           <p class="hero-description">Una capacitación práctica en español para navegar el nuevo sistema de registro de la FMCSA, vincular compañías existentes y completar procesos clave sin depender de una fecha u horario.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#checkout">Obtener acceso de por vida<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="button button-primary" href="#checkout">Accede al taller de Motus<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             <a class="button button-quiet" href="#curriculum">Ver qué aprenderás</a>
           </div>
           <p class="hero-note"><svg class="icon icon-infinity" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c4 0 5-7 9-7 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-4 0-5-7-9-7Z"/></svg><span>Estudia a tu ritmo · Incluye futuras actualizaciones</span></p>
@@ -699,6 +716,31 @@ opinx-component { display: block; }
       </div>
     </section>
 
+    <section class="section section-checkout" id="checkout" aria-labelledby="checkout-title">
+      <div class="motus-shell checkout-layout">
+        <div class="checkout-copy">
+          <p class="eyebrow eyebrow-light"><svg class="icon icon-lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Acceso seguro</span></p>
+          <h2 id="checkout-title">Accede al taller de MOTUS</h2>
+          <p>El precio y la disponibilidad se consultan directamente en Cursos y Ventas. Después del pago recibirás por correo los datos de acceso.</p>
+          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Pago procesado por Stripe</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Acceso digital después del pago</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Sin cargos recurrentes</span></li></ul>
+        </div>
+        <div class="checkout-card" data-motus-checkout data-language="es">
+          <div class="checkout-card-head">
+            <img src="https://bc.opin-x.com/motus-recorded-course.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async">
+            <div><span>Capacitación bajo demanda</span><strong>Curso práctico de MOTUS</strong></div>
+          </div>
+          <opinx-component data-opinx-global-content="motus-checkout-es">
+            <div class="checkout-component-fallback" data-component-fallback>
+              <p class="checkout-status" role="status">La compra está temporalmente en actualización. Puedes pedir información por WhatsApp.</p>
+              <a class="button button-whatsapp checkout-fallback" href="https://wa.me/12192396752?text=Quiero%20informaci%C3%B3n%20sobre%20el%20curso%20grabado%20de%20MOTUS" target="_blank" rel="noopener noreferrer"><svg class="icon icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8 7.8c.4-.7.8-.7 1.2-.6.3 0 .5.2.7.6l.8 1.7c.1.3.1.6-.1.8l-.6.7c-.2.3-.1.5 0 .8.8 1.4 1.8 2.3 3.1 3 .3.2.6.2.8-.1l.8-.9c.3-.3.6-.3.9-.2l1.8.9c.4.2.5.5.4.9-.2 1.1-1 2-2.1 2.3-1.4.3-3.4-.4-5.4-2.2-1.8-1.6-2.9-3.5-3.2-4.9-.2-1 .2-2.1.9-2.8Z"/></svg>Preguntar por WhatsApp</a>
+            </div>
+          </opinx-component>
+          <img class="payment-methods" src="https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png" alt="Métodos de pago admitidos por Stripe" loading="lazy" decoding="async">
+          <p class="checkout-legal"><span>Al comprar confirmas que revisaste los</span> <a data-legal-terms href="https://best-carriers.com/terminos-y-condiciones/" target="_blank" rel="noopener noreferrer">Términos y condiciones</a> y la <a data-legal-privacy href="https://best-carriers.com/politica-de-privacidad/" target="_blank" rel="noopener noreferrer">Política de privacidad</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="trust-rail" aria-label="Beneficios del curso">
       <div class="motus-shell trust-grid">
         <article><svg class="icon icon-infinity" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c4 0 5-7 9-7 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-4 0-5-7-9-7Z"/></svg><div><h2>Acceso de por vida</h2><p>Regresa a las lecciones cuando cambie un proceso o necesites repasarlo.</p></div></article>
@@ -714,7 +756,6 @@ opinx-component { display: block; }
           <p class="eyebrow"><svg class="icon icon-route" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg><span>El cambio ya está en marcha</span></p>
           <h2>MOTUS reemplaza procesos antiguos. La curva de aprendizaje no tiene que frenar tu operación.</h2>
           <p>La FMCSA diseñó MOTUS como la nueva base para solicitar y administrar registros, actualizar información y controlar el acceso a las cuentas de empresa. Este curso convierte esa transición en una secuencia práctica y comprensible.</p>
-          <a class="source-link" href="https://www.fmcsa.dot.gov/registration/move-motus" target="_blank" rel="noopener noreferrer">Consultar información oficial de FMCSA<svg class="icon icon-external" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6H5V6h6"/></svg></a>
         </div>
         <div class="outcomes-card">
           <div class="card-kicker">MOTUS / USDOT</div>
@@ -769,36 +810,11 @@ opinx-component { display: block; }
           <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Preparadores de impuestos que apoyan a empresas de trucking.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Administradores de flotas y personal de Safety o Compliance.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Transportation Service Providers y profesionales de registros.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Propietarios que necesitan comprender el estado de su propia empresa.</span></li></ul>
           <p class="independence-note">Contenido educativo. Best Carriers no está afiliado ni respaldado por FMCSA, USDOT, MOTUS o Login.gov.</p>
         </div>
-        <article class="video-card" data-video-card data-video-id="icLfupSYr_4" data-video-title="Aprende con contexto real de la industria"><div class="video-art" aria-hidden="true"><span class="video-code">BC / 01</span><span class="video-play"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span><div class="video-lines"></div></div><div class="video-copy"><p class="card-kicker">Experiencia aplicada</p><h2>Aprende con contexto real de la industria</h2><p>Conoce la experiencia detrás de Best Carriers y por qué cada lección se enfoca en decisiones que aparecen durante el trabajo diario.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Reproducir historia del instructor</span></button></div></article>
+        <article class="video-card" data-video-card data-video-id="icLfupSYr_4" data-video-title="Aprende con contexto real de la industria"><button class="video-art" type="button" data-play-video aria-label="Reproducir historia del instructor"><img class="video-thumbnail" src="https://i.ytimg.com/vi/icLfupSYr_4/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / 01</span><span class="video-play" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span></button><div class="video-copy"><p class="card-kicker">Experiencia aplicada</p><h2>Aprende con contexto real de la industria</h2><p>Conoce la experiencia detrás de Best Carriers y por qué cada lección se enfoca en decisiones que aparecen durante el trabajo diario.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Reproducir historia del instructor</span></button></div></article>
       </div>
     </section>
 
-    <section class="section section-proof" id="reviews" aria-labelledby="proof-title"><div class="motus-shell"><div class="proof-heading"><div><p class="eyebrow"><svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg><span>Reputación Best Carriers</span></p><h2 id="proof-title">La experiencia de nuestros alumnos habla por la marca</h2><p>La calificación reúne opiniones sobre distintos cursos y servicios educativos de Best Carriers. Representa la experiencia general con la marca, no una puntuación exclusiva de MOTUS.</p></div></div><article class="video-card video-card-compact" data-video-card data-video-id="LJ9DsCbuMXw" data-video-title="Ver testimonios en video"><div class="video-art" aria-hidden="true"><span class="video-code">BC / STORIES</span><span class="video-play"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span><div class="video-lines"></div></div><div class="video-copy"><p class="card-kicker">Reputación Best Carriers</p><h2>Ver testimonios en video</h2><p>La calificación reúne opiniones sobre distintos cursos y servicios educativos de Best Carriers. Representa la experiencia general con la marca, no una puntuación exclusiva de MOTUS.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Ver testimonios en video</span></button></div></article><div class="proof-runtime"><opinx-component data-opinx-global-content="best-carriers-social-proof-es"><div data-component-fallback><div class="rating-chip" aria-label="Calificación general de Best Carriers"><strong>4.9</strong><span><b aria-hidden="true">★★★★★</b><small>Basado en 156 reseñas de clientes</small></span></div><div class="fallback-reviews"><article><div class="review-top"><span>MC</span><div><strong>Maribel Castillo</strong><b aria-label="5 estrellas">★★★★★</b></div></div><p>“En el taller de Motus, está súper bueno.”</p></article><article><div class="review-top"><span>Y</span><div><strong>Yamila</strong><b aria-label="5 estrellas">★★★★★</b></div></div><p>“Toma el curso de IFTA, puede ser el comienzo de tu negocio.”</p></article><article><div class="review-top"><span>KP</span><div><strong>Karina Perez</strong><b aria-label="5 estrellas">★★★★★</b></div></div><p>“Aprendí a hacer todo sobre las empresas de trucking desde cero.”</p></article></div><div class="photo-heading"><div><h3>Personas reales, cursos reales</h3><p>Una muestra de los grupos que han participado en las capacitaciones de Best Carriers.</p></div></div><div class="photo-grid"><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png" alt="Participantes de Taller de MOTUS · 29 de agosto de 2026" loading="lazy" decoding="async"><figcaption><strong>Taller de MOTUS</strong><span>29 de agosto de 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-07-18-at-12.28.01-PM-450x291.png" alt="Participantes de Taller de MOTUS · 13 de junio de 2026" loading="lazy" decoding="async"><figcaption><strong>Taller de MOTUS</strong><span>13 de junio de 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-7.19.48-PM-450x276.png" alt="Participantes de Taller de MOTUS · 8 de agosto de 2026" loading="lazy" decoding="async"><figcaption><strong>Taller de MOTUS</strong><span>8 de agosto de 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-09-12-at-10.49.21-AM-450x266.png" alt="Participantes de Cursos de Best Carriers · 2026" loading="lazy" decoding="async"><figcaption><strong>Cursos de Best Carriers</strong><span>2026</span></figcaption></figure></div></div></opinx-component></div></div></section>
-
-    <section class="section section-checkout" id="checkout" aria-labelledby="checkout-title">
-      <div class="motus-shell checkout-layout">
-        <div class="checkout-copy">
-          <p class="eyebrow eyebrow-light"><svg class="icon icon-lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Acceso seguro</span></p>
-          <h2 id="checkout-title">Empieza cuando estés listo</h2>
-          <p>El precio y la disponibilidad se consultan directamente en Cursos y Ventas. Después del pago recibirás por correo los datos de acceso.</p>
-          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Pago procesado por Stripe</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Acceso digital después del pago</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Sin cargos recurrentes</span></li></ul>
-        </div>
-        <div class="checkout-card" data-motus-checkout data-language="es">
-          <div class="checkout-card-head">
-            <img src="https://bc.opin-x.com/motus-recorded-course.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async">
-            <div><span>Capacitación bajo demanda</span><strong>Curso práctico de MOTUS</strong></div>
-          </div>
-          <opinx-component data-opinx-global-content="motus-checkout-es">
-            <div class="checkout-component-fallback" data-component-fallback>
-              <p class="checkout-status" role="status">La compra está temporalmente en actualización. Puedes pedir información por WhatsApp.</p>
-              <a class="button button-whatsapp checkout-fallback" href="https://wa.me/12192396752?text=Quiero%20informaci%C3%B3n%20sobre%20el%20curso%20grabado%20de%20MOTUS" target="_blank" rel="noopener noreferrer"><svg class="icon icon-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.7Z"/><path d="M8 7.8c.4-.7.8-.7 1.2-.6.3 0 .5.2.7.6l.8 1.7c.1.3.1.6-.1.8l-.6.7c-.2.3-.1.5 0 .8.8 1.4 1.8 2.3 3.1 3 .3.2.6.2.8-.1l.8-.9c.3-.3.6-.3.9-.2l1.8.9c.4.2.5.5.4.9-.2 1.1-1 2-2.1 2.3-1.4.3-3.4-.4-5.4-2.2-1.8-1.6-2.9-3.5-3.2-4.9-.2-1 .2-2.1.9-2.8Z"/></svg>Preguntar por WhatsApp</a>
-            </div>
-          </opinx-component>
-          <img class="payment-methods" src="https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png" alt="Métodos de pago admitidos por Stripe" loading="lazy" decoding="async">
-          <p class="checkout-legal"><span>Al comprar confirmas que revisaste los</span> <a data-legal-terms href="https://best-carriers.com/terminos-y-condiciones/" target="_blank" rel="noopener noreferrer">Términos y condiciones</a> y la <a data-legal-privacy href="https://best-carriers.com/politica-de-privacidad/" target="_blank" rel="noopener noreferrer">Política de privacidad</a>. <strong>Producto digital. Todas las ventas son finales y no se ofrecen reembolsos.</strong></p>
-        </div>
-      </div>
-    </section>
+    <section class="section section-proof" id="reviews" aria-labelledby="proof-title"><div class="motus-shell"><div class="proof-heading"><div><p class="eyebrow"><svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg><span>Reputación Best Carriers</span></p><h2 id="proof-title">La experiencia de nuestros alumnos habla por la marca</h2><p>La calificación reúne opiniones sobre distintos cursos y servicios educativos de Best Carriers. Representa la experiencia general con la marca, no una puntuación exclusiva de MOTUS.</p></div></div><article class="video-card video-card-compact" data-video-card data-video-id="LJ9DsCbuMXw" data-video-title="Ver testimonios en video"><button class="video-art" type="button" data-play-video aria-label="Ver testimonios en video"><img class="video-thumbnail" src="https://i.ytimg.com/vi/LJ9DsCbuMXw/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / STORIES</span><span class="video-play" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span></button><div class="video-copy"><p class="card-kicker">Reputación Best Carriers</p><h2>Ver testimonios en video</h2><p>La calificación reúne opiniones sobre distintos cursos y servicios educativos de Best Carriers. Representa la experiencia general con la marca, no una puntuación exclusiva de MOTUS.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Ver testimonios en video</span></button></div></article><div class="proof-runtime"><opinx-component data-opinx-global-content="best-carriers-social-proof-es"><div data-component-fallback><div class="rating-chip" aria-label="Calificación general de Best Carriers"><strong>4.9</strong><span><b aria-hidden="true">★★★★★</b><small>Basado en 156 reseñas de clientes</small></span></div><div class="fallback-reviews"><article><div class="review-top"><span>MC</span><div><strong>Maribel Castillo</strong><b aria-label="5 estrellas">★★★★★</b></div></div><p>“En el taller de Motus, está súper bueno.”</p></article><article><div class="review-top"><span>Y</span><div><strong>Yamila</strong><b aria-label="5 estrellas">★★★★★</b></div></div><p>“Toma el curso de IFTA, puede ser el comienzo de tu negocio.”</p></article><article><div class="review-top"><span>KP</span><div><strong>Karina Perez</strong><b aria-label="5 estrellas">★★★★★</b></div></div><p>“Aprendí a hacer todo sobre las empresas de trucking desde cero.”</p></article></div><div class="photo-heading"><div><h3>Fotos de participantes</h3><p>Una muestra de los grupos que han participado en las capacitaciones de Best Carriers.</p></div></div><div class="photo-grid"><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png" alt="Participantes de Taller de MOTUS · 29 de agosto de 2026" loading="lazy" decoding="async"><figcaption><strong>Taller de MOTUS</strong><span>29 de agosto de 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-07-18-at-12.28.01-PM-450x291.png" alt="Participantes de Taller de MOTUS · 13 de junio de 2026" loading="lazy" decoding="async"><figcaption><strong>Taller de MOTUS</strong><span>13 de junio de 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-7.19.48-PM-450x276.png" alt="Participantes de Taller de MOTUS · 8 de agosto de 2026" loading="lazy" decoding="async"><figcaption><strong>Taller de MOTUS</strong><span>8 de agosto de 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-09-12-at-10.49.21-AM-450x266.png" alt="Participantes de Cursos de Best Carriers · 2026" loading="lazy" decoding="async"><figcaption><strong>Cursos de Best Carriers</strong><span>2026</span></figcaption></figure></div></div></opinx-component></div></div></section>
 
     <section class="section section-faq" id="faq" aria-labelledby="faq-title">
       <div class="motus-shell faq-layout">
@@ -819,12 +835,12 @@ opinx-component { display: block; }
     </section>
 
     <section class="final-cta">
-      <div class="motus-shell final-cta-inner"><div><p>Convierte la incertidumbre en un proceso</p><h2>Ten una guía disponible cada vez que entres a MOTUS.</h2></div><a class="button button-light" href="#checkout">Ver precio y comprar<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="motus-shell final-cta-inner"><div><p>Convierte la incertidumbre en un proceso</p><h2>Ten una guía disponible cada vez que entres a MOTUS.</h2></div><a class="button button-light" href="#checkout">Comprar el taller de Motus<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </section>
   </main>
 
   <footer class="site-footer"><div class="motus-shell footer-grid"><div class="footer-brand"><img src="https://c.opin-x.com/Logo-Best-Carriers-tm.png" alt="Best Carriers"><p>Capacitación práctica para la industria de trucking.</p></div><div><p>Contenido educativo independiente. No constituye asesoría legal ni representación ante una agencia federal.</p><nav aria-label="Información legal"><a href="https://best-carriers.com/terminos-y-condiciones/">Términos y condiciones</a><a href="https://best-carriers.com/politica-de-privacidad/">Política de privacidad</a></nav><small>© <span data-current-year>2026</span> Opin X LLC. Todos los derechos reservados.</small></div></div></footer>
-  <a class="mobile-purchase" href="#checkout"><span>Ver acceso</span><strong data-mobile-price></strong><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="mobile-purchase" href="#checkout"><span>Comprar el taller de Motus</span><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <script>(function () {
   "use strict";
 
@@ -834,32 +850,24 @@ opinx-component { display: block; }
     });
   }
 
-  function initializeHeader() {
-    var header = document.querySelector("[data-header]");
-    if (!header) return;
-    function update() {
-      header.classList.toggle("is-scrolled", window.scrollY > 16);
-    }
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-  }
-
   function initializeVideos() {
     document.querySelectorAll("[data-video-card]").forEach(function (card) {
-      var button = card.querySelector("[data-play-video]");
+      var buttons = card.querySelectorAll("[data-play-video]");
       var videoId = card.getAttribute("data-video-id") || "";
       var title = card.getAttribute("data-video-title") || "Best Carriers video";
-      if (!button || !/^[A-Za-z0-9_-]{6,20}$/.test(videoId)) return;
-      button.addEventListener("click", function () {
-        if (card.classList.contains("is-playing")) return;
-        var iframe = document.createElement("iframe");
-        iframe.title = title;
-        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        iframe.allowFullscreen = true;
-        card.replaceChildren(iframe);
-        card.classList.add("is-playing");
+      if (!buttons.length || !/^[A-Za-z0-9_-]{6,20}$/.test(videoId)) return;
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (card.classList.contains("is-playing")) return;
+          var iframe = document.createElement("iframe");
+          iframe.title = title;
+          iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0&modestbranding=1";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+          iframe.allowFullscreen = true;
+          card.replaceChildren(iframe);
+          card.classList.add("is-playing");
+        });
       });
     });
   }
@@ -876,28 +884,46 @@ opinx-component { display: block; }
     });
   }
 
-  function copyLivePrice() {
-    var mobile = document.querySelector("[data-mobile-price]");
-    if (!mobile) return;
-    var price = document.querySelector(".opinx-checkout-model span");
-    if (price && price.textContent.trim()) mobile.textContent = "· " + price.textContent.trim();
-  }
+  function enhanceSocialProof() {
+    var locale = document.body.getAttribute("data-locale") || "es";
+    var labels = locale === "es"
+      ? { photosTitle: "Fotos de participantes", photosBody: "Una muestra de participantes de las capacitaciones de Best Carriers." }
+      : { photosTitle: "Participant photos", photosBody: "A sample of participants in Best Carriers training programs." };
 
-  function initializePriceObserver() {
-    copyLivePrice();
-    if (!window.MutationObserver) return;
-    var checkout = document.querySelector("[data-motus-checkout]");
-    if (!checkout) return;
-    var observer = new MutationObserver(copyLivePrice);
-    observer.observe(checkout, { childList: true, subtree: true, characterData: true });
+    document.querySelectorAll(".opinx-social-proof").forEach(function (proof) {
+      var rating = proof.querySelector("header");
+      if (rating) rating.setAttribute("aria-label", rating.textContent.trim());
+
+      proof.querySelectorAll(".opinx-social-proof__reviews article footer span").forEach(function (ratingLabel) {
+        ratingLabel.setAttribute("aria-label", ratingLabel.textContent.trim());
+      });
+
+      var reviews = proof.querySelector(".opinx-social-proof__reviews");
+      var moreReviews = proof.querySelector(".opinx-social-proof__more--reviews");
+      if (reviews && moreReviews) reviews.insertAdjacentElement("afterend", moreReviews);
+
+      var photos = proof.querySelector(".opinx-social-proof__photos");
+      if (photos && !proof.querySelector(".opinx-social-proof__photos-heading")) {
+        var heading = document.createElement("div");
+        heading.className = "opinx-social-proof__photos-heading";
+        var title = document.createElement("h3");
+        title.textContent = labels.photosTitle;
+        var body = document.createElement("p");
+        body.textContent = labels.photosBody;
+        heading.append(title, body);
+        photos.insertAdjacentElement("beforebegin", heading);
+      }
+
+      var morePhotos = proof.querySelector(".opinx-social-proof__more--photos");
+      if (photos && morePhotos) photos.insertAdjacentElement("afterend", morePhotos);
+    });
   }
 
   function ready() {
     setYear();
-    initializeHeader();
     initializeVideos();
     initializeFaq();
-    initializePriceObserver();
+    enhanceSocialProof();
   }
 
   if (document.readyState === "loading") {

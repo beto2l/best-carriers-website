@@ -7,32 +7,24 @@
     });
   }
 
-  function initializeHeader() {
-    var header = document.querySelector("[data-header]");
-    if (!header) return;
-    function update() {
-      header.classList.toggle("is-scrolled", window.scrollY > 16);
-    }
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-  }
-
   function initializeVideos() {
     document.querySelectorAll("[data-video-card]").forEach(function (card) {
-      var button = card.querySelector("[data-play-video]");
+      var buttons = card.querySelectorAll("[data-play-video]");
       var videoId = card.getAttribute("data-video-id") || "";
       var title = card.getAttribute("data-video-title") || "Best Carriers video";
-      if (!button || !/^[A-Za-z0-9_-]{6,20}$/.test(videoId)) return;
-      button.addEventListener("click", function () {
-        if (card.classList.contains("is-playing")) return;
-        var iframe = document.createElement("iframe");
-        iframe.title = title;
-        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.referrerPolicy = "strict-origin-when-cross-origin";
-        iframe.allowFullscreen = true;
-        card.replaceChildren(iframe);
-        card.classList.add("is-playing");
+      if (!buttons.length || !/^[A-Za-z0-9_-]{6,20}$/.test(videoId)) return;
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (card.classList.contains("is-playing")) return;
+          var iframe = document.createElement("iframe");
+          iframe.title = title;
+          iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0&modestbranding=1";
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.referrerPolicy = "strict-origin-when-cross-origin";
+          iframe.allowFullscreen = true;
+          card.replaceChildren(iframe);
+          card.classList.add("is-playing");
+        });
       });
     });
   }
@@ -49,28 +41,46 @@
     });
   }
 
-  function copyLivePrice() {
-    var mobile = document.querySelector("[data-mobile-price]");
-    if (!mobile) return;
-    var price = document.querySelector(".opinx-checkout-model span");
-    if (price && price.textContent.trim()) mobile.textContent = "· " + price.textContent.trim();
-  }
+  function enhanceSocialProof() {
+    var locale = document.body.getAttribute("data-locale") || "es";
+    var labels = locale === "es"
+      ? { photosTitle: "Fotos de participantes", photosBody: "Una muestra de participantes de las capacitaciones de Best Carriers." }
+      : { photosTitle: "Participant photos", photosBody: "A sample of participants in Best Carriers training programs." };
 
-  function initializePriceObserver() {
-    copyLivePrice();
-    if (!window.MutationObserver) return;
-    var checkout = document.querySelector("[data-motus-checkout]");
-    if (!checkout) return;
-    var observer = new MutationObserver(copyLivePrice);
-    observer.observe(checkout, { childList: true, subtree: true, characterData: true });
+    document.querySelectorAll(".opinx-social-proof").forEach(function (proof) {
+      var rating = proof.querySelector("header");
+      if (rating) rating.setAttribute("aria-label", rating.textContent.trim());
+
+      proof.querySelectorAll(".opinx-social-proof__reviews article footer span").forEach(function (ratingLabel) {
+        ratingLabel.setAttribute("aria-label", ratingLabel.textContent.trim());
+      });
+
+      var reviews = proof.querySelector(".opinx-social-proof__reviews");
+      var moreReviews = proof.querySelector(".opinx-social-proof__more--reviews");
+      if (reviews && moreReviews) reviews.insertAdjacentElement("afterend", moreReviews);
+
+      var photos = proof.querySelector(".opinx-social-proof__photos");
+      if (photos && !proof.querySelector(".opinx-social-proof__photos-heading")) {
+        var heading = document.createElement("div");
+        heading.className = "opinx-social-proof__photos-heading";
+        var title = document.createElement("h3");
+        title.textContent = labels.photosTitle;
+        var body = document.createElement("p");
+        body.textContent = labels.photosBody;
+        heading.append(title, body);
+        photos.insertAdjacentElement("beforebegin", heading);
+      }
+
+      var morePhotos = proof.querySelector(".opinx-social-proof__more--photos");
+      if (photos && morePhotos) photos.insertAdjacentElement("afterend", morePhotos);
+    });
   }
 
   function ready() {
     setYear();
-    initializeHeader();
     initializeVideos();
     initializeFaq();
-    initializePriceObserver();
+    enhanceSocialProof();
   }
 
   if (document.readyState === "loading") {

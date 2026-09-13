@@ -182,8 +182,6 @@ function renderSalePage({ locale, content, site, version, css, js }) {
 </head>
 <body data-page="motus-sale" data-locale="${locale}" data-release="${escapeHtml(version)}">
   <a class="skip-link" href="#course-content">${escapeHtml(t.skipLink)}</a>
-  ${renderHeader({ locale, content, t })}
-
   <main id="course-content">
     <section class="motus-hero" aria-labelledby="hero-title">
       <div class="motus-grid" aria-hidden="true"></div>
@@ -215,6 +213,8 @@ function renderSalePage({ locale, content, site, version, css, js }) {
       </div>
     </section>
 
+    ${renderCheckout({ locale, content, site, t, terms, privacy })}
+
     <section class="trust-rail" aria-label="${escapeHtml(locale === "es" ? "Beneficios del curso" : "Course benefits")}">
       <div class="motus-shell trust-grid">
         ${t.trustItems.map((item, index) => `<article>${icon(["infinity", "refresh", "certificate", "community"][index])}<div><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.text)}</p></div></article>`).join("\n        ")}
@@ -227,7 +227,6 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           <p class="eyebrow">${icon("route")}<span>${escapeHtml(t.problemEyebrow)}</span></p>
           <h2>${escapeHtml(t.problemTitle)}</h2>
           <p>${escapeHtml(t.problemBody)}</p>
-          <a class="source-link" href="https://www.fmcsa.dot.gov/registration/move-motus" target="_blank" rel="noopener noreferrer">${escapeHtml(t.officialSource)}${icon("external")}</a>
         </div>
         <div class="outcomes-card">
           <div class="card-kicker">MOTUS / USDOT</div>
@@ -283,31 +282,6 @@ function renderSalePage({ locale, content, site, version, css, js }) {
 
     ${renderSocialProof({ locale, content, t })}
 
-    <section class="section section-checkout" id="checkout" aria-labelledby="checkout-title">
-      <div class="motus-shell checkout-layout">
-        <div class="checkout-copy">
-          <p class="eyebrow eyebrow-light">${icon("lock")}<span>${escapeHtml(t.checkoutEyebrow)}</span></p>
-          <h2 id="checkout-title">${escapeHtml(t.checkoutTitle)}</h2>
-          <p>${escapeHtml(t.checkoutBody)}</p>
-          <ul>${t.checkoutGuarantees.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}</ul>
-        </div>
-        <div class="checkout-card" data-motus-checkout data-language="${locale}">
-          <div class="checkout-card-head">
-            <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1448" height="1086" loading="lazy" decoding="async">
-            <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
-          </div>
-          <opinx-component data-opinx-global-content="motus-checkout-${locale}">
-            <div class="checkout-component-fallback" data-component-fallback>
-              <p class="checkout-status" role="status">${escapeHtml(t.checkoutUnavailable)}</p>
-              <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.salesHelpCta)}</a>
-            </div>
-          </opinx-component>
-          <img class="payment-methods" src="${escapeHtml(content.assets.paymentMethods)}" alt="${escapeHtml(t.paymentAlt)}" loading="lazy" decoding="async">
-          <p class="checkout-legal"><span>${escapeHtml(t.legalPrefix)}</span> <a data-legal-terms href="${escapeHtml(terms)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.termsLabel)}</a> ${locale === "es" ? "y la" : "and the"} <a data-legal-privacy href="${escapeHtml(privacy)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacyLabel)}</a>. <strong>${escapeHtml(t.finalSale)}</strong></p>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-faq" id="faq" aria-labelledby="faq-title">
       <div class="motus-shell faq-layout">
         <div class="section-copy faq-heading">
@@ -326,7 +300,7 @@ function renderSalePage({ locale, content, site, version, css, js }) {
   </main>
 
   ${renderFooter({ locale, content, site, t })}
-  <a class="mobile-purchase" href="#checkout"><span>${escapeHtml(t.navCta)}</span><strong data-mobile-price></strong>${icon("arrow")}</a>
+  <a class="mobile-purchase" href="#checkout"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
   <script>${js}</script>
 </body>
 </html>\n`;
@@ -384,9 +358,31 @@ function renderThanksPage({ locale, content, site, version, css, js }) {
 </html>\n`;
 }
 
-function renderHeader({ locale, content, t }) {
-  const alternate = locale === "es" ? "en" : "es";
-  return `<header class="site-header" data-header><div class="motus-shell header-inner"><a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers"><img src="${escapeHtml(content.assets.logo)}" alt="Best Carriers"></a><nav aria-label="${locale === "es" ? "Navegación del curso" : "Course navigation"}"><a href="#curriculum">${escapeHtml(t.navCurriculum)}</a><a href="#reviews">${escapeHtml(t.navReviews)}</a><a href="#faq">${escapeHtml(t.navFaq)}</a><a class="language-link" href="${escapeHtml(content.routes[alternate])}" hreflang="${alternate}">${escapeHtml(t.languageLink)}</a><a class="button button-small button-primary" href="#checkout">${escapeHtml(t.navCta)}</a></nav></div></header>`;
+function renderCheckout({ locale, content, site, t, terms, privacy }) {
+  return `<section class="section section-checkout" id="checkout" aria-labelledby="checkout-title">
+      <div class="motus-shell checkout-layout">
+        <div class="checkout-copy">
+          <p class="eyebrow eyebrow-light">${icon("lock")}<span>${escapeHtml(t.checkoutEyebrow)}</span></p>
+          <h2 id="checkout-title">${escapeHtml(t.checkoutTitle)}</h2>
+          <p>${escapeHtml(t.checkoutBody)}</p>
+          <ul>${t.checkoutGuarantees.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}</ul>
+        </div>
+        <div class="checkout-card" data-motus-checkout data-language="${locale}">
+          <div class="checkout-card-head">
+            <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1448" height="1086" loading="lazy" decoding="async">
+            <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
+          </div>
+          <opinx-component data-opinx-global-content="motus-checkout-${locale}">
+            <div class="checkout-component-fallback" data-component-fallback>
+              <p class="checkout-status" role="status">${escapeHtml(t.checkoutUnavailable)}</p>
+              <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.salesHelpCta)}</a>
+            </div>
+          </opinx-component>
+          <img class="payment-methods" src="${escapeHtml(content.assets.paymentMethods)}" alt="${escapeHtml(t.paymentAlt)}" loading="lazy" decoding="async">
+          <p class="checkout-legal"><span>${escapeHtml(t.legalPrefix)}</span> <a data-legal-terms href="${escapeHtml(terms)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.termsLabel)}</a> ${locale === "es" ? "y la" : "and the"} <a data-legal-privacy href="${escapeHtml(privacy)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacyLabel)}</a>.</p>
+        </div>
+      </div>
+    </section>`;
 }
 
 function renderSocialProof({ locale, content, t }) {
@@ -395,7 +391,8 @@ function renderSocialProof({ locale, content, t }) {
 }
 
 function renderVideo({ id, eyebrow, title, body, button, compact = false }) {
-  return `<article class="video-card${compact ? " video-card-compact" : ""}" data-video-card data-video-id="${escapeHtml(id)}" data-video-title="${escapeHtml(title)}"><div class="video-art" aria-hidden="true"><span class="video-code">BC / ${compact ? "STORIES" : "01"}</span><span class="video-play">${icon("play")}</span><div class="video-lines"></div></div><div class="video-copy"><p class="card-kicker">${escapeHtml(eyebrow)}</p><h2>${escapeHtml(title)}</h2><p>${escapeHtml(body)}</p><button type="button" data-play-video>${icon("play")}<span>${escapeHtml(button)}</span></button></div></article>`;
+  const thumbnail = `https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`;
+  return `<article class="video-card${compact ? " video-card-compact" : ""}" data-video-card data-video-id="${escapeHtml(id)}" data-video-title="${escapeHtml(title)}"><button class="video-art" type="button" data-play-video aria-label="${escapeHtml(button)}"><img class="video-thumbnail" src="${escapeHtml(thumbnail)}" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / ${compact ? "STORIES" : "01"}</span><span class="video-play" aria-hidden="true">${icon("play")}</span></button><div class="video-copy"><p class="card-kicker">${escapeHtml(eyebrow)}</p><h2>${escapeHtml(title)}</h2><p>${escapeHtml(body)}</p><button type="button" data-play-video>${icon("play")}<span>${escapeHtml(button)}</span></button></div></article>`;
 }
 
 function renderFooter({ locale, content, site, t }) {
