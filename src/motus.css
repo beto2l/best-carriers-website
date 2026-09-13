@@ -401,6 +401,54 @@ opinx-component { display: block; }
 [data-opinx-funnel-mount] .opin-fi-email-feedback,
 [data-opinx-funnel-mount] .opin-fi-capture-status,
 [data-opinx-funnel-mount] .opin-fi-checkout-error { margin-top: 4px; color: var(--danger); font-size: 12px; }
+[data-opinx-funnel-mount] .opin-fi-order-bump {
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 12px;
+  margin-top: 4px;
+  padding: 15px;
+  border: 1px solid rgba(211, 143, 6, .42);
+  border-radius: 13px;
+  background: linear-gradient(135deg, #fffaf0, #fff5d9);
+  box-shadow: 0 8px 24px rgba(112, 75, 5, .07);
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+[data-opinx-funnel-mount] .opin-fi-order-bump:hover,
+[data-opinx-funnel-mount] .opin-fi-order-bump:focus-within {
+  border-color: rgba(190, 119, 0, .72);
+  box-shadow: 0 10px 28px rgba(112, 75, 5, .12);
+  transform: translateY(-1px);
+}
+[data-opinx-funnel-mount] .opin-fi-order-bump-input {
+  width: 19px;
+  height: 19px;
+  margin: 2px 0 0;
+  accent-color: var(--amber-dark);
+}
+[data-opinx-funnel-mount] .opin-fi-order-bump-copy { display: grid; gap: 5px; }
+[data-opinx-funnel-mount] .opin-fi-order-bump-copy strong {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: #27313d;
+  font-size: 13px;
+  line-height: 1.35;
+}
+[data-opinx-funnel-mount] .opin-fi-order-bump-copy strong span {
+  flex: 0 0 auto;
+  color: #9b6200;
+  font-size: 14px;
+  font-weight: 920;
+}
+[data-opinx-funnel-mount] .opin-fi-order-bump-copy small {
+  color: #65717e;
+  font-size: 11px;
+  line-height: 1.45;
+}
 [data-opinx-funnel-mount] .opin-fi-promotional-consent {
   min-height: 44px;
   display: grid;
