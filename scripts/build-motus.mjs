@@ -261,10 +261,6 @@ function renderSalePage({ locale, content, site, version, css, js }) {
             ${t.includes.map((item, index) => `<article>${icon(["play", "download", "refresh", "certificate"][index])}<h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.text)}</p></article>`).join("\n            ")}
           </div>
         </div>
-        <div class="support-band">
-          <div><p class="support-label">${escapeHtml(t.supportTitle)}</p><p>${escapeHtml(t.supportIncluded)}</p><p>${escapeHtml(t.supportAdditional)}</p></div>
-          <div class="support-sales"><p>${escapeHtml(t.salesHelp)}</p><a href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.salesHelpCta)}</a></div>
-        </div>
       </div>
     </section>
 
@@ -375,7 +371,7 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
           <opinx-component data-opinx-global-content="motus-checkout-${locale}">
             <div class="checkout-component-fallback" data-component-fallback>
               <p class="checkout-status" role="status">${escapeHtml(t.checkoutUnavailable)}</p>
-              <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.salesHelpCta)}</a>
+              <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.checkoutHelpCta)}</a>
             </div>
           </opinx-component>
           <img class="payment-methods" src="${escapeHtml(content.assets.paymentMethods)}" alt="${escapeHtml(t.paymentAlt)}" loading="lazy" decoding="async">

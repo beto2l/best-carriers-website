@@ -127,11 +127,6 @@
         { "title": "Actualizaciones", "text": "Acceso a las mejoras futuras incluidas en esta capacitación." },
         { "title": "Certificado", "text": "Reconocimiento al completar el contenido del curso." }
       ],
-      "supportTitle": "Soporte y consultoría, sin confusiones",
-      "supportIncluded": "Incluido: grupo privado de Facebook para la comunidad del curso. El enlace se entrega después de la compra.",
-      "supportAdditional": "Adicional: consultoría individual por $150. No forma parte del precio del curso y sólo se agrega cuando el cliente la elige expresamente.",
-      "salesHelp": "¿Tienes una pregunta antes de comprar? WhatsApp se utiliza únicamente para información de ventas.",
-      "salesHelpCta": "Preguntar por WhatsApp",
       "audienceEyebrow": "Diseñado para trabajar",
       "audienceTitle": "¿Para quién es este curso?",
       "audience": [
@@ -160,6 +155,7 @@
       "checkoutBody": "El precio y la disponibilidad se consultan directamente en Cursos y Ventas. Después del pago recibirás por correo los datos de acceso.",
       "checkoutLoading": "Consultando precio y disponibilidad…",
       "checkoutUnavailable": "La compra está temporalmente en actualización. Puedes pedir información por WhatsApp.",
+      "checkoutHelpCta": "Consultar por WhatsApp",
       "checkoutGuarantees": ["Pago procesado por Stripe", "Acceso digital después del pago", "Sin cargos recurrentes"],
       "paymentAlt": "Métodos de pago admitidos por Stripe",
       "legalPrefix": "Al comprar confirmas que revisaste los",
@@ -272,11 +268,6 @@
         { "title": "Course updates", "text": "Access future improvements included with this training." },
         { "title": "Certificate", "text": "Recognition after completing the required course content." }
       ],
-      "supportTitle": "Support and consulting, clearly separated",
-      "supportIncluded": "Included: a private Facebook group for the course community. The link is delivered after purchase.",
-      "supportAdditional": "Additional: individual consulting for $150. It is not included in the course price and is added only when the customer expressly selects it.",
-      "salesHelp": "Have a question before purchasing? WhatsApp is used only for sales information.",
-      "salesHelpCta": "Ask on WhatsApp",
       "audienceEyebrow": "Built for working professionals",
       "audienceTitle": "Who is this course for?",
       "audience": [
@@ -305,6 +296,7 @@
       "checkoutBody": "Price and availability come directly from Courses & Sales. After payment, your access details will be sent by email.",
       "checkoutLoading": "Checking price and availability…",
       "checkoutUnavailable": "Checkout is temporarily being updated. You can request information on WhatsApp.",
+      "checkoutHelpCta": "Ask on WhatsApp",
       "checkoutGuarantees": ["Payment processed by Stripe", "Digital access after payment", "No recurring charges"],
       "paymentAlt": "Payment methods accepted by Stripe",
       "legalPrefix": "By purchasing, you confirm that you reviewed the",
