@@ -65,7 +65,7 @@ export async function buildMotus({ root, site, version }) {
       await mkdir(destination, { recursive: true });
       await writeFile(file, html, "utf8");
       files.push(file);
-      if (definition === sale) {
+      if (definition === sale && !/^https:\/\//i.test(content.assets.courseImage)) {
         const asset = path.join(destination, content.assets.courseImage);
         await mkdir(path.dirname(asset), { recursive: true });
         await copyFile(courseImageSource, asset);
@@ -136,6 +136,9 @@ function validate(content) {
   }
   if (!Array.isArray(content.assets.groupPhotos) || content.assets.groupPhotos.length < 4) {
     throw new Error("MOTUS requires an initial group-photo fallback.");
+  }
+  if (!/^https:\/\/bc\.opin-x\.com\//i.test(content.assets.courseImage)) {
+    throw new Error("MOTUS course artwork must use the Best Carriers CDN.");
   }
 }
 

@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "languages": [
     "es",
     "en"
@@ -141,15 +141,13 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/motus/assets/motus-recorded-course.webp": "a36fbb4b86fd2cd344d84a3289cccc3aa9fa0913356af7dae09371e4d6ad6840",
-    "pages/cursos/motus/gracias/index.html": "9d70f620512d6edebfcca6e7ff4c1895c78e5e61af9ccb6108cc70e79245a9b0",
-    "pages/cursos/motus/index.html": "6b3db0eda1e8cad20e44dbd212270d302f178a5a07ce31aef40999daec41b678",
-    "pages/en/courses/motus/assets/motus-recorded-course.webp": "a36fbb4b86fd2cd344d84a3289cccc3aa9fa0913356af7dae09371e4d6ad6840",
-    "pages/en/courses/motus/index.html": "a05e65e40c449bd907d9861775d249f0297a5c78e7cc2f74117646ee2fa9538d",
-    "pages/en/courses/motus/thank-you/index.html": "e74e62e3191947233d9a199bfdc698211e4edbb611504200d63c863dc67c4d72",
-    "pages/services/data/services.json": "c8fff0e1526696bc9553127ee1436ce42b461fc1c1e7e036640cf15f9a5e660d",
-    "pages/services/index.html": "4e2e436f76dd388b732496a10adbbc75b2b021165406371d18f654c84bf79a04",
-    "pages/servicios/data/services.json": "dabea8f9f257772692c712d721e122c84433444a417373fce5a2710db0844148",
-    "pages/servicios/index.html": "7f37f615281f7611ec556a0e7ba013e1c536928b4047ebfb39a292e74f861639"
+    "pages/cursos/motus/gracias/index.html": "678c153104af1f6774dae034b9ba283de83a34cfa326e70a2099ef401c3d1780",
+    "pages/cursos/motus/index.html": "18c6d1d251e0b6816c6ad7b393b7f2427228ee19ea8db7135b8a7768fe11ec99",
+    "pages/en/courses/motus/index.html": "e567ca24bd5ba201811819363b0a3c2e6b90f2650d1e755336bee8980d3ba654",
+    "pages/en/courses/motus/thank-you/index.html": "05db66f66b0e3e2f50b7b6e8a9a96df70d843f9db8155769193f66e2dd824d84",
+    "pages/services/data/services.json": "16a88f4f0c9ff3a659c270c114b44d1709b5a587108ad319471cb6e8cc827cc9",
+    "pages/services/index.html": "e54c5282f9cb0a6b70f77984cd810f925921ee55ee2a736843c2332a0c8b26aa",
+    "pages/servicios/data/services.json": "45850e913d20b6037b1b02ec078d82b16ffa5f67eb4bc466379f448933aec1e8",
+    "pages/servicios/index.html": "4a9add8d1e843d938ae2c8f7d1abb3473a6e2846bc9a1e5763d68091d53bb7eb"
   }
 }

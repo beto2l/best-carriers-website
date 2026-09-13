@@ -25,7 +25,7 @@ All other routes remain controlled by WordPress and Divi. After publication, bot
 - `src/motus.css`: premium course-sales and thank-you visual system.
 - `src/motus.js`: progressive video playback, FAQ behavior and non-sensitive UI enhancements.
 - `design/best-carriers-services-hero.webp`: retained design source. Public HTML uses the copy already uploaded through the authorized Best Carriers CDN client.
-- `design/motus-recorded-course.webp`: optimized, text-free course artwork for the recorded MOTUS offer. The build copies it into both localized routes.
+- `design/motus-recorded-course.webp`: source artwork for the recorded MOTUS offer. Production pages use the offloaded Best Carriers CDN URL declared in `content/motus.json`.
 
 The service cards are rendered into HTML during the build for SEO and a no-JavaScript fallback. Critical CSS and JavaScript are embedded because this WordPress host routes virtual `.css` and `.js` paths before WordPress. The embedded JavaScript fetches the localized JSON file to enhance search, filtering and the details dialog without reloading the page.
 

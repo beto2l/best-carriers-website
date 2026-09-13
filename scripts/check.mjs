@@ -118,7 +118,7 @@ function checkMotusSale(page, html) {
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }
-  if (!html.includes('src="assets/motus-recorded-course.webp"')) failures.push(`${page.entry} must use the recorded-course artwork`);
+  if (!html.includes('src="https://bc.opin-x.com/motus-recorded-course.webp"')) failures.push(`${page.entry} must use the CDN recorded-course artwork`);
   if (html.includes("https://bc.opin-x.com/Motus-V2.png")) failures.push(`${page.entry} must not use the old live-workshop artwork`);
   for (const forbidden of [
     "Workshop en vivo online",
