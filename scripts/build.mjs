@@ -161,6 +161,7 @@ function renderPage(locale) {
   <script type="application/ld+json">${safeJson(schema)}</script>
 </head>
 <body data-locale="${locale}" data-release="${escapeHtml(version)}">
+  <script type="application/json" data-static-catalog>${safeJson(localizedPayload(locale))}</script>
   <a class="skip-link" href="#services-grid">${escapeHtml(t.skipLink)}</a>
   <header class="site-header" data-header>
     <div class="shell header-inner">

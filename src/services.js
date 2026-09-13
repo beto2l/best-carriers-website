@@ -16,7 +16,7 @@
   const closeDialog = document.querySelector("[data-dialog-close]");
   const currentYear = document.querySelector("[data-current-year]");
   let activeCategory = "all";
-  let catalog = null;
+  let catalog = readStaticCatalog();
   let lastTrigger = null;
 
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
@@ -211,5 +211,16 @@
 
   function normalize(value) {
     return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase(locale);
+  }
+
+  function readStaticCatalog() {
+    const source = document.querySelector("[data-static-catalog]");
+    if (!source) return null;
+    try {
+      return JSON.parse(source.textContent);
+    } catch (error) {
+      console.warn("Best Carriers embedded catalog could not be read.", error);
+      return null;
+    }
   }
 })();
