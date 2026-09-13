@@ -413,7 +413,8 @@ function buildSchema({ locale, content, site }) {
         name: site.brand,
         legalName: "Opin X LLC",
         url: "https://best-carriers.com/",
-        logo: { "@type": "ImageObject", url: content.assets.logo }
+        logo: { "@type": "ImageObject", url: content.assets.logo },
+        sameAs: site.sameAs
       },
       {
         "@type": "Course",

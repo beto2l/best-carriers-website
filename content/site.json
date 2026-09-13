@@ -1,6 +1,13 @@
 {
   "brand": "Best Carriers",
   "brandDescriptor": "Trucking Services",
+  "sameAs": [
+    "https://www.facebook.com/bestcarriers",
+    "https://www.instagram.com/bestcarriersoficial/",
+    "https://www.youtube.com/@bestcarriers",
+    "https://www.linkedin.com/company/como-iniciar-tu-empresa-de-trucking/",
+    "https://www.tiktok.com/@bestcarriers"
+  ],
   "heroImage": {
     "url": "https://bc.opin-x.com/best-carriers-services-hero.webp",
     "width": 1920,

@@ -112,6 +112,7 @@ function checkMotusSale(page, html) {
     "https://www.fmcsa.dot.gov/registration/move-motus",
     '"@type":"Course"',
     '"@type":"FAQPage"',
+    '"sameAs":["https://www.facebook.com/bestcarriers"',
     "data-video-card",
     "data-motus-checkout"
   ]) {
