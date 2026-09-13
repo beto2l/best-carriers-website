@@ -8,6 +8,10 @@ Source repository for high-performance LuxWrap pages mounted inside the existing
 | --- | --- | --- | --- |
 | Servicios de Trucking | `/servicios/` | Spanish | `trucking-services-es` |
 | Trucking Services | `/services/` | English | `trucking-services-en` |
+| Curso grabado de FMCSA MOTUS | `/cursos/motus/` | Spanish | `motus-course-es` |
+| Recorded FMCSA MOTUS Course | `/en/courses/motus/` | English | `motus-course-en` |
+| Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
+| Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
 
 All other routes remain controlled by WordPress and Divi. After publication, both managed routes appear as native entries under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 
@@ -15,11 +19,17 @@ All other routes remain controlled by WordPress and Divi. After publication, bot
 
 - `content/site.json`: brand, routes, labels, SEO metadata, WhatsApp and CDN hero image.
 - `content/services.json`: canonical bilingual service catalog.
+- `content/motus.json`: bilingual MOTUS sales, FAQ, social-proof fallback and post-purchase content.
 - `src/services.css`: visual system and responsive layout, embedded into each built page.
 - `src/services.js`: search, category filters, JSON loading and accessible service dialog, embedded into each built page.
+- `src/motus.css`: premium course-sales and thank-you visual system.
+- `src/motus.js`: progressive video playback, FAQ behavior and non-sensitive UI enhancements.
 - `design/best-carriers-services-hero.webp`: retained design source. Public HTML uses the copy already uploaded through the authorized Best Carriers CDN client.
+- `design/motus-recorded-course.webp`: optimized, text-free course artwork for the recorded MOTUS offer. The build copies it into both localized routes.
 
 The service cards are rendered into HTML during the build for SEO and a no-JavaScript fallback. Critical CSS and JavaScript are embedded because this WordPress host routes virtual `.css` and `.js` paths before WordPress. The embedded JavaScript fetches the localized JSON file to enhance search, filtering and the details dialog without reloading the page.
+
+MOTUS uses LuxWrap Release Contract 5. Its repository HTML contains safe bilingual fallbacks while the allowlisted `social_proof`, `checkout` and `payment_result` components are rendered by WordPress. Reviews Hub remains the owner of reviews and group photos; Funnel remains the owner of price, Stripe, purchase intent, verified conversions and fulfillment. The repository owns presentation only.
 
 ## Local build and validation
 

@@ -1,9 +1,9 @@
 {
-  "contract_version": 4,
+  "contract_version": 5,
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "languages": [
     "es",
     "en"
@@ -14,20 +14,142 @@
       "title": "Servicios de Trucking",
       "route": "servicios",
       "entry": "pages/servicios/index.html",
-      "language": "es"
+      "language": "es",
+      "translation_key": "trucking-services"
     },
     {
       "id": "trucking-services-en",
       "title": "Trucking Services",
       "route": "services",
       "entry": "pages/services/index.html",
-      "language": "en"
+      "language": "en",
+      "translation_key": "trucking-services"
+    },
+    {
+      "id": "motus-course-es",
+      "title": "Curso grabado de FMCSA MOTUS",
+      "route": "cursos/motus",
+      "entry": "pages/cursos/motus/index.html",
+      "language": "es",
+      "translation_key": "motus-course",
+      "components": [
+        "best-carriers-social-proof-es",
+        "motus-checkout-es"
+      ]
+    },
+    {
+      "id": "motus-course-en",
+      "title": "Recorded FMCSA MOTUS Course",
+      "route": "en/courses/motus",
+      "entry": "pages/en/courses/motus/index.html",
+      "language": "en",
+      "translation_key": "motus-course",
+      "components": [
+        "best-carriers-social-proof-en",
+        "motus-checkout-en"
+      ]
+    },
+    {
+      "id": "motus-thank-you-es",
+      "title": "Gracias por comprar el curso MOTUS",
+      "route": "cursos/motus/gracias",
+      "entry": "pages/cursos/motus/gracias/index.html",
+      "language": "es",
+      "translation_key": "motus-thank-you",
+      "components": [
+        "motus-payment-result-es"
+      ],
+      "seo": {
+        "robots": "noindex,follow"
+      }
+    },
+    {
+      "id": "motus-thank-you-en",
+      "title": "Thank you for purchasing the MOTUS course",
+      "route": "en/courses/motus/thank-you",
+      "entry": "pages/en/courses/motus/thank-you/index.html",
+      "language": "en",
+      "translation_key": "motus-thank-you",
+      "components": [
+        "motus-payment-result-en"
+      ],
+      "seo": {
+        "robots": "noindex,follow"
+      }
     }
   ],
+  "global_content": {
+    "best-carriers-social-proof-es": {
+      "version": "1",
+      "type": "social_proof",
+      "source": "reviews_hub",
+      "scope": "brand",
+      "language": "es",
+      "initial_limit": 6,
+      "load_more": true,
+      "design_variant": "course-proof"
+    },
+    "best-carriers-social-proof-en": {
+      "version": "1",
+      "type": "social_proof",
+      "source": "reviews_hub",
+      "scope": "brand",
+      "language": "en",
+      "initial_limit": 6,
+      "load_more": true,
+      "design_variant": "course-proof"
+    },
+    "motus-checkout-es": {
+      "version": "1",
+      "type": "checkout",
+      "product": "motus",
+      "language": "es",
+      "design_variant": "headless",
+      "required_product_type": "recorded_course",
+      "required_benefits": [
+        "lifetime_access",
+        "includes_updates",
+        "includes_certificate"
+      ],
+      "require_legal": true
+    },
+    "motus-checkout-en": {
+      "version": "1",
+      "type": "checkout",
+      "product": "motus",
+      "language": "en",
+      "design_variant": "headless",
+      "required_product_type": "recorded_course",
+      "required_benefits": [
+        "lifetime_access",
+        "includes_updates",
+        "includes_certificate"
+      ],
+      "require_legal": true
+    },
+    "motus-payment-result-es": {
+      "version": "1",
+      "type": "payment_result",
+      "product": "motus",
+      "language": "es"
+    },
+    "motus-payment-result-en": {
+      "version": "1",
+      "type": "payment_result",
+      "product": "motus",
+      "language": "en"
+    }
+  },
   "files_sha256": {
-    "pages/services/data/services.json": "28e3b77761b25f3ec535120da57423f5ef91fcffa835239eec69d8992f4d6df1",
-    "pages/services/index.html": "94e395525f45188e0a617c8223f22b9b107b23b0c1bfe1a59071ad85405defe8",
-    "pages/servicios/data/services.json": "623f3e0b40e2ed23b5a2c423c9bea072019c72f3cc5731a6d981e2621fa77f48",
-    "pages/servicios/index.html": "628b6f7fae071552006b3bde62fa69ffdf1c093877d750d9f87c2a292a4d5fbc"
+    "pages/cursos/motus/assets/motus-recorded-course.webp": "a36fbb4b86fd2cd344d84a3289cccc3aa9fa0913356af7dae09371e4d6ad6840",
+    "pages/cursos/motus/gracias/index.html": "5292dda268d6c0217efefbe3ef409365b7640ec6accc832297ae36947733f994",
+    "pages/cursos/motus/index.html": "e6419b29ae85ce7ccdc4e78184ed6c55950b223656c11849846bd0c28d90370c",
+    "pages/en/courses/motus/assets/motus-recorded-course.webp": "a36fbb4b86fd2cd344d84a3289cccc3aa9fa0913356af7dae09371e4d6ad6840",
+    "pages/en/courses/motus/index.html": "060733686616ac2c0e05b3101dadb00a6f5593f181726b3ffcce11d7f6b924b7",
+    "pages/en/courses/motus/thank-you/index.html": "01cf9a8924ea71cc765add3390548e0eee7c39ab0bad663c9aa7a25e8c20adb8",
+    "pages/services/data/services.json": "c8fff0e1526696bc9553127ee1436ce42b461fc1c1e7e036640cf15f9a5e660d",
+    "pages/services/index.html": "4e2e436f76dd388b732496a10adbbc75b2b021165406371d18f654c84bf79a04",
+    "pages/servicios/data/services.json": "dabea8f9f257772692c712d721e122c84433444a417373fce5a2710db0844148",
+    "pages/servicios/index.html": "7f37f615281f7611ec556a0e7ba013e1c536928b4047ebfb39a292e74f861639"
   }
 }

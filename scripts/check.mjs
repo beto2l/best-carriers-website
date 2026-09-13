@@ -5,13 +5,22 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const release = JSON.parse(await readFile(path.join(root, "lw-release.json"), "utf8"));
-const expectedRoutes = new Set(["servicios", "services"]);
+const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
+const expectedRoutes = new Set([
+  "servicios",
+  "services",
+  "cursos/motus",
+  "en/courses/motus",
+  "cursos/motus/gracias",
+  "en/courses/motus/thank-you"
+]);
 const failures = [];
 
-if (release.contract_version !== 4) failures.push("contract_version must be 4");
+if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
-if (release.pages.length !== 2) failures.push("exactly two Pages are required");
+if (release.version !== packageJson.version) failures.push("release and package versions must match");
+if (release.pages.length !== 6) failures.push("exactly six native Pages are required");
 
 const ids = new Set();
 for (const page of release.pages) {
@@ -25,25 +34,45 @@ for (const page of release.pages) {
     `rel="canonical" href="${expectedCanonical}"`,
     "hreflang=\"es\"",
     "hreflang=\"en\"",
-    "data-services-grid",
-    "data-service-dialog",
-    "<style>:root",
-    "Best Carriers interactive catalog could not load",
     "data-current-year",
-    "https://bc.opin-x.com/best-carriers-services-hero.webp",
-    "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking"
+    "<style>:root"
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }
-  if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 static service cards`);
-  if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
-  if (!html.includes('data-static-catalog')) failures.push(`${page.entry} is missing the embedded service catalog`);
-  if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
-  if (!html.includes(page.language === "es" ? "BOC-3" : "BOC-3")) failures.push(`${page.entry} is missing the USDOT exclusions`);
-  if (/<script[^>]+src=["']https?:\/\//i.test(html)) failures.push(`${page.entry} loads external JavaScript`);
+  if (/<script[^>]+src=["']https?:\/\//i.test(html)) failures.push(`${page.entry} loads undeclared external JavaScript`);
+  if (/\[(opin_|shortcode)/i.test(html)) failures.push(`${page.entry} contains a raw WordPress shortcode`);
+
+  if (["servicios", "services"].includes(page.route)) checkServices(page, html);
+  if (["cursos/motus", "en/courses/motus"].includes(page.route)) checkMotusSale(page, html);
+  if (["cursos/motus/gracias", "en/courses/motus/thank-you"].includes(page.route)) checkMotusThanks(page, html);
 }
 
 if (expectedRoutes.size) failures.push(`missing routes: ${[...expectedRoutes].join(", ")}`);
+
+const components = release.global_content || {};
+for (const key of [
+  "best-carriers-social-proof-es",
+  "best-carriers-social-proof-en",
+  "motus-checkout-es",
+  "motus-checkout-en",
+  "motus-payment-result-es",
+  "motus-payment-result-en"
+]) {
+  if (!components[key]) failures.push(`missing global component ${key}`);
+}
+for (const key of ["best-carriers-social-proof-es", "best-carriers-social-proof-en"]) {
+  if (components[key]?.scope !== "brand") failures.push(`${key} must represent the Best Carriers brand`);
+  if (components[key]?.source !== "reviews_hub") failures.push(`${key} must use Reviews Hub`);
+}
+for (const key of ["motus-checkout-es", "motus-checkout-en"]) {
+  const component = components[key] || {};
+  if (component.design_variant !== "headless") failures.push(`${key} must leave presentation to the release`);
+  if (component.required_product_type !== "recorded_course") failures.push(`${key} must reject the former live workshop configuration`);
+  for (const benefit of ["lifetime_access", "includes_updates", "includes_certificate"]) {
+    if (!component.required_benefits?.includes(benefit)) failures.push(`${key} must require ${benefit}`);
+  }
+  if (component.require_legal !== true) failures.push(`${key} must require the legal checkout contract`);
+}
 
 for (const [relative, expected] of Object.entries(release.files_sha256)) {
   const absolute = path.join(root, relative);
@@ -52,17 +81,60 @@ for (const [relative, expected] of Object.entries(release.files_sha256)) {
   if (actual !== expected) failures.push(`checksum mismatch: ${relative}`);
 }
 
-const releaseFiles = Object.keys(release.files_sha256);
-for (const route of ["servicios", "services"]) {
-  for (const required of ["index.html", "data/services.json"]) {
-    const relative = `pages/${route}/${required}`;
-    if (!releaseFiles.includes(relative)) failures.push(`manifest omits ${relative}`);
-  }
-}
-
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join("\n"));
   process.exit(1);
 }
 
-console.log(`Validated LuxWrap ${release.version}: ${release.pages.length} native Pages and ${releaseFiles.length} checksummed files.`);
+console.log(`Validated LuxWrap ${release.version}: ${release.pages.length} native Pages, ${Object.keys(components).length} global components and ${Object.keys(release.files_sha256).length} checksummed files.`);
+
+function checkServices(page, html) {
+  for (const required of [
+    "data-services-grid",
+    "data-service-dialog",
+    "Best Carriers interactive catalog could not load",
+    "https://bc.opin-x.com/best-carriers-services-hero.webp",
+    "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking"
+  ]) {
+    if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
+  }
+  if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 static service cards`);
+  if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
+  if (!html.includes("data-static-catalog")) failures.push(`${page.entry} is missing the embedded service catalog`);
+  if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
+}
+
+function checkMotusSale(page, html) {
+  const locale = page.language;
+  for (const required of [
+    `data-opinx-global-content="best-carriers-social-proof-${locale}"`,
+    `data-opinx-global-content="motus-checkout-${locale}"`,
+    "https://www.fmcsa.dot.gov/registration/move-motus",
+    '"@type":"Course"',
+    '"@type":"FAQPage"',
+    "data-video-card",
+    "data-motus-checkout"
+  ]) {
+    if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
+  }
+  if (!html.includes('src="assets/motus-recorded-course.webp"')) failures.push(`${page.entry} must use the recorded-course artwork`);
+  if (html.includes("https://bc.opin-x.com/Motus-V2.png")) failures.push(`${page.entry} must not use the old live-workshop artwork`);
+  for (const forbidden of [
+    "Workshop en vivo online",
+    "Sábado 12 de Septiembre de 2026",
+    "Duración: 2 horas",
+    "Preguntas y respuestas en vivo"
+  ]) {
+    if (html.includes(forbidden)) failures.push(`${page.entry} retains live-workshop copy: ${forbidden}`);
+  }
+  if (!html.includes(locale === "es" ? "acceso de por vida" : "lifetime access")) failures.push(`${page.entry} is missing the lifetime-access promise`);
+  if (!html.includes(locale === "es" ? "calificación reúne opiniones sobre distintos cursos" : "rating combines feedback about different Best Carriers courses")) failures.push(`${page.entry} must label reviews as brand-wide social proof`);
+}
+
+function checkMotusThanks(page, html) {
+  const locale = page.language;
+  if (!html.includes('name="robots" content="noindex,follow,noarchive"')) failures.push(`${page.entry} must be noindex`);
+  if (!html.includes(`data-opinx-global-content="motus-payment-result-${locale}"`)) failures.push(`${page.entry} is missing the payment-result component`);
+  if (/cs_(?:live|test)_/i.test(html)) failures.push(`${page.entry} must not contain a payment session ID`);
+  if (!html.includes("https://learning.opin-x.com/")) failures.push(`${page.entry} is missing the Learning next step`);
+}

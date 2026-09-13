@@ -1,0 +1,355 @@
+{
+  "product": "motus",
+  "routes": {
+    "es": "https://best-carriers.com/cursos/motus/",
+    "en": "https://best-carriers.com/en/courses/motus/",
+    "thanksEs": "https://best-carriers.com/cursos/motus/gracias/",
+    "thanksEn": "https://best-carriers.com/en/courses/motus/thank-you/"
+  },
+  "assets": {
+    "logo": "https://c.opin-x.com/Logo-Best-Carriers-tm.png",
+    "courseImage": "assets/motus-recorded-course.webp",
+    "paymentMethods": "https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png",
+    "instructorVideo": "icLfupSYr_4",
+    "testimonialsVideo": "LJ9DsCbuMXw",
+    "groupPhotos": [
+      {
+        "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png",
+        "course": { "es": "Taller de MOTUS", "en": "MOTUS Workshop" },
+        "date": { "es": "29 de agosto de 2026", "en": "August 29, 2026" }
+      },
+      {
+        "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-07-18-at-12.28.01-PM-450x291.png",
+        "course": { "es": "Taller de MOTUS", "en": "MOTUS Workshop" },
+        "date": { "es": "13 de junio de 2026", "en": "June 13, 2026" }
+      },
+      {
+        "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-7.19.48-PM-450x276.png",
+        "course": { "es": "Taller de MOTUS", "en": "MOTUS Workshop" },
+        "date": { "es": "8 de agosto de 2026", "en": "August 8, 2026" }
+      },
+      {
+        "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-09-12-at-10.49.21-AM-450x266.png",
+        "course": { "es": "Cursos de Best Carriers", "en": "Best Carriers Courses" },
+        "date": { "es": "2026", "en": "2026" }
+      }
+    ]
+  },
+  "ratingSnapshot": {
+    "average": "4.9",
+    "count": 156,
+    "reviews": [
+      {
+        "name": "Maribel Castillo",
+        "es": "En el taller de Motus, está súper bueno.",
+        "en": "The Motus workshop is really good."
+      },
+      {
+        "name": "Yamila",
+        "es": "Toma el curso de IFTA, puede ser el comienzo de tu negocio.",
+        "en": "Take the IFTA course. It can be the beginning of your business."
+      },
+      {
+        "name": "Karina Perez",
+        "es": "Aprendí a hacer todo sobre las empresas de trucking desde cero.",
+        "en": "I learned how to build a trucking business from the ground up."
+      }
+    ]
+  },
+  "locales": {
+    "es": {
+      "metaTitle": "Curso grabado de FMCSA MOTUS en español | Best Carriers",
+      "metaDescription": "Aprende a usar el nuevo sistema FMCSA MOTUS: crea o reclama una cuenta, vincula un USDOT, realiza actualizaciones y evita errores comunes. Acceso de por vida.",
+      "ogTitle": "Domina FMCSA MOTUS con un curso práctico en español",
+      "ogDescription": "Curso grabado paso a paso, acceso de por vida, actualizaciones, materiales descargables y certificado.",
+      "skipLink": "Ir al contenido del curso",
+      "languageLink": "English",
+      "languageAria": "View the MOTUS course in English",
+      "navCurriculum": "Contenido",
+      "navReviews": "Opiniones",
+      "navFaq": "Preguntas",
+      "navCta": "Ver acceso",
+      "eyebrow": "Curso grabado · Acceso inmediato",
+      "heroTitle": "Entiende FMCSA MOTUS.",
+      "heroAccent": "Trabaja con seguridad en el nuevo sistema.",
+      "heroDescription": "Una capacitación práctica en español para navegar el nuevo sistema de registro de la FMCSA, vincular compañías existentes y completar procesos clave sin depender de una fecha u horario.",
+      "heroPrimary": "Obtener acceso de por vida",
+      "heroSecondary": "Ver qué aprenderás",
+      "heroNote": "Estudia a tu ritmo · Incluye futuras actualizaciones",
+      "courseCardEyebrow": "Capacitación bajo demanda",
+      "courseCardTitle": "Curso práctico de MOTUS",
+      "courseCardBody": "Lecciones claras, ejemplos reales y una ruta de trabajo que puedes consultar cuando la necesites.",
+      "courseCardPill": "100% online",
+      "trustItems": [
+        { "title": "Acceso de por vida", "text": "Regresa a las lecciones cuando cambie un proceso o necesites repasarlo." },
+        { "title": "Actualizaciones incluidas", "text": "El contenido podrá evolucionar junto con el sistema MOTUS." },
+        { "title": "Certificado", "text": "Completa la capacitación y recibe tu certificado." },
+        { "title": "Comunidad privada", "text": "El acceso al grupo de soporte en Facebook se entrega después de comprar." }
+      ],
+      "problemEyebrow": "El cambio ya está en marcha",
+      "problemTitle": "MOTUS reemplaza procesos antiguos. La curva de aprendizaje no tiene que frenar tu operación.",
+      "problemBody": "La FMCSA diseñó MOTUS como la nueva base para solicitar y administrar registros, actualizar información y controlar el acceso a las cuentas de empresa. Este curso convierte esa transición en una secuencia práctica y comprensible.",
+      "officialSource": "Consultar información oficial de FMCSA",
+      "outcomesTitle": "Al finalizar tendrás una ruta clara para",
+      "outcomes": [
+        "Preparar el acceso con Login.gov y verificar el correo correcto.",
+        "Crear un perfil y una cuenta de empresa en MOTUS.",
+        "Reclamar y vincular un USDOT existente.",
+        "Navegar registros y actualizaciones sin perder el contexto del trámite.",
+        "Reconocer errores frecuentes y saber cuál es el siguiente paso."
+      ],
+      "curriculumEyebrow": "Contenido práctico",
+      "curriculumTitle": "De la preparación al trámite, paso a paso",
+      "curriculumBody": "El curso organiza los procesos que hoy generan más dudas en una secuencia que puedes pausar, repetir y consultar mientras trabajas.",
+      "curriculum": [
+        {
+          "number": "01",
+          "title": "Preparar el acceso",
+          "text": "Verificación del email registrado, Login.gov, Portal de la FMCSA, perfil de usuario y cuenta de empresa."
+        },
+        {
+          "number": "02",
+          "title": "Configurar y administrar",
+          "text": "Registro inicial de MOTUS, vinculación de USDOT, registro como Transportation Service Provider y gestión de accesos."
+        },
+        {
+          "number": "03",
+          "title": "Resolver procesos clave",
+          "text": "Biennial Update, Request for Data Review desde DataQs, errores comunes y recursos oficiales para escalar una incidencia."
+        }
+      ],
+      "includesEyebrow": "Tu compra incluye",
+      "includesTitle": "No es una clase que desaparece al terminar",
+      "includesBody": "La capacitación queda disponible para que la conviertas en una herramienta de trabajo.",
+      "includes": [
+        { "title": "Curso grabado", "text": "Avanza a tu ritmo y repite los pasos importantes." },
+        { "title": "Material descargable", "text": "Recursos de apoyo para acompañar los procesos explicados." },
+        { "title": "Actualizaciones", "text": "Acceso a las mejoras futuras incluidas en esta capacitación." },
+        { "title": "Certificado", "text": "Reconocimiento al completar el contenido del curso." }
+      ],
+      "supportTitle": "Soporte y consultoría, sin confusiones",
+      "supportIncluded": "Incluido: grupo privado de Facebook para la comunidad del curso. El enlace se entrega después de la compra.",
+      "supportAdditional": "Adicional: consultoría individual por $150. No forma parte del precio del curso y sólo se agrega cuando el cliente la elige expresamente.",
+      "salesHelp": "¿Tienes una pregunta antes de comprar? WhatsApp se utiliza únicamente para información de ventas.",
+      "salesHelpCta": "Preguntar por WhatsApp",
+      "audienceEyebrow": "Diseñado para trabajar",
+      "audienceTitle": "¿Para quién es este curso?",
+      "audience": [
+        "Preparadores de impuestos que apoyan a empresas de trucking.",
+        "Administradores de flotas y personal de Safety o Compliance.",
+        "Transportation Service Providers y profesionales de registros.",
+        "Propietarios que necesitan comprender el estado de su propia empresa."
+      ],
+      "audienceNote": "Contenido educativo. Best Carriers no está afiliado ni respaldado por FMCSA, USDOT, MOTUS o Login.gov.",
+      "instructorEyebrow": "Experiencia aplicada",
+      "instructorTitle": "Aprende con contexto real de la industria",
+      "instructorBody": "Conoce la experiencia detrás de Best Carriers y por qué cada lección se enfoca en decisiones que aparecen durante el trabajo diario.",
+      "playInstructor": "Reproducir historia del instructor",
+      "proofEyebrow": "Reputación Best Carriers",
+      "proofTitle": "La experiencia de nuestros alumnos habla por la marca",
+      "proofBody": "La calificación reúne opiniones sobre distintos cursos y servicios educativos de Best Carriers. Representa la experiencia general con la marca, no una puntuación exclusiva de MOTUS.",
+      "ratingLabel": "Calificación general de Best Carriers",
+      "ratingBasedOn": "Basado en 156 reseñas de clientes",
+      "playTestimonials": "Ver testimonios en video",
+      "photosTitle": "Personas reales, cursos reales",
+      "photosBody": "Una muestra de los grupos que han participado en las capacitaciones de Best Carriers.",
+      "moreReviews": "Ver más comentarios",
+      "morePhotos": "Ver más fotos",
+      "checkoutEyebrow": "Acceso seguro",
+      "checkoutTitle": "Empieza cuando estés listo",
+      "checkoutBody": "El precio y la disponibilidad se consultan directamente en Cursos y Ventas. Después del pago recibirás por correo los datos de acceso.",
+      "checkoutLoading": "Consultando precio y disponibilidad…",
+      "checkoutUnavailable": "La compra está temporalmente en actualización. Puedes pedir información por WhatsApp.",
+      "checkoutButton": "Comprar acceso de por vida",
+      "checkoutGuarantees": ["Pago procesado por Stripe", "Acceso digital después del pago", "Sin cargos recurrentes"],
+      "paymentAlt": "Métodos de pago admitidos por Stripe",
+      "legalPrefix": "Al comprar confirmas que revisaste los",
+      "termsLabel": "Términos y condiciones",
+      "privacyLabel": "Política de privacidad",
+      "finalSale": "Producto digital. Todas las ventas son finales y no se ofrecen reembolsos.",
+      "faqEyebrow": "Preguntas frecuentes",
+      "faqTitle": "Lo esencial antes de comenzar",
+      "faqs": [
+        { "q": "¿El curso es en vivo?", "a": "No. Es una capacitación grabada para que puedas comenzar y avanzar a tu ritmo, sin esperar una fecha de clase." },
+        { "q": "¿Cuánto tiempo tendré acceso?", "a": "El acceso es de por vida e incluye las actualizaciones que se incorporen a esta capacitación." },
+        { "q": "¿Incluye un certificado?", "a": "Sí. Podrás recibir un certificado después de completar el contenido requerido del curso." },
+        { "q": "¿Dónde recibo soporte?", "a": "El soporte incluido se ofrece en un grupo privado de Facebook. El acceso se entrega a los alumnos después de la compra." },
+        { "q": "¿La consultoría individual está incluida?", "a": "No. La consultoría individual es opcional y tiene un costo adicional de $150." },
+        { "q": "¿Puedo solicitar un reembolso?", "a": "No. Al tratarse de acceso digital, todas las ventas son finales. Revisa los términos antes de comprar." },
+        { "q": "¿Best Carriers forma parte de la FMCSA?", "a": "No. Best Carriers es una marca educativa independiente. MOTUS, FMCSA, USDOT y Login.gov pertenecen a sus respectivos titulares." }
+      ],
+      "finalCtaEyebrow": "Convierte la incertidumbre en un proceso",
+      "finalCtaTitle": "Ten una guía disponible cada vez que entres a MOTUS.",
+      "finalCtaButton": "Ver precio y comprar",
+      "footerTagline": "Capacitación práctica para la industria de trucking.",
+      "footerDisclaimer": "Contenido educativo independiente. No constituye asesoría legal ni representación ante una agencia federal.",
+      "copyright": "Opin X LLC. Todos los derechos reservados.",
+      "thanksMetaTitle": "Gracias por tu compra | Curso MOTUS de Best Carriers",
+      "thanksMetaDescription": "Confirmación privada de la compra del curso MOTUS y próximos pasos para acceder a la capacitación.",
+      "thanksEyebrow": "Compra recibida",
+      "thanksTitle": "Tu acceso a MOTUS está en camino",
+      "thanksBody": "La confirmación segura del pago aparecerá aquí. No cierres esta página hasta ver el estado de tu compra.",
+      "thanksFallback": "Estamos verificando tu pago con Stripe…",
+      "thanksStepsTitle": "Tus próximos pasos",
+      "thanksSteps": [
+        "Revisa el correo utilizado durante el pago, incluyendo Promociones y Spam.",
+        "Abre el mensaje de acceso y entra a la plataforma Learning de OPIN X.",
+        "Sigue las indicaciones privadas para unirte al grupo de Facebook del curso."
+      ],
+      "learningCta": "Abrir plataforma de cursos",
+      "helpTitle": "¿No recibiste el acceso?",
+      "helpBody": "Espera unos minutos y revisa todas las carpetas de tu correo. Si el pago aparece completado y aún no recibes el acceso, escríbenos.",
+      "helpCta": "Solicitar ayuda",
+      "consultingTitle": "¿Necesitas acompañamiento individual?",
+      "consultingBody": "La consultoría privada es un servicio adicional de $150 y no está incluida en el curso.",
+      "consultingCta": "Conocer la consultoría"
+    },
+    "en": {
+      "metaTitle": "Recorded FMCSA MOTUS Course | Best Carriers",
+      "metaDescription": "Learn the new FMCSA MOTUS system: create or claim an account, link a USDOT number, complete updates and avoid common errors. Lifetime access.",
+      "ogTitle": "Master FMCSA MOTUS with a practical recorded course",
+      "ogDescription": "Step-by-step recorded training with lifetime access, updates, downloadable materials and a certificate.",
+      "skipLink": "Skip to course content",
+      "languageLink": "Español",
+      "languageAria": "Ver el curso MOTUS en español",
+      "navCurriculum": "Curriculum",
+      "navReviews": "Reviews",
+      "navFaq": "FAQ",
+      "navCta": "View access",
+      "eyebrow": "Recorded course · Immediate access",
+      "heroTitle": "Understand FMCSA MOTUS.",
+      "heroAccent": "Work confidently in the new system.",
+      "heroDescription": "Practical training for navigating FMCSA's new registration system, linking existing companies and completing key processes without waiting for a live class.",
+      "heroPrimary": "Get lifetime access",
+      "heroSecondary": "Explore the curriculum",
+      "heroNote": "Learn at your own pace · Future updates included",
+      "courseCardEyebrow": "On-demand training",
+      "courseCardTitle": "Practical MOTUS Course",
+      "courseCardBody": "Clear lessons, real examples and a working path you can revisit whenever you need it.",
+      "courseCardPill": "100% online",
+      "trustItems": [
+        { "title": "Lifetime access", "text": "Return to the lessons whenever a process changes or you need a refresher." },
+        { "title": "Updates included", "text": "The training can evolve along with the MOTUS system." },
+        { "title": "Certificate", "text": "Complete the training and receive your certificate." },
+        { "title": "Private community", "text": "Access to the Facebook support group is delivered after purchase." }
+      ],
+      "problemEyebrow": "The transition is underway",
+      "problemTitle": "MOTUS is replacing older processes. The learning curve should not slow your operation.",
+      "problemBody": "FMCSA designed MOTUS as the new home base for applying for and managing registrations, updating information and controlling access to company accounts. This course turns that transition into a practical, understandable sequence.",
+      "officialSource": "View official FMCSA information",
+      "outcomesTitle": "By the end, you will have a clear path to",
+      "outcomes": [
+        "Prepare Login.gov access and verify the correct email.",
+        "Create a user profile and company account in MOTUS.",
+        "Claim and link an existing USDOT number.",
+        "Navigate registrations and updates without losing the context of the filing.",
+        "Recognize common errors and identify the next step."
+      ],
+      "curriculumEyebrow": "Practical curriculum",
+      "curriculumTitle": "From account setup to registration tasks, step by step",
+      "curriculumBody": "The course organizes the processes that create the most uncertainty into a sequence you can pause, repeat and consult while you work.",
+      "curriculum": [
+        {
+          "number": "01",
+          "title": "Prepare access",
+          "text": "Registered email verification, Login.gov, the FMCSA Portal, user profile and company account."
+        },
+        {
+          "number": "02",
+          "title": "Configure and manage",
+          "text": "Initial MOTUS setup, USDOT linking, Transportation Service Provider registration and user access management."
+        },
+        {
+          "number": "03",
+          "title": "Complete key processes",
+          "text": "Biennial Update, Request for Data Review through DataQs, common errors and official resources for escalating an issue."
+        }
+      ],
+      "includesEyebrow": "Included with your purchase",
+      "includesTitle": "This is not a class that disappears when it ends",
+      "includesBody": "The training remains available so you can use it as a working resource.",
+      "includes": [
+        { "title": "Recorded course", "text": "Learn at your own pace and replay important steps." },
+        { "title": "Downloadable materials", "text": "Reference resources that support the processes explained in the course." },
+        { "title": "Course updates", "text": "Access future improvements included with this training." },
+        { "title": "Certificate", "text": "Recognition after completing the required course content." }
+      ],
+      "supportTitle": "Support and consulting, clearly separated",
+      "supportIncluded": "Included: a private Facebook group for the course community. The link is delivered after purchase.",
+      "supportAdditional": "Additional: individual consulting for $150. It is not included in the course price and is added only when the customer expressly selects it.",
+      "salesHelp": "Have a question before purchasing? WhatsApp is used only for sales information.",
+      "salesHelpCta": "Ask on WhatsApp",
+      "audienceEyebrow": "Built for working professionals",
+      "audienceTitle": "Who is this course for?",
+      "audience": [
+        "Tax preparers who support trucking companies.",
+        "Fleet administrators and Safety or Compliance staff.",
+        "Transportation Service Providers and registration professionals.",
+        "Owners who need to understand their own company's status."
+      ],
+      "audienceNote": "Educational content. Best Carriers is not affiliated with or endorsed by FMCSA, USDOT, MOTUS or Login.gov.",
+      "instructorEyebrow": "Applied experience",
+      "instructorTitle": "Learn with real trucking-industry context",
+      "instructorBody": "Learn about the experience behind Best Carriers and why each lesson focuses on decisions that appear in everyday work.",
+      "playInstructor": "Play the instructor story",
+      "proofEyebrow": "Best Carriers reputation",
+      "proofTitle": "Our students' experiences speak for the brand",
+      "proofBody": "The rating combines feedback about different Best Carriers courses and educational services. It represents the overall experience with the brand, not a MOTUS-only score.",
+      "ratingLabel": "Overall Best Carriers rating",
+      "ratingBasedOn": "Based on 156 customer reviews",
+      "playTestimonials": "Watch video testimonials",
+      "photosTitle": "Real people, real courses",
+      "photosBody": "A sample of the groups that have participated in Best Carriers training programs.",
+      "moreReviews": "View more reviews",
+      "morePhotos": "View more photos",
+      "checkoutEyebrow": "Secure access",
+      "checkoutTitle": "Start when you are ready",
+      "checkoutBody": "Price and availability come directly from Courses & Sales. After payment, your access details will be sent by email.",
+      "checkoutLoading": "Checking price and availability…",
+      "checkoutUnavailable": "Checkout is temporarily being updated. You can request information on WhatsApp.",
+      "checkoutButton": "Buy lifetime access",
+      "checkoutGuarantees": ["Payment processed by Stripe", "Digital access after payment", "No recurring charges"],
+      "paymentAlt": "Payment methods accepted by Stripe",
+      "legalPrefix": "By purchasing, you confirm that you reviewed the",
+      "termsLabel": "Terms and Conditions",
+      "privacyLabel": "Privacy Policy",
+      "finalSale": "Digital product. All sales are final and no refunds are offered.",
+      "faqEyebrow": "Frequently asked questions",
+      "faqTitle": "What to know before you begin",
+      "faqs": [
+        { "q": "Is the course live?", "a": "No. This is recorded training, so you can start and learn at your own pace without waiting for a scheduled class." },
+        { "q": "How long will I have access?", "a": "Access is lifetime and includes updates added to this training." },
+        { "q": "Does it include a certificate?", "a": "Yes. You may receive a certificate after completing the required course content." },
+        { "q": "Where do I receive support?", "a": "Included support is provided through a private Facebook group. Access is delivered to students after purchase." },
+        { "q": "Is individual consulting included?", "a": "No. Individual consulting is optional and costs an additional $150." },
+        { "q": "Can I request a refund?", "a": "No. Because this is digital access, all sales are final. Review the terms before purchasing." },
+        { "q": "Is Best Carriers part of FMCSA?", "a": "No. Best Carriers is an independent educational brand. MOTUS, FMCSA, USDOT and Login.gov belong to their respective owners." }
+      ],
+      "finalCtaEyebrow": "Turn uncertainty into a process",
+      "finalCtaTitle": "Keep a guide available every time you log into MOTUS.",
+      "finalCtaButton": "View price and buy",
+      "footerTagline": "Practical training for the trucking industry.",
+      "footerDisclaimer": "Independent educational content. It is not legal advice or representation before a federal agency.",
+      "copyright": "Opin X LLC. All rights reserved.",
+      "thanksMetaTitle": "Thank you for your purchase | Best Carriers MOTUS Course",
+      "thanksMetaDescription": "Private confirmation of your MOTUS course purchase and the next steps for accessing the training.",
+      "thanksEyebrow": "Purchase received",
+      "thanksTitle": "Your MOTUS access is on the way",
+      "thanksBody": "Your secure payment confirmation will appear here. Keep this page open until you see the status of your purchase.",
+      "thanksFallback": "We are verifying your payment with Stripe…",
+      "thanksStepsTitle": "Your next steps",
+      "thanksSteps": [
+        "Check the email used during payment, including Promotions and Spam.",
+        "Open the access message and sign in to the OPIN X Learning platform.",
+        "Follow the private instructions to join the course's Facebook group."
+      ],
+      "learningCta": "Open the course platform",
+      "helpTitle": "Did not receive access?",
+      "helpBody": "Wait a few minutes and check every email folder. If the payment is complete and access has not arrived, contact us.",
+      "helpCta": "Request help",
+      "consultingTitle": "Need individual guidance?",
+      "consultingBody": "Private consulting is an additional $150 service and is not included with the course.",
+      "consultingCta": "Learn about consulting"
+    }
+  }
+}

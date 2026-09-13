@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildMotus } from "./build-motus.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = JSON.parse(await readFile(path.join(root, "content/site.json"), "utf8"));
@@ -37,6 +38,9 @@ for (const locale of locales) {
   files.push(htmlPath, dataPath);
 }
 
+const motusRelease = await buildMotus({ root, site, version });
+files.push(...motusRelease.files);
+
 const checksums = {};
 for (const file of files.sort()) {
   const relative = path.relative(root, file).split(path.sep).join("/");
@@ -45,17 +49,22 @@ for (const file of files.sort()) {
 }
 
 const release = {
-  contract_version: 4,
+  contract_version: 5,
   runtime: "static",
   scope: "pages",
   site: "best-carriers-website",
   version,
   languages: locales,
-  pages: locales.map((locale) => ({
-    ...pageDefinitions[locale],
-    entry: `pages/${pageDefinitions[locale].route}/index.html`,
-    language: locale
-  })),
+  pages: [
+    ...locales.map((locale) => ({
+      ...pageDefinitions[locale],
+      entry: `pages/${pageDefinitions[locale].route}/index.html`,
+      language: locale,
+      translation_key: "trucking-services"
+    })),
+    ...motusRelease.pages
+  ],
+  global_content: motusRelease.globalContent,
   files_sha256: checksums
 };
 
