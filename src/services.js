@@ -22,7 +22,7 @@
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
   if (!grid || !search || !dialog) return;
 
-  loadCatalog();
+  const catalogReady = loadCatalog();
 
   search.addEventListener("input", applyFilters);
   filters.forEach((filter) => {
@@ -44,9 +44,11 @@
   grid.addEventListener("click", openService);
   table?.addEventListener("click", openService);
 
-  function openService(event) {
+  async function openService(event) {
     const trigger = event.target.closest("[data-open-service]");
-    if (!trigger || !catalog) return;
+    if (!trigger) return;
+    if (!catalog) await catalogReady;
+    if (!catalog) return;
     const service = catalog.services.find((item) => item.id === trigger.dataset.openService);
     if (!service) return;
     lastTrigger = trigger;
@@ -127,6 +129,15 @@
     }
     if (service.variants?.length) {
       bodyHost.append(createVariantsSection(labels.variantsLabel, service.variants));
+    }
+    if (service.requirements?.length) {
+      bodyHost.append(createListSection(labels.prerequisitesLabel, service.requirements));
+    }
+    if (service.excludes?.length) {
+      bodyHost.append(createListSection(labels.excludesLabel, service.excludes));
+    }
+    if (service.clientProvides?.length) {
+      bodyHost.append(createListSection(labels.clientProvidesLabel, service.clientProvides));
     }
     bodyHost.append(createSection(labels.requirementsLabel, catalog.requirements));
   }

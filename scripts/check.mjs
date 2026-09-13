@@ -37,6 +37,8 @@ for (const page of release.pages) {
   }
   if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 static service cards`);
   if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
+  if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
+  if (!html.includes(page.language === "es" ? "BOC-3" : "BOC-3")) failures.push(`${page.entry} is missing the USDOT exclusions`);
   if (/<script[^>]+src=["']https?:\/\//i.test(html)) failures.push(`${page.entry} loads external JavaScript`);
 }
 

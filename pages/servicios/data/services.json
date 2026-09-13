@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "whatsappUrl": "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking",
   "requirements": "La documentación exacta depende de tu estructura, estado y situación operativa. La lista de requisitos se confirma después de una evaluación inicial.",
   "labels": {
@@ -8,6 +8,9 @@
     "priceLabel": "Precio",
     "includesLabel": "Incluye",
     "variantsLabel": "Opciones de servicio",
+    "prerequisitesLabel": "Requisitos previos",
+    "excludesLabel": "No incluye",
+    "clientProvidesLabel": "El cliente debe indicar",
     "requirementsLabel": "Información y requisitos",
     "priceNotice": "Precios vigentes hasta diciembre de 2026.",
     "dialogCta": "Quiero este servicio",
@@ -120,8 +123,23 @@
       "name": "Obtener USDOT",
       "price": "$250",
       "priceNote": "Precio fijo",
-      "summary": "Solicitud del número USDOT para tu empresa de trucking.",
-      "details": "Acompañamiento para solicitar el número USDOT de la empresa ante FMCSA."
+      "summary": "Obtención únicamente del número USDOT para tu empresa de trucking.",
+      "details": "Este servicio se limita exclusivamente a obtener el número USDOT de la empresa.",
+      "requirements": [
+        "La compañía de trucking debe estar creada.",
+        "La LLC debe estar constituida.",
+        "Debes tener lista la carta del IIN."
+      ],
+      "excludes": [
+        "Motor Carrier o EMC",
+        "BOC-3",
+        "UCR"
+      ],
+      "clientProvides": [
+        "El tipo de operación que van a tener.",
+        "Qué tipo de camiones van a operar.",
+        "Cuántos drivers van a manejar."
+      ]
     },
     {
       "id": "reinstate-mc-authority",
