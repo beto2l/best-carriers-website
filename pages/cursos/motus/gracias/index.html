@@ -416,6 +416,30 @@ opinx-component { display: block; }
 [data-opinx-funnel-mount] .opin-fi-email-feedback,
 [data-opinx-funnel-mount] .opin-fi-capture-status,
 [data-opinx-funnel-mount] .opin-fi-checkout-error { margin-top: 4px; color: var(--danger); font-size: 12px; }
+[data-opinx-funnel-mount] .opin-fi-promotional-consent {
+  min-height: 44px;
+  display: grid;
+  grid-template-columns: 19px 1fr;
+  align-items: start;
+  gap: 10px;
+  margin-top: 3px;
+  padding: 10px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f7fafc;
+  color: #536273;
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.5;
+  cursor: pointer;
+}
+[data-opinx-funnel-mount] .opin-fi-promotional-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--blue-dark);
+}
+[data-opinx-funnel-mount] .opin-fi-promotional-consent a { color: var(--blue-dark); font-weight: 850; }
 
 .section-faq { background: var(--canvas); }
 .faq-layout { display: grid; grid-template-columns: .7fr 1.3fr; align-items: start; gap: clamp(50px, 8vw, 105px); }
