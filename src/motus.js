@@ -41,6 +41,18 @@
     });
   }
 
+  function initializeMobilePurchase() {
+    var purchase = document.querySelector(".mobile-purchase");
+    var hero = document.querySelector(".motus-hero");
+    if (!purchase || !hero || !("IntersectionObserver" in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      var heroVisible = entries[0] && entries[0].isIntersecting;
+      purchase.classList.toggle("is-visible", !heroVisible);
+      purchase.setAttribute("aria-hidden", heroVisible ? "true" : "false");
+    }, { threshold: 0.08 });
+    observer.observe(hero);
+  }
+
   function enhanceSocialProof() {
     var locale = document.body.getAttribute("data-locale") || "es";
     var labels = locale === "es"
@@ -80,6 +92,7 @@
     setYear();
     initializeVideos();
     initializeFaq();
+    initializeMobilePurchase();
     enhanceSocialProof();
   }
 

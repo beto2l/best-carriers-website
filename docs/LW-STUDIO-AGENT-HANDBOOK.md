@@ -48,7 +48,7 @@ Cada Page necesita un `id` permanente, una ruta, un archivo de entrada y su idio
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "pages": [
     {
       "id": "mi-pagina-es",
@@ -84,7 +84,7 @@ Al publicar, las rutas declaradas aparecen en **Pages** de WordPress con estado 
 | Stripe, intención de compra, Purchase, reintentos y fulfillment | Funnel de Pagos | Usar el checkout resuelto por WordPress | No crear Stripe, formularios de tarjeta, webhooks ni eventos Purchase en JavaScript del repositorio. |
 | Acceso de un alumno y compra confirmada | NUSA / Learning, a través de Cursos y Ventas y Funnel | Usar el componente de resultado de pago y la ruta de agradecimiento | No simular una inscripción ni enviar accesos desde la landing. |
 | Reseñas, promedio, fotos de participantes y carga incremental | Reviews Hub | Componente `social_proof` con fallback estático | La calificación debe indicar si representa la marca y no un curso individual. |
-| Imágenes, optimización y vaciado coordinado de caché | CDN y Cache | Subir primero mediante el cliente CDN autorizado del sitio y usar la URL resultante | No subir al CDN desde el navegador, ni incluir tokens en el repositorio. |
+| Imágenes, optimización y vaciado coordinado de caché | CDN y Cache | Subir primero en WordPress mediante **OPIN X > CDN y Cache > Imágenes CDN** y usar la URL resultante | No usar un CDN externo ni incluir tokens en el repositorio. |
 | Botón o enlace de WhatsApp | WhatsApp Link | Usar la URL y el mensaje aprobados por sitio; mantener un enlace normal como fallback | No alterar destino ni mensaje sin aprobación. |
 | Validación de correo en una captura de lead | Email Validator | El formulario debe ser un componente/flujo WordPress autorizado | No guardar ni validar correos sensibles en JavaScript estático. |
 | Envío a NUSA, Mautic, Meta, TikTok o Telegram | Lead Router y/o Funnel de Pagos | Conectar un formulario o checkout aprobado en WordPress | No enviar eventos de contacto o venta directamente desde el repositorio. |
@@ -138,9 +138,9 @@ El atributo `design_variant: "headless"` significa que la página conserva su di
 2. **Identifica los propietarios.** Decide si solo hay contenido estático o si requiere un recurso de la tabla anterior. Para precio de curso, formularios o reseñas, confirma primero el módulo dueño y la configuración por sitio.
 3. **Crea la fuente.** Añade contenido bilingüe en `content/`, la generación en `scripts/` y CSS/JS propio en `src/`. Mantén HTML semántico, foco visible, `prefers-reduced-motion`, imágenes con `alt` y fallback sin JavaScript.
 4. **Declara las Pages.** Asigna IDs nuevos y permanentes, rutas sin conflicto, `translation_key` compartido y canonicals/hreflang correctos.
-5. **Usa imágenes correctamente.** Optimiza y sube por `OPIN X > CDN y Cache > Imágenes CDN`; copia la URL CDN aprobada a la fuente. No generes URLs de CDN manualmente.
+5. **Usa imágenes correctamente.** Optimiza y sube por `OPIN X > CDN y Cache > Imágenes CDN`; copia la URL CDN aprobada a la fuente. No generes URLs de CDN manualmente ni agregues binarios de producción al repositorio.
 6. **Integra datos dinámicos por contrato.** Inserta un `opinx-component` y su fallback. Declara la clave exacta en `global_content`. Nunca copies la lógica del módulo propietario.
-7. **Construye y valida.** Ejecuta `npm test`. Inspecciona el diff, comprueba que los archivos de `pages/` y `lw-release.json` se hayan regenerado y que no haya secretos.
+7. **Construye y valida.** Ejecuta `npm test`. Para una liberación de MOTUS, el build conserva los artefactos de servicios sin cambios y sólo regenera MOTUS, gracias y el manifiesto; usa `FULL_RELEASE=1 npm run build` únicamente cuando el cambio sí incluye servicios. Inspecciona el diff, comprueba los checksums y que no haya secretos.
 8. **Publica el código.** Haz commit de los archivos intencionales y envíalo a `main`.
 9. **Publica en WordPress.** En el subsite: **OPIN X > LuxWrap Studio**. Revisa el commit y las rutas; selecciona actualizar/publicar la versión revisada.
 10. **Verifica producción.** Comprueba desktop y móvil, las Page nativas, el menú si aplica, los componentes, la URL CDN, el enlace WhatsApp y las capas de caché autorizadas.
@@ -150,14 +150,16 @@ El atributo `design_variant: "headless"` significa que la página conserva su di
 La venta de MOTUS demuestra la separación correcta:
 
 - La landing y agradecimiento son seis Pages estáticas bilingües de este repositorio.
-- La imagen de curso se sirve desde el CDN de Best Carriers; no se carga desde el repositorio en producción.
+- La imagen de curso y los visuales de producto se sirven desde el CDN de Best Carriers; no se cargan desde el repositorio en producción. Cada imagen incluye URL CDN, dimensiones, `loading="lazy"` salvo la imagen principal, `decoding="async"` y texto alternativo para ambos idiomas.
 - La página declara checkout y resultado de pago, pero no contiene precio fijo, lógica de Stripe, credenciales ni webhooks.
 - Si el precio, disponibilidad o beneficios comerciales cambian, se actualizan en **Cursos y Ventas**. Funnel de Pagos recibe la proyección canonica y el checkout de la landing refleja la nueva ficha.
 - Reviews Hub provee reseñas y fotos. El HTML incluye un fallback accesible y el runtime conserva "Ver más comentarios" y "Ver más fotos" como enlaces con respaldo sin JavaScript.
-- Los videos muestran miniatura de YouTube y solo crean el reproductor al hacer clic; esto protege rendimiento inicial y evita reproducir contenido sin intención.
+- Los videos muestran miniatura de YouTube y solo crean el reproductor al hacer clic; esto protege rendimiento inicial y evita reproducir contenido sin intención. La tarjeta de instructor usa `icLfupSYr_4` y conserva los textos “Conoce a tu instructor” / “Meet your instructor”.
+- El temario se modela por módulos y lecciones en `content/motus.json`; el build lo genera como acordeones accesibles. No conviertas esa información en una imagen ni la ocultes dentro de JavaScript.
+- El CTA fijo móvil inicia oculto y solo se vuelve interactivo cuando el hero ya salió de vista. Todos los CTAs de venta apuntan a `#checkout`; el precio, disponibilidad y checkout siguen siendo dinámicos.
 - El checkout aparece inmediatamente después del hero para reducir fricción, mientras que la compra real sigue perteneciendo a Funnel de Pagos.
 
-La versión `1.2.1` documenta la última revisión visual: paleta inspirada en MOTUS, sin cabecera fija de idioma, CTA de compra simplificado, video previews reales, estrellas visuales, checkout alto, texto de soporte extenso eliminado y enlaces externos no solicitados retirados.
+La versión `1.3.1` añade la demostración visual de plataforma, lecciones, temario, recursos descargables y certificado mediante el CDN; añade la imagen de participantes como respaldo de autoridad para el instructor; y conserva la revisión previa: paleta inspirada en MOTUS, sin cabecera fija de idioma, video previews reales, estrellas visuales, checkout alto, texto de soporte extenso eliminado y enlaces externos no solicitados retirados.
 
 ## 8. Formularios, tracking y eventos: regla de seguridad
 

@@ -130,7 +130,7 @@ function validate(content) {
   }
   for (const locale of locales) {
     const t = content.locales[locale];
-    if (!t?.metaTitle || !t?.heroTitle || t.curriculum?.length !== 3 || t.faqs?.length < 6) {
+    if (!t?.metaTitle || !t?.heroTitle || t.curriculum?.length !== 3 || t.curriculum.some((item) => !Array.isArray(item.lessons) || !item.lessons.length) || t.faqs?.length < 6) {
       throw new Error(`MOTUS ${locale} content is incomplete.`);
     }
   }
@@ -139,6 +139,12 @@ function validate(content) {
   }
   if (!/^https:\/\/bc\.opin-x\.com\//i.test(content.assets.courseImage)) {
     throw new Error("MOTUS course artwork must use the Best Carriers CDN.");
+  }
+  if (!content.assets.instructorPhoto?.url || !/^https:\/\/bc\.opin-x\.com\//i.test(content.assets.instructorPhoto.url)) {
+    throw new Error("MOTUS instructor authority image must use the Best Carriers CDN.");
+  }
+  if (!Array.isArray(content.assets.productVisuals) || content.assets.productVisuals.length < 5 || content.assets.productVisuals.some((asset) => !/^https:\/\/bc\.opin-x\.com\//i.test(asset.url))) {
+    throw new Error("MOTUS product visuals must be served by the Best Carriers CDN.");
   }
 }
 
@@ -244,7 +250,7 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           <p>${escapeHtml(t.curriculumBody)}</p>
         </div>
         <div class="curriculum-grid">
-          ${t.curriculum.map((item) => `<article class="curriculum-card"><span class="curriculum-number">${escapeHtml(item.number)}</span><div class="curriculum-line" aria-hidden="true"></div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.text)}</p></article>`).join("\n          ")}
+          ${t.curriculum.map((item, index) => `<details class="curriculum-card"${index === 0 ? " open" : ""}><summary><span class="curriculum-number">${escapeHtml(item.number)}</span><span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.text)}</small></span>${icon("plus")}</summary><ol>${item.lessons.map((lesson) => `<li>${escapeHtml(lesson)}</li>`).join("")}</ol></details>`).join("\n          ")}
         </div>
       </div>
     </section>
@@ -264,15 +270,23 @@ function renderSalePage({ locale, content, site, version, css, js }) {
       </div>
     </section>
 
+    ${renderProductVisuals({ locale, content })}
+
     <section class="section section-audience">
-      <div class="motus-shell audience-layout">
+      <div class="motus-shell">
         <div class="audience-card">
           <p class="eyebrow">${icon("users")}<span>${escapeHtml(t.audienceEyebrow)}</span></p>
           <h2>${escapeHtml(t.audienceTitle)}</h2>
           <ul>${t.audience.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}</ul>
           <p class="independence-note">${escapeHtml(t.audienceNote)}</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section section-instructor">
+      <div class="motus-shell instructor-layout">
         ${renderVideo({ id: content.assets.instructorVideo, eyebrow: t.instructorEyebrow, title: t.instructorTitle, body: t.instructorBody, button: t.playInstructor })}
+        <figure class="instructor-authority"><img src="${escapeHtml(content.assets.instructorPhoto.url)}" alt="${escapeHtml(content.assets.instructorPhoto.alt[locale])}" width="${escapeHtml(content.assets.instructorPhoto.width)}" height="${escapeHtml(content.assets.instructorPhoto.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(locale === "es" ? "Experiencia compartida con participantes reales de MOTUS." : "Experience shared with real MOTUS participants.")}</figcaption></figure>
       </div>
     </section>
 
@@ -296,10 +310,25 @@ function renderSalePage({ locale, content, site, version, css, js }) {
   </main>
 
   ${renderFooter({ locale, content, site, t })}
-  <a class="mobile-purchase" href="#checkout"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
+  <a class="mobile-purchase" href="#checkout" aria-hidden="true"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
   <script>${js}</script>
 </body>
 </html>\n`;
+}
+
+function renderProductVisuals({ locale, content }) {
+  return `<section class="section section-product-visuals" aria-labelledby="product-visuals-title">
+      <div class="motus-shell">
+        <div class="section-heading centered">
+          <p class="eyebrow">${icon("layers")}<span>${escapeHtml(locale === "es" ? "Así se trabaja dentro" : "How you work inside")}</span></p>
+          <h2 id="product-visuals-title">${escapeHtml(locale === "es" ? "Una plataforma práctica para consultar, aprender y ejecutar" : "A practical platform to review, learn and execute")}</h2>
+          <p>${escapeHtml(locale === "es" ? "Lecciones grabadas, un temario organizado, materiales descargables y certificado dentro de una misma experiencia." : "Recorded lessons, an organized curriculum, downloadable materials and a certificate in one experience.")}</p>
+        </div>
+        <div class="product-visual-grid">
+          ${content.assets.productVisuals.map((visual) => `<figure class="product-visual product-visual--${escapeHtml(visual.id)}"><img src="${escapeHtml(visual.url)}" alt="${escapeHtml(visual.alt[locale])}" width="${escapeHtml(visual.width)}" height="${escapeHtml(visual.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(visual.title[locale])}</figcaption></figure>`).join("\n          ")}
+        </div>
+      </div>
+    </section>`;
 }
 
 function renderThanksPage({ locale, content, site, version, css, js }) {

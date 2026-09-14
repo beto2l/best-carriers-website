@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recorded FMCSA MOTUS Course | Best Carriers</title>
-  <meta name="description" content="Learn the new FMCSA MOTUS system: create or claim an account, link a USDOT number, complete updates and avoid common errors. Lifetime access.">
+  <title>Recorded FMCSA MOTUS Course Step by Step | Best Carriers</title>
+  <meta name="description" content="Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Lifetime access.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#06111f">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
@@ -13,8 +13,8 @@
   <link rel="alternate" hreflang="en" href="https://best-carriers.com/en/courses/motus/">
   <link rel="alternate" hreflang="x-default" href="https://best-carriers.com/cursos/motus/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Master FMCSA MOTUS with a practical recorded course">
-  <meta property="og:description" content="Step-by-step recorded training with lifetime access, updates, downloadable materials and a certificate.">
+  <meta property="og:title" content="Learn FMCSA MOTUS step by step with Best Carriers">
+  <meta property="og:description" content="Recorded course with immediate access, a practical workflow, updates, downloadable materials, certificate and student support.">
   <meta property="og:url" content="https://best-carriers.com/en/courses/motus/">
   <meta property="og:image" content="https://bc.opin-x.com/motus-recorded-course.webp">
   <meta property="og:locale" content="en_US">
@@ -267,13 +267,19 @@ opinx-component { display: block; }
 .section-heading.centered { max-width: 780px; margin-inline: auto; text-align: center; }
 .section-heading.centered .eyebrow { justify-content: center; }
 .section-heading.centered > p:last-child { max-width: 680px; margin: 24px auto 0; }
-.curriculum-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 58px; }
-.curriculum-card { position: relative; overflow: hidden; min-height: 330px; padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(155deg, #fff 0%, #f7fafc 100%); }
-.curriculum-card::after { content: ""; position: absolute; right: -46px; bottom: -46px; width: 150px; height: 150px; border: 1px solid rgba(22,137,216,.13); border-radius: 50%; }
-.curriculum-number { color: var(--blue); font-size: 13px; font-weight: 950; letter-spacing: .2em; }
-.curriculum-line { width: 54px; height: 2px; margin: 29px 0 50px; background: linear-gradient(90deg, var(--amber), transparent); }
-.curriculum-card h3 { max-width: 260px; margin: 0; font-size: 27px; line-height: 1.15; letter-spacing: -.035em; }
-.curriculum-card p { margin: 18px 0 0; color: var(--slate); font-size: 15px; }
+.curriculum-grid { display: grid; max-width: 900px; gap: 13px; margin: 58px auto 0; }
+.curriculum-card { overflow: hidden; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 10px 30px rgba(4,18,32,.04); }
+.curriculum-card summary { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 22px 24px; cursor: pointer; list-style: none; }
+.curriculum-card summary::-webkit-details-marker { display: none; }
+.curriculum-number { color: var(--blue); font-size: 11px; font-weight: 950; letter-spacing: .14em; white-space: nowrap; }
+.curriculum-card summary strong { display: block; color: var(--ink); font-size: 20px; line-height: 1.25; }
+.curriculum-card summary small { display: block; overflow: hidden; max-height: 0; margin-top: 0; color: var(--slate); font-size: 12px; line-height: 1.45; transition: max-height .18s ease, margin .18s ease; }
+.curriculum-card summary > .icon { color: var(--blue-dark); transition: transform .18s ease; }
+.curriculum-card[open] { border-color: rgba(7,95,171,.35); background: linear-gradient(145deg, #fff, #f5f9fd); }
+.curriculum-card[open] summary small { max-height: 60px; margin-top: 6px; }
+.curriculum-card[open] summary > .icon { transform: rotate(45deg); }
+.curriculum-card ol { display: grid; gap: 0; margin: 0; padding: 0 24px 20px; list-style: none; }
+.curriculum-card li { padding: 11px 0; border-top: 1px solid var(--line); color: #35475b; font-size: 14px; font-weight: 650; }
 
 .section-includes { background: var(--ink); color: #fff; }
 .section-includes .section-copy > p:not(.eyebrow) { color: rgba(255,255,255,.62); }
@@ -289,12 +295,29 @@ opinx-component { display: block; }
 .support-sales { padding-left: 34px; border-left: 1px solid rgba(255,255,255,.12); }
 .support-sales a { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; color: #8ce5bd; font-size: 14px; font-weight: 850; }
 
+.section-product-visuals { background: #fff; }
+.product-visual-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; margin-top: 54px; }
+.product-visual { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #f5f8fb; box-shadow: var(--shadow-soft); }
+.product-visual img { width: 100%; height: 100%; min-height: 240px; max-height: 390px; object-fit: cover; background: var(--canvas); }
+.product-visual figcaption { padding: 14px 17px 16px; color: var(--ink); font-size: 13px; font-weight: 850; }
+.product-visual--platform { grid-column: span 7; }
+.product-visual--lesson-usdot { grid-column: span 5; }
+.product-visual--lesson-tsp { grid-column: span 5; }
+.product-visual--curriculum { grid-column: span 3; }
+.product-visual--curriculum img { object-fit: contain; }
+.product-visual--downloads { grid-column: span 4; }
+.product-visual--certificate { grid-column: span 8; }
+
 .section-audience { background: var(--canvas); }
-.audience-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 22px; }
 .audience-card, .video-card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow-soft); }
-.audience-card { padding: clamp(32px, 5vw, 54px); }
+.audience-card { max-width: 940px; margin-inline: auto; padding: clamp(32px, 5vw, 54px); }
 .audience-card h2 { font-size: clamp(34px, 4vw, 50px); }
 .independence-note { margin: 28px 0 0; padding-top: 22px; border-top: 1px solid var(--line); color: #718091; font-size: 12px; }
+.section-instructor { background: #fff; }
+.instructor-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(250px, .42fr); align-items: stretch; gap: 22px; }
+.instructor-authority { display: flex; flex-direction: column; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink); box-shadow: var(--shadow-soft); }
+.instructor-authority img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.instructor-authority figcaption { margin-top: auto; padding: 18px 20px; color: rgba(255,255,255,.76); font-size: 12px; line-height: 1.5; }
 .video-card { overflow: hidden; display: grid; grid-template-columns: .9fr 1.1fr; }
 .video-art { position: relative; min-height: 100%; overflow: hidden; display: grid; place-items: center; padding: 0; border: 0; background: #001d4f; color: #fff; cursor: pointer; isolation: isolate; }
 .video-thumbnail { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -573,9 +596,7 @@ opinx-component { display: block; }
   .trust-grid article:nth-child(3) { border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
   .trust-grid article:nth-child(4) { border-top: 1px solid var(--line); }
   .split-layout, .includes-layout, .checkout-layout { gap: 48px; }
-  .curriculum-grid { grid-template-columns: 1fr; }
-  .curriculum-card { min-height: auto; }
-  .curriculum-line { margin-bottom: 30px; }
+  .instructor-layout { grid-template-columns: minmax(0, 1fr) minmax(210px, .46fr); }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
   .audience-layout { grid-template-columns: 1fr; }
   .video-card { min-height: 430px; }
@@ -611,12 +632,20 @@ opinx-component { display: block; }
   .split-layout, .includes-layout, .checkout-layout, .faq-layout, .proof-heading, .footer-grid, .thanks-grid { grid-template-columns: 1fr; }
   .outcomes-card { padding: 28px 24px; }
   .curriculum-grid { margin-top: 38px; }
-  .curriculum-card { padding: 28px 24px; }
+  .curriculum-card summary { padding: 20px 18px; gap: 12px; }
+  .curriculum-card summary strong { font-size: 18px; }
+  .curriculum-card ol { padding: 0 18px 18px; }
   .includes-grid { grid-template-columns: 1fr; }
   .includes-grid article { min-height: 0; }
   .support-band { grid-template-columns: 1fr; gap: 22px; padding: 27px 24px; }
   .support-sales { padding: 22px 0 0; border-top: 1px solid rgba(255,255,255,.12); border-left: 0; }
   .audience-card { padding: 30px 24px; }
+  .product-visual-grid { grid-template-columns: 1fr; margin-top: 36px; }
+  .product-visual, .product-visual--platform, .product-visual--lesson-usdot, .product-visual--lesson-tsp, .product-visual--curriculum, .product-visual--downloads, .product-visual--certificate { grid-column: auto; }
+  .product-visual img { min-height: 0; max-height: 270px; }
+  .product-visual--curriculum img { max-height: 400px; }
+  .instructor-layout { grid-template-columns: 1fr; }
+  .instructor-authority { max-width: 320px; }
   .video-card, .video-card-compact { grid-template-columns: 1fr; min-height: 0; }
   .video-art, .video-card-compact .video-art { min-height: 220px; }
   .video-copy { padding: 30px 24px; }
@@ -659,7 +688,13 @@ opinx-component { display: block; }
     font-size: 14px;
     font-weight: 900;
     text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
   }
+  .mobile-purchase.is-visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
   .mobile-purchase strong:empty { display: none; }
   .thanks-main { padding-block: 62px 82px; }
   .thanks-header .brand img { width: 144px; }
@@ -681,9 +716,9 @@ opinx-component { display: block; }
 }
 </style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://best-carriers.com/#organization","name":"Best Carriers","legalName":"Opin X LLC","url":"https://best-carriers.com/","logo":{"@type":"ImageObject","url":"https://c.opin-x.com/Logo-Best-Carriers-tm.png"},"sameAs":["https://www.facebook.com/bestcarriers","https://www.instagram.com/bestcarriersoficial/","https://www.youtube.com/@bestcarriers","https://www.linkedin.com/company/como-iniciar-tu-empresa-de-trucking/","https://www.tiktok.com/@bestcarriers"]},{"@type":"Course","@id":"https://best-carriers.com/en/courses/motus/#course","name":"Practical MOTUS Course","description":"Learn the new FMCSA MOTUS system: create or claim an account, link a USDOT number, complete updates and avoid common errors. Lifetime access.","url":"https://best-carriers.com/en/courses/motus/","inLanguage":"en-US","courseMode":"online","provider":{"@id":"https://best-carriers.com/#organization"},"teaches":["Prepare Login.gov access and verify the correct email.","Create a user profile and company account in MOTUS.","Claim and link an existing USDOT number.","Navigate registrations and updates without losing the context of the filing.","Recognize common errors and identify the next step."]},{"@type":"WebPage","@id":"https://best-carriers.com/en/courses/motus/#webpage","url":"https://best-carriers.com/en/courses/motus/","name":"Recorded FMCSA MOTUS Course | Best Carriers","description":"Learn the new FMCSA MOTUS system: create or claim an account, link a USDOT number, complete updates and avoid common errors. Lifetime access.","inLanguage":"en-US","mainEntity":{"@id":"https://best-carriers.com/en/courses/motus/#course"},"isPartOf":{"@type":"WebSite","@id":"https://best-carriers.com/#website","url":"https://best-carriers.com/","name":"Best Carriers"}},{"@type":"FAQPage","@id":"https://best-carriers.com/en/courses/motus/#faq","mainEntity":[{"@type":"Question","name":"Is the course live?","acceptedAnswer":{"@type":"Answer","text":"No. This is recorded training, so you can start and learn at your own pace without waiting for a scheduled class."}},{"@type":"Question","name":"How long will I have access?","acceptedAnswer":{"@type":"Answer","text":"Access is lifetime and includes updates added to this training."}},{"@type":"Question","name":"Does it include a certificate?","acceptedAnswer":{"@type":"Answer","text":"Yes. You may receive a certificate after completing the required course content."}},{"@type":"Question","name":"Where do I receive support?","acceptedAnswer":{"@type":"Answer","text":"Included support is provided through a private Facebook group. Access is delivered to students after purchase."}},{"@type":"Question","name":"Is individual consulting included?","acceptedAnswer":{"@type":"Answer","text":"No. Individual consulting is optional and costs an additional $150."}},{"@type":"Question","name":"Can I request a refund?","acceptedAnswer":{"@type":"Answer","text":"No. Because this is digital access, all sales are final. Review the terms before purchasing."}},{"@type":"Question","name":"Is Best Carriers part of FMCSA?","acceptedAnswer":{"@type":"Answer","text":"No. Best Carriers is an independent educational brand. MOTUS, FMCSA, USDOT and Login.gov belong to their respective owners."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://best-carriers.com/#organization","name":"Best Carriers","legalName":"Opin X LLC","url":"https://best-carriers.com/","logo":{"@type":"ImageObject","url":"https://c.opin-x.com/Logo-Best-Carriers-tm.png"},"sameAs":["https://www.facebook.com/bestcarriers","https://www.instagram.com/bestcarriersoficial/","https://www.youtube.com/@bestcarriers","https://www.linkedin.com/company/como-iniciar-tu-empresa-de-trucking/","https://www.tiktok.com/@bestcarriers"]},{"@type":"Course","@id":"https://best-carriers.com/en/courses/motus/#course","name":"Practical FMCSA MOTUS Course","description":"Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Lifetime access.","url":"https://best-carriers.com/en/courses/motus/","inLanguage":"en-US","courseMode":"online","provider":{"@id":"https://best-carriers.com/#organization"},"teaches":["One organized training path instead of piecing together scattered resources.","Preparation for Login.gov, registered email, profile and company account before critical processes.","Cases focused on existing companies, TSPs, compliance staff and professionals who serve clients.","A sequence for claiming or linking USDOT numbers, managing users and completing updates.","Common errors, support resources and guidance for identifying the next step."]},{"@type":"WebPage","@id":"https://best-carriers.com/en/courses/motus/#webpage","url":"https://best-carriers.com/en/courses/motus/","name":"Recorded FMCSA MOTUS Course Step by Step | Best Carriers","description":"Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Lifetime access.","inLanguage":"en-US","mainEntity":{"@id":"https://best-carriers.com/en/courses/motus/#course"},"isPartOf":{"@type":"WebSite","@id":"https://best-carriers.com/#website","url":"https://best-carriers.com/","name":"Best Carriers"}},{"@type":"FAQPage","@id":"https://best-carriers.com/en/courses/motus/#faq","mainEntity":[{"@type":"Question","name":"Is the course live?","acceptedAnswer":{"@type":"Answer","text":"No. This is recorded training with immediate access, so you can start and learn at your own pace."}},{"@type":"Question","name":"Do I need a USDOT number to take the course?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. The course explains processes for existing companies as well as setup and access concepts useful to professionals who work with clients."}},{"@type":"Question","name":"Is the course useful if I work with clients as a tax preparer or TSP?","acceptedAnswer":{"@type":"Answer","text":"Yes. The curriculum includes processes relevant to preparers, compliance staff and Transportation Service Providers, including TSP Filing Number, Designate TSP and Authorized Users."}},{"@type":"Question","name":"How long will I have access?","acceptedAnswer":{"@type":"Answer","text":"Access is lifetime and includes updates added to this training."}},{"@type":"Question","name":"Does the course include individual help with my case?","acceptedAnswer":{"@type":"Answer","text":"No. Individual consulting is optional, purchased separately and costs an additional $150."}},{"@type":"Question","name":"Does it include a certificate?","acceptedAnswer":{"@type":"Answer","text":"Yes. You may receive a certificate after completing the required course content."}},{"@type":"Question","name":"Where do I receive support?","acceptedAnswer":{"@type":"Answer","text":"Included support is provided through a private Facebook group. Access is delivered to students after purchase."}},{"@type":"Question","name":"What should I prepare before starting?","acceptedAnswer":{"@type":"Answer","text":"It is helpful to have access to the email related to your registrations and, if you are working with an existing company, its company information and USDOT number. Each lesson explains what is needed for that process."}},{"@type":"Question","name":"What happens if FMCSA changes MOTUS?","acceptedAnswer":{"@type":"Answer","text":"Access includes future updates that Best Carriers adds to this training to reflect relevant system changes."}},{"@type":"Question","name":"Can I request a refund?","acceptedAnswer":{"@type":"Answer","text":"No. Because this is digital access, all sales are final. Review the terms before purchasing."}},{"@type":"Question","name":"Is Best Carriers part of FMCSA?","acceptedAnswer":{"@type":"Answer","text":"No. Best Carriers is an independent educational brand. MOTUS, FMCSA, USDOT and Login.gov belong to their respective owners."}}]}]}</script>
 </head>
-<body data-page="motus-sale" data-locale="en" data-release="1.2.1">
+<body data-page="motus-sale" data-locale="en" data-release="1.3.1">
   <a class="skip-link" href="#course-content">Skip to course content</a>
   <main id="course-content">
     <section class="motus-hero" aria-labelledby="hero-title">
@@ -692,26 +727,26 @@ opinx-component { display: block; }
       <div class="motus-orb motus-orb-two" aria-hidden="true"></div>
       <div class="motus-shell hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow eyebrow-light"><svg class="icon icon-signal" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17h2v3H4zM9 13h2v7H9zM14 9h2v11h-2zM19 4h2v16h-2z"/></svg><span>Recorded course · Immediate access</span></p>
-          <h1 id="hero-title">Understand FMCSA MOTUS. <em>Work confidently in the new system.</em></h1>
-          <p class="hero-description">Practical training for navigating FMCSA&#039;s new registration system, linking existing companies and completing key processes without waiting for a live class.</p>
+          <p class="eyebrow eyebrow-light"><svg class="icon icon-signal" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17h2v3H4zM9 13h2v7H9zM14 9h2v11h-2zM19 4h2v16h-2z"/></svg><span>Recorded course · Immediate access · Lifetime updates</span></p>
+          <h1 id="hero-title">Learn how to set up and use FMCSA MOTUS step by step, <em>without guessing what comes next.</em></h1>
+          <p class="hero-description">Follow a practical path for Login.gov access, USDOT account claiming, TSP, Biennial Updates, DataQs and key MOTUS processes, built for trucking professionals, compliance staff and tax preparers.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#checkout">Access the MOTUS Workshop<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="button button-quiet" href="#curriculum">Explore the curriculum</a>
+            <a class="button button-primary" href="#checkout">Get immediate access<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="button button-quiet" href="#curriculum">View the full curriculum</a>
           </div>
-          <p class="hero-note"><svg class="icon icon-infinity" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c4 0 5-7 9-7 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-4 0-5-7-9-7Z"/></svg><span>Learn at your own pace · Future updates included</span></p>
+          <p class="hero-note"><svg class="icon icon-infinity" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c4 0 5-7 9-7 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-4 0-5-7-9-7Z"/></svg><span>Recorded course · Lifetime access · Future updates included</span></p>
         </div>
-        <div class="hero-product" aria-label="Practical MOTUS Course">
+        <div class="hero-product" aria-label="Practical FMCSA MOTUS Course">
           <div class="product-glow" aria-hidden="true"></div>
           <div class="product-window">
             <div class="product-window-bar"><span></span><span></span><span></span><small>MOTUS / BEST CARRIERS</small></div>
-            <img src="https://bc.opin-x.com/motus-recorded-course.webp" alt="Practical MOTUS Course" width="1448" height="1086" fetchpriority="high" decoding="async">
+            <img src="https://bc.opin-x.com/motus-recorded-course.webp" alt="Practical FMCSA MOTUS Course" width="1448" height="1086" fetchpriority="high" decoding="async">
             <div class="product-window-copy">
-              <div><p>On-demand training</p><strong>Practical MOTUS Course</strong></div>
+              <div><p>On-demand training</p><strong>Practical FMCSA MOTUS Course</strong></div>
               <span>100% online</span>
             </div>
           </div>
-          <div class="product-caption">Clear lessons, real examples and a working path you can revisit whenever you need it.</div>
+          <div class="product-caption">An organized workflow for using MOTUS, repeating each process when needed and reducing time lost across scattered guides, videos and trial and error.</div>
         </div>
       </div>
     </section>
@@ -720,14 +755,14 @@ opinx-component { display: block; }
       <div class="motus-shell checkout-layout">
         <div class="checkout-copy">
           <p class="eyebrow eyebrow-light"><svg class="icon icon-lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Secure access</span></p>
-          <h2 id="checkout-title">Access the MOTUS Workshop</h2>
-          <p>Price and availability come directly from Courses &amp; Sales. After payment, your access details will be sent by email.</p>
-          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Payment processed by Stripe</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Digital access after payment</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>No recurring charges</span></li></ul>
+          <h2 id="checkout-title">Get immediate access to the MOTUS course</h2>
+          <p>Current price and availability appear directly in the Courses &amp; Sales checkout. After payment, your training access details will be sent by email.</p>
+          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Secure payment processed by Stripe</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Digital access sent after payment</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>One-time payment · No recurring charges</span></li></ul>
         </div>
         <div class="checkout-card" data-motus-checkout data-language="en">
           <div class="checkout-card-head">
             <img src="https://bc.opin-x.com/motus-recorded-course.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async">
-            <div><span>On-demand training</span><strong>Practical MOTUS Course</strong></div>
+            <div><span>On-demand training</span><strong>Practical FMCSA MOTUS Course</strong></div>
           </div>
           <opinx-component data-opinx-global-content="motus-checkout-en">
             <div class="checkout-component-fallback" data-component-fallback>
@@ -743,24 +778,24 @@ opinx-component { display: block; }
 
     <section class="trust-rail" aria-label="Course benefits">
       <div class="motus-shell trust-grid">
-        <article><svg class="icon icon-infinity" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c4 0 5-7 9-7 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-4 0-5-7-9-7Z"/></svg><div><h2>Lifetime access</h2><p>Return to the lessons whenever a process changes or you need a refresher.</p></div></article>
-        <article><svg class="icon icon-refresh" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7h-5V2M4 17h5v5M6 8a7 7 0 0 1 12-3l2 2M18 16a7 7 0 0 1-12 3l-2-2"/></svg><div><h2>Updates included</h2><p>The training can evolve along with the MOTUS system.</p></div></article>
-        <article><svg class="icon icon-certificate" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1 7 4.5-2 4.5 2-1-7"/></svg><div><h2>Certificate</h2><p>Complete the training and receive your certificate.</p></div></article>
-        <article><svg class="icon icon-community" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20a6 6 0 0 1 12 0M14 16a4 4 0 0 1 7 3"/></svg><div><h2>Private community</h2><p>Access to the Facebook support group is delivered after purchase.</p></div></article>
+        <article><svg class="icon icon-infinity" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.5 8.5c-2.2 0-4 1.6-4 3.5s1.8 3.5 4 3.5c4 0 5-7 9-7 2.2 0 4 1.6 4 3.5s-1.8 3.5-4 3.5c-4 0-5-7-9-7Z"/></svg><div><h2>Lifetime access</h2><p>Return to the lessons whenever you need to complete or review a process.</p></div></article>
+        <article><svg class="icon icon-refresh" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7h-5V2M4 17h5v5M6 8a7 7 0 0 1 12-3l2 2M18 16a7 7 0 0 1-12 3l-2-2"/></svg><div><h2>Updates included</h2><p>Receive future improvements added to this training as MOTUS evolves.</p></div></article>
+        <article><svg class="icon icon-certificate" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1 7 4.5-2 4.5 2-1-7"/></svg><div><h2>Certificate</h2><p>Complete the training and receive your participation certificate.</p></div></article>
+        <article><svg class="icon icon-community" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20a6 6 0 0 1 12 0M14 16a4 4 0 0 1 7 3"/></svg><div><h2>Student support</h2><p>Access to the private support community after purchase.</p></div></article>
       </div>
     </section>
 
     <section class="section section-problem">
       <div class="motus-shell split-layout">
         <div class="section-copy">
-          <p class="eyebrow"><svg class="icon icon-route" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg><span>The transition is underway</span></p>
-          <h2>MOTUS is replacing older processes. The learning curve should not slow your operation.</h2>
-          <p>FMCSA designed MOTUS as the new home base for applying for and managing registrations, updating information and controlling access to company accounts. This course turns that transition into a practical, understandable sequence.</p>
+          <p class="eyebrow"><svg class="icon icon-route" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg><span>More than scattered information</span></p>
+          <h2>Official information exists. The challenge is turning it into a workflow you can actually execute.</h2>
+          <p>FMCSA publishes free MOTUS resources. This course does not sell access to public information: it organizes the processes into a practical path with trucking context, support materials, updates and a sequence you can consult while you work.</p>
         </div>
         <div class="outcomes-card">
           <div class="card-kicker">MOTUS / USDOT</div>
-          <h3>By the end, you will have a clear path to</h3>
-          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Prepare Login.gov access and verify the correct email.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Create a user profile and company account in MOTUS.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Claim and link an existing USDOT number.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Navigate registrations and updates without losing the context of the filing.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Recognize common errors and identify the next step.</span></li></ul>
+          <h3>The practical difference</h3>
+          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>One organized training path instead of piecing together scattered resources.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Preparation for Login.gov, registered email, profile and company account before critical processes.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Cases focused on existing companies, TSPs, compliance staff and professionals who serve clients.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>A sequence for claiming or linking USDOT numbers, managing users and completing updates.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Common errors, support resources and guidance for identifying the next step.</span></li></ul>
         </div>
       </div>
     </section>
@@ -768,14 +803,14 @@ opinx-component { display: block; }
     <section class="section section-curriculum" id="curriculum" aria-labelledby="curriculum-title">
       <div class="motus-shell">
         <div class="section-heading centered">
-          <p class="eyebrow"><svg class="icon icon-layers" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg><span>Practical curriculum</span></p>
-          <h2 id="curriculum-title">From account setup to registration tasks, step by step</h2>
-          <p>The course organizes the processes that create the most uncertainty into a sequence you can pause, repeat and consult while you work.</p>
+          <p class="eyebrow"><svg class="icon icon-layers" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg><span>Full curriculum</span></p>
+          <h2 id="curriculum-title">13 lessons from first access through support and consulting</h2>
+          <p>The content follows the same working sequence you will see inside the platform. Pause, replay and return to a lesson while completing a process.</p>
         </div>
         <div class="curriculum-grid">
-          <article class="curriculum-card"><span class="curriculum-number">01</span><div class="curriculum-line" aria-hidden="true"></div><h3>Prepare access</h3><p>Registered email verification, Login.gov, the FMCSA Portal, user profile and company account.</p></article>
-          <article class="curriculum-card"><span class="curriculum-number">02</span><div class="curriculum-line" aria-hidden="true"></div><h3>Configure and manage</h3><p>Initial MOTUS setup, USDOT linking, Transportation Service Provider registration and user access management.</p></article>
-          <article class="curriculum-card"><span class="curriculum-number">03</span><div class="curriculum-line" aria-hidden="true"></div><h3>Complete key processes</h3><p>Biennial Update, Request for Data Review through DataQs, common errors and official resources for escalating an issue.</p></article>
+          <details class="curriculum-card" open><summary><span class="curriculum-number">MODULE 1</span><span><strong>First steps in MOTUS</strong><small>01 · Introduction to MOTUS · 02 · Find registered email</small></span><svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><ol><li>01 · Introduction to MOTUS</li><li>02 · Find registered email</li></ol></details>
+          <details class="curriculum-card"><summary><span class="curriculum-number">MODULE 2</span><span><strong>Configuration and management</strong><small>03 · FMCSA Portal · 04 · Identity verification · 05 · Link USDOT · 06 · MOTUS ticket · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update</small></span><svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><ol><li>03 · FMCSA Portal</li><li>04 · Identity verification</li><li>05 · Link USDOT</li><li>06 · MOTUS ticket</li><li>07 · TSP Filing Number</li><li>08 · Designate TSP</li><li>09 · Authorized Users</li><li>10 · Biennial Update</li></ol></details>
+          <details class="curriculum-card"><summary><span class="curriculum-number">MODULE 3</span><span><strong>Tickets and consulting</strong><small>11 · DataQ ticket · 12 · FMCSA letter: federal agency assistance · 13 · Consulting</small></span><svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><ol><li>11 · DataQ ticket</li><li>12 · FMCSA letter: federal agency assistance</li><li>13 · Consulting</li></ol></details>
         </div>
       </div>
     </section>
@@ -784,33 +819,57 @@ opinx-component { display: block; }
       <div class="motus-shell">
         <div class="includes-layout">
           <div class="section-copy">
-            <p class="eyebrow"><svg class="icon icon-box" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21 8-9 5-9-5 9-5 9 5Z"/><path d="m3 8 9 5 9-5v8l-9 5-9-5V8Z"/></svg><span>Included with your purchase</span></p>
-            <h2>This is not a class that disappears when it ends</h2>
-            <p>The training remains available so you can use it as a working resource.</p>
+            <p class="eyebrow"><svg class="icon icon-box" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21 8-9 5-9-5 9-5 9 5Z"/><path d="m3 8 9 5 9-5v8l-9 5-9-5V8Z"/></svg><span>What you receive</span></p>
+            <h2>A working resource that stays available</h2>
+            <p>This is not a class that disappears when it ends. Keep access and return whenever you need to review a process.</p>
           </div>
           <div class="includes-grid">
-            <article><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><h3>Recorded course</h3><p>Learn at your own pace and replay important steps.</p></article>
-            <article><svg class="icon icon-download" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg><h3>Downloadable materials</h3><p>Reference resources that support the processes explained in the course.</p></article>
-            <article><svg class="icon icon-refresh" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7h-5V2M4 17h5v5M6 8a7 7 0 0 1 12-3l2 2M18 16a7 7 0 0 1-12 3l-2-2"/></svg><h3>Course updates</h3><p>Access future improvements included with this training.</p></article>
-            <article><svg class="icon icon-certificate" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1 7 4.5-2 4.5 2-1-7"/></svg><h3>Certificate</h3><p>Recognition after completing the required course content.</p></article>
+            <article><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><h3>Recorded course</h3><p>13 lessons to learn at your own pace and replay important steps.</p></article>
+            <article><svg class="icon icon-download" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg><h3>Downloadable materials</h3><p>Guides and reference resources that support the processes explained.</p></article>
+            <article><svg class="icon icon-refresh" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7h-5V2M4 17h5v5M6 8a7 7 0 0 1 12-3l2 2M18 16a7 7 0 0 1-12 3l-2-2"/></svg><h3>Future updates</h3><p>Access improvements added to this training when relevant processes change.</p></article>
+            <article><svg class="icon icon-certificate" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1 7 4.5-2 4.5 2-1-7"/></svg><h3>Certificate</h3><p>Participation recognition after completing the required course content.</p></article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-product-visuals" aria-labelledby="product-visuals-title">
+      <div class="motus-shell">
+        <div class="section-heading centered">
+          <p class="eyebrow"><svg class="icon icon-layers" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg><span>How you work inside</span></p>
+          <h2 id="product-visuals-title">A practical platform to review, learn and execute</h2>
+          <p>Recorded lessons, an organized curriculum, downloadable materials and a certificate in one experience.</p>
+        </div>
+        <div class="product-visual-grid">
+          <figure class="product-visual product-visual--platform"><img src="https://bc.opin-x.com/Screenshot-2026-09-14-at-11.46.48-AM-scaled.png" alt="MOTUS course platform with a video lesson" width="2560" height="1578" loading="lazy" decoding="async"><figcaption>Course platform</figcaption></figure>
+          <figure class="product-visual product-visual--lesson-usdot"><img src="https://bc.opin-x.com/Screenshot-2026-09-14-at-11.49.54-AM-scaled.png" alt="MOTUS lesson about linking USDOT" width="2560" height="1489" loading="lazy" decoding="async"><figcaption>Video lessons</figcaption></figure>
+          <figure class="product-visual product-visual--lesson-tsp"><img src="https://bc.opin-x.com/Screenshot-2026-09-14-at-11.50.03-AM-scaled.png" alt="MOTUS lesson for designating a TSP" width="2560" height="1473" loading="lazy" decoding="async"><figcaption>Processes explained step by step</figcaption></figure>
+          <figure class="product-visual product-visual--curriculum"><img src="https://bc.opin-x.com/temario-Taller-Motus.png" alt="MOTUS Workshop curriculum with 13 lessons" width="708" height="1574" loading="lazy" decoding="async"><figcaption>Full curriculum</figcaption></figure>
+          <figure class="product-visual product-visual--downloads"><img src="https://bc.opin-x.com/Screenshot-2026-09-14-at-11.48.25-AM-scaled.png" alt="Downloadable resources available to MOTUS course students" width="2560" height="1170" loading="lazy" decoding="async"><figcaption>Downloadable resources</figcaption></figure>
+          <figure class="product-visual product-visual--certificate"><img src="https://bc.opin-x.com/motus.jpg" alt="Example of a MOTUS Workshop participation recognition" width="1200" height="800" loading="lazy" decoding="async"><figcaption>Certificate</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="section section-audience">
-      <div class="motus-shell audience-layout">
+      <div class="motus-shell">
         <div class="audience-card">
-          <p class="eyebrow"><svg class="icon icon-users" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6M17 14a5 5 0 0 1 4 5"/></svg><span>Built for working professionals</span></p>
+          <p class="eyebrow"><svg class="icon icon-users" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5a3 3 0 0 1 0 6M17 14a5 5 0 0 1 4 5"/></svg><span>Built for real work</span></p>
           <h2>Who is this course for?</h2>
-          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Tax preparers who support trucking companies.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Fleet administrators and Safety or Compliance staff.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Transportation Service Providers and registration professionals.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Owners who need to understand their own company&#039;s status.</span></li></ul>
-          <p class="independence-note">Educational content. Best Carriers is not affiliated with or endorsed by FMCSA, USDOT, MOTUS or Login.gov.</p>
+          <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Tax preparers and bookkeepers who serve trucking companies.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Safety, Compliance and fleet administration staff.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Transportation Service Providers and professionals who manage client registrations.</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Company owners who want to understand and control their own MOTUS processes.</span></li></ul>
+          <p class="independence-note">This is not a done-for-you service and individual consulting is not included. It is training for learning how to use MOTUS. Best Carriers is an independent educational brand and is not affiliated with or endorsed by FMCSA, USDOT, MOTUS or Login.gov.</p>
         </div>
-        <article class="video-card" data-video-card data-video-id="icLfupSYr_4" data-video-title="Learn with real trucking-industry context"><button class="video-art" type="button" data-play-video aria-label="Play the instructor story"><img class="video-thumbnail" src="https://i.ytimg.com/vi/icLfupSYr_4/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / 01</span><span class="video-play" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span></button><div class="video-copy"><p class="card-kicker">Applied experience</p><h2>Learn with real trucking-industry context</h2><p>Learn about the experience behind Best Carriers and why each lesson focuses on decisions that appear in everyday work.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Play the instructor story</span></button></div></article>
       </div>
     </section>
 
-    <section class="section section-proof" id="reviews" aria-labelledby="proof-title"><div class="motus-shell"><div class="proof-heading"><div><p class="eyebrow"><svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg><span>Best Carriers reputation</span></p><h2 id="proof-title">Our students&#039; experiences speak for the brand</h2><p>The rating combines feedback about different Best Carriers courses and educational services. It represents the overall experience with the brand, not a MOTUS-only score.</p></div></div><article class="video-card video-card-compact" data-video-card data-video-id="LJ9DsCbuMXw" data-video-title="Watch video testimonials"><button class="video-art" type="button" data-play-video aria-label="Watch video testimonials"><img class="video-thumbnail" src="https://i.ytimg.com/vi/LJ9DsCbuMXw/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / STORIES</span><span class="video-play" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span></button><div class="video-copy"><p class="card-kicker">Best Carriers reputation</p><h2>Watch video testimonials</h2><p>The rating combines feedback about different Best Carriers courses and educational services. It represents the overall experience with the brand, not a MOTUS-only score.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Watch video testimonials</span></button></div></article><div class="proof-runtime"><opinx-component data-opinx-global-content="best-carriers-social-proof-en"><div data-component-fallback><div class="rating-chip" aria-label="Overall Best Carriers rating"><strong>4.9</strong><span><b aria-hidden="true">★★★★★</b><small>Based on 156 customer reviews</small></span></div><div class="fallback-reviews"><article><div class="review-top"><span>MC</span><div><strong>Maribel Castillo</strong><b aria-label="5 stars">★★★★★</b></div></div><p>“The Motus workshop is really good.”</p></article><article><div class="review-top"><span>Y</span><div><strong>Yamila</strong><b aria-label="5 stars">★★★★★</b></div></div><p>“Take the IFTA course. It can be the beginning of your business.”</p></article><article><div class="review-top"><span>KP</span><div><strong>Karina Perez</strong><b aria-label="5 stars">★★★★★</b></div></div><p>“I learned how to build a trucking business from the ground up.”</p></article></div><div class="photo-heading"><div><h3>Participant photos</h3><p>A sample of the groups that have participated in Best Carriers training programs.</p></div></div><div class="photo-grid"><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png" alt="Participants in MOTUS Workshop · August 29, 2026" loading="lazy" decoding="async"><figcaption><strong>MOTUS Workshop</strong><span>August 29, 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-07-18-at-12.28.01-PM-450x291.png" alt="Participants in MOTUS Workshop · June 13, 2026" loading="lazy" decoding="async"><figcaption><strong>MOTUS Workshop</strong><span>June 13, 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-7.19.48-PM-450x276.png" alt="Participants in MOTUS Workshop · August 8, 2026" loading="lazy" decoding="async"><figcaption><strong>MOTUS Workshop</strong><span>August 8, 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-09-12-at-10.49.21-AM-450x266.png" alt="Participants in Best Carriers Courses · 2026" loading="lazy" decoding="async"><figcaption><strong>Best Carriers Courses</strong><span>2026</span></figcaption></figure></div></div></opinx-component></div></div></section>
+    <section class="section section-instructor">
+      <div class="motus-shell instructor-layout">
+        <article class="video-card" data-video-card data-video-id="icLfupSYr_4" data-video-title="Meet your instructor"><button class="video-art" type="button" data-play-video aria-label="Meet your instructor"><img class="video-thumbnail" src="https://i.ytimg.com/vi/icLfupSYr_4/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / 01</span><span class="video-play" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span></button><div class="video-copy"><p class="card-kicker">Applied experience</p><h2>Meet your instructor</h2><p>Learn about the experience behind Best Carriers and why this training focuses on decisions and problems that appear in real work with trucking companies.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Meet your instructor</span></button></div></article>
+        <figure class="instructor-authority"><img src="https://bc.opin-x.com/participantes-taller-motus-2-julio-26.jpg" alt="Real participants in the Best Carriers MOTUS Workshop" width="300" height="300" loading="lazy" decoding="async"><figcaption>Experience shared with real MOTUS participants.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section section-proof" id="reviews" aria-labelledby="proof-title"><div class="motus-shell"><div class="proof-heading"><div><p class="eyebrow"><svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg><span>Best Carriers reputation</span></p><h2 id="proof-title">Real experiences from Best Carriers students</h2><p>MOTUS-related comments are shown first when available. The overall rating combines verified feedback about different Best Carriers courses and educational services and is not presented as a MOTUS-only score.</p></div></div><article class="video-card video-card-compact" data-video-card data-video-id="LJ9DsCbuMXw" data-video-title="Watch video testimonials"><button class="video-art" type="button" data-play-video aria-label="Watch video testimonials"><img class="video-thumbnail" src="https://i.ytimg.com/vi/LJ9DsCbuMXw/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / STORIES</span><span class="video-play" aria-hidden="true"><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg></span></button><div class="video-copy"><p class="card-kicker">Best Carriers reputation</p><h2>Watch video testimonials</h2><p>MOTUS-related comments are shown first when available. The overall rating combines verified feedback about different Best Carriers courses and educational services and is not presented as a MOTUS-only score.</p><button type="button" data-play-video><svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 7 8 5-8 5V7Z"/></svg><span>Watch video testimonials</span></button></div></article><div class="proof-runtime"><opinx-component data-opinx-global-content="best-carriers-social-proof-en"><div data-component-fallback><div class="rating-chip" aria-label="Overall Best Carriers rating"><strong>4.9</strong><span><b aria-hidden="true">★★★★★</b><small>Based on 156 customer reviews</small></span></div><div class="fallback-reviews"><article><div class="review-top"><span>MC</span><div><strong>Maribel Castillo</strong><b aria-label="5 stars">★★★★★</b></div></div><p>“The Motus workshop is really good.”</p></article><article><div class="review-top"><span>Y</span><div><strong>Yamila</strong><b aria-label="5 stars">★★★★★</b></div></div><p>“Take the IFTA course. It can be the beginning of your business.”</p></article><article><div class="review-top"><span>KP</span><div><strong>Karina Perez</strong><b aria-label="5 stars">★★★★★</b></div></div><p>“I learned how to build a trucking business from the ground up.”</p></article></div><div class="photo-heading"><div><h3>Participants in our training programs</h3><p>Real groups that have participated in Best Carriers workshops and educational programs.</p></div></div><div class="photo-grid"><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png" alt="Participants in MOTUS Workshop · August 29, 2026" loading="lazy" decoding="async"><figcaption><strong>MOTUS Workshop</strong><span>August 29, 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-07-18-at-12.28.01-PM-450x291.png" alt="Participants in MOTUS Workshop · June 13, 2026" loading="lazy" decoding="async"><figcaption><strong>MOTUS Workshop</strong><span>June 13, 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-7.19.48-PM-450x276.png" alt="Participants in MOTUS Workshop · August 8, 2026" loading="lazy" decoding="async"><figcaption><strong>MOTUS Workshop</strong><span>August 8, 2026</span></figcaption></figure><figure><img src="https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-09-12-at-10.49.21-AM-450x266.png" alt="Participants in Best Carriers Courses · 2026" loading="lazy" decoding="async"><figcaption><strong>Best Carriers Courses</strong><span>2026</span></figcaption></figure></div></div></opinx-component></div></div></section>
 
     <section class="section section-faq" id="faq" aria-labelledby="faq-title">
       <div class="motus-shell faq-layout">
@@ -819,11 +878,15 @@ opinx-component { display: block; }
           <h2 id="faq-title">What to know before you begin</h2>
         </div>
         <div class="faq-list">
-          <details open><summary>Is the course live?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. This is recorded training, so you can start and learn at your own pace without waiting for a scheduled class.</p></details>
+          <details open><summary>Is the course live?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. This is recorded training with immediate access, so you can start and learn at your own pace.</p></details>
+          <details><summary>Do I need a USDOT number to take the course?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>Not necessarily. The course explains processes for existing companies as well as setup and access concepts useful to professionals who work with clients.</p></details>
+          <details><summary>Is the course useful if I work with clients as a tax preparer or TSP?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. The curriculum includes processes relevant to preparers, compliance staff and Transportation Service Providers, including TSP Filing Number, Designate TSP and Authorized Users.</p></details>
           <details><summary>How long will I have access?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>Access is lifetime and includes updates added to this training.</p></details>
+          <details><summary>Does the course include individual help with my case?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. Individual consulting is optional, purchased separately and costs an additional $150.</p></details>
           <details><summary>Does it include a certificate?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. You may receive a certificate after completing the required course content.</p></details>
           <details><summary>Where do I receive support?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>Included support is provided through a private Facebook group. Access is delivered to students after purchase.</p></details>
-          <details><summary>Is individual consulting included?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. Individual consulting is optional and costs an additional $150.</p></details>
+          <details><summary>What should I prepare before starting?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>It is helpful to have access to the email related to your registrations and, if you are working with an existing company, its company information and USDOT number. Each lesson explains what is needed for that process.</p></details>
+          <details><summary>What happens if FMCSA changes MOTUS?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>Access includes future updates that Best Carriers adds to this training to reflect relevant system changes.</p></details>
           <details><summary>Can I request a refund?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. Because this is digital access, all sales are final. Review the terms before purchasing.</p></details>
           <details><summary>Is Best Carriers part of FMCSA?<svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary><p>No. Best Carriers is an independent educational brand. MOTUS, FMCSA, USDOT and Login.gov belong to their respective owners.</p></details>
         </div>
@@ -831,12 +894,12 @@ opinx-component { display: block; }
     </section>
 
     <section class="final-cta">
-      <div class="motus-shell final-cta-inner"><div><p>Turn uncertainty into a process</p><h2>Keep a guide available every time you log into MOTUS.</h2></div><a class="button button-light" href="#checkout">Buy the MOTUS Workshop<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="motus-shell final-cta-inner"><div><p>Stop piecing information together</p><h2>Keep a practical workflow available every time you need to work in MOTUS.</h2></div><a class="button button-light" href="#checkout">Get immediate access<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </section>
   </main>
 
   <footer class="site-footer"><div class="motus-shell footer-grid"><div class="footer-brand"><img src="https://c.opin-x.com/Logo-Best-Carriers-tm.png" alt="Best Carriers"><p>Practical training for the trucking industry.</p></div><div><p>Independent educational content. It is not legal advice or representation before a federal agency.</p><nav aria-label="Legal information"><a href="https://best-carriers.com/en/terms-and-conditions/">Terms and Conditions</a><a href="https://best-carriers.com/en/privacy-policy/">Privacy Policy</a></nav><small>© <span data-current-year>2026</span> Opin X LLC. All rights reserved.</small></div></div></footer>
-  <a class="mobile-purchase" href="#checkout"><span>Buy the MOTUS Workshop</span><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="mobile-purchase" href="#checkout" aria-hidden="true"><span>MOTUS Course · Get access</span><svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <script>(function () {
   "use strict";
 
@@ -880,6 +943,18 @@ opinx-component { display: block; }
     });
   }
 
+  function initializeMobilePurchase() {
+    var purchase = document.querySelector(".mobile-purchase");
+    var hero = document.querySelector(".motus-hero");
+    if (!purchase || !hero || !("IntersectionObserver" in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      var heroVisible = entries[0] && entries[0].isIntersecting;
+      purchase.classList.toggle("is-visible", !heroVisible);
+      purchase.setAttribute("aria-hidden", heroVisible ? "true" : "false");
+    }, { threshold: 0.08 });
+    observer.observe(hero);
+  }
+
   function enhanceSocialProof() {
     var locale = document.body.getAttribute("data-locale") || "es";
     var labels = locale === "es"
@@ -919,6 +994,7 @@ opinx-component { display: block; }
     setYear();
     initializeVideos();
     initializeFaq();
+    initializeMobilePurchase();
     enhanceSocialProof();
   }
 

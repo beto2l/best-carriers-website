@@ -128,11 +128,22 @@ function checkMotusSale(page, html) {
   ]) {
     if (html.includes(forbidden)) failures.push(`${page.entry} retains live-workshop copy: ${forbidden}`);
   }
-  if (!html.includes(locale === "es" ? "acceso de por vida" : "lifetime access")) failures.push(`${page.entry} is missing the lifetime-access promise`);
-  if (!html.includes(locale === "es" ? "calificación reúne opiniones sobre distintos cursos" : "rating combines feedback about different Best Carriers courses")) failures.push(`${page.entry} must label reviews as brand-wide social proof`);
+  if (!html.toLowerCase().includes(locale === "es" ? "acceso de por vida" : "lifetime access")) failures.push(`${page.entry} is missing the lifetime-access promise`);
+  if (!html.includes(locale === "es" ? "La calificación general reúne opiniones verificadas sobre distintos cursos y servicios educativos de Best Carriers" : "The overall rating combines verified feedback about different Best Carriers courses and educational services")) failures.push(`${page.entry} must label reviews as brand-wide social proof`);
   if (html.includes("www.fmcsa.dot.gov/registration/move-motus")) failures.push(`${page.entry} must not include the external FMCSA link`);
   if (html.includes('class="site-header"')) failures.push(`${page.entry} must not include the fixed sales-page header`);
-  if (!html.includes(locale === "es" ? "Comprar el taller de Motus" : "Buy the MOTUS Workshop")) failures.push(`${page.entry} is missing the revised mobile purchase CTA`);
+  if (!html.includes(locale === "es" ? "Curso MOTUS · Obtener acceso" : "MOTUS Course · Get access")) failures.push(`${page.entry} is missing the mobile purchase CTA`);
+  for (const visual of [
+    "Screenshot-2026-09-14-at-11.46.48-AM-scaled.png",
+    "Screenshot-2026-09-14-at-11.48.25-AM-scaled.png",
+    "Screenshot-2026-09-14-at-11.49.54-AM-scaled.png",
+    "Screenshot-2026-09-14-at-11.50.03-AM-scaled.png",
+    "temario-Taller-Motus.png",
+    "motus.jpg"
+  ]) {
+    if (!html.includes(`https://bc.opin-x.com/${visual}`)) failures.push(`${page.entry} is missing CDN visual ${visual}`);
+  }
+  if (!html.includes('class="mobile-purchase" href="#checkout" aria-hidden="true"')) failures.push(`${page.entry} must defer the mobile purchase CTA until the hero is passed`);
 }
 
 function checkMotusThanks(page, html) {

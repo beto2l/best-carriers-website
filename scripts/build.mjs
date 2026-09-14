@@ -12,6 +12,7 @@ const inlineCss = (await readFile(path.join(root, "src/services.css"), "utf8")).
 const inlineJs = (await readFile(path.join(root, "src/services.js"), "utf8")).replaceAll("</script", "<\\/script");
 const version = packageJson.version;
 const locales = ["es", "en"];
+const buildServices = process.env.FULL_RELEASE === "1";
 
 const pageDefinitions = {
   es: { id: "trucking-services-es", title: "Servicios de Trucking", route: "servicios" },
@@ -21,21 +22,27 @@ const pageDefinitions = {
 validateSource();
 
 const pagesRoot = path.join(root, "pages");
-await rm(pagesRoot, { recursive: true, force: true });
-
 const files = [];
-for (const locale of locales) {
-  const definition = pageDefinitions[locale];
-  const destination = path.join(pagesRoot, definition.route);
-  await mkdir(path.join(destination, "data"), { recursive: true });
+if (buildServices) {
+  await rm(pagesRoot, { recursive: true, force: true });
+  for (const locale of locales) {
+    const definition = pageDefinitions[locale];
+    const destination = path.join(pagesRoot, definition.route);
+    await mkdir(path.join(destination, "data"), { recursive: true });
 
-  const htmlPath = path.join(destination, "index.html");
-  const dataPath = path.join(destination, "data/services.json");
+    const htmlPath = path.join(destination, "index.html");
+    const dataPath = path.join(destination, "data/services.json");
 
-  await writeFile(htmlPath, renderPage(locale), "utf8");
-  await writeFile(dataPath, `${JSON.stringify(localizedPayload(locale), null, 2)}\n`, "utf8");
+    await writeFile(htmlPath, renderPage(locale), "utf8");
+    await writeFile(dataPath, `${JSON.stringify(localizedPayload(locale), null, 2)}\n`, "utf8");
 
-  files.push(htmlPath, dataPath);
+    files.push(htmlPath, dataPath);
+  }
+} else {
+  for (const locale of locales) {
+    const route = pageDefinitions[locale].route;
+    files.push(path.join(pagesRoot, route, "index.html"), path.join(pagesRoot, route, "data/services.json"));
+  }
 }
 
 const motusRelease = await buildMotus({ root, site, version });
@@ -69,7 +76,7 @@ const release = {
 };
 
 await writeFile(path.join(root, "lw-release.json"), `${JSON.stringify(release, null, 2)}\n`, "utf8");
-console.log(`Built Best Carriers release ${version}: ${files.length} files, ${services.length} services, ${locales.length} languages.`);
+console.log(`Built Best Carriers release ${version}: ${files.length} files, ${buildServices ? "refreshed" : "preserved"} services, ${locales.length} languages.`);
 
 function validateSource() {
   if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error("package.json version must be SemVer.");

@@ -12,6 +12,65 @@
     "paymentMethods": "https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png",
     "instructorVideo": "icLfupSYr_4",
     "testimonialsVideo": "LJ9DsCbuMXw",
+    "instructorPhoto": {
+      "url": "https://bc.opin-x.com/participantes-taller-motus-2-julio-26.jpg",
+      "width": 300,
+      "height": 300,
+      "alt": {
+        "es": "Participantes reales del Taller de MOTUS de Best Carriers",
+        "en": "Real participants in the Best Carriers MOTUS Workshop"
+      }
+    },
+    "productVisuals": [
+      {
+        "id": "platform",
+        "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.46.48-AM-scaled.png",
+        "width": 2560,
+        "height": 1578,
+        "title": { "es": "Plataforma del curso", "en": "Course platform" },
+        "alt": { "es": "Plataforma del curso MOTUS con una lección en video", "en": "MOTUS course platform with a video lesson" }
+      },
+      {
+        "id": "lesson-usdot",
+        "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.49.54-AM-scaled.png",
+        "width": 2560,
+        "height": 1489,
+        "title": { "es": "Lecciones en video", "en": "Video lessons" },
+        "alt": { "es": "Lección de MOTUS sobre vincular USDOT", "en": "MOTUS lesson about linking USDOT" }
+      },
+      {
+        "id": "lesson-tsp",
+        "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.50.03-AM-scaled.png",
+        "width": 2560,
+        "height": 1473,
+        "title": { "es": "Procesos explicados paso a paso", "en": "Processes explained step by step" },
+        "alt": { "es": "Lección de MOTUS para designar un TSP", "en": "MOTUS lesson for designating a TSP" }
+      },
+      {
+        "id": "curriculum",
+        "url": "https://bc.opin-x.com/temario-Taller-Motus.png",
+        "width": 708,
+        "height": 1574,
+        "title": { "es": "Temario completo", "en": "Full curriculum" },
+        "alt": { "es": "Temario del Taller de MOTUS con 13 lecciones", "en": "MOTUS Workshop curriculum with 13 lessons" }
+      },
+      {
+        "id": "downloads",
+        "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.48.25-AM-scaled.png",
+        "width": 2560,
+        "height": 1170,
+        "title": { "es": "Archivos descargables", "en": "Downloadable resources" },
+        "alt": { "es": "Recursos descargables disponibles para alumnos del curso MOTUS", "en": "Downloadable resources available to MOTUS course students" }
+      },
+      {
+        "id": "certificate",
+        "url": "https://bc.opin-x.com/motus.jpg",
+        "width": 1200,
+        "height": 800,
+        "title": { "es": "Certificado", "en": "Certificate" },
+        "alt": { "es": "Ejemplo de reconocimiento de participación del Taller de MOTUS", "en": "Example of a MOTUS Workshop participation recognition" }
+      }
+    ],
     "groupPhotos": [
       {
         "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png",
@@ -105,17 +164,20 @@
         {
           "number": "MÓDULO 1",
           "title": "Primeros pasos en Motus",
-          "text": "01 · Introducción a Motus · 02 · Buscar correo registrado"
+          "text": "01 · Introducción a Motus · 02 · Buscar correo registrado",
+          "lessons": ["01 · Introducción a Motus", "02 · Buscar correo registrado"]
         },
         {
           "number": "MÓDULO 2",
           "title": "Configuración y gestión",
-          "text": "03 · Portal FMCSA · 04 · Verificación de identidad · 05 · Vincular USDOT · 06 · Ticket Motus · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update"
+          "text": "03 · Portal FMCSA · 04 · Verificación de identidad · 05 · Vincular USDOT · 06 · Ticket Motus · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
+          "lessons": ["03 · Portal FMCSA", "04 · Verificación de identidad", "05 · Vincular USDOT", "06 · Ticket Motus", "07 · TSP Filing Number", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
         },
         {
           "number": "MÓDULO 3",
           "title": "Tickets y consultoría",
-          "text": "11 · Ticket DataQ · 12 · Carta FMCSA: ayuda con agencia federal · 13 · Consultoría"
+          "text": "11 · Ticket DataQ · 12 · Carta FMCSA: ayuda con agencia federal · 13 · Consultoría",
+          "lessons": ["11 · Ticket DataQ", "12 · Carta FMCSA: ayuda con agencia federal", "13 · Consultoría"]
         }
       ],
       "includesEyebrow": "Lo que recibes",
@@ -250,17 +312,20 @@
         {
           "number": "MODULE 1",
           "title": "First steps in MOTUS",
-          "text": "01 · Introduction to MOTUS · 02 · Find registered email"
+          "text": "01 · Introduction to MOTUS · 02 · Find registered email",
+          "lessons": ["01 · Introduction to MOTUS", "02 · Find registered email"]
         },
         {
           "number": "MODULE 2",
           "title": "Configuration and management",
-          "text": "03 · FMCSA Portal · 04 · Identity verification · 05 · Link USDOT · 06 · MOTUS ticket · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update"
+          "text": "03 · FMCSA Portal · 04 · Identity verification · 05 · Link USDOT · 06 · MOTUS ticket · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
+          "lessons": ["03 · FMCSA Portal", "04 · Identity verification", "05 · Link USDOT", "06 · MOTUS ticket", "07 · TSP Filing Number", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
         },
         {
           "number": "MODULE 3",
           "title": "Tickets and consulting",
-          "text": "11 · DataQ ticket · 12 · FMCSA letter: federal agency assistance · 13 · Consulting"
+          "text": "11 · DataQ ticket · 12 · FMCSA letter: federal agency assistance · 13 · Consulting",
+          "lessons": ["11 · DataQ ticket", "12 · FMCSA letter: federal agency assistance", "13 · Consulting"]
         }
       ],
       "includesEyebrow": "What you receive",
