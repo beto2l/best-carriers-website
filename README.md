@@ -2,6 +2,8 @@
 
 Source repository for high-performance LuxWrap pages mounted inside the existing WordPress site at [best-carriers.com](https://best-carriers.com/).
 
+For an AI or developer creating a new LW Studio page, start with the [LW Studio agent handbook](docs/LW-STUDIO-AGENT-HANDBOOK.md). It explains the release contract, native WordPress Pages, publication workflow and the ownership boundary for Courses & Sales, Funnel, Reviews Hub, CDN & Cache, Lead Router, Email Validator, Tracking URLs and WhatsApp.
+
 ## Managed pages
 
 | WordPress Page | Public route | Language | Permanent LuxWrap ID |
@@ -13,7 +15,7 @@ Source repository for high-performance LuxWrap pages mounted inside the existing
 | Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
 | Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
 
-All other routes remain controlled by WordPress and Divi. After publication, both managed routes appear as native entries under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
+All other routes remain controlled by WordPress and Divi. After publication, every managed route appears as a native entry under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 
 ## Content editing
 
