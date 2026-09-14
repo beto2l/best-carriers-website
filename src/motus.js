@@ -68,6 +68,20 @@
       });
 
       var reviews = proof.querySelector(".opinx-social-proof__reviews");
+      if (reviews) {
+        var candidates = Array.prototype.slice.call(reviews.querySelectorAll("article"));
+        var usable = candidates.filter(function (review) {
+          var body = (review.querySelector("p") || {}).textContent || "";
+          var words = body.trim().split(/\s+/).filter(Boolean);
+          var letters = (body.match(/[A-Za-zÁÉÍÓÚáéíóúÑñÜü]/g) || []).length;
+          return words.length >= 5 && letters >= 28;
+        });
+        if (usable.length) {
+          candidates.forEach(function (review) {
+            review.hidden = usable.indexOf(review) === -1;
+          });
+        }
+      }
       var moreReviews = proof.querySelector(".opinx-social-proof__more--reviews");
       if (reviews && moreReviews) reviews.insertAdjacentElement("afterend", moreReviews);
 

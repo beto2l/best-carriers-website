@@ -161,6 +161,8 @@ La venta de MOTUS demuestra la separación correcta:
 
 La versión `1.3.1` añade la demostración visual de plataforma, lecciones, temario, recursos descargables y certificado mediante el CDN; añade la imagen de participantes como respaldo de autoridad para el instructor; y conserva la revisión previa: paleta inspirada en MOTUS, sin cabecera fija de idioma, video previews reales, estrellas visuales, checkout alto, texto de soporte extenso eliminado y enlaces externos no solicitados retirados.
 
+La versión `1.3.2` corrige una composición que no cumplía la pauta comercial: reduce el hero y las separaciones verticales, usa la paleta cálida de la página de consultoría (marfil, grafito y dorado), muestra las 13 lecciones sin acordeones, agranda los beneficios y añade CTAs de compra tras las secciones de problema y temario. El checkout sigue siendo propiedad de Cursos y Ventas/Funnel: la landing oculta únicamente el bloque visual `.opin-fi-digital-sale-legal` que no fue aprobado para esta página, sin tocar precio, disponibilidad, Stripe, consentimiento, upsell ni términos. La declaración del componente solicita `featured_first` y mínimo cinco palabras; Reviews Hub `0.3.26` y LuxWrap Studio `0.9.7` conservan esa selección en SSR, REST y paginación. El JavaScript de la landing mantiene un filtro visual adicional para evitar testimonios de una palabra, emojis o respuestas vacías si una caché anterior responde brevemente.
+
 ## 8. Formularios, tracking y eventos: regla de seguridad
 
 Una landing puede contener una zona visual para un formulario, pero el envío debe pertenecer a un flujo WordPress previamente configurado. Antes de publicar un formulario que capture contactos, verifica:

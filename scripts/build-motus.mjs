@@ -242,6 +242,8 @@ function renderSalePage({ locale, content, site, version, css, js }) {
       </div>
     </section>
 
+    ${renderInlineCta({ t, id: "course-cta-after-problem" })}
+
     <section class="section section-curriculum" id="curriculum" aria-labelledby="curriculum-title">
       <div class="motus-shell">
         <div class="section-heading centered">
@@ -250,10 +252,12 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           <p>${escapeHtml(t.curriculumBody)}</p>
         </div>
         <div class="curriculum-grid">
-          ${t.curriculum.map((item, index) => `<details class="curriculum-card"${index === 0 ? " open" : ""}><summary><span class="curriculum-number">${escapeHtml(item.number)}</span><span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.text)}</small></span>${icon("plus")}</summary><ol>${item.lessons.map((lesson) => `<li>${escapeHtml(lesson)}</li>`).join("")}</ol></details>`).join("\n          ")}
+          ${t.curriculum.map((item) => `<article class="curriculum-card"><header><span class="curriculum-number">${escapeHtml(item.number)}</span><div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.text)}</p></div></header><ol>${item.lessons.map((lesson) => `<li>${escapeHtml(lesson)}</li>`).join("")}</ol></article>`).join("\n          ")}
         </div>
       </div>
     </section>
+
+    ${renderInlineCta({ t, id: "course-cta-after-curriculum" })}
 
     <section class="section section-includes">
       <div class="motus-shell">
@@ -408,6 +412,10 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
         </div>
       </div>
     </section>`;
+}
+
+function renderInlineCta({ t, id }) {
+  return `<section class="conversion-cta" aria-label="${escapeHtml(t.heroPrimary)}"><div class="motus-shell conversion-cta-inner"><div><p>${escapeHtml(t.courseCardEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a id="${escapeHtml(id)}" class="button button-primary" href="#checkout">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a></div></section>`;
 }
 
 function renderSocialProof({ locale, content, t }) {
