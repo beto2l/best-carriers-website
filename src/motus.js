@@ -53,6 +53,24 @@
     observer.observe(hero);
   }
 
+  function synchronizeHeroPrice() {
+    var targets = document.querySelectorAll("[data-motus-current-price]");
+    var checkout = document.querySelector("[data-motus-checkout]");
+    if (!targets.length || !checkout) return;
+
+    function update() {
+      var priceNode = checkout.querySelector(".opinx-checkout-model span");
+      var price = priceNode && priceNode.textContent ? priceNode.textContent.trim() : "";
+      if (!/\d/.test(price)) return;
+      targets.forEach(function (target) { target.textContent = price; });
+    }
+
+    update();
+    if (!("MutationObserver" in window)) return;
+    var observer = new MutationObserver(update);
+    observer.observe(checkout, { childList: true, subtree: true, characterData: true });
+  }
+
   function enhanceSocialProof() {
     var locale = document.body.getAttribute("data-locale") || "es";
     var labels = locale === "es"
@@ -107,6 +125,7 @@
     initializeVideos();
     initializeFaq();
     initializeMobilePurchase();
+    synchronizeHeroPrice();
     enhanceSocialProof();
   }
 

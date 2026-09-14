@@ -211,6 +211,16 @@ opinx-component { display: block; }
 }
 .hero-copy h1 em { display: block; margin-top: 12px; color: var(--blue-dark); font-style: normal; }
 .hero-description { max-width: 670px; margin: 24px 0 0; color: #57616b; font-size: clamp(18px, 2vw, 20px); line-height: 1.65; }
+.hero-opportunity { max-width: 670px; margin: 24px 0 0; padding: 20px 22px; border: 1px solid rgba(164,109,23,.28); border-radius: 16px; background: rgba(255,255,255,.72); box-shadow: 0 14px 32px rgba(80,56,17,.08); }
+.hero-opportunity p { margin: 0; color: #46505a; font-size: 15px; line-height: 1.58; }
+.hero-opportunity .hero-opportunity-label { margin-bottom: 7px; color: var(--amber-dark); font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.hero-price-proof { display: flex; flex-wrap: wrap; align-items: end; gap: 18px; margin-top: 16px; }
+.hero-price-proof > span { display: grid; gap: 2px; }
+.hero-price-proof small { font-size: 10px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.hero-price-was { color: var(--danger); }
+.hero-price-was s { font-size: 20px; font-weight: 850; }
+.hero-price-current { color: #07824e; }
+.hero-price-current strong { font-size: clamp(22px, 3vw, 31px); font-weight: 920; letter-spacing: -.04em; line-height: 1.05; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .hero-note { display: flex; align-items: center; gap: 10px; margin: 20px 0 0; color: #69737c; font-size: 14px; font-weight: 700; }
 .hero-note .icon { color: var(--amber); }
@@ -392,6 +402,8 @@ opinx-component { display: block; }
 .checkout-copy { padding-top: 18px; }
 .checkout-copy > p:not(.eyebrow) { max-width: 590px; color: rgba(255,255,255,.76); font-size: 18px; }
 .checkout-copy li { border-color: rgba(255,255,255,.16); color: rgba(255,255,255,.84); font-size: 16px; }
+.checkout-copy .checkout-legal { max-width: 590px; margin: 16px 0 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.7); font-size: 12px; line-height: 1.55; }
+.checkout-copy .checkout-legal a { color: #f2cf7e; font-weight: 800; }
 .checkout-card { padding: 28px; border: 1px solid rgba(255,255,255,.22); border-radius: 22px; background: #fff; color: var(--ink); box-shadow: 0 25px 65px rgba(0,0,0,.26); }
 .checkout-card-head { display: flex; align-items: center; gap: 15px; }
 .checkout-card-head img { width: 65px; height: 65px; border-radius: 13px; object-fit: cover; }
@@ -412,9 +424,6 @@ opinx-component { display: block; }
 .checkout-card .opinx-global-content--checkout > link { display: none; }
 .checkout-card .opin-fi-digital-sale-legal { display: none; }
 .payment-methods { width: min(255px, 85%); margin: 16px auto 0; }
-.checkout-legal { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: #6a7784; font-size: 10px; line-height: 1.55; }
-.checkout-legal a { color: var(--blue-dark); font-weight: 800; }
-.checkout-legal strong { display: block; margin-top: 6px; color: #3e4c5a; }
 
 [data-opinx-funnel-mount] .opin-fi-checkout-form { display: grid; gap: 11px; }
 [data-opinx-funnel-mount] [data-opinx-field] { display: grid; gap: 6px; color: #334354; font-size: 11px; font-weight: 800; }
@@ -613,6 +622,9 @@ opinx-component { display: block; }
   .hero-layout { grid-template-columns: 1fr; padding-block: 60px 48px; gap: 30px; }
   .hero-copy h1 { font-size: clamp(43px, 13vw, 62px); }
   .hero-description { font-size: 17px; }
+  .hero-opportunity { padding: 18px; }
+  .hero-opportunity p { font-size: 14px; }
+  .hero-price-proof { gap: 14px; }
   .hero-actions { display: grid; }
   .hero-actions .button { width: 100%; }
   .hero-product { max-width: 300px; justify-self: center; }
@@ -719,7 +731,7 @@ opinx-component { display: block; }
   <script>document.documentElement.classList.replace("no-js","js");</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://best-carriers.com/#organization","name":"Best Carriers","legalName":"Opin X LLC","url":"https://best-carriers.com/","logo":{"@type":"ImageObject","url":"https://c.opin-x.com/Logo-Best-Carriers-tm.png"},"sameAs":["https://www.facebook.com/bestcarriers","https://www.instagram.com/bestcarriersoficial/","https://www.youtube.com/@bestcarriers","https://www.linkedin.com/company/como-iniciar-tu-empresa-de-trucking/","https://www.tiktok.com/@bestcarriers"]},{"@type":"Course","@id":"https://best-carriers.com/cursos/motus/#course","name":"Curso práctico de FMCSA MOTUS","description":"Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso de por vida.","url":"https://best-carriers.com/cursos/motus/","inLanguage":"es-US","courseMode":"online","provider":{"@id":"https://best-carriers.com/#organization"},"teaches":["Una ruta organizada en un solo entrenamiento en lugar de unir recursos dispersos.","Preparación de Login.gov, correo registrado, perfil y cuenta de empresa antes de iniciar procesos críticos.","Casos enfocados en compañías existentes, TSP, personal de compliance y preparadores que trabajan con clientes.","Secuencia para reclamar o vincular USDOT, administrar usuarios y completar actualizaciones.","Errores frecuentes, recursos de soporte y criterios para saber cuál es el siguiente paso."]},{"@type":"WebPage","@id":"https://best-carriers.com/cursos/motus/#webpage","url":"https://best-carriers.com/cursos/motus/","name":"Curso grabado FMCSA MOTUS paso a paso | Best Carriers","description":"Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso de por vida.","inLanguage":"es-US","mainEntity":{"@id":"https://best-carriers.com/cursos/motus/#course"},"isPartOf":{"@type":"WebSite","@id":"https://best-carriers.com/#website","url":"https://best-carriers.com/","name":"Best Carriers"}},{"@type":"FAQPage","@id":"https://best-carriers.com/cursos/motus/#faq","mainEntity":[{"@type":"Question","name":"¿El curso es en vivo?","acceptedAnswer":{"@type":"Answer","text":"No. Es una capacitación grabada con acceso inmediato para que puedas comenzar y avanzar a tu ritmo."}},{"@type":"Question","name":"¿Necesito tener un USDOT para tomar el curso?","acceptedAnswer":{"@type":"Answer","text":"No necesariamente. El curso explica procesos para compañías existentes y también conceptos de configuración y acceso que son útiles para profesionales que trabajan con clientes."}},{"@type":"Question","name":"¿El curso sirve si trabajo con clientes como preparador o TSP?","acceptedAnswer":{"@type":"Answer","text":"Sí. El temario incluye procesos relevantes para preparadores, personal de compliance y Transportation Service Providers, incluyendo TSP Filing Number, Designate TSP y Authorized Users."}},{"@type":"Question","name":"¿Cuánto tiempo tendré acceso?","acceptedAnswer":{"@type":"Answer","text":"El acceso es de por vida e incluye las actualizaciones que se incorporen a esta capacitación."}},{"@type":"Question","name":"¿Incluye ayuda individual para resolver mi caso?","acceptedAnswer":{"@type":"Answer","text":"No. La consultoría individual es opcional, se contrata por separado y tiene un costo adicional de $150."}},{"@type":"Question","name":"¿Incluye un certificado?","acceptedAnswer":{"@type":"Answer","text":"Sí. Podrás recibir un certificado después de completar el contenido requerido del curso."}},{"@type":"Question","name":"¿Dónde recibo soporte?","acceptedAnswer":{"@type":"Answer","text":"El soporte incluido se ofrece en un grupo privado de Facebook. El acceso se entrega a los alumnos después de la compra."}},{"@type":"Question","name":"¿Qué necesito preparar antes de comenzar?","acceptedAnswer":{"@type":"Answer","text":"Conviene tener acceso al correo relacionado con tus registros y, si trabajarás con una compañía existente, la información de la empresa y su USDOT. Cada lección indica qué necesitas para el proceso correspondiente."}},{"@type":"Question","name":"¿Qué sucede si FMCSA cambia MOTUS?","acceptedAnswer":{"@type":"Answer","text":"El acceso incluye las actualizaciones futuras que Best Carriers incorpore a esta capacitación para reflejar cambios relevantes del sistema."}},{"@type":"Question","name":"¿Puedo solicitar un reembolso?","acceptedAnswer":{"@type":"Answer","text":"No. Al tratarse de acceso digital, todas las ventas son finales. Revisa los términos antes de comprar."}},{"@type":"Question","name":"¿Best Carriers forma parte de la FMCSA?","acceptedAnswer":{"@type":"Answer","text":"No. Best Carriers es una marca educativa independiente. MOTUS, FMCSA, USDOT y Login.gov pertenecen a sus respectivos titulares."}}]}]}</script>
 </head>
-<body data-page="motus-sale" data-locale="es" data-release="1.3.3">
+<body data-page="motus-sale" data-locale="es" data-release="1.3.4">
   <a class="skip-link" href="#course-content">Ir al contenido del curso</a>
   <main id="course-content">
     <section class="motus-hero" aria-labelledby="hero-title">
@@ -731,6 +743,14 @@ opinx-component { display: block; }
           <p class="eyebrow eyebrow-light"><svg class="icon icon-signal" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17h2v3H4zM9 13h2v7H9zM14 9h2v11h-2zM19 4h2v16h-2z"/></svg><span>Curso grabado · Acceso inmediato · En español</span></p>
           <h1 id="hero-title">Aprende a configurar y usar FMCSA MOTUS paso a paso, <em>sin adivinar qué hacer después.</em></h1>
           <p class="hero-description">Domina el acceso con Login.gov, la creación o reclamación de una cuenta USDOT, TSP, Biennial Updates, DataQs y procesos clave de MOTUS con una ruta práctica para profesionales de trucking, compliance y preparación de impuestos.</p>
+          <aside class="hero-opportunity" aria-label="Conocimiento que puedes aplicar como servicio">
+            <p class="hero-opportunity-label">Conocimiento que puedes aplicar como servicio</p>
+            <p>Los servicios para resolver incidencias de MOTUS suelen cotizarse aproximadamente entre $500 y $750 USD. Aprende el proceso para resolverlos con claridad y, si forma parte de tu actividad profesional, ofrecer ese servicio a tus propios clientes.</p>
+            <div class="hero-price-proof" aria-live="polite">
+              <span class="hero-price-was"><small>Antes</small><s>$150</s></span>
+              <span class="hero-price-current"><small>Precio actual</small><strong data-motus-current-price>Ver precio vigente en el checkout</strong></span>
+            </div>
+          </aside>
           <div class="hero-actions">
             <a class="button button-primary" href="#checkout">Obtener acceso inmediato<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             <a class="button button-quiet" href="#curriculum">Ver el temario completo</a>
@@ -759,6 +779,7 @@ opinx-component { display: block; }
           <h2 id="checkout-title">Obtén acceso inmediato al curso de MOTUS</h2>
           <p>El precio actual y la disponibilidad aparecen directamente en el checkout de Cursos y Ventas. Después del pago recibirás por correo los datos de acceso a la capacitación.</p>
           <ul><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Pago seguro procesado por Stripe</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Acceso digital enviado después del pago</span></li><li><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg><span>Pago único · Sin cargos recurrentes</span></li></ul>
+          <p class="checkout-legal"><span>Al comprar confirmas que revisaste los</span> <a data-legal-terms href="https://best-carriers.com/terminos-y-condiciones/" target="_blank" rel="noopener noreferrer">Términos y condiciones</a> y la <a data-legal-privacy href="https://best-carriers.com/politica-de-privacidad/" target="_blank" rel="noopener noreferrer">Política de privacidad</a>.</p>
         </div>
         <div class="checkout-card" data-motus-checkout data-language="es">
           <div class="checkout-card-head">
@@ -772,7 +793,6 @@ opinx-component { display: block; }
             </div>
           </opinx-component>
           <img class="payment-methods" src="https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png" alt="Métodos de pago admitidos por Stripe" loading="lazy" decoding="async">
-          <p class="checkout-legal"><span>Al comprar confirmas que revisaste los</span> <a data-legal-terms href="https://best-carriers.com/terminos-y-condiciones/" target="_blank" rel="noopener noreferrer">Términos y condiciones</a> y la <a data-legal-privacy href="https://best-carriers.com/politica-de-privacidad/" target="_blank" rel="noopener noreferrer">Política de privacidad</a>.</p>
         </div>
       </div>
     </section>
@@ -960,6 +980,24 @@ opinx-component { display: block; }
     observer.observe(hero);
   }
 
+  function synchronizeHeroPrice() {
+    var targets = document.querySelectorAll("[data-motus-current-price]");
+    var checkout = document.querySelector("[data-motus-checkout]");
+    if (!targets.length || !checkout) return;
+
+    function update() {
+      var priceNode = checkout.querySelector(".opinx-checkout-model span");
+      var price = priceNode && priceNode.textContent ? priceNode.textContent.trim() : "";
+      if (!/\d/.test(price)) return;
+      targets.forEach(function (target) { target.textContent = price; });
+    }
+
+    update();
+    if (!("MutationObserver" in window)) return;
+    var observer = new MutationObserver(update);
+    observer.observe(checkout, { childList: true, subtree: true, characterData: true });
+  }
+
   function enhanceSocialProof() {
     var locale = document.body.getAttribute("data-locale") || "es";
     var labels = locale === "es"
@@ -1014,6 +1052,7 @@ opinx-component { display: block; }
     initializeVideos();
     initializeFaq();
     initializeMobilePurchase();
+    synchronizeHeroPrice();
     enhanceSocialProof();
   }
 

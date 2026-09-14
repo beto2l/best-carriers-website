@@ -198,6 +198,14 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           <p class="eyebrow eyebrow-light">${icon("signal")}<span>${escapeHtml(t.eyebrow)}</span></p>
           <h1 id="hero-title">${escapeHtml(t.heroTitle)} <em>${escapeHtml(t.heroAccent)}</em></h1>
           <p class="hero-description">${escapeHtml(t.heroDescription)}</p>
+          <aside class="hero-opportunity" aria-label="${escapeHtml(t.heroOpportunityLabel)}">
+            <p class="hero-opportunity-label">${escapeHtml(t.heroOpportunityLabel)}</p>
+            <p>${escapeHtml(t.heroOpportunity)}</p>
+            <div class="hero-price-proof" aria-live="polite">
+              <span class="hero-price-was"><small>${escapeHtml(t.heroPreviousPriceLabel)}</small><s>${escapeHtml(t.heroPreviousPrice)}</s></span>
+              <span class="hero-price-current"><small>${escapeHtml(t.heroCurrentPriceLabel)}</small><strong data-motus-current-price>${escapeHtml(t.heroCurrentPriceLoading)}</strong></span>
+            </div>
+          </aside>
           <div class="hero-actions">
             <a class="button button-primary" href="#checkout">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
             <a class="button button-quiet" href="#curriculum">${escapeHtml(t.heroSecondary)}</a>
@@ -395,6 +403,7 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
           <h2 id="checkout-title">${escapeHtml(t.checkoutTitle)}</h2>
           <p>${escapeHtml(t.checkoutBody)}</p>
           <ul>${t.checkoutGuarantees.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}</ul>
+          <p class="checkout-legal"><span>${escapeHtml(t.legalPrefix)}</span> <a data-legal-terms href="${escapeHtml(terms)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.termsLabel)}</a> ${locale === "es" ? "y la" : "and the"} <a data-legal-privacy href="${escapeHtml(privacy)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacyLabel)}</a>.</p>
         </div>
         <div class="checkout-card" data-motus-checkout data-language="${locale}">
           <div class="checkout-card-head">
@@ -408,7 +417,6 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
             </div>
           </opinx-component>
           <img class="payment-methods" src="${escapeHtml(content.assets.paymentMethods)}" alt="${escapeHtml(t.paymentAlt)}" loading="lazy" decoding="async">
-          <p class="checkout-legal"><span>${escapeHtml(t.legalPrefix)}</span> <a data-legal-terms href="${escapeHtml(terms)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.termsLabel)}</a> ${locale === "es" ? "y la" : "and the"} <a data-legal-privacy href="${escapeHtml(privacy)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacyLabel)}</a>.</p>
         </div>
       </div>
     </section>`;
