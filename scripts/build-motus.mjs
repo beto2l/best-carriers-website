@@ -1,5 +1,6 @@
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { renderAuthorityLogos } from "../components/authority-logos.mjs";
 
 const locales = ["es", "en"];
 
@@ -198,19 +199,6 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           <p class="eyebrow eyebrow-light">${icon("signal")}<span>${escapeHtml(t.eyebrow)}</span></p>
           <h1 id="hero-title">${escapeHtml(t.heroTitle)} <em>${escapeHtml(t.heroAccent)}</em></h1>
           <p class="hero-description">${escapeHtml(t.heroDescription)}</p>
-          <aside class="hero-opportunity" aria-label="${escapeHtml(t.heroOpportunityLabel)}">
-            <p class="hero-opportunity-label">${escapeHtml(t.heroOpportunityLabel)}</p>
-            <p>${escapeHtml(t.heroOpportunity)}</p>
-            <div class="hero-price-proof" aria-live="polite">
-              <span class="hero-price-was"><small>${escapeHtml(t.heroPreviousPriceLabel)}</small><s>${escapeHtml(t.heroPreviousPrice)}</s></span>
-              <span class="hero-price-current"><small>${escapeHtml(t.heroCurrentPriceLabel)}</small><strong data-motus-current-price>${escapeHtml(t.heroCurrentPriceLoading)}</strong></span>
-            </div>
-          </aside>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#checkout">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
-            <a class="button button-quiet" href="#curriculum">${escapeHtml(t.heroSecondary)}</a>
-          </div>
-          <p class="hero-note">${icon("infinity")}<span>${escapeHtml(t.heroNote)}</span></p>
         </div>
         <div class="hero-product" aria-label="${escapeHtml(t.courseCardTitle)}">
           <div class="product-glow" aria-hidden="true"></div>
@@ -224,8 +212,22 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           </div>
           <div class="product-caption">${escapeHtml(t.courseCardBody)}</div>
         </div>
+        <aside class="hero-opportunity" aria-label="${escapeHtml(t.heroOpportunityLabel)}">
+          <div><p class="hero-opportunity-label">${escapeHtml(t.heroOpportunityLabel)}</p><p>${escapeHtml(t.heroOpportunity)}</p></div>
+          <div class="hero-price-proof" aria-live="polite">
+            <span class="hero-price-was"><small>${escapeHtml(t.heroPreviousPriceLabel)}</small><s>${escapeHtml(t.heroPreviousPrice)}</s></span>
+            <span class="hero-price-current"><small>${escapeHtml(t.heroCurrentPriceLabel)}</small><strong data-motus-current-price>${escapeHtml(t.heroCurrentPriceLoading)}</strong></span>
+          </div>
+        </aside>
+        <div class="hero-actions hero-actions--centered">
+          <a class="button button-primary" href="#checkout">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
+          <a class="button button-quiet" href="#curriculum">${escapeHtml(t.heroSecondary)}</a>
+        </div>
+        <p class="hero-note hero-note--centered">${icon("infinity")}<span>${escapeHtml(t.heroNote)}</span></p>
       </div>
     </section>
+
+    ${renderAuthorityLogos({ label: t.authorityLogosLabel, logos: content.assets.authorityLogos })}
 
     ${renderCheckout({ locale, content, site, t, terms, privacy })}
 

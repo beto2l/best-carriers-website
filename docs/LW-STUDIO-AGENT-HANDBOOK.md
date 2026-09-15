@@ -173,7 +173,25 @@ La versión `1.3.1` añade la demostración visual de plataforma, lecciones, tem
 
 La versión `1.3.2` corrige una composición que no cumplía la pauta comercial: reduce el hero y las separaciones verticales, usa la paleta cálida de la página de consultoría (marfil, grafito y dorado), muestra las 13 lecciones sin acordeones, agranda los beneficios y añade CTAs de compra tras las secciones de problema y temario. El checkout sigue siendo propiedad de Cursos y Ventas/Funnel: la landing oculta únicamente el bloque visual `.opin-fi-digital-sale-legal` que no fue aprobado para esta página, sin tocar precio, disponibilidad, Stripe, consentimiento, upsell ni términos. La versión `1.3.3` declara explícitamente `featured_first` y mínimo cinco palabras en ambos componentes Social Proof; Reviews Hub `0.3.26` y LuxWrap Studio `0.9.7` conservan esa selección en SSR, REST y paginación. El JavaScript de la landing mantiene un filtro visual adicional para evitar testimonios de una palabra, emojis o respuestas vacías si una caché anterior responde brevemente. La versión `1.3.4` añade la prueba comercial y el precio sincronizado descritos arriba, y mueve los enlaces legales fuera de la tarjeta de pago.
 
-## 8. Formularios, tracking y eventos: regla de seguridad
+La versión `1.3.5` concentra el hero en una retícula más compacta: título moderado, visual proporcional, tarjeta de posicionamiento a todo el ancho y CTA centrado. También incorpora una primera **biblioteca de componentes LW Studio** en `components/`. El componente `authority-logos.mjs` replica el elemento global de Divi **Section Iconos de Autoridad** (ID `1028`) usando los mismos siete recursos ya publicados en el CDN autorizado de Best Carriers. En escritorio se muestra como una franja de siete logos y en móvil como una retícula de dos columnas. Así, páginas futuras pueden reutilizar el componente sin depender de una plantilla o layout de Divi, y sin duplicar lógica de ningún módulo. Los componentes de esta biblioteca son solo de presentación: reciben datos públicos desde `content/`, no crean contratos nuevos de WordPress, y no pueden implementar pagos, reseñas, formularios, tracking, CDN ni datos personales.
+
+La misma versión incorpora estilos de presentación para el feedback local de Email Validator que ya entrega Funnel (`.opin-fi-email-feedback`): aviso ámbar legible, espaciado y botón consistente, sin cambiar su validación, destino ni manejo de datos. El temario abierto mantiene foco y hover claro, y el visual de certificado se centra dentro de su bloque responsive.
+
+## 8. Biblioteca reutilizable de LW Studio
+
+La biblioteca está en `components/` y sirve para reutilizar una sección de presentación entre páginas administradas por este repositorio. Es el equivalente controlado por Git de una pieza de Divi Library, con una diferencia importante: la fuente de verdad no es un post/layout de WordPress sino un archivo versionado, probado y publicado junto al release de LW Studio.
+
+Para añadir un componente:
+
+1. Confirma que es estrictamente visual y que sus datos pertenecen al repositorio o llegan por un contrato OPIN X ya permitido.
+2. Crea `components/nombre-del-componente.mjs`, recibe datos explícitos y devuelve HTML semántico escapado.
+3. Añade la fuente editorial en `content/` y úsala desde el generador de la página; no hardcodees pagos, credenciales, endpoints privados, nombres, correos o teléfonos.
+4. Añade CSS responsive en el archivo de la página que lo utiliza y documenta la pieza en `components/README.md`.
+5. Incluye una verificación de presencia en `scripts/check.mjs` cuando el componente sea obligatorio para una página y luego ejecuta `npm test`.
+
+Una biblioteca no sustituye `opinx-component`: para checkout, resultado de pago, Social Proof o cualquier dato operativo se mantiene el contrato allowlisted y el módulo propietario. La biblioteca solo es adecuada para elementos como rieles de autoridad, bloques editoriales, iconografía aprobada, CTA visual o composiciones de contenido.
+
+## 9. Formularios, tracking y eventos: regla de seguridad
 
 Una landing puede contener una zona visual para un formulario, pero el envío debe pertenecer a un flujo WordPress previamente configurado. Antes de publicar un formulario que capture contactos, verifica:
 
@@ -185,7 +203,7 @@ Una landing puede contener una zona visual para un formulario, pero el envío de
 
 Para una venta, Funnel es el único emisor de `Purchase` confirmado. Para una captura de contacto, Lead Router es el dueño del enrutamiento. El HTML estático puede reportar una interacción de interfaz no sensible solo cuando exista una especificación aprobada; no debe enviar nombre, correo, teléfono, identificadores publicitarios ni conversiones directamente a proveedores externos.
 
-## 9. CDN y caché después de publicar
+## 10. CDN y caché después de publicar
 
 LW Studio valida el release; no sustituye el procedimiento del CDN. Cuando cambie una imagen, HTML público o configuración comercial:
 
@@ -196,7 +214,7 @@ LW Studio valida el release; no sustituye el procedimiento del CDN. Cuando cambi
 
 No purgues zonas genéricas ni cambies DNS desde una publicación de página. La configuración de dominio, Cloudflare y hosting sigue siendo un paso de infraestructura separado.
 
-## 10. Lista final para un agente
+## 11. Lista final para un agente
 
 - [ ] Leí `AGENTS.md`, este documento, `README.md`, `content/` y `lw-release.json`.
 - [ ] Sé quién posee cada dato, pago, formulario y evento.
