@@ -118,7 +118,8 @@ Y la misma clave se declara en el manifiesto:
       "language": "es",
       "design_variant": "headless",
       "required_product_type": "recorded_course",
-      "require_legal": true
+      "require_legal": false,
+      "legal_surface": "landing"
     }
   }
 }
@@ -175,7 +176,7 @@ La versión `1.3.2` corrige una composición que no cumplía la pauta comercial:
 
 La versión `1.3.5` concentra el hero en una retícula más compacta: título moderado, visual proporcional, tarjeta de posicionamiento a todo el ancho y CTA centrado. También incorpora una primera **biblioteca de componentes LW Studio** en `components/`. El componente `authority-logos.mjs` replica el elemento global de Divi **Section Iconos de Autoridad** (ID `1028`) usando los mismos siete recursos ya publicados en el CDN autorizado de Best Carriers. En escritorio se muestra como una franja de siete logos y en móvil como una retícula de dos columnas. Así, páginas futuras pueden reutilizar el componente sin depender de una plantilla o layout de Divi, y sin duplicar lógica de ningún módulo. Los componentes de esta biblioteca son solo de presentación: reciben datos públicos desde `content/`, no crean contratos nuevos de WordPress, y no pueden implementar pagos, reseñas, formularios, tracking, CDN ni datos personales.
 
-La misma versión incorpora estilos de presentación para el feedback local de Email Validator que ya entrega Funnel (`.opin-fi-email-feedback`): aviso ámbar legible, espaciado y botón consistente, sin cambiar su validación, destino ni manejo de datos. El temario abierto mantiene foco y hover claro, y el visual de certificado se centra dentro de su bloque responsive.
+La misma versión incorpora estilos de presentación para el feedback local de Email Validator que ya entrega Funnel (`.opin-fi-email-feedback`): aviso ámbar legible, espaciado y botón consistente, sin cambiar su validación, destino ni manejo de datos. El temario abierto mantiene foco y hover claro, y el visual de certificado se centra dentro de su bloque responsive. La versión `1.3.6` declara que MOTUS mantiene los enlaces legales en la landing, debajo de las garantías y fuera del formulario; por eso su componente headless no exige el campo `digital_sale_disclosure` de Funnel cuando el contrato llega vacío.
 
 ## 8. Biblioteca reutilizable de LW Studio
 

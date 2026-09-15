@@ -71,7 +71,9 @@ for (const key of ["motus-checkout-es", "motus-checkout-en"]) {
   for (const benefit of ["lifetime_access", "includes_updates", "includes_certificate"]) {
     if (!component.required_benefits?.includes(benefit)) failures.push(`${key} must require ${benefit}`);
   }
-  if (component.require_legal !== true) failures.push(`${key} must require the legal checkout contract`);
+  if (component.require_legal !== false || component.legal_surface !== "landing") {
+    failures.push(`${key} must keep legal copy on the landing when the checkout disclosure is empty`);
+  }
 }
 
 for (const [relative, expected] of Object.entries(release.files_sha256)) {

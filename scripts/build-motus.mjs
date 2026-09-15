@@ -107,7 +107,8 @@ export async function buildMotus({ root, site, version }) {
         design_variant: "headless",
         required_product_type: "recorded_course",
         required_benefits: ["lifetime_access", "includes_updates", "includes_certificate"],
-        require_legal: true
+        require_legal: false,
+        legal_surface: "landing"
       },
       "motus-checkout-en": {
         version: "1",
@@ -117,7 +118,8 @@ export async function buildMotus({ root, site, version }) {
         design_variant: "headless",
         required_product_type: "recorded_course",
         required_benefits: ["lifetime_access", "includes_updates", "includes_certificate"],
-        require_legal: true
+        require_legal: false,
+        legal_surface: "landing"
       },
       "motus-payment-result-es": { version: "1", type: "payment_result", product: "motus", language: "es" },
       "motus-payment-result-en": { version: "1", type: "payment_result", product: "motus", language: "en" }
