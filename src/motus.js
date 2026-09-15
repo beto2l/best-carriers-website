@@ -22,7 +22,11 @@
           iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
           iframe.referrerPolicy = "strict-origin-when-cross-origin";
           iframe.allowFullscreen = true;
-          card.replaceChildren(iframe);
+          iframe.className = "video-frame";
+          var videoArt = card.querySelector(".video-art");
+          if (videoArt) {
+            videoArt.replaceWith(iframe);
+          }
           card.classList.add("is-playing");
         });
       });

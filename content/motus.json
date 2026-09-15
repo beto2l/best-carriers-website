@@ -61,14 +61,14 @@
         "width": 708,
         "height": 1574,
         "title": { "es": "Temario completo", "en": "Full curriculum" },
-        "alt": { "es": "Temario del Taller de MOTUS con 13 lecciones", "en": "MOTUS Workshop curriculum with 13 lessons" }
+        "alt": { "es": "Temario del Taller de MOTUS con 12 lecciones", "en": "MOTUS Workshop curriculum with 12 lessons" }
       },
       {
         "id": "downloads",
         "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.48.25-AM-scaled.png",
         "width": 2560,
         "height": 1170,
-        "title": { "es": "Archivos descargables", "en": "Downloadable resources" },
+        "title": { "es": "Material descargable del curso", "en": "Downloadable course materials" },
         "alt": { "es": "Recursos descargables disponibles para alumnos del curso MOTUS", "en": "Downloadable resources available to MOTUS course students" }
       },
       {
@@ -76,7 +76,7 @@
         "url": "https://bc.opin-x.com/motus.jpg",
         "width": 1200,
         "height": 800,
-        "title": { "es": "Certificado", "en": "Certificate" },
+        "title": { "es": "Obtén tu certificado después de completar el taller", "en": "Get your certificate after completing the workshop" },
         "alt": { "es": "Ejemplo de reconocimiento de participación del Taller de MOTUS", "en": "Example of a MOTUS Workshop participation recognition" }
       }
     ],
@@ -127,7 +127,7 @@
   "locales": {
     "es": {
       "metaTitle": "Curso grabado FMCSA MOTUS paso a paso | Best Carriers",
-      "metaDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso de por vida.",
+      "metaDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo.",
       "ogTitle": "Aprende FMCSA MOTUS paso a paso con Best Carriers",
       "ogDescription": "Curso grabado con acceso inmediato, ruta práctica, actualizaciones, materiales descargables, certificado y soporte para alumnos.",
       "skipLink": "Ir al contenido del curso",
@@ -150,14 +150,14 @@
       "heroCurrentPriceLoading": "Ver precio vigente en el checkout",
       "heroPrimary": "Obtener acceso inmediato",
       "heroSecondary": "Ver el temario completo",
-      "heroNote": "Curso grabado · Acceso de por vida · Futuras actualizaciones incluidas",
+      "heroNote": "Curso grabado · Acceso inmediato · Avanza a tu ritmo",
       "authorityLogosLabel": "Instituciones y recursos de autoridad relacionados con la capacitación",
       "courseCardEyebrow": "Capacitación bajo demanda",
       "courseCardTitle": "Curso práctico de FMCSA MOTUS",
       "courseCardBody": "Una ruta organizada para trabajar con MOTUS, repetir cada proceso cuando lo necesites y reducir el tiempo perdido entre guías, videos y prueba/error.",
       "courseCardPill": "100% online",
       "trustItems": [
-        { "title": "Acceso de por vida", "text": "Regresa a las lecciones cada vez que necesites ejecutar o repasar un proceso." },
+        { "title": "Acceso inmediato", "text": "Comienza cuando quieras y vuelve a las lecciones para repasar cada proceso a tu ritmo." },
         { "title": "Actualizaciones incluidas", "text": "Recibe las mejoras futuras incorporadas a esta capacitación cuando MOTUS evolucione." },
         { "title": "Certificado", "text": "Completa la capacitación y recibe tu reconocimiento de participación." },
         { "title": "Soporte para alumnos", "text": "Acceso a la comunidad privada de soporte después de comprar." }
@@ -174,7 +174,7 @@
         "Errores frecuentes, recursos de soporte y criterios para saber cuál es el siguiente paso."
       ],
       "curriculumEyebrow": "Temario completo",
-      "curriculumTitle": "13 lecciones organizadas desde el primer acceso hasta soporte y consultoría",
+      "curriculumTitle": "12 lecciones organizadas desde el primer acceso hasta soporte",
       "curriculumBody": "El contenido sigue la misma secuencia de trabajo que verás dentro de la plataforma. Puedes pausar, repetir y volver a una lección mientras realizas un trámite.",
       "curriculum": [
         {
@@ -186,21 +186,21 @@
         {
           "number": "MÓDULO 2",
           "title": "Configuración y gestión",
-          "text": "03 · Portal FMCSA · 04 · Verificación de identidad · 05 · Vincular USDOT · 06 · Ticket Motus · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
-          "lessons": ["03 · Portal FMCSA", "04 · Verificación de identidad", "05 · Vincular USDOT", "06 · Ticket Motus", "07 · TSP Filing Number", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
+          "text": "03 · Portal FMCSA · 04 · Verificación de identidad · 05 · Vincular USDOT · 06 · Ticket Motus · 07 · Obtener Registro como Transportation Service Provider · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
+          "lessons": ["03 · Portal FMCSA", "04 · Verificación de identidad", "05 · Vincular USDOT", "06 · Ticket Motus", "07 · Obtener Registro como Transportation Service Provider", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
         },
         {
           "number": "MÓDULO 3",
-          "title": "Tickets y consultoría",
-          "text": "11 · Ticket DataQ · 12 · Carta FMCSA: ayuda con agencia federal · 13 · Consultoría",
-          "lessons": ["11 · Ticket DataQ", "12 · Carta FMCSA: ayuda con agencia federal", "13 · Consultoría"]
+          "title": "Tickets y soporte",
+          "text": "11 · Ticket DataQ · 12 · Carta FMCSA: ayuda con agencia federal",
+          "lessons": ["11 · Ticket DataQ", "12 · Carta FMCSA: ayuda con agencia federal"]
         }
       ],
       "includesEyebrow": "Lo que recibes",
       "includesTitle": "Una herramienta de trabajo que permanece disponible",
       "includesBody": "No es una clase que desaparece al terminar. Conservas el acceso para consultar los procesos cuando los necesites.",
       "includes": [
-        { "title": "Curso grabado", "text": "13 lecciones para avanzar a tu ritmo y repetir los pasos importantes." },
+        { "title": "Curso grabado", "text": "12 lecciones para avanzar a tu ritmo y repetir los pasos importantes." },
         { "title": "Material descargable", "text": "Guías y recursos de apoyo para acompañar los procesos explicados." },
         { "title": "Actualizaciones futuras", "text": "Acceso a las mejoras incorporadas a esta capacitación cuando cambien los procesos." },
         { "title": "Certificado", "text": "Reconocimiento de participación después de completar el contenido requerido." }
@@ -211,6 +211,8 @@
         "Preparadores de impuestos y bookkeepers que atienden empresas de trucking.",
         "Personal de Safety, Compliance y administradores de flotas.",
         "Transportation Service Providers y profesionales que gestionan registros de clientes.",
+        "Despachadores que atienden clientes de trucking.",
+        "Agentes de seguros comerciales que ayudan a sus clientes.",
         "Dueños de compañías que quieren comprender y controlar sus propios procesos en MOTUS."
       ],
       "audienceNote": "No es un servicio done-for-you ni incluye consultoría individual. Es capacitación para aprender a utilizar MOTUS. Best Carriers es una marca educativa independiente y no está afiliada ni respaldada por FMCSA, USDOT, MOTUS o Login.gov.",
@@ -244,8 +246,8 @@
       "faqs": [
         { "q": "¿El curso es en vivo?", "a": "No. Es una capacitación grabada con acceso inmediato para que puedas comenzar y avanzar a tu ritmo." },
         { "q": "¿Necesito tener un USDOT para tomar el curso?", "a": "No necesariamente. El curso explica procesos para compañías existentes y también conceptos de configuración y acceso que son útiles para profesionales que trabajan con clientes." },
-        { "q": "¿El curso sirve si trabajo con clientes como preparador o TSP?", "a": "Sí. El temario incluye procesos relevantes para preparadores, personal de compliance y Transportation Service Providers, incluyendo TSP Filing Number, Designate TSP y Authorized Users." },
-        { "q": "¿Cuánto tiempo tendré acceso?", "a": "El acceso es de por vida e incluye las actualizaciones que se incorporen a esta capacitación." },
+        { "q": "¿El curso sirve si trabajo con clientes como preparador o TSP?", "a": "Sí. El temario incluye procesos relevantes para preparadores, personal de compliance y Transportation Service Providers, incluyendo obtener registro como Transportation Service Provider, Designate TSP y Authorized Users." },
+        { "q": "¿Cuándo puedo comenzar?", "a": "Recibirás el acceso después de la aprobación del pago y podrás avanzar a tu ritmo." },
         { "q": "¿Incluye ayuda individual para resolver mi caso?", "a": "No. La consultoría individual es opcional, se contrata por separado y tiene un costo adicional de $150." },
         { "q": "¿Incluye un certificado?", "a": "Sí. Podrás recibir un certificado después de completar el contenido requerido del curso." },
         { "q": "¿Dónde recibo soporte?", "a": "El soporte incluido se ofrece en un grupo privado de Facebook. El acceso se entrega a los alumnos después de la compra." },
@@ -282,7 +284,7 @@
     },
     "en": {
       "metaTitle": "Recorded FMCSA MOTUS Course Step by Step | Best Carriers",
-      "metaDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Lifetime access.",
+      "metaDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace.",
       "ogTitle": "Learn FMCSA MOTUS step by step with Best Carriers",
       "ogDescription": "Recorded course with immediate access, a practical workflow, updates, downloadable materials, certificate and student support.",
       "skipLink": "Skip to course content",
@@ -293,7 +295,7 @@
       "navFaq": "FAQ",
       "navCta": "Get immediate access",
       "mobileCta": "MOTUS Course · Get access",
-      "eyebrow": "Recorded course · Immediate access · Lifetime updates",
+      "eyebrow": "Recorded course · Immediate access · Future updates included",
       "heroTitle": "Learn how to set up and use FMCSA MOTUS step by step,",
       "heroAccent": "without guessing what comes next.",
       "heroDescription": "Follow a practical path for Login.gov access, USDOT account claiming, TSP, Biennial Updates, DataQs and key MOTUS processes, built for trucking professionals, compliance staff and tax preparers.",
@@ -305,14 +307,14 @@
       "heroCurrentPriceLoading": "See the current price in checkout",
       "heroPrimary": "Get immediate access",
       "heroSecondary": "View the full curriculum",
-      "heroNote": "Recorded course · Lifetime access · Future updates included",
+      "heroNote": "Recorded course · Immediate access · Learn at your own pace",
       "authorityLogosLabel": "Authority institutions and resources related to the training",
       "courseCardEyebrow": "On-demand training",
       "courseCardTitle": "Practical FMCSA MOTUS Course",
       "courseCardBody": "An organized workflow for using MOTUS, repeating each process when needed and reducing time lost across scattered guides, videos and trial and error.",
       "courseCardPill": "100% online",
       "trustItems": [
-        { "title": "Lifetime access", "text": "Return to the lessons whenever you need to complete or review a process." },
+        { "title": "Immediate access", "text": "Start when you are ready and return to the lessons to review each process at your own pace." },
         { "title": "Updates included", "text": "Receive future improvements added to this training as MOTUS evolves." },
         { "title": "Certificate", "text": "Complete the training and receive your participation certificate." },
         { "title": "Student support", "text": "Access to the private support community after purchase." }
@@ -329,7 +331,7 @@
         "Common errors, support resources and guidance for identifying the next step."
       ],
       "curriculumEyebrow": "Full curriculum",
-      "curriculumTitle": "13 lessons from first access through support and consulting",
+      "curriculumTitle": "12 lessons from first access through support",
       "curriculumBody": "The content follows the same working sequence you will see inside the platform. Pause, replay and return to a lesson while completing a process.",
       "curriculum": [
         {
@@ -341,21 +343,21 @@
         {
           "number": "MODULE 2",
           "title": "Configuration and management",
-          "text": "03 · FMCSA Portal · 04 · Identity verification · 05 · Link USDOT · 06 · MOTUS ticket · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
-          "lessons": ["03 · FMCSA Portal", "04 · Identity verification", "05 · Link USDOT", "06 · MOTUS ticket", "07 · TSP Filing Number", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
+          "text": "03 · FMCSA Portal · 04 · Identity verification · 05 · Link USDOT · 06 · MOTUS ticket · 07 · Obtain registration as a Transportation Service Provider · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
+          "lessons": ["03 · FMCSA Portal", "04 · Identity verification", "05 · Link USDOT", "06 · MOTUS ticket", "07 · Obtain registration as a Transportation Service Provider", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
         },
         {
           "number": "MODULE 3",
-          "title": "Tickets and consulting",
-          "text": "11 · DataQ ticket · 12 · FMCSA letter: federal agency assistance · 13 · Consulting",
-          "lessons": ["11 · DataQ ticket", "12 · FMCSA letter: federal agency assistance", "13 · Consulting"]
+          "title": "Tickets and support",
+          "text": "11 · DataQ ticket · 12 · FMCSA letter: federal agency assistance",
+          "lessons": ["11 · DataQ ticket", "12 · FMCSA letter: federal agency assistance"]
         }
       ],
       "includesEyebrow": "What you receive",
       "includesTitle": "A working resource that stays available",
       "includesBody": "This is not a class that disappears when it ends. Keep access and return whenever you need to review a process.",
       "includes": [
-        { "title": "Recorded course", "text": "13 lessons to learn at your own pace and replay important steps." },
+        { "title": "Recorded course", "text": "12 lessons to learn at your own pace and replay important steps." },
         { "title": "Downloadable materials", "text": "Guides and reference resources that support the processes explained." },
         { "title": "Future updates", "text": "Access improvements added to this training when relevant processes change." },
         { "title": "Certificate", "text": "Participation recognition after completing the required course content." }
@@ -366,9 +368,11 @@
         "Tax preparers and bookkeepers who serve trucking companies.",
         "Safety, Compliance and fleet administration staff.",
         "Transportation Service Providers and professionals who manage client registrations.",
+        "Dispatchers who serve trucking clients.",
+        "Commercial insurance agents who help their clients.",
         "Company owners who want to understand and control their own MOTUS processes."
       ],
-      "audienceNote": "This is not a done-for-you service and individual consulting is not included. It is training for learning how to use MOTUS. Best Carriers is an independent educational brand and is not affiliated with or endorsed by FMCSA, USDOT, MOTUS or Login.gov.",
+      "audienceNote": "This is not a done-for-you service and does not include individual consulting. It is training that teaches you how to use MOTUS. Best Carriers is an independent educational brand and is not affiliated with or endorsed by FMCSA, USDOT, MOTUS or Login.gov.",
       "instructorEyebrow": "Applied experience",
       "instructorTitle": "Meet your instructor",
       "instructorBody": "Learn about the experience behind Best Carriers and why this training focuses on decisions and problems that appear in real work with trucking companies.",
@@ -399,8 +403,8 @@
       "faqs": [
         { "q": "Is the course live?", "a": "No. This is recorded training with immediate access, so you can start and learn at your own pace." },
         { "q": "Do I need a USDOT number to take the course?", "a": "Not necessarily. The course explains processes for existing companies as well as setup and access concepts useful to professionals who work with clients." },
-        { "q": "Is the course useful if I work with clients as a tax preparer or TSP?", "a": "Yes. The curriculum includes processes relevant to preparers, compliance staff and Transportation Service Providers, including TSP Filing Number, Designate TSP and Authorized Users." },
-        { "q": "How long will I have access?", "a": "Access is lifetime and includes updates added to this training." },
+        { "q": "Is the course useful if I work with clients as a tax preparer or TSP?", "a": "Yes. The curriculum includes processes relevant to preparers, compliance staff and Transportation Service Providers, including registration as a Transportation Service Provider, Designate TSP and Authorized Users." },
+        { "q": "When can I start?", "a": "You receive access after payment approval and can learn at your own pace." },
         { "q": "Does the course include individual help with my case?", "a": "No. Individual consulting is optional, purchased separately and costs an additional $150." },
         { "q": "Does it include a certificate?", "a": "Yes. You may receive a certificate after completing the required course content." },
         { "q": "Where do I receive support?", "a": "Included support is provided through a private Facebook group. Access is delivered to students after purchase." },

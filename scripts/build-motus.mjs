@@ -222,7 +222,7 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           </div>
         </aside>
         <div class="hero-actions hero-actions--centered">
-          <a class="button button-primary" href="#checkout">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
+          <a class="button button-primary" href="#checkout-form">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
           <a class="button button-quiet" href="#curriculum">${escapeHtml(t.heroSecondary)}</a>
         </div>
         <p class="hero-note hero-note--centered">${icon("infinity")}<span>${escapeHtml(t.heroNote)}</span></p>
@@ -301,7 +301,7 @@ function renderSalePage({ locale, content, site, version, css, js }) {
 
     <section class="section section-instructor">
       <div class="motus-shell instructor-layout">
-        ${renderVideo({ id: content.assets.instructorVideo, eyebrow: t.instructorEyebrow, title: t.instructorTitle, body: t.instructorBody, button: t.playInstructor })}
+        ${renderVideo({ id: content.assets.instructorVideo, eyebrow: t.instructorEyebrow, title: t.instructorTitle, body: t.instructorBody, button: t.playInstructor, stacked: true })}
         <figure class="instructor-authority"><img src="${escapeHtml(content.assets.instructorPhoto.url)}" alt="${escapeHtml(content.assets.instructorPhoto.alt[locale])}" width="${escapeHtml(content.assets.instructorPhoto.width)}" height="${escapeHtml(content.assets.instructorPhoto.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(locale === "es" ? "Experiencia compartida con participantes reales de MOTUS." : "Experience shared with real MOTUS participants.")}</figcaption></figure>
       </div>
     </section>
@@ -321,12 +321,12 @@ function renderSalePage({ locale, content, site, version, css, js }) {
     </section>
 
     <section class="final-cta">
-      <div class="motus-shell final-cta-inner"><div><p>${escapeHtml(t.finalCtaEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a class="button button-light" href="#checkout">${escapeHtml(t.finalCtaButton)}${icon("arrow")}</a></div>
+      <div class="motus-shell final-cta-inner"><div><p>${escapeHtml(t.finalCtaEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a class="button button-light" href="#checkout-form">${escapeHtml(t.finalCtaButton)}${icon("arrow")}</a></div>
     </section>
   </main>
 
   ${renderFooter({ locale, content, site, t })}
-  <a class="mobile-purchase" href="#checkout" aria-hidden="true"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
+  <a class="mobile-purchase" href="#checkout-form" aria-hidden="true"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
   <script>${js}</script>
 </body>
 </html>\n`;
@@ -414,7 +414,7 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
             <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1448" height="1086" loading="lazy" decoding="async">
             <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
           </div>
-          <opinx-component data-opinx-global-content="motus-checkout-${locale}">
+          <opinx-component id="checkout-form" data-opinx-global-content="motus-checkout-${locale}">
             <div class="checkout-component-fallback" data-component-fallback>
               <p class="checkout-status" role="status">${escapeHtml(t.checkoutUnavailable)}</p>
               <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.checkoutHelpCta)}</a>
@@ -427,7 +427,7 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
 }
 
 function renderInlineCta({ t, id }) {
-  return `<section class="conversion-cta" aria-label="${escapeHtml(t.heroPrimary)}"><div class="motus-shell conversion-cta-inner"><div><p>${escapeHtml(t.courseCardEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a id="${escapeHtml(id)}" class="button button-primary" href="#checkout">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a></div></section>`;
+  return `<section class="conversion-cta" aria-label="${escapeHtml(t.heroPrimary)}"><div class="motus-shell conversion-cta-inner"><div><p>${escapeHtml(t.courseCardEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a id="${escapeHtml(id)}" class="button button-primary" href="#checkout-form">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a></div></section>`;
 }
 
 function renderSocialProof({ locale, content, t }) {
@@ -435,9 +435,11 @@ function renderSocialProof({ locale, content, t }) {
   return `<section class="section section-proof" id="reviews" aria-labelledby="proof-title"><div class="motus-shell"><div class="proof-heading"><div><p class="eyebrow">${icon("star")}<span>${escapeHtml(t.proofEyebrow)}</span></p><h2 id="proof-title">${escapeHtml(t.proofTitle)}</h2><p>${escapeHtml(t.proofBody)}</p></div></div>${renderVideo({ id: content.assets.testimonialsVideo, eyebrow: t.proofEyebrow, title: t.playTestimonials, body: t.proofBody, button: t.playTestimonials, compact: true })}<div class="proof-runtime"><opinx-component data-opinx-global-content="${componentKey}"><div data-component-fallback><div class="rating-chip" aria-label="${escapeHtml(t.ratingLabel)}"><strong>${escapeHtml(content.ratingSnapshot.average)}</strong><span><b aria-hidden="true">★★★★★</b><small>${escapeHtml(t.ratingBasedOn)}</small></span></div><div class="fallback-reviews">${content.ratingSnapshot.reviews.map((review) => `<article><div class="review-top"><span>${initials(review.name)}</span><div><strong>${escapeHtml(review.name)}</strong><b aria-label="5 ${locale === "es" ? "estrellas" : "stars"}">★★★★★</b></div></div><p>“${escapeHtml(review[locale])}”</p></article>`).join("")}</div><div class="photo-heading"><div><h3>${escapeHtml(t.photosTitle)}</h3><p>${escapeHtml(t.photosBody)}</p></div></div><div class="photo-grid">${content.assets.groupPhotos.map((photo) => `<figure><img src="${escapeHtml(photo.url)}" alt="${escapeHtml((locale === "es" ? "Participantes de " : "Participants in ") + photo.course[locale] + " · " + photo.date[locale])}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(photo.course[locale])}</strong><span>${escapeHtml(photo.date[locale])}</span></figcaption></figure>`).join("")}</div></div></opinx-component></div></div></section>`;
 }
 
-function renderVideo({ id, eyebrow, title, body, button, compact = false }) {
+function renderVideo({ id, eyebrow, title, body, button, compact = false, stacked = false }) {
   const thumbnail = `https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`;
-  return `<article class="video-card${compact ? " video-card-compact" : ""}" data-video-card data-video-id="${escapeHtml(id)}" data-video-title="${escapeHtml(title)}"><button class="video-art" type="button" data-play-video aria-label="${escapeHtml(button)}"><img class="video-thumbnail" src="${escapeHtml(thumbnail)}" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / ${compact ? "STORIES" : "01"}</span><span class="video-play" aria-hidden="true">${icon("play")}</span></button><div class="video-copy"><p class="card-kicker">${escapeHtml(eyebrow)}</p><h2>${escapeHtml(title)}</h2><p>${escapeHtml(body)}</p><button type="button" data-play-video>${icon("play")}<span>${escapeHtml(button)}</span></button></div></article>`;
+  const art = `<button class="video-art" type="button" data-play-video aria-label="${escapeHtml(button)}"><img class="video-thumbnail" src="${escapeHtml(thumbnail)}" alt="" loading="lazy" decoding="async"><span class="video-shade" aria-hidden="true"></span><span class="video-code">BC / ${compact ? "STORIES" : "01"}</span><span class="video-play" aria-hidden="true">${icon("play")}</span></button>`;
+  const copy = `<div class="video-copy"><p class="card-kicker">${escapeHtml(eyebrow)}</p><h2>${escapeHtml(title)}</h2><p>${escapeHtml(body)}</p><button type="button" data-play-video>${icon("play")}<span>${escapeHtml(button)}</span></button></div>`;
+  return `<article class="video-card${compact ? " video-card-compact" : ""}${stacked ? " video-card-stacked" : ""}" data-video-card data-video-id="${escapeHtml(id)}" data-video-title="${escapeHtml(title)}">${stacked ? copy + art : art + copy}</article>`;
 }
 
 function renderFooter({ locale, content, site, t }) {

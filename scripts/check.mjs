@@ -130,7 +130,7 @@ function checkMotusSale(page, html) {
   ]) {
     if (html.includes(forbidden)) failures.push(`${page.entry} retains live-workshop copy: ${forbidden}`);
   }
-  if (!html.toLowerCase().includes(locale === "es" ? "acceso de por vida" : "lifetime access")) failures.push(`${page.entry} is missing the lifetime-access promise`);
+  if (!html.toLowerCase().includes(locale === "es" ? "acceso inmediato" : "immediate access")) failures.push(`${page.entry} is missing the immediate-access promise`);
   if (!html.includes(locale === "es" ? "La calificación general reúne opiniones verificadas sobre distintos cursos y servicios educativos de Best Carriers" : "The overall rating combines verified feedback about different Best Carriers courses and educational services")) failures.push(`${page.entry} must label reviews as brand-wide social proof`);
   if (html.includes("www.fmcsa.dot.gov/registration/move-motus")) failures.push(`${page.entry} must not include the external FMCSA link`);
   if (html.includes('class="site-header"')) failures.push(`${page.entry} must not include the fixed sales-page header`);
@@ -145,7 +145,7 @@ function checkMotusSale(page, html) {
   ]) {
     if (!html.includes(`https://bc.opin-x.com/${visual}`)) failures.push(`${page.entry} is missing CDN visual ${visual}`);
   }
-  if (!html.includes('class="mobile-purchase" href="#checkout" aria-hidden="true"')) failures.push(`${page.entry} must defer the mobile purchase CTA until the hero is passed`);
+  if (!html.includes('class="mobile-purchase" href="#checkout-form" aria-hidden="true"')) failures.push(`${page.entry} must send the mobile purchase CTA to the checkout form after the hero is passed`);
   if (html.includes('<details class="curriculum-card"')) failures.push(`${page.entry} must show the complete curriculum without a disclosure control`);
   if ((html.match(/class="curriculum-card"/g) || []).length !== 3) failures.push(`${page.entry} must include all three curriculum modules`);
   if (!html.includes('class="conversion-cta"')) failures.push(`${page.entry} must include contextual conversion CTAs`);
