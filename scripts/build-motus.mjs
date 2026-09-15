@@ -409,12 +409,12 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
           <ul>${t.checkoutGuarantees.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}</ul>
           <p class="checkout-legal"><span>${escapeHtml(t.legalPrefix)}</span> <a data-legal-terms href="${escapeHtml(terms)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.termsLabel)}</a> ${locale === "es" ? "y la" : "and the"} <a data-legal-privacy href="${escapeHtml(privacy)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacyLabel)}</a>.</p>
         </div>
-        <div class="checkout-card" data-motus-checkout data-language="${locale}">
+        <div class="checkout-card" id="checkout-form" data-motus-checkout data-language="${locale}">
           <div class="checkout-card-head">
             <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1448" height="1086" loading="lazy" decoding="async">
             <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
           </div>
-          <opinx-component id="checkout-form" data-opinx-global-content="motus-checkout-${locale}">
+          <opinx-component id="checkout-component" data-opinx-global-content="motus-checkout-${locale}">
             <div class="checkout-component-fallback" data-component-fallback>
               <p class="checkout-status" role="status">${escapeHtml(t.checkoutUnavailable)}</p>
               <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.checkoutHelpCta)}</a>
