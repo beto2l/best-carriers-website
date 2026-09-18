@@ -143,6 +143,9 @@ function validate(content) {
   if (!/^https:\/\/bc\.opin-x\.com\//i.test(content.assets.courseImage)) {
     throw new Error("MOTUS course artwork must use the Best Carriers CDN.");
   }
+  if (!content.assets.featuredCommentImage?.url || !/^https:\/\/bc\.opin-x\.com\//i.test(content.assets.featuredCommentImage.url)) {
+    throw new Error("MOTUS featured comment image must use the Best Carriers CDN.");
+  }
   if (!content.assets.instructorPhoto?.url || !/^https:\/\/bc\.opin-x\.com\//i.test(content.assets.instructorPhoto.url)) {
     throw new Error("MOTUS instructor authority image must use the Best Carriers CDN.");
   }
@@ -206,7 +209,7 @@ function renderSalePage({ locale, content, site, version, css, js }) {
           <div class="product-glow" aria-hidden="true"></div>
           <div class="product-window">
             <div class="product-window-bar"><span></span><span></span><span></span><small>MOTUS / BEST CARRIERS</small></div>
-            <img src="${escapeHtml(content.assets.courseImage)}" alt="${escapeHtml(t.courseCardTitle)}" width="1448" height="1086" fetchpriority="high" decoding="async">
+            <img src="${escapeHtml(content.assets.courseImage)}" alt="${escapeHtml(t.courseCardTitle)}" width="1536" height="1024" fetchpriority="high" decoding="async">
             <div class="product-window-copy">
               <div><p>${escapeHtml(t.courseCardEyebrow)}</p><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
               <span>${escapeHtml(t.courseCardPill)}</span>
@@ -411,7 +414,7 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
         </div>
         <div class="checkout-card" id="checkout-form" data-motus-checkout data-language="${locale}">
           <div class="checkout-card-head">
-            <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1448" height="1086" loading="lazy" decoding="async">
+            <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1536" height="1024" loading="lazy" decoding="async">
             <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
           </div>
           <opinx-component id="checkout-component" data-opinx-global-content="motus-checkout-${locale}">
@@ -432,7 +435,8 @@ function renderInlineCta({ t, id }) {
 
 function renderSocialProof({ locale, content, t }) {
   const componentKey = `best-carriers-social-proof-${locale}`;
-  const featured = `<aside class="featured-comment" aria-label="${escapeHtml(t.featuredCommentLabel)}"><div class="featured-comment__mark" aria-hidden="true">“</div><div class="featured-comment__body"><p class="featured-comment__label">${escapeHtml(t.featuredCommentLabel)}</p><blockquote>${escapeHtml(t.featuredComment)}</blockquote><p class="featured-comment__context">${escapeHtml(t.featuredCommentContext)}</p><footer><strong>Karla Rivera</strong><span>Facebook</span></footer></div></aside>`;
+  const featuredImage = content.assets.featuredCommentImage;
+  const featured = `<figure class="featured-comment" aria-labelledby="featured-comment-label-${locale}"><p class="featured-comment__label" id="featured-comment-label-${locale}">${escapeHtml(t.featuredCommentLabel)}</p><img src="${escapeHtml(featuredImage.url)}" alt="${escapeHtml(t.featuredCommentImageAlt)}" width="${escapeHtml(featuredImage.width)}" height="${escapeHtml(featuredImage.height)}" loading="lazy" decoding="async"><figcaption class="visually-hidden">“${escapeHtml(t.featuredComment)}” — Karla Rivera, Facebook. ${escapeHtml(t.featuredCommentContext)}</figcaption></figure>`;
   return `<section class="section section-proof" id="reviews" aria-labelledby="proof-title"><div class="motus-shell"><div class="proof-heading"><div><p class="eyebrow">${icon("star")}<span>${escapeHtml(t.proofEyebrow)}</span></p><h2 id="proof-title">${escapeHtml(t.proofTitle)}</h2><p>${escapeHtml(t.proofBody)}</p></div></div>${featured}${renderVideo({ id: content.assets.testimonialsVideo, eyebrow: t.proofEyebrow, title: t.playTestimonials, body: t.proofBody, button: t.playTestimonials, compact: true })}<div class="proof-runtime"><opinx-component data-opinx-global-content="${componentKey}"><div data-component-fallback><div class="rating-chip" aria-label="${escapeHtml(t.ratingLabel)}"><strong>${escapeHtml(content.ratingSnapshot.average)}</strong><span><b aria-hidden="true">★★★★★</b><small>${escapeHtml(t.ratingBasedOn)}</small></span></div><div class="fallback-reviews">${content.ratingSnapshot.reviews.map((review) => `<article><div class="review-top"><span>${initials(review.name)}</span><div><strong>${escapeHtml(review.name)}</strong><b aria-label="5 ${locale === "es" ? "estrellas" : "stars"}">★★★★★</b></div></div><p>“${escapeHtml(review[locale])}”</p></article>`).join("")}</div><div class="photo-heading"><div><h3>${escapeHtml(t.photosTitle)}</h3><p>${escapeHtml(t.photosBody)}</p></div></div><div class="photo-grid">${content.assets.groupPhotos.map((photo) => `<figure><img src="${escapeHtml(photo.url)}" alt="${escapeHtml((locale === "es" ? "Participantes de " : "Participants in ") + photo.course[locale] + " · " + photo.date[locale])}" loading="lazy" decoding="async"><figcaption><strong>${escapeHtml(photo.course[locale])}</strong><span>${escapeHtml(photo.date[locale])}</span></figcaption></figure>`).join("")}</div></div></opinx-component></div></div></section>`;
 }
 

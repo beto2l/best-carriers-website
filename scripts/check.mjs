@@ -120,7 +120,9 @@ function checkMotusSale(page, html) {
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }
-  if (!html.includes('src="https://bc.opin-x.com/motus-recorded-course.webp"')) failures.push(`${page.entry} must use the CDN recorded-course artwork`);
+  if (!html.includes('src="https://bc.opin-x.com/motus-course-device-scene-v4.webp"')) failures.push(`${page.entry} must use the current CDN recorded-course artwork`);
+  if (!html.includes('src="https://bc.opin-x.com/facebook-comment-karla-rivera-motus.webp"')) failures.push(`${page.entry} must show the featured Facebook screenshot from the CDN`);
+  if (!html.includes(locale === "es" ? "Excelente clase. Yo después, en lo personal, pude arreglar mi problema." : "Excellent class. Afterwards, I was able to solve my problem personally.")) failures.push(`${page.entry} must preserve the featured comment as accessible text`);
   if (html.includes("https://bc.opin-x.com/Motus-V2.png")) failures.push(`${page.entry} must not use the old live-workshop artwork`);
   for (const forbidden of [
     "Workshop en vivo online",

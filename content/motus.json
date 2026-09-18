@@ -8,10 +8,15 @@
   },
   "assets": {
     "logo": "https://c.opin-x.com/Logo-Best-Carriers-tm.png",
-    "courseImage": "https://bc.opin-x.com/motus-recorded-course.webp",
+    "courseImage": "https://bc.opin-x.com/motus-course-device-scene-v4.webp",
     "paymentMethods": "https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png",
     "instructorVideo": "icLfupSYr_4",
     "testimonialsVideo": "LJ9DsCbuMXw",
+    "featuredCommentImage": {
+      "url": "https://bc.opin-x.com/facebook-comment-karla-rivera-motus.webp",
+      "width": 996,
+      "height": 862
+    },
     "authorityLogos": [
       { "url": "https://bc.opin-x.com/IRS-CE-Provider-3.png", "alt": "IRS Continuing Education Approved Provider", "width": 450, "height": 450 },
       { "url": "https://c.opin-x.com/1-ico-fmcsa.png", "alt": "Federal Motor Carrier Safety Administration", "width": 450, "height": 450 },
@@ -226,6 +231,7 @@
       "featuredCommentLabel": "Comentario destacado de Facebook",
       "featuredComment": "Excelente clase. Yo después, en lo personal, pude arreglar mi problema. Da muy buena información.",
       "featuredCommentContext": "Experiencia compartida por una alumna en Facebook.",
+      "featuredCommentImageAlt": "Captura del comentario de Facebook de Karla Rivera sobre su experiencia con la clase de MOTUS de Best Carriers.",
       "ratingLabel": "Calificación general de Best Carriers",
       "ratingBasedOn": "Basado en 156 reseñas de clientes",
       "playTestimonials": "Ver testimonios en video",
@@ -386,6 +392,7 @@
       "featuredCommentLabel": "Featured Facebook comment",
       "featuredComment": "Excellent class. Afterwards, I was able to solve my problem personally. It provides very useful information.",
       "featuredCommentContext": "Experience shared by a student on Facebook.",
+      "featuredCommentImageAlt": "Screenshot of Karla Rivera's Facebook comment about her experience with the Best Carriers MOTUS class.",
       "ratingLabel": "Overall Best Carriers rating",
       "ratingBasedOn": "Based on 156 customer reviews",
       "playTestimonials": "Watch video testimonials",
