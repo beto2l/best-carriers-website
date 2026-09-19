@@ -133,7 +133,7 @@ function validate(content) {
   }
   for (const locale of locales) {
     const t = content.locales[locale];
-    if (!t?.metaTitle || !t?.heroTitle || t.curriculum?.length !== 3 || t.curriculum.some((item) => !Array.isArray(item.lessons) || !item.lessons.length) || t.faqs?.length < 6) {
+    if (!t?.metaTitle || !t?.heroTitle || t.curriculum?.length !== 5 || t.curriculum.some((item) => !Array.isArray(item.lessons) || !item.lessons.length) || t.faqs?.length < 6) {
       throw new Error(`MOTUS ${locale} content is incomplete.`);
     }
   }

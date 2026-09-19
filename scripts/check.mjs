@@ -152,14 +152,14 @@ function checkMotusSale(page, html) {
     "Screenshot-2026-09-14-at-11.48.25-AM-scaled.png",
     "Screenshot-2026-09-14-at-11.49.54-AM-scaled.png",
     "Screenshot-2026-09-14-at-11.50.03-AM-scaled.png",
-    "temario-Taller-Motus.png",
+    "motus-curriculum-15-lessons.webp",
     "motus.jpg"
   ]) {
     if (!html.includes(`https://bc.opin-x.com/${visual}`)) failures.push(`${page.entry} is missing CDN visual ${visual}`);
   }
   if (!html.includes('class="mobile-purchase" href="#checkout-form" aria-hidden="true"')) failures.push(`${page.entry} must send the mobile purchase CTA to the checkout form after the hero is passed`);
   if (html.includes('<details class="curriculum-card"')) failures.push(`${page.entry} must show the complete curriculum without a disclosure control`);
-  if ((html.match(/class="curriculum-card"/g) || []).length !== 3) failures.push(`${page.entry} must include all three curriculum modules`);
+  if ((html.match(/class="curriculum-card"/g) || []).length !== 5) failures.push(`${page.entry} must include all five curriculum modules`);
   if (!html.includes('class="conversion-cta"')) failures.push(`${page.entry} must include contextual conversion CTAs`);
   if (!html.includes('.opin-fi-digital-sale-legal { display: none; }')) failures.push(`${page.entry} must suppress checkout copy not approved for the landing`);
 }
