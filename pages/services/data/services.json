@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "version": "1.3.15",
+  "version": "1.3.16",
   "whatsappUrl": "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking",
   "requirements": "The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.",
   "labels": {
@@ -21,6 +21,11 @@
   "services": [
     {
       "id": "federal-tax-filing",
+      "slug": "federal-tax-filing",
+      "aliases": [
+        "federal-tax-filing",
+        "declaracion-impuestos-federales"
+      ],
       "category": "taxes",
       "icon": "chart",
       "name": "Federal Tax Filing",
@@ -47,6 +52,10 @@
     },
     {
       "id": "form-1099",
+      "slug": "form-1099",
+      "aliases": [
+        "form-1099"
+      ],
       "category": "taxes",
       "icon": "document",
       "name": "Form 1099",
@@ -57,6 +66,10 @@
     },
     {
       "id": "sales-tax",
+      "slug": "sales-tax",
+      "aliases": [
+        "sales-tax"
+      ],
       "category": "taxes",
       "icon": "receipt",
       "name": "Sales Tax Filing",
@@ -67,6 +80,11 @@
     },
     {
       "id": "filing-ifta",
+      "slug": "ifta-filing",
+      "aliases": [
+        "filing-ifta",
+        "ifta-filing"
+      ],
       "category": "compliance",
       "icon": "fuel",
       "name": "IFTA Filing",
@@ -77,6 +95,10 @@
     },
     {
       "id": "irp-ifta",
+      "slug": "irp-ifta",
+      "aliases": [
+        "irp-ifta"
+      ],
       "category": "compliance",
       "icon": "route",
       "name": "IRP + IFTA",
@@ -87,6 +109,11 @@
     },
     {
       "id": "llc-authority",
+      "slug": "llc-authority",
+      "aliases": [
+        "llc-authority",
+        "crear-llc"
+      ],
       "category": "business",
       "icon": "building",
       "name": "LLC + Operating Authority",
@@ -110,6 +137,11 @@
     },
     {
       "id": "state-permits",
+      "slug": "state-permits",
+      "aliases": [
+        "state-permits",
+        "permisos-estatales"
+      ],
       "category": "compliance",
       "icon": "map",
       "name": "State Permits",
@@ -127,6 +159,11 @@
     },
     {
       "id": "obtain-usdot",
+      "slug": "obtain-usdot",
+      "aliases": [
+        "obtain-usdot",
+        "obtener-usdot"
+      ],
       "category": "compliance",
       "icon": "document",
       "name": "Obtain USDOT Number",
@@ -152,6 +189,10 @@
     },
     {
       "id": "reinstate-mc-authority",
+      "slug": "reinstate-mc-authority",
+      "aliases": [
+        "reinstate-mc-authority"
+      ],
       "category": "compliance",
       "icon": "shield",
       "name": "Reinstate MC Authority",
@@ -162,6 +203,11 @@
     },
     {
       "id": "migrate-motus",
+      "slug": "migrate-motus",
+      "aliases": [
+        "migrate-motus",
+        "migrar-motus"
+      ],
       "category": "business",
       "icon": "sync",
       "name": "Migrate to Motus",
@@ -172,6 +218,11 @@
     },
     {
       "id": "close-trucking-company",
+      "slug": "close-trucking-company",
+      "aliases": [
+        "close-trucking-company",
+        "cerrar-empresa-trucking"
+      ],
       "category": "business",
       "icon": "close",
       "name": "Close a Trucking Company",
@@ -182,6 +233,12 @@
     },
     {
       "id": "consulting",
+      "slug": "tax-trucking-consulting",
+      "aliases": [
+        "consulting",
+        "consultoria-impuestos-trucking",
+        "tax-trucking-consulting"
+      ],
       "category": "business",
       "icon": "chat",
       "name": "Tax or Trucking Consulting",

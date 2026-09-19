@@ -106,6 +106,14 @@ function checkServices(page, html) {
   if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
   if (!html.includes(page.language === "es" ? "Fee de la Secretaría de Estado" : "Secretary of State filing fee")) failures.push(`${page.entry} is missing the LLC state-fee exclusion`);
   if (!html.includes(page.language === "es" ? "Página web y dominio personalizado: $250 por un año" : "Website and custom domain: $250 for one year")) failures.push(`${page.entry} is missing the LLC website add-on`);
+  for (const slug of page.language === "es"
+    ? ["declaracion-impuestos-federales", "form-1099", "sales-tax", "filing-ifta", "irp-ifta", "crear-llc", "permisos-estatales", "obtener-usdot", "reinstate-mc-authority", "migrar-motus", "cerrar-empresa-trucking", "consultoria-impuestos-trucking"]
+    : ["federal-tax-filing", "form-1099", "sales-tax", "ifta-filing", "irp-ifta", "llc-authority", "state-permits", "obtain-usdot", "reinstate-mc-authority", "migrate-motus", "close-trucking-company", "tax-trucking-consulting"]) {
+    if (!html.includes(`\"slug\":\"${slug}\"`)) failures.push(`${page.entry} is missing deep-link slug #${slug}`);
+  }
+  for (const required of ["syncDialogWithHash", "window.addEventListener(\"hashchange\"", "window.history.pushState", "window.history.replaceState"]) {
+    if (!html.includes(required)) failures.push(`${page.entry} is missing service deep-link behavior: ${required}`);
+  }
 }
 
 function checkMotusSale(page, html) {

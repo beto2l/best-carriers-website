@@ -19,8 +19,11 @@
   let activeCategory = "all";
   const staticCatalog = readStaticCatalog();
   const staticServices = new Map((staticCatalog?.services || []).map((service) => [service.id, service]));
+  const servicesByHash = buildServiceHashIndex(staticCatalog?.services || []);
   let catalog = staticCatalog;
   let lastTrigger = null;
+  let activeService = null;
+  let preserveHashOnClose = false;
 
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
   if (!grid || !search || !dialog) return;
@@ -45,6 +48,7 @@
   });
 
   serviceTriggers.forEach((trigger) => trigger.addEventListener("click", openService));
+  window.addEventListener("hashchange", syncDialogWithHash);
 
   async function openService(event) {
     const trigger = event.currentTarget;
@@ -53,9 +57,43 @@
     const serviceId = trigger.getAttribute("data-open-service");
     const service = staticServices.get(serviceId) || catalog.services.find((item) => item.id === serviceId);
     if (!service) return;
+    showService(service, { trigger, updateHash: true });
+  }
+
+  function showService(service, { trigger = null, updateHash = false } = {}) {
     lastTrigger = trigger;
+    activeService = service;
     populateDialog(service);
-    if (typeof dialog.showModal === "function") dialog.showModal();
+    if (!dialog.open && typeof dialog.showModal === "function") dialog.showModal();
+    if (updateHash) setServiceHash(service);
+  }
+
+  function syncDialogWithHash() {
+    const service = serviceFromHash(window.location.hash);
+    if (service) {
+      showService(service);
+      return;
+    }
+    if (dialog.open) {
+      preserveHashOnClose = true;
+      dialog.close();
+    }
+  }
+
+  function serviceFromHash(hash) {
+    const key = decodeHash(hash);
+    return key ? servicesByHash.get(key) || null : null;
+  }
+
+  function setServiceHash(service) {
+    const nextHash = `#${encodeURIComponent(service.slug || service.id)}`;
+    if (window.location.hash === nextHash) return;
+    window.history.pushState(window.history.state, "", `${window.location.pathname}${window.location.search}${nextHash}`);
+  }
+
+  function clearServiceHash(service) {
+    if (serviceFromHash(window.location.hash)?.id !== service?.id) return;
+    window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.search}`);
   }
 
   closeDialog?.addEventListener("click", () => dialog.close());
@@ -64,7 +102,16 @@
     const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
     if (outside) dialog.close();
   });
-  dialog.addEventListener("close", () => lastTrigger?.focus());
+  dialog.addEventListener("close", () => {
+    const closedService = activeService;
+    activeService = null;
+    if (!preserveHashOnClose) clearServiceHash(closedService);
+    preserveHashOnClose = false;
+    if (lastTrigger?.isConnected) lastTrigger.focus();
+    lastTrigger = null;
+  });
+
+  syncDialogWithHash();
 
   async function loadCatalog() {
     try {
@@ -216,6 +263,24 @@
 
   function normalize(value) {
     return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase(locale);
+  }
+
+  function buildServiceHashIndex(items) {
+    const index = new Map();
+    items.forEach((service) => {
+      [service.id, service.slug, ...(service.aliases || [])].filter(Boolean).forEach((value) => {
+        index.set(String(value).toLowerCase(), service);
+      });
+    });
+    return index;
+  }
+
+  function decodeHash(hash) {
+    try {
+      return decodeURIComponent(String(hash || "").replace(/^#/, "")).trim().toLowerCase();
+    } catch (error) {
+      return "";
+    }
   }
 
   function readStaticCatalog() {

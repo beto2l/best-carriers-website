@@ -84,11 +84,16 @@ function validateSource() {
   if (!/^\d{11,15}$/.test(site.whatsapp.number)) throw new Error("WhatsApp must use an international digits-only number.");
   if (!/^https:\/\//.test(site.heroImage.url)) throw new Error("The hero image must use HTTPS.");
   const ids = new Set();
+  const slugsByLocale = new Map(locales.map((locale) => [locale, new Set()]));
   for (const service of services) {
     if (!service.id || ids.has(service.id)) throw new Error(`Missing or duplicate service ID: ${service.id || "(empty)"}`);
     ids.add(service.id);
     if (!["taxes", "compliance", "business"].includes(service.category)) throw new Error(`Invalid category for ${service.id}`);
     for (const locale of locales) {
+      const slug = service.slugs?.[locale];
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug || "")) throw new Error(`${service.id}.slugs.${locale} must be a URL-safe slug.`);
+      if (slugsByLocale.get(locale).has(slug)) throw new Error(`Duplicate ${locale} service slug: ${slug}`);
+      slugsByLocale.get(locale).add(slug);
       for (const field of ["name", "price", "priceNote", "summary", "details"]) {
         if (!service[locale]?.[field]) throw new Error(`${service.id}.${locale}.${field} is required.`);
       }
@@ -119,6 +124,8 @@ function localizedPayload(locale) {
     },
     services: services.map((service) => ({
       id: service.id,
+      slug: service.slugs[locale],
+      aliases: [...new Set([service.id, ...Object.values(service.slugs)])],
       category: service.category,
       icon: service.icon,
       ...service[locale]

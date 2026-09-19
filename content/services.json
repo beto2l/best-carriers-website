@@ -1,6 +1,7 @@
 [
   {
     "id": "federal-tax-filing",
+    "slugs": {"es": "declaracion-impuestos-federales", "en": "federal-tax-filing"},
     "category": "taxes",
     "icon": "chart",
     "es": {
@@ -28,6 +29,7 @@
   },
   {
     "id": "form-1099",
+    "slugs": {"es": "form-1099", "en": "form-1099"},
     "category": "taxes",
     "icon": "document",
     "es": {"name": "Form 1099", "price": "$75", "priceNote": "Por formulario", "summary": "Preparación y emisión de formularios para contratistas independientes.", "details": "Servicio individual por cada formulario 1099 solicitado."},
@@ -35,6 +37,7 @@
   },
   {
     "id": "sales-tax",
+    "slugs": {"es": "sales-tax", "en": "sales-tax"},
     "category": "taxes",
     "icon": "receipt",
     "es": {"name": "Sales Tax", "price": "$250", "priceNote": "Anual", "summary": "Declaración y reporte ante la autoridad tributaria.", "details": "Preparación del reporte anual de Sales Tax de acuerdo con la información proporcionada."},
@@ -42,6 +45,7 @@
   },
   {
     "id": "filing-ifta",
+    "slugs": {"es": "filing-ifta", "en": "ifta-filing"},
     "category": "compliance",
     "icon": "fuel",
     "es": {"name": "Filing IFTA", "price": "$375", "priceNote": "Anual por camión", "summary": "Reporte trimestral y declaración de impuestos de combustible.", "details": "Preparación de los reportes IFTA de la operación para el periodo correspondiente."},
@@ -49,6 +53,7 @@
   },
   {
     "id": "irp-ifta",
+    "slugs": {"es": "irp-ifta", "en": "irp-ifta"},
     "category": "compliance",
     "icon": "route",
     "es": {"name": "IRP + IFTA", "price": "$1,500", "priceNote": "Apertura coordinada", "summary": "Apertura y registro coordinado de cuenta interestatal y combustible.", "details": "Configuración inicial coordinada de registros IRP e IFTA para la empresa de trucking."},
@@ -56,6 +61,7 @@
   },
   {
     "id": "llc-authority",
+    "slugs": {"es": "crear-llc", "en": "llc-authority"},
     "category": "business",
     "icon": "building",
     "es": {
@@ -93,6 +99,7 @@
   },
   {
     "id": "state-permits",
+    "slugs": {"es": "permisos-estatales", "en": "state-permits"},
     "category": "compliance",
     "icon": "map",
     "es": {"name": "Permisos Estatales", "price": "$150 – $750", "priceNote": "Según estado y trámite", "summary": "Trámites y registros estatales para operaciones de trucking.", "details": "Servicio disponible para California, Oregon, New Mexico, Kentucky y New York.", "includes": ["California (CA)", "Oregon (OR)", "New Mexico (NM)", "Kentucky (KY)", "New York (NY)"]},
@@ -100,6 +107,7 @@
   },
   {
     "id": "obtain-usdot",
+    "slugs": {"es": "obtener-usdot", "en": "obtain-usdot"},
     "category": "compliance",
     "icon": "document",
     "es": {
@@ -125,6 +133,7 @@
   },
   {
     "id": "reinstate-mc-authority",
+    "slugs": {"es": "reinstate-mc-authority", "en": "reinstate-mc-authority"},
     "category": "compliance",
     "icon": "shield",
     "es": {"name": "Reinstate MC Authority", "price": "$750", "priceNote": "Reactivación", "summary": "Reactivación de autoridad operativa ante FMCSA / DOT.", "details": "Acompañamiento para restablecer la autoridad MC de la operación."},
@@ -132,6 +141,7 @@
   },
   {
     "id": "migrate-motus",
+    "slugs": {"es": "migrar-motus", "en": "migrate-motus"},
     "category": "business",
     "icon": "sync",
     "es": {"name": "Migrar a Motus", "price": "$250", "priceNote": "Configuración y transición", "summary": "Configuración, transición y sincronización de plataforma.", "details": "Asistencia para organizar la transición operativa a Motus."},
@@ -139,6 +149,7 @@
   },
   {
     "id": "close-trucking-company",
+    "slugs": {"es": "cerrar-empresa-trucking", "en": "close-trucking-company"},
     "category": "business",
     "icon": "close",
     "es": {"name": "Cerrar Empresa de Trucking", "price": "$1,000 – $2,500", "priceNote": "Según alcance", "summary": "Cierre coordinado de registros operativos y fiscales.", "details": "Puede incluir cancelación de DOT, MC, IFTA, IRP, cierres estatales y baja fiscal definitiva."},
@@ -146,6 +157,7 @@
   },
   {
     "id": "consulting",
+    "slugs": {"es": "consultoria-impuestos-trucking", "en": "tax-trucking-consulting"},
     "category": "business",
     "icon": "chat",
     "es": {"name": "Consultoría de Impuestos o Trucking", "price": "$150", "priceNote": "Por hora", "summary": "Asesoría estratégica individualizada con expertos en transporte.", "details": "Sesión enfocada en dudas fiscales, regulatorias u operativas de la empresa."},
