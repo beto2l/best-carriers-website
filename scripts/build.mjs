@@ -110,6 +110,7 @@ function localizedPayload(locale) {
       prerequisitesLabel: site.locales[locale].prerequisitesLabel,
       excludesLabel: site.locales[locale].excludesLabel,
       clientProvidesLabel: site.locales[locale].clientProvidesLabel,
+      addOnsLabel: site.locales[locale].addOnsLabel,
       requirementsLabel: site.locales[locale].requirementsLabel,
       priceNotice: site.locales[locale].priceNotice,
       dialogCta: site.locales[locale].dialogCta,

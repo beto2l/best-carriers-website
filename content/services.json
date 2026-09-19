@@ -58,8 +58,38 @@
     "id": "llc-authority",
     "category": "business",
     "icon": "building",
-    "es": {"name": "Crear LLC + Autoridad", "price": "$1,400", "priceNote": "Fees oficiales incluidos", "summary": "Creación de la compañía y apertura de autoridad operativa.", "details": "Incluye los fees oficiales correspondientes a MC, UCR y BOC-3.", "includes": ["MC", "UCR", "BOC-3"]},
-    "en": {"name": "LLC + Operating Authority", "price": "$1,400", "priceNote": "Official fees included", "summary": "Company formation and operating authority setup.", "details": "Includes the applicable official fees for MC, UCR and BOC-3.", "includes": ["MC", "UCR", "BOC-3"]}
+    "es": {
+      "name": "Crear LLC + Autoridad",
+      "price": "$1,400",
+      "priceNote": "Precio del servicio",
+      "summary": "Creación de la compañía y apertura de autoridad operativa.",
+      "details": "Creación de la LLC y apertura de autoridad operativa.",
+      "excludes": ["Fee de la Secretaría de Estado."],
+      "clientProvides": [
+        "Nombre completo e identificación de cada socio.",
+        "Nombre de la compañía.",
+        "Domicilio en el que se establecerá la compañía.",
+        "Número de teléfono y correo electrónico de la empresa.",
+        "Indicar si algún miembro de la compañía será el registered agent o si contratarán un servicio adicional."
+      ],
+      "addOns": ["Página web y dominio personalizado: $250 por un año."]
+    },
+    "en": {
+      "name": "LLC + Operating Authority",
+      "price": "$1,400",
+      "priceNote": "Service price",
+      "summary": "Company formation and operating authority setup.",
+      "details": "LLC formation and operating authority setup.",
+      "excludes": ["Secretary of State filing fee."],
+      "clientProvides": [
+        "Full name and identification for each member.",
+        "Company name.",
+        "Address where the company will be established.",
+        "Company phone number and email address.",
+        "Indicate whether a company member will serve as the registered agent or whether an additional service will be hired."
+      ],
+      "addOns": ["Website and custom domain: $250 for one year."]
+    }
   },
   {
     "id": "state-permits",

@@ -141,6 +141,9 @@
     if (service.clientProvides?.length) {
       bodyHost.append(createListSection(labels.clientProvidesLabel, service.clientProvides));
     }
+    if (service.addOns?.length) {
+      bodyHost.append(createListSection(labels.addOnsLabel, service.addOns));
+    }
     bodyHost.append(createSection(labels.requirementsLabel, catalog.requirements));
   }
 

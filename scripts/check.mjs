@@ -104,6 +104,8 @@ function checkServices(page, html) {
   if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
   if (!html.includes("data-static-catalog")) failures.push(`${page.entry} is missing the embedded service catalog`);
   if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
+  if (!html.includes(page.language === "es" ? "Fee de la Secretaría de Estado" : "Secretary of State filing fee")) failures.push(`${page.entry} is missing the LLC state-fee exclusion`);
+  if (!html.includes(page.language === "es" ? "Página web y dominio personalizado: $250 por un año" : "Website and custom domain: $250 for one year")) failures.push(`${page.entry} is missing the LLC website add-on`);
 }
 
 function checkMotusSale(page, html) {
