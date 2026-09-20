@@ -106,6 +106,16 @@ function checkServices(page, html) {
   if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
   if (!html.includes(page.language === "es" ? "Fee de la Secretaría de Estado" : "Secretary of State filing fee")) failures.push(`${page.entry} is missing the LLC state-fee exclusion`);
   if (!html.includes(page.language === "es" ? "Página web y dominio personalizado: $250 por un año" : "Website and custom domain: $250 for one year")) failures.push(`${page.entry} is missing the LLC website add-on`);
+  for (const required of page.language === "es"
+    ? ["Para iniciar el registro de su compañía de transporte", "Comprobante de domicilio comercial", "Indicar mínimo 3 tipos de carga u operaciones", "se recomienda no utilizar el número de teléfono personal"]
+    : ["To begin registering your trucking company", "Proof of business address", "Provide at least 3 types of cargo or operations", "recommend not using a personal phone number"]) {
+    if (!html.includes(required)) failures.push(`${page.entry} is missing the updated LLC requirement: ${required}`);
+  }
+  for (const removed of page.language === "es"
+    ? ["Nombre completo e identificación de cada socio", "algún miembro de la compañía será el registered agent"]
+    : ["Full name and identification for each member", "company member will serve as the registered agent"]) {
+    if (html.includes(removed)) failures.push(`${page.entry} retains an outdated LLC requirement: ${removed}`);
+  }
   for (const slug of page.language === "es"
     ? ["declaracion-impuestos-federales", "form-1099", "sales-tax", "filing-ifta", "irp-ifta", "crear-llc", "permisos-estatales", "obtener-usdot", "reinstate-mc-authority", "migrar-motus", "cerrar-empresa-trucking", "consultoria-impuestos-trucking"]
     : ["federal-tax-filing", "form-1099", "sales-tax", "ifta-filing", "irp-ifta", "llc-authority", "state-permits", "obtain-usdot", "reinstate-mc-authority", "migrate-motus", "close-trucking-company", "tax-trucking-consulting"]) {

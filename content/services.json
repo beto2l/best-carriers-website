@@ -71,12 +71,53 @@
       "summary": "Creación de la compañía y apertura de autoridad operativa.",
       "details": "Creación de la LLC y apertura de autoridad operativa.",
       "excludes": ["Fee de la Secretaría de Estado."],
+      "clientProvidesIntro": "Para iniciar el registro de su compañía de transporte, es necesario contar con la siguiente información y documentación:",
       "clientProvides": [
-        "Nombre completo e identificación de cada socio.",
-        "Nombre de la compañía.",
-        "Domicilio en el que se establecerá la compañía.",
-        "Número de teléfono y correo electrónico de la empresa.",
-        "Indicar si algún miembro de la compañía será el registered agent o si contratarán un servicio adicional."
+        {
+          "title": "LLC",
+          "items": ["Artículos de Incorporación / Articles of Organization."]
+        },
+        {
+          "title": "EIN",
+          "items": ["Número de Identificación del Empleador (Employer Identification Number)."]
+        },
+        {
+          "title": "Comprobante de domicilio comercial",
+          "items": [
+            "Debe ser un domicilio físico, no virtual.",
+            "Se requiere un comprobante, por ejemplo, un bill de servicios.",
+            "El domicilio no debe estar siendo utilizado por otra compañía de trucking para este mismo propósito."
+          ]
+        },
+        {
+          "title": "Información de los camiones",
+          "items": [
+            "Tipo de camión que utilizarán.",
+            "Cantidad de camiones que tendrá la compañía."
+          ]
+        },
+        {
+          "title": "Drivers",
+          "items": ["Cantidad de conductores que trabajarán para la compañía."]
+        },
+        {
+          "title": "Tipo de operación",
+          "items": [
+            "Indicar mínimo 3 tipos de carga u operaciones que realizará la compañía.",
+            "Ejemplo: materiales de construcción, alimentos, maquinaria, productos generales, etc."
+          ]
+        },
+        {
+          "title": "Correo electrónico del negocio",
+          "items": ["Se recomienda utilizar un correo exclusivo para la compañía."]
+        },
+        {
+          "title": "Número de teléfono del negocio",
+          "items": [
+            "Debe ser un número exclusivo para la compañía.",
+            "Importante: una vez registrado el número, es común comenzar a recibir una gran cantidad de llamadas relacionadas con servicios para compañías de trucking. Por esta razón, se recomienda no utilizar el número de teléfono personal."
+          ]
+        }
       ],
       "addOns": ["Página web y dominio personalizado: $250 por un año."]
     },
@@ -87,12 +128,53 @@
       "summary": "Company formation and operating authority setup.",
       "details": "LLC formation and operating authority setup.",
       "excludes": ["Secretary of State filing fee."],
+      "clientProvidesIntro": "To begin registering your trucking company, the following information and documentation are required:",
       "clientProvides": [
-        "Full name and identification for each member.",
-        "Company name.",
-        "Address where the company will be established.",
-        "Company phone number and email address.",
-        "Indicate whether a company member will serve as the registered agent or whether an additional service will be hired."
+        {
+          "title": "LLC",
+          "items": ["Articles of Incorporation / Articles of Organization."]
+        },
+        {
+          "title": "EIN",
+          "items": ["Employer Identification Number."]
+        },
+        {
+          "title": "Proof of business address",
+          "items": [
+            "It must be a physical address, not a virtual address.",
+            "Proof is required, such as a utility bill.",
+            "The address must not be used by another trucking company for this same purpose."
+          ]
+        },
+        {
+          "title": "Truck information",
+          "items": [
+            "The type of truck the company will use.",
+            "The number of trucks the company will have."
+          ]
+        },
+        {
+          "title": "Drivers",
+          "items": ["The number of drivers who will work for the company."]
+        },
+        {
+          "title": "Type of operation",
+          "items": [
+            "Provide at least 3 types of cargo or operations the company will perform.",
+            "Examples: construction materials, food, machinery, general products, etc."
+          ]
+        },
+        {
+          "title": "Business email address",
+          "items": ["We recommend using an email address dedicated exclusively to the company."]
+        },
+        {
+          "title": "Business phone number",
+          "items": [
+            "It must be a phone number dedicated exclusively to the company.",
+            "Important: once the number is registered, it is common to begin receiving many calls related to services for trucking companies. For this reason, we recommend not using a personal phone number."
+          ]
+        }
       ],
       "addOns": ["Website and custom domain: $250 for one year."]
     }

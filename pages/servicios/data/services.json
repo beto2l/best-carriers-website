@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "version": "1.3.16",
+  "version": "1.3.18",
   "whatsappUrl": "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking",
   "requirements": "La documentación exacta depende de tu estructura, estado y situación operativa. La lista de requisitos se confirma después de una evaluación inicial.",
   "labels": {
@@ -124,12 +124,61 @@
       "excludes": [
         "Fee de la Secretaría de Estado."
       ],
+      "clientProvidesIntro": "Para iniciar el registro de su compañía de transporte, es necesario contar con la siguiente información y documentación:",
       "clientProvides": [
-        "Nombre completo e identificación de cada socio.",
-        "Nombre de la compañía.",
-        "Domicilio en el que se establecerá la compañía.",
-        "Número de teléfono y correo electrónico de la empresa.",
-        "Indicar si algún miembro de la compañía será el registered agent o si contratarán un servicio adicional."
+        {
+          "title": "LLC",
+          "items": [
+            "Artículos de Incorporación / Articles of Organization."
+          ]
+        },
+        {
+          "title": "EIN",
+          "items": [
+            "Número de Identificación del Empleador (Employer Identification Number)."
+          ]
+        },
+        {
+          "title": "Comprobante de domicilio comercial",
+          "items": [
+            "Debe ser un domicilio físico, no virtual.",
+            "Se requiere un comprobante, por ejemplo, un bill de servicios.",
+            "El domicilio no debe estar siendo utilizado por otra compañía de trucking para este mismo propósito."
+          ]
+        },
+        {
+          "title": "Información de los camiones",
+          "items": [
+            "Tipo de camión que utilizarán.",
+            "Cantidad de camiones que tendrá la compañía."
+          ]
+        },
+        {
+          "title": "Drivers",
+          "items": [
+            "Cantidad de conductores que trabajarán para la compañía."
+          ]
+        },
+        {
+          "title": "Tipo de operación",
+          "items": [
+            "Indicar mínimo 3 tipos de carga u operaciones que realizará la compañía.",
+            "Ejemplo: materiales de construcción, alimentos, maquinaria, productos generales, etc."
+          ]
+        },
+        {
+          "title": "Correo electrónico del negocio",
+          "items": [
+            "Se recomienda utilizar un correo exclusivo para la compañía."
+          ]
+        },
+        {
+          "title": "Número de teléfono del negocio",
+          "items": [
+            "Debe ser un número exclusivo para la compañía.",
+            "Importante: una vez registrado el número, es común comenzar a recibir una gran cantidad de llamadas relacionadas con servicios para compañías de trucking. Por esta razón, se recomienda no utilizar el número de teléfono personal."
+          ]
+        }
       ],
       "addOns": [
         "Página web y dominio personalizado: $250 por un año."

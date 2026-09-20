@@ -1084,6 +1084,56 @@ svg {
   font-weight: 700;
 }
 
+.client-provides-intro {
+  margin-bottom: 14px !important;
+}
+
+.dialog-section .client-provides-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.55rem;
+  list-style: decimal;
+}
+
+.dialog-section .client-provides-list > li {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--mist);
+  color: #43515a;
+  font-size: .86rem;
+  font-weight: 500;
+}
+
+.client-provides-list > li::marker {
+  color: var(--emerald-dark);
+  font-weight: 850;
+}
+
+.client-provides-list > li > strong {
+  display: block;
+  color: var(--navy-900);
+  font-size: .9rem;
+}
+
+.dialog-section .client-provides-details {
+  display: grid;
+  gap: 5px;
+  margin-top: 7px;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.dialog-section .client-provides-details li {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #43515a;
+  font-size: .84rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .variant-list {
   display: grid !important;
   gap: 10px !important;

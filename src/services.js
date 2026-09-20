@@ -186,7 +186,7 @@
       bodyHost.append(createListSection(labels.excludesLabel, service.excludes));
     }
     if (service.clientProvides?.length) {
-      bodyHost.append(createListSection(labels.clientProvidesLabel, service.clientProvides));
+      bodyHost.append(createClientProvidesSection(labels.clientProvidesLabel, service.clientProvidesIntro, service.clientProvides));
     }
     if (service.addOns?.length) {
       bodyHost.append(createListSection(labels.addOnsLabel, service.addOns));
@@ -208,6 +208,32 @@
     const list = element("ul");
     items.forEach((item) => list.append(element("li", "", item)));
     section.append(heading, list);
+    return section;
+  }
+
+  function createClientProvidesSection(title, intro, items) {
+    const hasStructuredItems = items.some((item) => item && typeof item === "object");
+    if (!hasStructuredItems) return createListSection(title, items);
+
+    const section = element("section", "dialog-section client-provides-section");
+    const heading = element("h3", "", title);
+    const list = element("ol", "client-provides-list");
+
+    items.forEach((entry) => {
+      if (!entry || typeof entry !== "object") return;
+      const item = element("li");
+      item.append(element("strong", "", entry.title));
+      if (Array.isArray(entry.items) && entry.items.length) {
+        const details = element("ul", "client-provides-details");
+        entry.items.forEach((detail) => details.append(element("li", "", detail)));
+        item.append(details);
+      }
+      list.append(item);
+    });
+
+    section.append(heading);
+    if (intro) section.append(element("p", "client-provides-intro", intro));
+    section.append(list);
     return section;
   }
 
