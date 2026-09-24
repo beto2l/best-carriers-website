@@ -1,0 +1,43 @@
+{
+  "logo": "https://c.opin-x.com/best-carriers/Best-carriers-icon.png",
+  "paymentMethodsImage": "https://c.opin-x.com/best-carriers/metodos-de-pago-admitidos.png",
+  "products": [
+    {
+      "slug": "tdc",
+      "name": "Trucking desde cero",
+      "type": "live_course",
+      "tag": "EN VIVO · ONLINE",
+      "fallback": "/cursos/tdc/pay/"
+    },
+    {
+      "slug": "ifta",
+      "name": "Curso de IFTA",
+      "type": "live_course",
+      "tag": "EN VIVO · ONLINE",
+      "fallback": "/cursos/ifta/pay/"
+    },
+    {
+      "slug": "safety",
+      "name": "Safety & Compliance",
+      "type": "live_course",
+      "tag": "EN VIVO · ONLINE",
+      "fallback": "/cursos/safety/pay/"
+    },
+    {
+      "slug": "motus",
+      "name": "Curso de Motus",
+      "type": "recorded_course",
+      "tag": "CURSO GRABADO",
+      "fallback": "/cursos/motus/#checkout-form",
+      "availability": "Acceso después del pago"
+    },
+    {
+      "slug": "consultoria",
+      "name": "Consultoría por hora",
+      "type": "consulting",
+      "tag": "ASESORÍA PERSONAL",
+      "fallback": "/consultoria/",
+      "availability": "1 hora · Agenda tu sesión"
+    }
+  ]
+}

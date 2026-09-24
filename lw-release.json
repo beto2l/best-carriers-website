@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.18",
+  "version": "1.3.19",
   "languages": [
     "es",
     "en"
@@ -76,6 +76,23 @@
       "seo": {
         "robots": "noindex,follow"
       }
+    },
+    {
+      "id": "course-payment-selector-es",
+      "title": "Cursos y consultoría · Pago seguro",
+      "route": "cursos/combo/pay",
+      "entry": "pages/cursos/combo/pay/index.html",
+      "language": "es",
+      "seo": {
+        "robots": "noindex,follow"
+      },
+      "components": [
+        "payments-tdc-es",
+        "payments-ifta-es",
+        "payments-safety-es",
+        "payments-motus-es",
+        "payments-consultoria-es"
+      ]
     }
   ],
   "global_content": {
@@ -140,13 +157,64 @@
       "type": "payment_result",
       "product": "motus",
       "language": "en"
+    },
+    "payments-tdc-es": {
+      "type": "checkout",
+      "version": 1,
+      "product": "tdc",
+      "language": "es",
+      "design_variant": "headless",
+      "activation": "on_select",
+      "submit_label": "Continuar a Stripe →",
+      "required_product_type": "live_course"
+    },
+    "payments-ifta-es": {
+      "type": "checkout",
+      "version": 1,
+      "product": "ifta",
+      "language": "es",
+      "design_variant": "headless",
+      "activation": "on_select",
+      "submit_label": "Continuar a Stripe →",
+      "required_product_type": "live_course"
+    },
+    "payments-safety-es": {
+      "type": "checkout",
+      "version": 1,
+      "product": "safety",
+      "language": "es",
+      "design_variant": "headless",
+      "activation": "on_select",
+      "submit_label": "Continuar a Stripe →",
+      "required_product_type": "live_course"
+    },
+    "payments-motus-es": {
+      "type": "checkout",
+      "version": 1,
+      "product": "motus",
+      "language": "es",
+      "design_variant": "headless",
+      "activation": "on_select",
+      "submit_label": "Continuar a Stripe →",
+      "required_product_type": "recorded_course"
+    },
+    "payments-consultoria-es": {
+      "type": "checkout",
+      "version": 1,
+      "product": "consultoria",
+      "language": "es",
+      "design_variant": "headless",
+      "activation": "on_select",
+      "submit_label": "Continuar a Stripe →",
+      "required_product_type": "consulting"
     }
   },
   "files_sha256": {
-    "pages/cursos/motus/gracias/index.html": "c642b03e41ac233cc39c7ea81f3013c09f44efcb64e4ae94f6949f28f78edfae",
-    "pages/cursos/motus/index.html": "adcb0e435a94bbfb01c2d911e2ae53e7ee32ea98e35c3845aa0a1841ae9d235d",
-    "pages/en/courses/motus/index.html": "f17670c18800d0f6301d71333a55a5e0768fb3cca90137e8b3a8e3835855638d",
-    "pages/en/courses/motus/thank-you/index.html": "c646fef4224375432651dfcd5ff12f1eb3f81d2c51795d8271a4c832ce80db0d",
+    "pages/cursos/combo/pay/index.html": "e8675ac36aa4d9bf0334110c539753542453689924ca50338fb34965eaf9bc72",
+    "pages/cursos/motus/gracias/index.html": "f03a5c3cf33985f50c65405210b436aadc17b3e11fa407ec77fdb96b7eb3718f",
+    "pages/cursos/motus/index.html": "110379f1871319a9ac640e838ecddd04e62d64e14b3d218389f4ea7cc6548c7a",
+    "pages/en/courses/motus/index.html": "08acd108876aa56adaecc6810e914d3ed1e52cf2bc87aeea98c490df23f85217",
+    "pages/en/courses/motus/thank-you/index.html": "c5a50c4bc614e47ca3c004f11b1ef6222a49bdccc7c4cea9c9245f1004bb8fa0",
     "pages/services/data/services.json": "01f7d3b51fa486ef6c3c5ad2edc654aa4af421bfaa36c0d772cede946c9cc1b3",
     "pages/services/index.html": "1cbe5faf186e2fb3035d15b613c11932925c63a2ee9d71e66dd75fce835fb23c",
     "pages/servicios/data/services.json": "b9e1525ab5102949da287ff539ca264e0e9e8568222f95c8762df3bd86b1c182",

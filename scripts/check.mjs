@@ -12,7 +12,8 @@ const expectedRoutes = new Set([
   "cursos/motus",
   "en/courses/motus",
   "cursos/motus/gracias",
-  "en/courses/motus/thank-you"
+  "en/courses/motus/thank-you",
+  "cursos/combo/pay"
 ]);
 const failures = [];
 
@@ -20,7 +21,7 @@ if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
 if (release.version !== packageJson.version) failures.push("release and package versions must match");
-if (release.pages.length !== 6) failures.push("exactly six native Pages are required");
+if (release.pages.length !== 7) failures.push("exactly seven native Pages are required");
 
 const ids = new Set();
 for (const page of release.pages) {
@@ -32,8 +33,7 @@ for (const page of release.pages) {
   const expectedCanonical = `https://best-carriers.com/${page.route}/`;
   for (const required of [
     `rel="canonical" href="${expectedCanonical}"`,
-    "hreflang=\"es\"",
-    "hreflang=\"en\"",
+    ...(page.route === "cursos/combo/pay" ? [] : ['hreflang="es"', 'hreflang="en"']),
     "data-current-year",
     "<style>:root"
   ]) {
@@ -82,6 +82,19 @@ for (const [relative, expected] of Object.entries(release.files_sha256)) {
   const actual = createHash("sha256").update(await readFile(absolute)).digest("hex");
   if (actual !== expected) failures.push(`checksum mismatch: ${relative}`);
 }
+
+const paymentPage = release.pages.find(page => page.route === "cursos/combo/pay");
+const paymentHtml = await readFile(path.join(root, paymentPage.entry), "utf8");
+for (const slug of ["tdc", "ifta", "safety", "motus", "consultoria"]) {
+  const key = `payments-${slug}-es`;
+  const component = components[key];
+  if (!paymentPage.components.includes(key) || component?.product !== slug || component?.activation !== "on_select") failures.push(`Missing selectable checkout for ${slug}`);
+  if (!paymentHtml.includes(`data-checkout="${slug}"`) || !paymentHtml.includes(`data-product="${slug}"`)) failures.push(`Missing selection UI for ${slug}`);
+}
+for (const forbidden of ["checkout-bootstrap", "admin-ajax.php", "OPINFunnelHeadless.mount", "localStorage", "sessionStorage", "stripe.com/pay", "399", "699"]) {
+  if (paymentHtml.includes(forbidden)) failures.push(`Payment UI must not duplicate payment logic, customer storage or canonical prices: ${forbidden}`);
+}
+if (!paymentHtml.includes("Best-carriers-icon.png") || !paymentHtml.includes("OPINXLWCheckout.activate")) failures.push("Payment page requires the original logo and official component activation");
 
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join("\n"));

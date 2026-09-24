@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildPayments } from "./build-payments.mjs";
 import { buildMotus } from "./build-motus.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -46,7 +47,8 @@ if (buildServices) {
 }
 
 const motusRelease = await buildMotus({ root, site, version });
-files.push(...motusRelease.files);
+const paymentsRelease = await buildPayments({ root, version });
+files.push(...motusRelease.files, ...paymentsRelease.files);
 
 const checksums = {};
 for (const file of files.sort()) {
@@ -69,9 +71,10 @@ const release = {
       language: locale,
       translation_key: "trucking-services"
     })),
-    ...motusRelease.pages
+    ...motusRelease.pages,
+    ...paymentsRelease.pages
   ],
-  global_content: motusRelease.globalContent,
+  global_content: { ...motusRelease.globalContent, ...paymentsRelease.globalContent },
   files_sha256: checksums
 };
 
