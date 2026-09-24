@@ -10,7 +10,7 @@ export async function buildPayments({ root, version }) {
   const key = product => `payments-${product.slug}-es`;
   const cards = content.products.map(product => `<a class="product" href="${escape(product.fallback)}" data-product="${product.slug}" aria-controls="payment-panel">
     <span class="product-copy"><small>${escape(product.tag)}</small><strong>${escape(product.name)}</strong><span class="product-date">${escape(product.availability || "Ver fecha y horario")}</span><span class="product-time"></span></span>
-    <span class="product-action"><b class="product-price">Ver precio</b><span class="product-arrow" aria-hidden="true">↗</span></span>
+    <span class="product-action"><b class="product-price">Ver precio</b><span class="product-pay">Pagar <span aria-hidden="true">→</span></span></span>
   </a>`).join("\n");
   const components = content.products.map(product => `<section data-checkout="${product.slug}" hidden><opinx-component data-opinx-global-content="${key(product)}"><p>Continúa en la página de inscripción.</p><a class="fallback-button" href="${escape(product.fallback)}">Abrir inscripción</a></opinx-component></section>`).join("\n");
   const html = `<!doctype html>
