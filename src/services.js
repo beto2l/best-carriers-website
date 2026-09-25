@@ -48,6 +48,10 @@
   });
 
   serviceTriggers.forEach((trigger) => trigger.addEventListener("click", openService));
+  cards.forEach((card) => card.addEventListener("click", (event) => {
+    if (event.target.closest("button, a, input, select, textarea, summary, details")) return;
+    card.querySelector("[data-open-service]")?.click();
+  }));
   window.addEventListener("hashchange", syncDialogWithHash);
 
   async function openService(event) {

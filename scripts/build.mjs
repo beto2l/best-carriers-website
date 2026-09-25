@@ -182,6 +182,7 @@ function renderPage(locale) {
   <meta property="og:url" content="${escapeHtml(canonical)}">
   <meta property="og:image" content="${escapeHtml(site.heroImage.url)}">
   <link rel="preconnect" href="https://bc.opin-x.com" crossorigin>
+  <link rel="preconnect" href="https://c.opin-x.com" crossorigin>
   <link rel="preload" as="image" href="${escapeHtml(site.heroImage.url)}" type="image/webp" fetchpriority="high">
   <style>${inlineCss}</style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
@@ -193,7 +194,7 @@ function renderPage(locale) {
   <header class="site-header" data-header>
     <div class="shell header-inner">
       <a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers">
-        <span class="brand-mark" aria-hidden="true">BC</span>
+        <img class="brand-logo" src="${escapeHtml(site.logo)}" width="44" height="44" alt="" aria-hidden="true" decoding="async">
         <span class="brand-copy"><strong>${escapeHtml(site.brand)}</strong><small>${escapeHtml(t.brandTagline)}</small></span>
       </a>
       <nav class="header-actions" aria-label="${locale === "es" ? "Acciones principales" : "Primary actions"}">
@@ -282,7 +283,7 @@ function renderPage(locale) {
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <div class="brand footer-brand"><span class="brand-mark" aria-hidden="true">BC</span><span class="brand-copy"><strong>${escapeHtml(site.brand)}</strong><small>${escapeHtml(t.footerText)}</small></span></div>
+      <div class="brand footer-brand"><img class="brand-logo" src="${escapeHtml(site.logo)}" width="44" height="44" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="brand-copy"><strong>${escapeHtml(site.brand)}</strong><small>${escapeHtml(t.footerText)}</small></span></div>
       <div class="footer-meta">
         <p>${escapeHtml(t.disclaimer)}</p>
         <small>© <span data-current-year>${new Date().getUTCFullYear()}</span> ${escapeHtml(t.copyright)}</small>
@@ -312,6 +313,7 @@ function renderCard(service, locale, index) {
   const item = service[locale];
   const t = site.locales[locale];
   return `<article class="service-card" data-service-card data-service-id="${escapeHtml(service.id)}" data-category="${escapeHtml(service.category)}" style="--order:${index}">
+            <div class="card-visual"><img src="${escapeHtml(service.image)}" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true">${icon(service.icon)}</span>
               <span class="service-number">${String(index + 1).padStart(2, "0")}</span>

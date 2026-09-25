@@ -18,6 +18,7 @@
   <meta property="og:url" content="https://best-carriers.com/services/">
   <meta property="og:image" content="https://bc.opin-x.com/best-carriers-services-hero.webp">
   <link rel="preconnect" href="https://bc.opin-x.com" crossorigin>
+  <link rel="preconnect" href="https://c.opin-x.com" crossorigin>
   <link rel="preload" as="image" href="https://bc.opin-x.com/best-carriers-services-hero.webp" type="image/webp" fetchpriority="high">
   <style>:root {
   color-scheme: light;
@@ -164,6 +165,14 @@ svg {
   font-size: .78rem;
   font-weight: 800;
   letter-spacing: .1em;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 11px;
 }
 
 .brand-copy {
@@ -693,6 +702,38 @@ svg {
   background: var(--white);
   box-shadow: 0 8px 25px rgba(7, 21, 34, .035);
   transition: transform .32s var(--ease), box-shadow .32s ease, border-color .32s ease;
+  cursor: pointer;
+}
+
+.card-visual {
+  position: relative;
+  height: 148px;
+  flex: 0 0 auto;
+  margin: -28px -28px 20px;
+  overflow: hidden;
+  background: #0b2029;
+}
+
+.card-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 21, 34, .08) 0%, rgba(7, 21, 34, .02) 48%, rgba(255, 255, 255, .94) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.card-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(.88) contrast(1.04);
+  transition: transform .65s var(--ease), filter .65s ease;
+}
+
+.service-card:hover .card-visual img {
+  filter: saturate(1) contrast(1.02);
+  transform: scale(1.035);
 }
 
 .service-card::after {
@@ -723,6 +764,11 @@ svg {
 }
 
 .card-top {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 28px;
+  left: 28px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -753,7 +799,7 @@ svg {
 }
 
 .card-copy {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .card-copy h3 {
@@ -1365,6 +1411,10 @@ svg {
     min-height: 360px;
   }
 
+  .card-visual {
+    height: 158px;
+  }
+
   .contact-band {
     padding: 66px 0;
   }
@@ -1420,13 +1470,13 @@ svg {
   <script>document.documentElement.classList.replace("no-js","js");</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Trucking Services","url":"https://best-carriers.com/services/","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Federal Tax Filing","description":"Federal tax return preparation for a Single Member LLC or Partnership.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Form 1099","description":"Preparation and issuance of forms for independent contractors.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Sales Tax Filing","description":"Filing and reporting with the applicable tax authority.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":4,"item":{"@type":"Service","name":"IFTA Filing","description":"Quarterly reporting and fuel tax filing.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":5,"item":{"@type":"Service","name":"IRP + IFTA","description":"Coordinated setup and registration of interstate and fuel accounts.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":6,"item":{"@type":"Service","name":"LLC + Operating Authority","description":"Company formation and operating authority setup.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":7,"item":{"@type":"Service","name":"State Permits","description":"State filings and registrations for trucking operations.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":8,"item":{"@type":"Service","name":"Obtain USDOT Number","description":"USDOT number only for your trucking company.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":9,"item":{"@type":"Service","name":"Reinstate MC Authority","description":"Operating authority reactivation with FMCSA / DOT.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":10,"item":{"@type":"Service","name":"Migrate to Motus","description":"Platform setup, transition and synchronization.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":11,"item":{"@type":"Service","name":"Close a Trucking Company","description":"Coordinated closure of operational and tax registrations.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}},{"@type":"ListItem","position":12,"item":{"@type":"Service","name":"Tax or Trucking Consulting","description":"Individual strategic advice with transportation specialists.","provider":{"@type":"Organization","name":"Best Carriers","url":"https://best-carriers.com/"},"areaServed":{"@type":"Country","name":"United States"}}}]}</script>
 </head>
-<body data-locale="en" data-release="1.3.18">
-  <script type="application/json" data-static-catalog>{"locale":"en","version":"1.3.18","whatsappUrl":"https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking","requirements":"The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.","labels":{"detailsEyebrow":"Service information","priceLabel":"Price","includesLabel":"Includes","variantsLabel":"Service options","prerequisitesLabel":"Prerequisites","excludesLabel":"Not included","clientProvidesLabel":"The client must provide","addOnsLabel":"Additional service","requirementsLabel":"Information and requirements","priceNotice":"Prices valid through December 2026.","dialogCta":"I want this service","resultSingular":"service available","resultPlural":"services available"},"services":[{"id":"federal-tax-filing","slug":"federal-tax-filing","aliases":["federal-tax-filing","declaracion-impuestos-federales"],"category":"taxes","icon":"chart","name":"Federal Tax Filing","price":"$490 – $2,500","priceNote":"Based on business structure","summary":"Federal tax return preparation for a Single Member LLC or Partnership.","details":"Final cost depends on operation size, number of trucks, transaction volume and bank accounts.","variants":[{"name":"Single Member LLC","form":"Schedule C + Form 1040","price":"$490 – $1,000","deadline":"April 15","extra":"K-1 not applicable"},{"name":"Partnership","form":"Form 1065","price":"$1,000 – $2,500","deadline":"March 15","extra":"One K-1 per partner"}]},{"id":"form-1099","slug":"form-1099","aliases":["form-1099"],"category":"taxes","icon":"document","name":"Form 1099","price":"$75","priceNote":"Per form","summary":"Preparation and issuance of forms for independent contractors.","details":"Individual service for each requested Form 1099."},{"id":"sales-tax","slug":"sales-tax","aliases":["sales-tax"],"category":"taxes","icon":"receipt","name":"Sales Tax Filing","price":"$250","priceNote":"Annual","summary":"Filing and reporting with the applicable tax authority.","details":"Preparation of the annual Sales Tax report using the information provided."},{"id":"filing-ifta","slug":"ifta-filing","aliases":["filing-ifta","ifta-filing"],"category":"compliance","icon":"fuel","name":"IFTA Filing","price":"$375","priceNote":"Annual, per truck","summary":"Quarterly reporting and fuel tax filing.","details":"Preparation of the operation's IFTA reports for the applicable period."},{"id":"irp-ifta","slug":"irp-ifta","aliases":["irp-ifta"],"category":"compliance","icon":"route","name":"IRP + IFTA","price":"$1,500","priceNote":"Coordinated setup","summary":"Coordinated setup and registration of interstate and fuel accounts.","details":"Coordinated initial setup of IRP and IFTA registrations for the trucking company."},{"id":"llc-authority","slug":"llc-authority","aliases":["llc-authority","crear-llc"],"category":"business","icon":"building","name":"LLC + Operating Authority","price":"$1,400","priceNote":"Service price","summary":"Company formation and operating authority setup.","details":"LLC formation and operating authority setup.","excludes":["Secretary of State filing fee."],"clientProvidesIntro":"To begin registering your trucking company, the following information and documentation are required:","clientProvides":[{"title":"LLC","items":["Articles of Incorporation / Articles of Organization."]},{"title":"EIN","items":["Employer Identification Number."]},{"title":"Proof of business address","items":["It must be a physical address, not a virtual address.","Proof is required, such as a utility bill.","The address must not be used by another trucking company for this same purpose."]},{"title":"Truck information","items":["The type of truck the company will use.","The number of trucks the company will have."]},{"title":"Drivers","items":["The number of drivers who will work for the company."]},{"title":"Type of operation","items":["Provide at least 3 types of cargo or operations the company will perform.","Examples: construction materials, food, machinery, general products, etc."]},{"title":"Business email address","items":["We recommend using an email address dedicated exclusively to the company."]},{"title":"Business phone number","items":["It must be a phone number dedicated exclusively to the company.","Important: once the number is registered, it is common to begin receiving many calls related to services for trucking companies. For this reason, we recommend not using a personal phone number."]}],"addOns":["Website and custom domain: $250 for one year."]},{"id":"state-permits","slug":"state-permits","aliases":["state-permits","permisos-estatales"],"category":"compliance","icon":"map","name":"State Permits","price":"$150 – $750","priceNote":"Based on state and filing","summary":"State filings and registrations for trucking operations.","details":"Service available for California, Oregon, New Mexico, Kentucky and New York.","includes":["California (CA)","Oregon (OR)","New Mexico (NM)","Kentucky (KY)","New York (NY)"]},{"id":"obtain-usdot","slug":"obtain-usdot","aliases":["obtain-usdot","obtener-usdot"],"category":"compliance","icon":"document","name":"Obtain USDOT Number","price":"$250","priceNote":"Fixed price","summary":"USDOT number only for your trucking company.","details":"This service is limited exclusively to obtaining the company's USDOT number.","requirements":["The trucking company must already be formed.","The LLC must already be established.","You must have the IIN letter ready."],"excludes":["Motor Carrier or EMC","BOC-3","UCR"],"clientProvides":["The type of operation you will have.","The type of trucks you will operate.","How many drivers you will manage."]},{"id":"reinstate-mc-authority","slug":"reinstate-mc-authority","aliases":["reinstate-mc-authority"],"category":"compliance","icon":"shield","name":"Reinstate MC Authority","price":"$750","priceNote":"Reactivation","summary":"Operating authority reactivation with FMCSA / DOT.","details":"Support to restore the operation's MC authority."},{"id":"migrate-motus","slug":"migrate-motus","aliases":["migrate-motus","migrar-motus"],"category":"business","icon":"sync","name":"Migrate to Motus","price":"$250","priceNote":"Setup and transition","summary":"Platform setup, transition and synchronization.","details":"Assistance organizing the operational transition to Motus."},{"id":"close-trucking-company","slug":"close-trucking-company","aliases":["close-trucking-company","cerrar-empresa-trucking"],"category":"business","icon":"close","name":"Close a Trucking Company","price":"$1,000 – $2,500","priceNote":"Based on scope","summary":"Coordinated closure of operational and tax registrations.","details":"May include cancellation of DOT, MC, IFTA, IRP, state closures and final tax account closure."},{"id":"consulting","slug":"tax-trucking-consulting","aliases":["consulting","consultoria-impuestos-trucking","tax-trucking-consulting"],"category":"business","icon":"chat","name":"Tax or Trucking Consulting","price":"$150","priceNote":"Per hour","summary":"Individual strategic advice with transportation specialists.","details":"A focused session for the company's tax, regulatory or operational questions."}]}</script>
+<body data-locale="en" data-release="1.3.22">
+  <script type="application/json" data-static-catalog>{"locale":"en","version":"1.3.22","whatsappUrl":"https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking","requirements":"The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.","labels":{"detailsEyebrow":"Service information","priceLabel":"Price","includesLabel":"Includes","variantsLabel":"Service options","prerequisitesLabel":"Prerequisites","excludesLabel":"Not included","clientProvidesLabel":"The client must provide","addOnsLabel":"Additional service","requirementsLabel":"Information and requirements","priceNotice":"Prices valid through December 2026.","dialogCta":"I want this service","resultSingular":"service available","resultPlural":"services available"},"services":[{"id":"federal-tax-filing","slug":"federal-tax-filing","aliases":["federal-tax-filing","declaracion-impuestos-federales"],"category":"taxes","icon":"chart","name":"Federal Tax Filing","price":"$490 – $2,500","priceNote":"Based on business structure","summary":"Federal tax return preparation for a Single Member LLC or Partnership.","details":"Final cost depends on operation size, number of trucks, transaction volume and bank accounts.","variants":[{"name":"Single Member LLC","form":"Schedule C + Form 1040","price":"$490 – $1,000","deadline":"April 15","extra":"K-1 not applicable"},{"name":"Partnership","form":"Form 1065","price":"$1,000 – $2,500","deadline":"March 15","extra":"One K-1 per partner"}]},{"id":"form-1099","slug":"form-1099","aliases":["form-1099"],"category":"taxes","icon":"document","name":"Form 1099","price":"$75","priceNote":"Per form","summary":"Preparation and issuance of forms for independent contractors.","details":"Individual service for each requested Form 1099."},{"id":"sales-tax","slug":"sales-tax","aliases":["sales-tax"],"category":"taxes","icon":"receipt","name":"Sales Tax Filing","price":"$250","priceNote":"Annual","summary":"Filing and reporting with the applicable tax authority.","details":"Preparation of the annual Sales Tax report using the information provided."},{"id":"filing-ifta","slug":"ifta-filing","aliases":["filing-ifta","ifta-filing"],"category":"compliance","icon":"fuel","name":"IFTA Filing","price":"$375","priceNote":"Annual, per truck","summary":"Quarterly reporting and fuel tax filing.","details":"Preparation of the operation's IFTA reports for the applicable period."},{"id":"irp-ifta","slug":"irp-ifta","aliases":["irp-ifta"],"category":"compliance","icon":"route","name":"IRP + IFTA","price":"$1,500","priceNote":"Coordinated setup","summary":"Coordinated setup and registration of interstate and fuel accounts.","details":"Coordinated initial setup of IRP and IFTA registrations for the trucking company."},{"id":"llc-authority","slug":"llc-authority","aliases":["llc-authority","crear-llc"],"category":"business","icon":"building","name":"LLC + Operating Authority","price":"$1,400","priceNote":"Service price","summary":"Company formation and operating authority setup.","details":"LLC formation and operating authority setup.","excludes":["Secretary of State filing fee."],"clientProvidesIntro":"To begin registering your trucking company, the following information and documentation are required:","clientProvides":[{"title":"LLC","items":["Articles of Incorporation / Articles of Organization."]},{"title":"EIN","items":["Employer Identification Number."]},{"title":"Proof of business address","items":["It must be a physical address, not a virtual address.","Proof is required, such as a utility bill.","The address must not be used by another trucking company for this same purpose."]},{"title":"Truck information","items":["The type of truck the company will use.","The number of trucks the company will have."]},{"title":"Drivers","items":["The number of drivers who will work for the company."]},{"title":"Type of operation","items":["Provide at least 3 types of cargo or operations the company will perform.","Examples: construction materials, food, machinery, general products, etc."]},{"title":"Business email address","items":["We recommend using an email address dedicated exclusively to the company."]},{"title":"Business phone number","items":["It must be a phone number dedicated exclusively to the company.","Important: once the number is registered, it is common to begin receiving many calls related to services for trucking companies. For this reason, we recommend not using a personal phone number."]}],"addOns":["Website and custom domain: $250 for one year."]},{"id":"state-permits","slug":"state-permits","aliases":["state-permits","permisos-estatales"],"category":"compliance","icon":"map","name":"State Permits","price":"$150 – $750","priceNote":"Based on state and filing","summary":"State filings and registrations for trucking operations.","details":"Service available for California, Oregon, New Mexico, Kentucky and New York.","includes":["California (CA)","Oregon (OR)","New Mexico (NM)","Kentucky (KY)","New York (NY)"]},{"id":"obtain-usdot","slug":"obtain-usdot","aliases":["obtain-usdot","obtener-usdot"],"category":"compliance","icon":"document","name":"Obtain USDOT Number","price":"$250","priceNote":"Fixed price","summary":"USDOT number only for your trucking company.","details":"This service is limited exclusively to obtaining the company's USDOT number.","requirements":["The trucking company must already be formed.","The LLC must already be established.","You must have the IIN letter ready."],"excludes":["Motor Carrier or EMC","BOC-3","UCR"],"clientProvides":["The type of operation you will have.","The type of trucks you will operate.","How many drivers you will manage."]},{"id":"reinstate-mc-authority","slug":"reinstate-mc-authority","aliases":["reinstate-mc-authority"],"category":"compliance","icon":"shield","name":"Reinstate MC Authority","price":"$750","priceNote":"Reactivation","summary":"Operating authority reactivation with FMCSA / DOT.","details":"Support to restore the operation's MC authority."},{"id":"migrate-motus","slug":"migrate-motus","aliases":["migrate-motus","migrar-motus"],"category":"business","icon":"sync","name":"Migrate to Motus","price":"$250","priceNote":"Setup and transition","summary":"Platform setup, transition and synchronization.","details":"Assistance organizing the operational transition to Motus."},{"id":"close-trucking-company","slug":"close-trucking-company","aliases":["close-trucking-company","cerrar-empresa-trucking"],"category":"business","icon":"close","name":"Close a Trucking Company","price":"$1,000 – $2,500","priceNote":"Based on scope","summary":"Coordinated closure of operational and tax registrations.","details":"May include cancellation of DOT, MC, IFTA, IRP, state closures and final tax account closure."},{"id":"consulting","slug":"tax-trucking-consulting","aliases":["consulting","consultoria-impuestos-trucking","tax-trucking-consulting"],"category":"business","icon":"chat","name":"Tax or Trucking Consulting","price":"$150","priceNote":"Per hour","summary":"Individual strategic advice with transportation specialists.","details":"A focused session for the company's tax, regulatory or operational questions."}]}</script>
   <a class="skip-link" href="#services-grid">Skip to services</a>
   <header class="site-header" data-header>
     <div class="shell header-inner">
       <a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers">
-        <span class="brand-mark" aria-hidden="true">BC</span>
+        <img class="brand-logo" src="https://c.opin-x.com/best-carriers/Best-carriers-icon.png" width="44" height="44" alt="" aria-hidden="true" decoding="async">
         <span class="brand-copy"><strong>Best Carriers</strong><small>Compliance, taxes and operations</small></span>
       </a>
       <nav class="header-actions" aria-label="Primary actions">
@@ -1491,6 +1541,7 @@ svg {
         <p class="results-count" aria-live="polite" data-results-count>12 services available</p>
         <div class="services-grid" id="services-grid" data-services-grid>
           <article class="service-card" data-service-card data-service-id="federal-tax-filing" data-category="taxes" style="--order:0">
+            <div class="card-visual"><img src="https://bc.opin-x.com/federal-tax-filing.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-chart" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg></span>
               <span class="service-number">01</span>
@@ -1509,6 +1560,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="form-1099" data-category="taxes" style="--order:1">
+            <div class="card-visual"><img src="https://bc.opin-x.com/form-1099.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-document" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 12h6m-6 4h6"/></svg></span>
               <span class="service-number">02</span>
@@ -1527,6 +1579,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="sales-tax" data-category="taxes" style="--order:2">
+            <div class="card-visual"><img src="https://bc.opin-x.com/sales-tax.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-receipt" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12v19l-3-2-3 2-3-2-3 2V3Zm3 5h6m-6 4h6m-6 4h4"/></svg></span>
               <span class="service-number">03</span>
@@ -1545,6 +1598,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="filing-ifta" data-category="compliance" style="--order:3">
+            <div class="card-visual"><img src="https://bc.opin-x.com/filing-ifta.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-fuel" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 22V3h10v19M3 22h14M8 7h4m5 3h2l2 2v6a2 2 0 0 1-4 0v-8Z"/></svg></span>
               <span class="service-number">04</span>
@@ -1563,6 +1617,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="irp-ifta" data-category="compliance" style="--order:4">
+            <div class="card-visual"><img src="https://bc.opin-x.com/irp-ifta.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-route" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h3a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg></span>
               <span class="service-number">05</span>
@@ -1581,6 +1636,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="llc-authority" data-category="business" style="--order:5">
+            <div class="card-visual"><img src="https://bc.opin-x.com/llc-authority.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-building" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V5l8-3 8 3v16M9 9h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1M2 21h20"/></svg></span>
               <span class="service-number">06</span>
@@ -1599,6 +1655,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="state-permits" data-category="compliance" style="--order:6">
+            <div class="card-visual"><img src="https://bc.opin-x.com/state-permits.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-map" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></svg></span>
               <span class="service-number">07</span>
@@ -1617,6 +1674,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="obtain-usdot" data-category="compliance" style="--order:7">
+            <div class="card-visual"><img src="https://bc.opin-x.com/obtain-usdot.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-document" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 12h6m-6 4h6"/></svg></span>
               <span class="service-number">08</span>
@@ -1635,6 +1693,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="reinstate-mc-authority" data-category="compliance" style="--order:8">
+            <div class="card-visual"><img src="https://bc.opin-x.com/reinstate-mc-authority.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-shield" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg></span>
               <span class="service-number">09</span>
@@ -1653,6 +1712,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="migrate-motus" data-category="business" style="--order:9">
+            <div class="card-visual"><img src="https://bc.opin-x.com/migrate-motus.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-sync" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7h-5V2M4 17h5v5M6.1 8A7 7 0 0 1 18 5l2 2M17.9 16A7 7 0 0 1 6 19l-2-2"/></svg></span>
               <span class="service-number">10</span>
@@ -1671,6 +1731,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="close-trucking-company" data-category="business" style="--order:10">
+            <div class="card-visual"><img src="https://bc.opin-x.com/close-trucking-company.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></span>
               <span class="service-number">11</span>
@@ -1689,6 +1750,7 @@ svg {
             </details>
             </article>
 <article class="service-card" data-service-card data-service-id="consulting" data-category="business" style="--order:11">
+            <div class="card-visual"><img src="https://bc.opin-x.com/consulting.webp" width="720" height="720" alt="" loading="lazy" decoding="async" sizes="(min-width: 1180px) 33vw, (min-width: 701px) 50vw, 100vw"></div>
             <div class="card-top">
               <span class="service-icon" aria-hidden="true"><svg class="icon icon-chat" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5.1A7.5 7.5 0 0 1 3 12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8v3Z"/></svg></span>
               <span class="service-number">12</span>
@@ -1782,7 +1844,7 @@ svg {
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <div class="brand footer-brand"><span class="brand-mark" aria-hidden="true">BC</span><span class="brand-copy"><strong>Best Carriers</strong><small>Professional services for the U.S. trucking industry.</small></span></div>
+      <div class="brand footer-brand"><img class="brand-logo" src="https://c.opin-x.com/best-carriers/Best-carriers-icon.png" width="44" height="44" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="brand-copy"><strong>Best Carriers</strong><small>Professional services for the U.S. trucking industry.</small></span></div>
       <div class="footer-meta">
         <p>Final cost may vary based on fleet size, business structure, number of transactions and required filings. The final price is confirmed after an evaluation.</p>
         <small>© <span data-current-year>2026</span> Best Carriers. All rights reserved.</small>
@@ -1853,6 +1915,10 @@ svg {
   });
 
   serviceTriggers.forEach((trigger) => trigger.addEventListener("click", openService));
+  cards.forEach((card) => card.addEventListener("click", (event) => {
+    if (event.target.closest("button, a, input, select, textarea, summary, details")) return;
+    card.querySelector("[data-open-service]")?.click();
+  }));
   window.addEventListener("hashchange", syncDialogWithHash);
 
   async function openService(event) {

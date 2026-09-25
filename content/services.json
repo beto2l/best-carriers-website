@@ -3,6 +3,7 @@
     "id": "federal-tax-filing",
     "slugs": {"es": "declaracion-impuestos-federales", "en": "federal-tax-filing"},
     "category": "taxes",
+    "image": "https://bc.opin-x.com/federal-tax-filing.webp",
     "icon": "chart",
     "es": {
       "name": "Declaración de Impuestos Federales",
@@ -31,6 +32,7 @@
     "id": "form-1099",
     "slugs": {"es": "form-1099", "en": "form-1099"},
     "category": "taxes",
+    "image": "https://bc.opin-x.com/form-1099.webp",
     "icon": "document",
     "es": {"name": "Form 1099", "price": "$75", "priceNote": "Por formulario", "summary": "Preparación y emisión de formularios para contratistas independientes.", "details": "Servicio individual por cada formulario 1099 solicitado."},
     "en": {"name": "Form 1099", "price": "$75", "priceNote": "Per form", "summary": "Preparation and issuance of forms for independent contractors.", "details": "Individual service for each requested Form 1099."}
@@ -39,6 +41,7 @@
     "id": "sales-tax",
     "slugs": {"es": "sales-tax", "en": "sales-tax"},
     "category": "taxes",
+    "image": "https://bc.opin-x.com/sales-tax.webp",
     "icon": "receipt",
     "es": {"name": "Sales Tax", "price": "$250", "priceNote": "Anual", "summary": "Declaración y reporte ante la autoridad tributaria.", "details": "Preparación del reporte anual de Sales Tax de acuerdo con la información proporcionada."},
     "en": {"name": "Sales Tax Filing", "price": "$250", "priceNote": "Annual", "summary": "Filing and reporting with the applicable tax authority.", "details": "Preparation of the annual Sales Tax report using the information provided."}
@@ -47,6 +50,7 @@
     "id": "filing-ifta",
     "slugs": {"es": "filing-ifta", "en": "ifta-filing"},
     "category": "compliance",
+    "image": "https://bc.opin-x.com/filing-ifta.webp",
     "icon": "fuel",
     "es": {"name": "Filing IFTA", "price": "$375", "priceNote": "Anual por camión", "summary": "Reporte trimestral y declaración de impuestos de combustible.", "details": "Preparación de los reportes IFTA de la operación para el periodo correspondiente."},
     "en": {"name": "IFTA Filing", "price": "$375", "priceNote": "Annual, per truck", "summary": "Quarterly reporting and fuel tax filing.", "details": "Preparation of the operation's IFTA reports for the applicable period."}
@@ -55,6 +59,7 @@
     "id": "irp-ifta",
     "slugs": {"es": "irp-ifta", "en": "irp-ifta"},
     "category": "compliance",
+    "image": "https://bc.opin-x.com/irp-ifta.webp",
     "icon": "route",
     "es": {"name": "IRP + IFTA", "price": "$1,500", "priceNote": "Apertura coordinada", "summary": "Apertura y registro coordinado de cuenta interestatal y combustible.", "details": "Configuración inicial coordinada de registros IRP e IFTA para la empresa de trucking."},
     "en": {"name": "IRP + IFTA", "price": "$1,500", "priceNote": "Coordinated setup", "summary": "Coordinated setup and registration of interstate and fuel accounts.", "details": "Coordinated initial setup of IRP and IFTA registrations for the trucking company."}
@@ -63,6 +68,7 @@
     "id": "llc-authority",
     "slugs": {"es": "crear-llc", "en": "llc-authority"},
     "category": "business",
+    "image": "https://bc.opin-x.com/llc-authority.webp",
     "icon": "building",
     "es": {
       "name": "Crear LLC + Autoridad",
@@ -183,6 +189,7 @@
     "id": "state-permits",
     "slugs": {"es": "permisos-estatales", "en": "state-permits"},
     "category": "compliance",
+    "image": "https://bc.opin-x.com/state-permits.webp",
     "icon": "map",
     "es": {"name": "Permisos Estatales", "price": "$150 – $750", "priceNote": "Según estado y trámite", "summary": "Trámites y registros estatales para operaciones de trucking.", "details": "Servicio disponible para California, Oregon, New Mexico, Kentucky y New York.", "includes": ["California (CA)", "Oregon (OR)", "New Mexico (NM)", "Kentucky (KY)", "New York (NY)"]},
     "en": {"name": "State Permits", "price": "$150 – $750", "priceNote": "Based on state and filing", "summary": "State filings and registrations for trucking operations.", "details": "Service available for California, Oregon, New Mexico, Kentucky and New York.", "includes": ["California (CA)", "Oregon (OR)", "New Mexico (NM)", "Kentucky (KY)", "New York (NY)"]}
@@ -191,6 +198,7 @@
     "id": "obtain-usdot",
     "slugs": {"es": "obtener-usdot", "en": "obtain-usdot"},
     "category": "compliance",
+    "image": "https://bc.opin-x.com/obtain-usdot.webp",
     "icon": "document",
     "es": {
       "name": "Obtener USDOT",
@@ -217,6 +225,7 @@
     "id": "reinstate-mc-authority",
     "slugs": {"es": "reinstate-mc-authority", "en": "reinstate-mc-authority"},
     "category": "compliance",
+    "image": "https://bc.opin-x.com/reinstate-mc-authority.webp",
     "icon": "shield",
     "es": {"name": "Reinstate MC Authority", "price": "$750", "priceNote": "Reactivación", "summary": "Reactivación de autoridad operativa ante FMCSA / DOT.", "details": "Acompañamiento para restablecer la autoridad MC de la operación."},
     "en": {"name": "Reinstate MC Authority", "price": "$750", "priceNote": "Reactivation", "summary": "Operating authority reactivation with FMCSA / DOT.", "details": "Support to restore the operation's MC authority."}
@@ -225,6 +234,7 @@
     "id": "migrate-motus",
     "slugs": {"es": "migrar-motus", "en": "migrate-motus"},
     "category": "business",
+    "image": "https://bc.opin-x.com/migrate-motus.webp",
     "icon": "sync",
     "es": {"name": "Migrar a Motus", "price": "$250", "priceNote": "Configuración y transición", "summary": "Configuración, transición y sincronización de plataforma.", "details": "Asistencia para organizar la transición operativa a Motus."},
     "en": {"name": "Migrate to Motus", "price": "$250", "priceNote": "Setup and transition", "summary": "Platform setup, transition and synchronization.", "details": "Assistance organizing the operational transition to Motus."}
@@ -233,6 +243,7 @@
     "id": "close-trucking-company",
     "slugs": {"es": "cerrar-empresa-trucking", "en": "close-trucking-company"},
     "category": "business",
+    "image": "https://bc.opin-x.com/close-trucking-company.webp",
     "icon": "close",
     "es": {"name": "Cerrar Empresa de Trucking", "price": "$1,000 – $2,500", "priceNote": "Según alcance", "summary": "Cierre coordinado de registros operativos y fiscales.", "details": "Puede incluir cancelación de DOT, MC, IFTA, IRP, cierres estatales y baja fiscal definitiva."},
     "en": {"name": "Close a Trucking Company", "price": "$1,000 – $2,500", "priceNote": "Based on scope", "summary": "Coordinated closure of operational and tax registrations.", "details": "May include cancellation of DOT, MC, IFTA, IRP, state closures and final tax account closure."}
@@ -241,6 +252,7 @@
     "id": "consulting",
     "slugs": {"es": "consultoria-impuestos-trucking", "en": "tax-trucking-consulting"},
     "category": "business",
+    "image": "https://bc.opin-x.com/consulting.webp",
     "icon": "chat",
     "es": {"name": "Consultoría de Impuestos o Trucking", "price": "$150", "priceNote": "Por hora", "summary": "Asesoría estratégica individualizada con expertos en transporte.", "details": "Sesión enfocada en dudas fiscales, regulatorias u operativas de la empresa."},
     "en": {"name": "Tax or Trucking Consulting", "price": "$150", "priceNote": "Per hour", "summary": "Individual strategic advice with transportation specialists.", "details": "A focused session for the company's tax, regulatory or operational questions."}

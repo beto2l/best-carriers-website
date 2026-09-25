@@ -145,6 +145,14 @@ svg {
   letter-spacing: .1em;
 }
 
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 11px;
+}
+
 .brand-copy {
   display: grid;
   line-height: 1.15;
@@ -672,6 +680,38 @@ svg {
   background: var(--white);
   box-shadow: 0 8px 25px rgba(7, 21, 34, .035);
   transition: transform .32s var(--ease), box-shadow .32s ease, border-color .32s ease;
+  cursor: pointer;
+}
+
+.card-visual {
+  position: relative;
+  height: 148px;
+  flex: 0 0 auto;
+  margin: -28px -28px 20px;
+  overflow: hidden;
+  background: #0b2029;
+}
+
+.card-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 21, 34, .08) 0%, rgba(7, 21, 34, .02) 48%, rgba(255, 255, 255, .94) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.card-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(.88) contrast(1.04);
+  transition: transform .65s var(--ease), filter .65s ease;
+}
+
+.service-card:hover .card-visual img {
+  filter: saturate(1) contrast(1.02);
+  transform: scale(1.035);
 }
 
 .service-card::after {
@@ -702,6 +742,11 @@ svg {
 }
 
 .card-top {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 28px;
+  left: 28px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -732,7 +777,7 @@ svg {
 }
 
 .card-copy {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .card-copy h3 {
@@ -1342,6 +1387,10 @@ svg {
 
   .service-card {
     min-height: 360px;
+  }
+
+  .card-visual {
+    height: 158px;
   }
 
   .contact-band {
