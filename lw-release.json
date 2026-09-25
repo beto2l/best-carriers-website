@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.22",
+  "version": "1.3.23",
   "languages": [
     "es",
     "en"
@@ -210,14 +210,14 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "723adeb5857f52dd2849d686adf0bcfa63ff757f1d9b6f521c503ec5640e0a9e",
-    "pages/cursos/motus/gracias/index.html": "0bb75377db21a67a61dff553d1c91c9137aae71c99477c9257bc773d680c7c5e",
-    "pages/cursos/motus/index.html": "24c778b6a787a1c42ee65d5c5a3bdc53a06ff7992d5f62a0f5f056d42a57618b",
-    "pages/en/courses/motus/index.html": "91d79fbe9a742f8295e456ed6d380a8990f1e0cb925a8ff52effafa49e6d9f95",
-    "pages/en/courses/motus/thank-you/index.html": "97fd99f8f16570c66cf5f852711cea4a3ad5ede3ac579ff771fe2fdb03b1345a",
-    "pages/services/data/services.json": "653701a51b5cd824b0a8ffdd0468331d5cbdf042e21ab3454eea658a40f7a8f5",
-    "pages/services/index.html": "e4b4f35492b333ec46380f8e64a308dd66bb24009b78eae5d525d039f36126bc",
-    "pages/servicios/data/services.json": "e04bfe005e9f424cf025e0bcdf074e91f4e6435df24b853f321b5bffb13bb358",
-    "pages/servicios/index.html": "c30d101475a1cf40c34004269fa1b5dc2b235a4ee4c52e5823a52d7314620f4b"
+    "pages/cursos/combo/pay/index.html": "d973f3cae29504c1e30e4523319a0e5e2ae3c0fe44c963a0dd59b94fca947cbb",
+    "pages/cursos/motus/gracias/index.html": "f8b423be61c12c164ae0bec92d3cd2e342cbe718df746ec1e62aa4c72a39e699",
+    "pages/cursos/motus/index.html": "a610627f73a7daa1823594c4b566f742a6b15b020880cfd16e28e4e93da06a61",
+    "pages/en/courses/motus/index.html": "f4a1356125dbbe364b076b6de89ad34f81b80fba91b34564f7b185e241713143",
+    "pages/en/courses/motus/thank-you/index.html": "2062988b3dbca2bbdeae796718f3f7099b1e8b18cf1bd5ac58c8f33ea47b596e",
+    "pages/services/data/services.json": "15c31960d9239363917626621ab91aa00ab38e9c97fbbeac18ea70923297bfcc",
+    "pages/services/index.html": "0ee115a111d4fd36fb17e1219d33e3722387f358e9deae08aea32648a511453b",
+    "pages/servicios/data/services.json": "a9cf6673fad7f949231ffcc60f7b940657b6ad2882ade099c52b3f66bd8069a5",
+    "pages/servicios/index.html": "be03f293abb89c53cd34b1738c34cf55e4c3b49ef05d999333abd08236d3e24a"
   }
 }

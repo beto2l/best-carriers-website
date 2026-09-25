@@ -20,7 +20,10 @@
   },
   "whatsapp": {
     "number": "12192396752",
-    "message": "Quiero un servicio de trucking"
+    "message": {
+      "es": "Quiero un servicio de trucking",
+      "en": "I want trucking services"
+    }
   },
   "priceValidThrough": "2026-12-31",
   "routes": {

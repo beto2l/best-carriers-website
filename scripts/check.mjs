@@ -22,6 +22,10 @@ if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
 if (release.version !== packageJson.version) failures.push("release and package versions must match");
 if (release.pages.length !== 7) failures.push("exactly seven native Pages are required");
+const servicePages = release.pages.filter(page => ["servicios", "services"].includes(page.route));
+if (servicePages.length !== 2 || servicePages.some(page => page.translation_key !== "trucking-services")) {
+  failures.push("Spanish and English service pages must remain a linked translation pair");
+}
 
 const ids = new Set();
 for (const page of release.pages) {
@@ -104,12 +108,13 @@ if (failures.length) {
 console.log(`Validated LuxWrap ${release.version}: ${release.pages.length} native Pages, ${Object.keys(components).length} global components and ${Object.keys(release.files_sha256).length} checksummed files.`);
 
 function checkServices(page, html) {
+  const whatsAppMessage = page.language === "es" ? "Quiero un servicio de trucking" : "I want trucking services";
   for (const required of [
     "data-services-grid",
     "data-service-dialog",
     "Best Carriers interactive catalog could not load",
     "https://bc.opin-x.com/best-carriers-services-hero.webp",
-    "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking"
+    `https://wa.me/12192396752?text=${encodeURIComponent(whatsAppMessage)}`
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }

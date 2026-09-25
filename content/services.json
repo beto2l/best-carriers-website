@@ -198,7 +198,7 @@
     "id": "obtain-usdot",
     "slugs": {"es": "obtener-usdot", "en": "obtain-usdot"},
     "category": "compliance",
-    "image": "https://bc.opin-x.com/obtain-usdot.webp",
+    "image": "https://bc.opin-x.com/best-carriers-obtain-usdot-card-v2.webp",
     "icon": "document",
     "es": {
       "name": "Obtener USDOT",
@@ -252,7 +252,7 @@
     "id": "consulting",
     "slugs": {"es": "consultoria-impuestos-trucking", "en": "tax-trucking-consulting"},
     "category": "business",
-    "image": "https://bc.opin-x.com/consulting.webp",
+    "image": "https://bc.opin-x.com/best-carriers-consulting-card-v2.webp",
     "icon": "chat",
     "es": {"name": "Consultoría de Impuestos o Trucking", "price": "$150", "priceNote": "Por hora", "summary": "Asesoría estratégica individualizada con expertos en transporte.", "details": "Sesión enfocada en dudas fiscales, regulatorias u operativas de la empresa."},
     "en": {"name": "Tax or Trucking Consulting", "price": "$150", "priceNote": "Per hour", "summary": "Individual strategic advice with transportation specialists.", "details": "A focused session for the company's tax, regulatory or operational questions."}

@@ -108,7 +108,7 @@ function localizedPayload(locale) {
   return {
     locale,
     version,
-    whatsappUrl: whatsappUrl(),
+    whatsappUrl: whatsappUrl(locale),
     requirements: site.locales[locale].requirementsPending,
     labels: {
       detailsEyebrow: site.locales[locale].detailsEyebrow,
@@ -199,7 +199,7 @@ function renderPage(locale) {
       </a>
       <nav class="header-actions" aria-label="${locale === "es" ? "Acciones principales" : "Primary actions"}">
         <a class="language-link" href="${escapeHtml(site.routes[alternateLocale])}" hreflang="${alternateLocale}" aria-label="${escapeHtml(t.languageAria)}">${escapeHtml(t.languageLink)}</a>
-        <a class="button button-small button-primary" href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.navCta)}</span></a>
+        <a class="button button-small button-primary" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.navCta)}</span></a>
       </nav>
     </div>
   </header>
@@ -215,7 +215,7 @@ function renderPage(locale) {
           <p class="hero-description">${escapeHtml(t.heroDescription)}</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#services-grid">${escapeHtml(t.heroPrimaryCta)}${icon("arrow")}</a>
-            <a class="button button-ghost" href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.heroSecondaryCta)}</a>
+            <a class="button button-ghost" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.heroSecondaryCta)}</a>
           </div>
         </div>
         <div class="trust-strip" aria-label="${locale === "es" ? "Ventajas" : "Benefits"}">
@@ -276,7 +276,7 @@ function renderPage(locale) {
           <h2 id="contact-title">${escapeHtml(t.ctaTitle)}</h2>
           <p>${escapeHtml(t.ctaText)}</p>
         </div>
-        <a class="button button-light" href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.ctaButton)}${icon("arrow")}</a>
+        <a class="button button-light" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.ctaButton)}${icon("arrow")}</a>
       </div>
     </section>
   </main>
@@ -301,7 +301,7 @@ function renderPage(locale) {
       <div class="dialog-price"><span>${escapeHtml(t.priceLabel)}</span><strong data-dialog-price></strong><small data-dialog-price-note></small></div>
       <div class="dialog-body" data-dialog-body></div>
       <p class="price-notice">${escapeHtml(t.priceNotice)}</p>
-      <a class="button button-primary dialog-cta" href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.dialogCta)}</span>${icon("arrow")}</a>
+      <a class="button button-primary dialog-cta" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.dialogCta)}</span>${icon("arrow")}</a>
     </div>
   </dialog>
   <script>${inlineJs}</script>
@@ -328,7 +328,7 @@ function renderCard(service, locale, index) {
               <summary>${escapeHtml(t.cardAction)}</summary>
               <p>${escapeHtml(item.details)}</p>
               <p><strong>${escapeHtml(t.requirementsLabel)}:</strong> ${escapeHtml(t.requirementsPending)}</p>
-              <a href="${escapeHtml(whatsappUrl())}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.dialogCta)}</a>
+              <a href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.dialogCta)}</a>
             </details>
             </article>`;
 }
@@ -341,8 +341,10 @@ function renderTableRow(service, locale, index) {
           </tr>`;
 }
 
-function whatsappUrl() {
-  return `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(site.whatsapp.message)}`;
+function whatsappUrl(locale = "es") {
+  const messages = site.whatsapp.message;
+  const message = typeof messages === "string" ? messages : messages[locale] || messages.es;
+  return `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(message)}`;
 }
 
 function escapeHtml(value) {
