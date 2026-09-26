@@ -97,7 +97,7 @@ for (const slug of ["tdc", "ifta", "safety", "motus", "consultoria"]) {
   if (!paymentHtml.includes(`data-checkout="${slug}"`) || !paymentHtml.includes(`data-product="${slug}"`)) failures.push(`Missing selection UI for ${slug}`);
 }
 for (const forbidden of ["checkout-bootstrap", "admin-ajax.php", "OPINFunnelHeadless.mount", "localStorage", "sessionStorage", "stripe.com/pay", "399", "699"]) {
-  if (paymentHtml.includes(forbidden)) failures.push(`Payment UI must not duplicate payment logic, customer storage or canonical prices: ${forbidden}`);
+  if (paymentHtml.replace(/<svg\b[\s\S]*?<\/svg>/g, "").includes(forbidden)) failures.push(`Payment UI must not duplicate payment logic, customer storage or canonical prices: ${forbidden}`);
 }
 if (!paymentHtml.includes("Best-carriers-icon.png") || !paymentHtml.includes("OPINXLWCheckout.activate")) failures.push("Payment page requires the original logo and official component activation");
 

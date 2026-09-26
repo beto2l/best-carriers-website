@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.25",
+  "version": "1.3.26",
   "languages": [
     "es",
     "en"
@@ -285,12 +285,12 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "10df60f95d98f300b09a05a1d88c1eb30e3cc88a86372759e37a222a0dcc7244",
-    "pages/cursos/index.html": "2b83c9eb83f46d7a46fe49fcb1aca8d6f392e12c6c5f2e175060ca52d2f9a1de",
-    "pages/cursos/motus/gracias/index.html": "883027f04bad7a6e8be76689331b1effc593287a29e43869db201bccc140fe0a",
-    "pages/cursos/motus/index.html": "217fbdf8bf8af08d1c1b7d382281613519dbb0e79eac2f8d580bd2fc6c846c6b",
-    "pages/en/courses/motus/index.html": "0b2eda9180f0bbbc00909b73432c746a0c6ccd408613a9996e9d4fac8c10c6ed",
-    "pages/en/courses/motus/thank-you/index.html": "3f5c149203558362bff1d040c08697528e0b5fe0ce458b60c4f0fc4a7199f8db",
+    "pages/cursos/combo/pay/index.html": "ab4f565d7d658ff3f89b8ca1bb05eb5491658569216a0606c5931a541a358467",
+    "pages/cursos/index.html": "683627562ad5d5387f04d962fb949c61ad0d9cdd37c9764fe7b3421cb97f9d3d",
+    "pages/cursos/motus/gracias/index.html": "70569f3ee65f572d91d55cc979af0a5e8bcd368ef43096824e7e972b2bd0379d",
+    "pages/cursos/motus/index.html": "080cf711e0f8f9f39fef8080e619ce836f5cac44cc4a4d18d5f4377c6003f641",
+    "pages/en/courses/motus/index.html": "9e6b034bda66520c3cb85bdb6e4f2ecae4f73558c82411e1481cd15346601d54",
+    "pages/en/courses/motus/thank-you/index.html": "00cc30c5e2b2f96825cf19d7b32ec3bf5dab88b00ecb69246ce7b790e28d1b99",
     "pages/services/data/services.json": "15c31960d9239363917626621ab91aa00ab38e9c97fbbeac18ea70923297bfcc",
     "pages/services/index.html": "0ee115a111d4fd36fb17e1219d33e3722387f358e9deae08aea32648a511453b",
     "pages/servicios/data/services.json": "a9cf6673fad7f949231ffcc60f7b940657b6ad2882ade099c52b3f66bd8069a5",
