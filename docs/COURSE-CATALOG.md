@@ -1,6 +1,6 @@
-# Catálogo de cursos · release 1.3.24
+# Catálogo de cursos · release 1.3.25
 
-La ruta preparada es `/cursos/`, con identidad permanente `course-catalog-es`. Requiere LW Studio 0.9.15 y el nuevo componente oficial `course_catalog`. El estado de este trabajo es **versión para revisión**, sin sustitución de la página pública.
+La ruta preparada es `/cursos/`, con identidad permanente `course-catalog-es`. Requiere LW Studio 0.9.15 y el nuevo componente oficial `course_catalog`. La publicación fue autorizada por el propietario después de revisar la previsualización.
 
 ## Diseño y contenido
 
@@ -11,7 +11,8 @@ La ruta preparada es `/cursos/`, con identidad permanente `course-catalog-es`. R
 - Tarjetas, tabla, búsqueda y filtros por modalidad. La tabla se convierte en filas apiladas con etiquetas en móvil.
 - Botones de WhatsApp al destino existente de Best Carriers, con mensajes preparados para información de cursos o cotización de paquetes. No se envía ningún mensaje automáticamente.
 - Grabaciones, certificado de participación y un año de acceso al curso comprado. Paquetes cotizados por cantidad de cursos.
-- Mismo componente Reviews Hub y mismo video de testimonios utilizados en MOTUS, adaptados a la identidad de este catálogo. Calificaciones de la marca, no de un curso específico.
+- Mismo componente Reviews Hub y mismo video de testimonios utilizados en MOTUS. Las reseñas y fotos reutilizan directamente los estilos, colores y comportamiento de `src/motus.css` y `src/motus.js` mediante `components/course-social-proof.mjs`, incluidos sus ajustes móviles. Calificaciones de la marca, no de un curso específico.
+- Seis preguntas frecuentes; se retiró «¿Qué significa “Próximamente”?» a petición del propietario.
 - FAQ, título/descripción SEO, enlaces HTML, canonical, alternates y `CollectionPage`/`BreadcrumbList`. El componente aporta `ItemList`/`Course` con los cursos incluidos realmente. Sin precios, estrellas de reseñas en schema ni promesas de resultados enriquecidos.
 
 ## Qué se actualiza automáticamente
@@ -46,13 +47,14 @@ Verificado:
 - Preflight real en lectura: adopción de Page 622, siete páginas sin cambios, cero conflictos y cero retiradas; traducción 726 y portada 1585 conservadas.
 - PHP: 50 aserciones de fechas, medianoche de Chicago, cambios de categoría, nuevos cursos, privacidad, HTML, schema y validación del contrato. Regresiones de componentes, releases, rutas y Pages aprobadas.
 
-## Publicación pendiente
+## Procedimiento de publicación
 
 1. Integrar y actualizar el módulo LW Studio 0.9.15 mediante su paquete oficial.
 2. Publicar el commit revisado de esta release usando el flujo normal de LW Studio; permitir la adopción de la Page **622**, no crear un catálogo duplicado. Conservar su relación con la Page inglesa **726**. La versión inglesa existente permanece nativa.
 3. Verificar el preflight del commit inmutable: ninguna retirada ni conflicto; la portada sigue siendo Servicios.
 4. Comprobar `/cursos/` y las rutas hijas de MOTUS, header `Cache-Control`, canonical, HTML renderizado y enlaces. Eliminar la copia anterior de la caché mediante CDN y Cache al publicar.
-5. Alinear por separado la política comercial de MOTUS: la configuración/landing existente aún declara acceso de por vida. Este trabajo no altera derechos de compradores anteriores ni su configuración de acceso; el nuevo catálogo incorpora la política de un año indicada por el propietario.
+
+Este trabajo no altera derechos de compradores anteriores ni su configuración de acceso; el nuevo catálogo incorpora la política de un año indicada por el propietario. La configuración/landing existente de MOTUS declara acceso de por vida y queda fuera de este cambio.
 
 Los cambios generados de MOTUS/pagos en esta release son únicamente su etiqueta de versión; su contenido y comportamiento permanecen idénticos. Las páginas de Servicios se preservan byte por byte.
 

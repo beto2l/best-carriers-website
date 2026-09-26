@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { courseSocialProof } from '../components/course-social-proof.mjs';
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const json = value => JSON.stringify(value).replaceAll('<','\\u003c');
 const icons = {
@@ -14,8 +15,9 @@ const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name]}
 export async function buildCourses({root,site,version}) {
   const content = JSON.parse(await readFile(path.join(root,'content/courses.json'),'utf8'));
   const motus = JSON.parse(await readFile(path.join(root,'content/motus.json'),'utf8'));
-  const css = (await readFile(path.join(root,'src/courses.css'),'utf8')).replaceAll('</style','<\\/style');
-  const js = (await readFile(path.join(root,'src/courses.js'),'utf8')).replaceAll('</script','<\\/script');
+  const proof = await courseSocialProof(root);
+  const css = ((await readFile(path.join(root,'src/courses.css'),'utf8')) + '\n' + proof.css).replaceAll('</style','<\\/style');
+  const js = ((await readFile(path.join(root,'src/courses.js'),'utf8')) + '\n' + proof.js).replaceAll('</script','<\\/script');
   const canonical = 'https://best-carriers.com/cursos/';
   // Keep the approved destination; this new course page prepares the requested course/package inquiry.
   const contact = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(content.whatsappMessages.information)}`;
@@ -70,7 +72,7 @@ export async function buildCourses({root,site,version}) {
 </div></div></section>
 <section class="section proof" id="experiencias" aria-labelledby="proof-title"><div class="shell"><div class="proof-head"><p class="eyebrow">La comunidad Best Carriers</p><h2 id="proof-title">Personas reales.<br>El mismo deseo de avanzar.</h2><p>Conoce las experiencias compartidas por nuestra comunidad y las opiniones sobre Best Carriers.</p></div>
 <div class="video-feature"><div class="video-frame"><img class="video-poster" src="${escape(content.testimonialsPoster || motus.assets.groupPhotos[0].url)}" alt="Participantes de una capacitación de Best Carriers" width="720" height="405" loading="lazy"><button type="button" data-testimonial-play aria-label="Reproducir testimonios de alumnos de Best Carriers"><span class="play-circle" aria-hidden="true">▶</span><span>Escucha sus experiencias</span></button></div><div class="video-copy"><p class="eyebrow">En sus propias palabras</p><h3>La experiencia de quienes ya dieron el paso.</h3><p>Detrás de cada curso hay personas que quieren entender mejor su negocio y seguir creciendo en el transporte.</p><small>Testimonios de alumnos de Best Carriers</small><noscript><p><a href="https://www.youtube.com/watch?v=LJ9DsCbuMXw">Ver testimonios en video ↗</a></p></noscript></div></div>
-<opinx-component data-opinx-global-content="best-carriers-social-proof-es"><p>Conoce más <a class="text-link" href="https://best-carriers.com/cursos/motus/#reviews">experiencias de nuestra comunidad ↗</a>.</p></opinx-component>
+<div class="catalog-proof"><opinx-component data-opinx-global-content="best-carriers-social-proof-es"><p>Conoce más <a class="text-link" href="https://best-carriers.com/cursos/motus/#reviews">experiencias de nuestra comunidad ↗</a>.</p></opinx-component></div>
 </div></section>
 <section class="bundle" id="paquetes" aria-labelledby="bundle-title"><div class="shell bundle-layout"><div><p class="eyebrow">Tu formación, a tu medida</p><h2 id="bundle-title">Un curso abre la ruta.<br>Varios amplían tu visión.</h2><div class="bundle-tags" aria-label="Áreas de capacitación"><span>Inicia tu empresa</span><span>Fortalece tu operación</span><span>Desarrolla tu equipo</span></div></div><div class="bundle-copy"><p>Si quieres tomar varias capacitaciones, podemos preparar un paquete para ti. La cotización se realiza de acuerdo con la cantidad de cursos que quieras tomar.</p><a class="button" href="${bundleContact}" target="_blank" rel="noopener">Cotizar mi paquete de cursos <span aria-hidden="true">↗</span></a></div></div></section>
 <section class="section" id="preguntas" aria-labelledby="faq-title"><div class="shell faq-layout"><div class="faq-intro"><p class="eyebrow">Antes de empezar</p><h2 id="faq-title">Resolvamos<br>tus dudas.</h2><p>Lo esencial para elegir tu capacitación y dar el siguiente paso con claridad.</p></div><div class="faq-list">${content.faqs.map(faq=>`<details><summary>${escape(faq.question)}</summary><p>${escape(faq.answer)}</p></details>`).join('')}</div></div></section>
