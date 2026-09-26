@@ -10,7 +10,7 @@ const routes = {
     services: { label: "Services", href: "/services/" },
     courses: { label: "Courses", href: "/cursos/" },
     experiences: { label: "Experiences", href: "/cursos/#experiencias" },
-    ebooks: { label: "E-books", href: "/ebooks/" },
+    ebooks: { label: "E-books", href: "/en/e-books/" },
     aria: "Main navigation"
   }
 };

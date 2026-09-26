@@ -9,6 +9,8 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | WordPress Page | Public route | Language | Permanent LuxWrap ID |
 | --- | --- | --- | --- |
 | Cursos de trucking en español | `/cursos/` | Spanish | `course-catalog-es` |
+| E-books de trucking | `/ebooks/` | Spanish | `ebook-catalog-es` |
+| Trucking e-books | `/en/e-books/` | English | `ebook-catalog-en` |
 | Servicios de Trucking | `/servicios/` | Spanish | `trucking-services-es` |
 | Trucking Services | `/services/` | English | `trucking-services-en` |
 | Curso grabado de FMCSA MOTUS | `/cursos/motus/` | Spanish | `motus-course-es` |
@@ -16,7 +18,7 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
 | Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
 
-The Services and Courses catalogs share the responsive header navigation component in `components/site-navigation.mjs`, including the `/ebooks/` link. Reuse it for future Best Carriers pages to keep the menu and destinations consistent.
+The Services, Courses and E-books catalogs share the responsive header navigation component in `components/site-navigation.mjs`, including the localized e-book destinations. Reuse it for future Best Carriers pages to keep the menu and destinations consistent.
 
 All other routes remain controlled by WordPress and Divi. After publication, every managed route appears as a native entry under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 
@@ -24,6 +26,8 @@ The new courses catalog is documented in [COURSE-CATALOG.md](docs/COURSE-CATALOG
 
 ## Content editing
 
+- `content/ebooks.json`: bilingual library copy, product metadata, verified covers and existing product destinations. See [EBOOK-CATALOG.md](docs/EBOOK-CATALOG.md) for adding titles.
+- `src/ebooks.css` / `src/ebooks.js`: responsive cards/table layouts, language-aware view selection and shared testimonial video.
 - `content/courses.json`: price-free catalog copy and editorial mapping; scheduling remains in WordPress.
 - `src/courses.css` / `src/courses.js`: responsive catalog presentation and progressive filters.
 - `content/site.json`: brand, routes, labels, SEO metadata, WhatsApp and CDN hero image.

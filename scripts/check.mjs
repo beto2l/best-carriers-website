@@ -14,7 +14,9 @@ const expectedRoutes = new Set([
   "cursos/motus/gracias",
   "en/courses/motus/thank-you",
   "cursos/combo/pay",
-  "cursos"
+  "cursos",
+  "ebooks",
+  "en/e-books"
 ]);
 const failures = [];
 
@@ -22,7 +24,7 @@ if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
 if (release.version !== packageJson.version) failures.push("release and package versions must match");
-if (release.pages.length !== 8) failures.push("exactly eight native Pages are required");
+if (release.pages.length !== 10) failures.push("exactly ten native Pages are required");
 const servicePages = release.pages.filter(page => ["servicios", "services"].includes(page.route));
 if (servicePages.length !== 2 || servicePages.some(page => page.translation_key !== "trucking-services")) {
   failures.push("Spanish and English service pages must remain a linked translation pair");
@@ -48,7 +50,8 @@ for (const page of release.pages) {
   if (/\[(opin_|shortcode)/i.test(html)) failures.push(`${page.entry} contains a raw WordPress shortcode`);
 
   if (["servicios", "services"].includes(page.route)) checkServices(page, html);
-  if (["servicios", "services", "cursos"].includes(page.route)) checkSharedNavigation(page, html);
+  if (["servicios", "services", "cursos", "ebooks", "en/e-books"].includes(page.route)) checkSharedNavigation(page, html);
+  if (["ebooks", "en/e-books"].includes(page.route)) checkEbooks(page, html);
   if (["cursos/motus", "en/courses/motus"].includes(page.route)) checkMotusSale(page, html);
   if (["cursos/motus/gracias", "en/courses/motus/thank-you"].includes(page.route)) checkMotusThanks(page, html);
 }
@@ -172,13 +175,38 @@ function checkSharedNavigation(page, html) {
   const locale = page.language || "es";
   const courseHref = page.route === "cursos" ? 'href="#catalogo"' : 'href="/cursos/"';
   const expected = locale === "en"
-    ? ['href="/services/"', courseHref, 'href="/cursos/#experiencias"', 'href="/ebooks/"']
+    ? ['href="/services/"', courseHref, 'href="/cursos/#experiencias"', 'href="/en/e-books/"']
     : ['href="/servicios/"', courseHref, 'href="/cursos/#experiencias"', 'href="/ebooks/"'];
   if (!html.includes('class="main-nav bc-main-nav"')) failures.push(`${page.entry} is missing the shared Best Carriers navigation`);
   for (const href of expected) {
     if (!html.includes(href)) failures.push(`${page.entry} is missing navigation destination ${href}`);
   }
   if (!html.includes(".site-header .header-inner") || !html.includes('grid-template-areas: "brand actions" "nav nav"')) failures.push(`${page.entry} must keep the shared navigation visible and usable on mobile`);
+}
+
+function checkEbooks(page, html) {
+  const locale = page.language;
+  if (page.id !== `ebook-catalog-${locale}` || page.translation_key !== "ebook-catalog") failures.push(`${page.entry} must retain its bilingual catalog identity`);
+  if ((html.match(/<h1[ >]/g) || []).length !== 1) failures.push(`${page.entry} requires one descriptive H1`);
+  for (const required of [
+    'Best-carriers-icon.png', 'data-ebook-view="cards"', 'data-ebook-view="table" hidden',
+    'data-view-button="cards"', 'data-view-button="table"', 'prefers-reduced-motion',
+    'data-opinx-global-content="best-carriers-social-proof-' + locale + '"',
+    'data-testimonial-play', 'youtube-nocookie.com/embed/LJ9DsCbuMXw',
+    '"@type":"CollectionPage"', '"@type":"Book"', '"inLanguage":"es"',
+    '"numberOfPages":25', '"numberOfPages":138',
+    'https://best-carriers.com/en/e-books/',
+    locale === 'es' ? 'Opiniones generales de Best Carriers sobre sus cursos y servicios.' : 'General Best Carriers reviews of its courses and services.',
+    locale === 'es' ? 'Español' : 'Product page in Spanish'
+  ]) if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
+  for (const slug of ['glosario', 'ifta-irp-handbook']) {
+    if ((html.match(new RegExp(`data-ebook-id="${slug}"`, 'g')) || []).length !== 2) failures.push(`${page.entry} must present ${slug} in cards and table`);
+    if (!html.includes(`href="https://best-carriers.com/ebooks/${slug}/"`)) failures.push(`${page.entry} must link to the existing product page ${slug}`);
+  }
+  if (!page.components.includes(`best-carriers-social-proof-${locale}`)) failures.push(`${page.entry} must declare the shared Reviews Hub component`);
+  for (const forbidden of ['"@type":"AggregateRating"', '"@type":"Offer"', 'checkout-bootstrap', 'stripe.com/pay', 'OPINFunnelHeadless', 'localStorage', 'sessionStorage']) {
+    if (html.includes(forbidden)) failures.push(`${page.entry} must not invent product ratings, terms or payment behavior: ${forbidden}`);
+  }
 }
 
 function checkMotusSale(page, html) {

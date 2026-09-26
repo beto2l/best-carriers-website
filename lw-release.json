@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.28",
+  "version": "1.3.29",
   "languages": [
     "es",
     "en"
@@ -104,6 +104,28 @@
       "components": [
         "best-carriers-course-catalog-es",
         "best-carriers-social-proof-es"
+      ]
+    },
+    {
+      "id": "ebook-catalog-es",
+      "title": "E-books de trucking",
+      "route": "ebooks",
+      "entry": "pages/ebooks/index.html",
+      "language": "es",
+      "translation_key": "ebook-catalog",
+      "components": [
+        "best-carriers-social-proof-es"
+      ]
+    },
+    {
+      "id": "ebook-catalog-en",
+      "title": "Trucking e-books",
+      "route": "en/e-books",
+      "entry": "pages/en/e-books/index.html",
+      "language": "en",
+      "translation_key": "ebook-catalog",
+      "components": [
+        "best-carriers-social-proof-en"
       ]
     }
   ],
@@ -285,15 +307,17 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "2c204f3c9545e7ad27f71bc321f6ec539efca1d64fd7d5b066e073dab0bfe7e8",
-    "pages/cursos/index.html": "23d23cc6af73910b7ee7e93ee5e5c77e15f895db4b382757e4bde877b62e7c95",
-    "pages/cursos/motus/gracias/index.html": "fdd051021357f18e679bd8caa4611dd86f6e42dd890798ad325734912c32603e",
-    "pages/cursos/motus/index.html": "21fededcf5cf1f6da925e56233400a14f1c18aa01b1c0fbcbf0a8ea7b34f1025",
-    "pages/en/courses/motus/index.html": "33c1cbb6d281ffc32447aad03d74a1aabe2ca2c68fb8ebab35345c059f009f15",
-    "pages/en/courses/motus/thank-you/index.html": "b067912fbb96503b662dcde15ed256e8347abbee76dd6daf95b00cedcaee36e3",
-    "pages/services/data/services.json": "246b8566f94020ddf1a0e91ef45092ccf515dc4caa8fbfd1579ed32f82978e56",
-    "pages/services/index.html": "d2e626b8423cb5dee273ebc1ede067e5f03ba2d85530d278ac4f806fc5ba7c04",
-    "pages/servicios/data/services.json": "1e96202f114191efd47c31da0401e54e627638d36a18e1afd20f5723e1c67e3a",
-    "pages/servicios/index.html": "b9c9b4d02932fb5eb38d88b8eb95226a16bdb92a4a9981ce2be4068fa3792977"
+    "pages/cursos/combo/pay/index.html": "4524baa66223b581ddd2c5ebfc4624f2fccd8dc67024f797dd01fc99837457fa",
+    "pages/cursos/index.html": "6c067cf7b7108b81caee5d7d50fbeda29781e5eb9bddba28bc3b5b053704ccdc",
+    "pages/cursos/motus/gracias/index.html": "c2c1625ac9dadb5b5f6b15992f4df22a247049d175ba71b6b61cccea4c9da774",
+    "pages/cursos/motus/index.html": "c16829764adef34a71b32248735cbb8dc67edb57690c08477277efab55599659",
+    "pages/ebooks/index.html": "7710c888498c733e38d575bf3ed1aab1e2faf8f4525fb0b6953369e706c3d5d0",
+    "pages/en/courses/motus/index.html": "6e081a8a462260e86a0620dd6603ed8a4ffbfa6a6e4b24cc5d05d69bea8b5a93",
+    "pages/en/courses/motus/thank-you/index.html": "71e4970c272e67bc54d8052e30e2ac9716c3c4e187733f5996fdcb048695e644",
+    "pages/en/e-books/index.html": "5c5eadd04e8623f98bb14daa8be5543da1a44913cc6824c50d13293f24d9f48a",
+    "pages/services/data/services.json": "736f4047ff0cbaf246d7a57d69693f0c269a4e583901888cc6ebacc67e1333a7",
+    "pages/services/index.html": "c0b2465529fa9104d58ee6955c0928e2576e82ca98db18314ae936b21e9b5637",
+    "pages/servicios/data/services.json": "0cea9bb9c55c335f67033182d9af6712766c5984a5c566affc07079ba4030ec4",
+    "pages/servicios/index.html": "ccab423d8a2fa4c86b6672a36ec1029949ec94a9d7aab4a955fa187a3c6bfc89"
   }
 }
