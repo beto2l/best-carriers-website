@@ -29,12 +29,13 @@
 @media(max-width:849px){.has-selection .catalog{display:none}.has-selection .intro h1,.has-selection .intro>p{display:none}.has-selection .intro{margin-bottom:20px}.payment-panel{padding:22px 20px}.has-selection .footer{margin-top:18px}}
 @media(max-width:359px){.page{width:calc(100% - 24px);margin-top:24px}.product{padding:13px 12px}.product-copy>strong{font-size:16px}.product-price{font-size:16px}.product-date{font-size:14px}.payment-panel{padding:20px 16px}.selection{grid-template-columns:1fr}.selection p{grid-column:auto}.secure-note{font-size:11px}}
 
-.payment-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:center;justify-items:center;max-width:540px;margin:auto}
-.payment-logo{display:flex;align-items:center;justify-content:center;min-width:0;width:100%;height:76px}
-.payment-logo>svg{display:block;width:110px;max-width:100%;height:auto;max-height:70px}
-.payment-logo--afterpay>svg{width:160px}
-.payment-logo--cash-app{gap:7px;color:#20242a;font-size:16px;font-weight:750}
-.payment-logo--cash-app>svg{width:40px;height:40px;fill:#00c244;flex-shrink:0}
+.methods{padding:16px}
+.payment-logos{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center;justify-content:center;max-width:540px;margin:auto}
+.payment-logo{display:flex;align-items:center;justify-content:center;flex:0 0 92px;min-width:0;height:44px}
+.payment-logo>svg{display:block;width:76px;max-width:100%;height:auto;max-height:40px}
+.payment-logo--afterpay>svg{width:92px}
+.payment-logo--cash-app{gap:4px;color:#20242a;font-size:12px;font-weight:750;white-space:nowrap}
+.payment-logo--cash-app>svg{width:24px;height:24px;fill:#00c244;flex-shrink:0}
 .product-copy>small{margin:2px 0 3px;font-size:12px;line-height:1.4}
 .product-copy>strong{line-height:1.25}
 .product-date,.product-time{line-height:1.45}
@@ -50,9 +51,9 @@
   .product-copy>strong{font-size:19px}.product-price{font-size:20px}
   .product-pay{font-size:15px}.product-time{font-size:15px}
   .payment-panel .opin-fi-checkout-form input[type="text"],.payment-panel .opin-fi-checkout-form input[type="email"],.payment-panel .opin-fi-checkout-form input[type="tel"]{font-size:18px}
-  .payment-logos{gap:10px}.payment-logo{height:62px}.payment-logo>svg{width:96px;max-height:60px}
-  .payment-logo--cash-app{flex-direction:column;gap:2px;font-size:12px}.payment-logo--cash-app>svg{width:32px;height:32px}
-  .payment-logo--afterpay>svg{width:130px}.methods{padding:14px}
+  .payment-logos{max-width:300px;gap:8px 10px}.payment-logo{flex-basis:78px;height:40px}.payment-logo>svg{width:68px;max-height:34px}
+  .payment-logo--cash-app{font-size:10px}.payment-logo--cash-app>svg{width:22px;height:22px}
+  .payment-logo--afterpay>svg{width:78px}.methods{padding:12px}
   .selection{grid-template-columns:1fr}.selection p{grid-column:auto;line-height:1.5}
   .secure-note{font-size:12px;flex-wrap:wrap}.secure-note strong{font-size:20px}
 }
@@ -61,11 +62,10 @@
   .product-copy>small{font-size:11px}.product-date{font-size:15px}.product-time{font-size:14px}
   .product-price{font-size:19px}.product-pay{padding:10px 12px;font-size:14px}
   .brand{font-size:16px;gap:8px}.brand img{width:60px;height:60px}.brand small{font-size:10px}
-  .payment-logos{grid-template-columns:repeat(2,minmax(0,1fr))}.payment-logo--amazon-pay{grid-column:1/-1}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style></head>
-<body data-release="1.3.26">
+<body data-release="1.3.27">
 <a class="skip-link" href="#products">Ir a los cursos</a>
 <main class="page">
 <header class="intro"><a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers, inicio"><img src="https://c.opin-x.com/best-carriers/Best-carriers-icon.png" alt="" width="64" height="64"><span>BEST CARRIERS<small>FORMACIÓN & CONSULTORÍA</small></span></a>
