@@ -187,7 +187,7 @@ Para añadir un componente:
 1. Confirma que es estrictamente visual y que sus datos pertenecen al repositorio o llegan por un contrato OPIN X ya permitido.
 2. Crea `components/nombre-del-componente.mjs`, recibe datos explícitos y devuelve HTML semántico escapado.
 3. Añade la fuente editorial en `content/` y úsala desde el generador de la página; no hardcodees pagos, credenciales, endpoints privados, nombres, correos o teléfonos.
-4. Añade CSS responsive en el archivo de la página que lo utiliza y documenta la pieza en `components/README.md`.
+4. Añade CSS responsive en el archivo de la página que lo utiliza y documenta la pieza en `components/README.md`. Para páginas nuevas de Best Carriers, reutiliza `components/site-navigation.mjs` y `src/site-navigation.css` para mantener Servicios, Cursos, Experiencias y E-books consistentes, salvo que el usuario solicite una página sin menú.
 5. Incluye una verificación de presencia en `scripts/check.mjs` cuando el componente sea obligatorio para una página y luego ejecuta `npm test`.
 
 Una biblioteca no sustituye `opinx-component`: para checkout, resultado de pago, Social Proof o cualquier dato operativo se mantiene el contrato allowlisted y el módulo propietario. La biblioteca solo es adecuada para elementos como rieles de autoridad, bloques editoriales, iconografía aprobada, CTA visual o composiciones de contenido.

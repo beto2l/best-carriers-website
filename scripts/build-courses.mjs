@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { courseSocialProof } from '../components/course-social-proof.mjs';
+import { renderSiteNavigation } from '../components/site-navigation.mjs';
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const json = value => JSON.stringify(value).replaceAll('<','\\u003c');
 const icons = {
@@ -16,7 +17,7 @@ export async function buildCourses({root,site,version}) {
   const content = JSON.parse(await readFile(path.join(root,'content/courses.json'),'utf8'));
   const motus = JSON.parse(await readFile(path.join(root,'content/motus.json'),'utf8'));
   const proof = await courseSocialProof(root);
-  const css = ((await readFile(path.join(root,'src/courses.css'),'utf8')) + '\n' + proof.css).replaceAll('</style','<\\/style');
+  const css = ((await readFile(path.join(root,'src/courses.css'),'utf8')) + '\n' + (await readFile(path.join(root,'src/site-navigation.css'),'utf8')) + '\n' + proof.css).replaceAll('</style','<\\/style');
   const js = ((await readFile(path.join(root,'src/courses.js'),'utf8')) + '\n' + proof.js).replaceAll('</script','<\\/script');
   const canonical = 'https://best-carriers.com/cursos/';
   // Keep the approved destination; this new course page prepares the requested course/package inquiry.
@@ -42,7 +43,7 @@ export async function buildCourses({root,site,version}) {
 </head>
 <body data-page="course-catalog" data-release="${version}">
 <a class="skip-link" href="#catalogo">Ir al catálogo de cursos</a>
-<header class="site-header"><div class="shell header-inner">${brand}<nav class="main-nav" aria-label="Principal"><a href="https://best-carriers.com/servicios/">Servicios</a><a href="#catalogo" aria-current="page">Cursos</a><a href="#experiencias">Experiencias</a></nav><a class="header-contact" href="${contact}" target="_blank" rel="noopener">Hablemos <span aria-hidden="true">↗</span></a></div></header>
+<header class="site-header"><div class="shell header-inner">${brand}${renderSiteNavigation({locale:'es',current:'courses'})}<a class="header-contact" href="${contact}" target="_blank" rel="noopener">Hablemos <span aria-hidden="true">↗</span></a></div></header>
 <main>
 <section class="hero" aria-labelledby="hero-title">
 <img class="hero-art" src="${escape(content.hero)}" alt="Camión de transporte en una carretera de Estados Unidos al amanecer" width="1672" height="941" fetchpriority="high" decoding="async">

@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.27",
+  "version": "1.3.28",
   "languages": [
     "es",
     "en"
@@ -285,15 +285,15 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "2d721d2a446ba24ef5e3650b5f24d0be6a6f654c9bd419066e4c00f3d38a0ff5",
-    "pages/cursos/index.html": "204f2918c2e59a3eb3bc2903372ee8a90325650bb13ff70eedf4004096023ae0",
-    "pages/cursos/motus/gracias/index.html": "df5a8532ba4b685d4c4cc62d68ace96cd198abed7f48f8f5532c75f7d4f6bb42",
-    "pages/cursos/motus/index.html": "e06f3c5e9f5df98528947617aabab1b5e8cff81dfd606868f592a89983124788",
-    "pages/en/courses/motus/index.html": "ffd49d9f476a2f4b9972b89c571f26fcdfd7971cebb638c53b2a4fc5b9c07dda",
-    "pages/en/courses/motus/thank-you/index.html": "ba9cc1f32e8d09a64ea9dcc1151bdec6d4283ceee67ed0f0953b5565b017b044",
-    "pages/services/data/services.json": "15c31960d9239363917626621ab91aa00ab38e9c97fbbeac18ea70923297bfcc",
-    "pages/services/index.html": "0ee115a111d4fd36fb17e1219d33e3722387f358e9deae08aea32648a511453b",
-    "pages/servicios/data/services.json": "a9cf6673fad7f949231ffcc60f7b940657b6ad2882ade099c52b3f66bd8069a5",
-    "pages/servicios/index.html": "be03f293abb89c53cd34b1738c34cf55e4c3b49ef05d999333abd08236d3e24a"
+    "pages/cursos/combo/pay/index.html": "2c204f3c9545e7ad27f71bc321f6ec539efca1d64fd7d5b066e073dab0bfe7e8",
+    "pages/cursos/index.html": "23d23cc6af73910b7ee7e93ee5e5c77e15f895db4b382757e4bde877b62e7c95",
+    "pages/cursos/motus/gracias/index.html": "fdd051021357f18e679bd8caa4611dd86f6e42dd890798ad325734912c32603e",
+    "pages/cursos/motus/index.html": "21fededcf5cf1f6da925e56233400a14f1c18aa01b1c0fbcbf0a8ea7b34f1025",
+    "pages/en/courses/motus/index.html": "33c1cbb6d281ffc32447aad03d74a1aabe2ca2c68fb8ebab35345c059f009f15",
+    "pages/en/courses/motus/thank-you/index.html": "b067912fbb96503b662dcde15ed256e8347abbee76dd6daf95b00cedcaee36e3",
+    "pages/services/data/services.json": "246b8566f94020ddf1a0e91ef45092ccf515dc4caa8fbfd1579ed32f82978e56",
+    "pages/services/index.html": "d2e626b8423cb5dee273ebc1ede067e5f03ba2d85530d278ac4f806fc5ba7c04",
+    "pages/servicios/data/services.json": "1e96202f114191efd47c31da0401e54e627638d36a18e1afd20f5723e1c67e3a",
+    "pages/servicios/index.html": "b9c9b4d02932fb5eb38d88b8eb95226a16bdb92a4a9981ce2be4068fa3792977"
   }
 }

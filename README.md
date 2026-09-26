@@ -16,6 +16,8 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
 | Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
 
+The Services and Courses catalogs share the responsive header navigation component in `components/site-navigation.mjs`, including the `/ebooks/` link. Reuse it for future Best Carriers pages to keep the menu and destinations consistent.
+
 All other routes remain controlled by WordPress and Divi. After publication, every managed route appears as a native entry under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 
 The new courses catalog is documented in [COURSE-CATALOG.md](docs/COURSE-CATALOG.md), including the LW Studio 0.9.15 dependency, preview checks and publication steps.

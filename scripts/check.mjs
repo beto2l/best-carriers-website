@@ -48,6 +48,7 @@ for (const page of release.pages) {
   if (/\[(opin_|shortcode)/i.test(html)) failures.push(`${page.entry} contains a raw WordPress shortcode`);
 
   if (["servicios", "services"].includes(page.route)) checkServices(page, html);
+  if (["servicios", "services", "cursos"].includes(page.route)) checkSharedNavigation(page, html);
   if (["cursos/motus", "en/courses/motus"].includes(page.route)) checkMotusSale(page, html);
   if (["cursos/motus/gracias", "en/courses/motus/thank-you"].includes(page.route)) checkMotusThanks(page, html);
 }
@@ -118,6 +119,7 @@ for (const forbidden of ["OPINFunnelHeadless", "stripe.com", "checkout-bootstrap
 }
 if ((catalogHtml.match(/<h1[ >]/g)||[]).length !== 1) failures.push("Catalog must have one descriptive H1");
 if (/href="https:\/\/best-carriers\.com\/cursos\/[^" ]*\/(pay|gracias)\//.test(catalogHtml)) failures.push("Catalog must link to information landings");
+if (!catalogHtml.includes('data-opinx-global-content="best-carriers-social-proof-es"') || !catalogHtml.includes("Testimonios de alumnos de Best Carriers")) failures.push("Catalog social proof, group imagery fallback and testimonials must be preserved");
 
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join("\n"));
@@ -164,6 +166,19 @@ function checkServices(page, html) {
   for (const required of ["syncDialogWithHash", "window.addEventListener(\"hashchange\"", "window.history.pushState", "window.history.replaceState"]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing service deep-link behavior: ${required}`);
   }
+}
+
+function checkSharedNavigation(page, html) {
+  const locale = page.language || "es";
+  const courseHref = page.route === "cursos" ? 'href="#catalogo"' : 'href="/cursos/"';
+  const expected = locale === "en"
+    ? ['href="/services/"', courseHref, 'href="/cursos/#experiencias"', 'href="/ebooks/"']
+    : ['href="/servicios/"', courseHref, 'href="/cursos/#experiencias"', 'href="/ebooks/"'];
+  if (!html.includes('class="main-nav bc-main-nav"')) failures.push(`${page.entry} is missing the shared Best Carriers navigation`);
+  for (const href of expected) {
+    if (!html.includes(href)) failures.push(`${page.entry} is missing navigation destination ${href}`);
+  }
+  if (!html.includes(".site-header .header-inner") || !html.includes('grid-template-areas: "brand actions" "nav nav"')) failures.push(`${page.entry} must keep the shared navigation visible and usable on mobile`);
 }
 
 function checkMotusSale(page, html) {

@@ -5,12 +5,13 @@ import { fileURLToPath } from "node:url";
 import { buildPayments } from "./build-payments.mjs";
 import { buildMotus } from "./build-motus.mjs";
 import { buildCourses } from "./build-courses.mjs";
+import { renderSiteNavigation } from "../components/site-navigation.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = JSON.parse(await readFile(path.join(root, "content/site.json"), "utf8"));
 const services = JSON.parse(await readFile(path.join(root, "content/services.json"), "utf8"));
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
-const inlineCss = (await readFile(path.join(root, "src/services.css"), "utf8")).replaceAll("</style", "<\\/style");
+const inlineCss = ((await readFile(path.join(root, "src/services.css"), "utf8")) + "\n" + (await readFile(path.join(root, "src/site-navigation.css"), "utf8"))).replaceAll("</style", "<\\/style");
 const inlineJs = (await readFile(path.join(root, "src/services.js"), "utf8")).replaceAll("</script", "<\\/script");
 const version = packageJson.version;
 const locales = ["es", "en"];
@@ -200,6 +201,7 @@ function renderPage(locale) {
         <img class="brand-logo" src="${escapeHtml(site.logo)}" width="44" height="44" alt="" aria-hidden="true" decoding="async">
         <span class="brand-copy"><strong>${escapeHtml(site.brand)}</strong><small>${escapeHtml(t.brandTagline)}</small></span>
       </a>
+      ${renderSiteNavigation({ locale, current: "services" })}
       <nav class="header-actions" aria-label="${locale === "es" ? "Acciones principales" : "Primary actions"}">
         <a class="language-link" href="${escapeHtml(site.routes[alternateLocale])}" hreflang="${alternateLocale}" aria-label="${escapeHtml(t.languageAria)}">${escapeHtml(t.languageLink)}</a>
         <a class="button button-small button-primary" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.navCta)}</span></a>

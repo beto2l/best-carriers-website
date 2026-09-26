@@ -9,3 +9,7 @@ This directory holds small, source-controlled presentation components that can b
 ## `authority-logos.mjs`
 
 Renders the responsive Best Carriers authority rail used by the existing Divi global section **Section Iconos de Autoridad** (ID `1028`). The same individual CDN assets are shown as one row on desktop and a two-column grid on mobile. Provide its localized accessible label and public logo list from the page content; use `renderAuthorityLogos()` from a page generator.
+
+## `site-navigation.mjs`
+
+Renders the shared Spanish/English Best Carriers navigation for Services, Courses, Experiences, and E-books. Use `renderSiteNavigation({ locale, current })` in each site page header and include `src/site-navigation.css` in that page's inline stylesheet. The menu includes a compact, visible mobile layout. Keep the E-books destination at `/ebooks/`; future page builders should reuse this component unless the page is intentionally designed without a site menu.
