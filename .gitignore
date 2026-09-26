@@ -2,3 +2,6 @@
 node_modules/
 output/
 .playwright-cli/
+
+# Read-only production snapshots and local visual evidence.
+preview/

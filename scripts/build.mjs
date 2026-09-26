@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildPayments } from "./build-payments.mjs";
 import { buildMotus } from "./build-motus.mjs";
+import { buildCourses } from "./build-courses.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = JSON.parse(await readFile(path.join(root, "content/site.json"), "utf8"));
@@ -48,7 +49,8 @@ if (buildServices) {
 
 const motusRelease = await buildMotus({ root, site, version });
 const paymentsRelease = await buildPayments({ root, version });
-files.push(...motusRelease.files, ...paymentsRelease.files);
+const coursesRelease = await buildCourses({ root, site, version });
+files.push(...motusRelease.files, ...paymentsRelease.files, ...coursesRelease.files);
 
 const checksums = {};
 for (const file of files.sort()) {
@@ -72,9 +74,10 @@ const release = {
       translation_key: "trucking-services"
     })),
     ...motusRelease.pages,
-    ...paymentsRelease.pages
+    ...paymentsRelease.pages,
+    ...coursesRelease.pages
   ],
-  global_content: { ...motusRelease.globalContent, ...paymentsRelease.globalContent },
+  global_content: { ...motusRelease.globalContent, ...paymentsRelease.globalContent, ...coursesRelease.globalContent },
   files_sha256: checksums
 };
 

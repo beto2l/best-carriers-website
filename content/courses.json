@@ -1,0 +1,92 @@
+{
+  "title": "Cursos de trucking en español en USA | Best Carriers",
+  "description": "Capacítate en trucking, IFTA, safety, dispatch y MOTUS. Explora cursos en español, fechas y horarios. Grabaciones, acceso por un año y certificado.",
+  "hero": "https://bc.opin-x.com/best-carriers-courses-hero-v1.webp",
+  "entries": [
+    {
+      "page_id": 711,
+      "course": "tdc",
+      "title": "Trucking desde cero",
+      "topic": "Emprende con una base sólida",
+      "summary": "Conoce las bases para iniciar una empresa de transporte en Estados Unidos: estructura del negocio, registros y primeros pasos de tu operación.",
+      "image": "https://bc.opin-x.com/llc-authority.webp",
+      "order": 10
+    },
+    {
+      "page_id": 9,
+      "course": "ifta",
+      "title": "IFTA sin complicaciones",
+      "topic": "Impuestos sobre combustible",
+      "summary": "Aprende a organizar millas y combustible, entender los reportes de IFTA y preparar la información que necesita tu empresa para sus declaraciones.",
+      "image": "https://bc.opin-x.com/filing-ifta.webp",
+      "order": 20
+    },
+    {
+      "page_id": 774,
+      "course": "safety",
+      "title": "Safety & Compliance",
+      "topic": "Una operación mejor preparada",
+      "summary": "Fortalece tus conocimientos de seguridad y cumplimiento en trucking. Conoce los procesos y documentos que ayudan a mantener tu operación en orden.",
+      "image": "https://bc.opin-x.com/reinstate-mc-authority.webp",
+      "order": 30
+    },
+    {
+      "page_id": 991,
+      "course": "motus",
+      "title": "Domina FMCSA MOTUS",
+      "topic": "La nueva plataforma de registro",
+      "summary": "Aprende a utilizar MOTUS paso a paso: acceso a la plataforma, vinculación de USDOT y gestión de los procesos de registro de tu empresa.",
+      "image": "https://bc.opin-x.com/motus-course-device-scene-v4.webp",
+      "order": 40
+    },
+    {
+      "page_id": 153,
+      "course": "dispatch",
+      "title": "Dispatch de camiones",
+      "topic": "Conecta la carga con la operación",
+      "summary": "Descubre cómo funciona el dispatch en Estados Unidos y desarrolla conocimientos para coordinar cargas, rutas y la comunicación de una operación de transporte.",
+      "image": "https://bc.opin-x.com/state-permits.webp",
+      "order": 50
+    },
+    {
+      "page_id": 1166,
+      "course": "reclutamiento",
+      "title": "Reclutamiento de operadores",
+      "topic": "El equipo que mueve tu empresa",
+      "summary": "Conoce el proceso de reclutamiento de operadores para empresas de transporte. Explora los detalles de esta próxima capacitación de Best Carriers.",
+      "image": "https://bc.opin-x.com/best-carriers-consulting-card-v2.webp",
+      "order": 60
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué cursos de trucking ofrece Best Carriers?",
+      "answer": "El catálogo reúne capacitaciones en español sobre cómo iniciar una empresa de trucking, IFTA, safety y compliance, FMCSA MOTUS, dispatch y reclutamiento de operadores. En la página de cada curso puedes consultar su temario y todos sus detalles."
+    },
+    {
+      "question": "¿Los cursos son en vivo o grabados?",
+      "answer": "Contamos con cursos online en vivo y cursos grabados. Cada ficha indica la modalidad y, cuando corresponde, la fecha y el horario. Los cursos en vivo también se graban para que puedas repasar su contenido."
+    },
+    {
+      "question": "¿Durante cuánto tiempo puedo acceder al curso?",
+      "answer": "Conservas acceso al curso que compras durante un año. Este acceso corresponde a ese curso; no incluye automáticamente las demás capacitaciones del catálogo."
+    },
+    {
+      "question": "¿Recibo un certificado?",
+      "answer": "Sí. Los cursos incluyen un certificado de participación. Consulta en la página de cada curso las indicaciones para obtenerlo. Es una constancia de capacitación de Best Carriers y no sustituye licencias ni autorizaciones oficiales."
+    },
+    {
+      "question": "¿Puedo contratar varios cursos en un paquete?",
+      "answer": "Sí. Podemos preparar una cotización de acuerdo con la cantidad de cursos que quieras tomar. Escríbenos por WhatsApp e indícanos cuáles te interesan para revisar las opciones contigo."
+    },
+    {
+      "question": "¿Dónde consulto el temario y cómo me inscribo?",
+      "answer": "Selecciona “Ver temario y detalles” en el curso que te interesa. Llegarás a su página informativa, donde podrás revisar el contenido completo y las opciones de inscripción disponibles."
+    },
+    {
+      "question": "¿Qué significa “Próximamente”?",
+      "answer": "Significa que la próxima fecha está por confirmar. Puedes visitar la página del curso o consultar a nuestro equipo para conocer su disponibilidad."
+    }
+  ],
+  "testimonialsPoster": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-15-at-10.52.16-AM-450x291.png"
+}

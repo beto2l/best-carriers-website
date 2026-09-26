@@ -13,7 +13,8 @@ const expectedRoutes = new Set([
   "en/courses/motus",
   "cursos/motus/gracias",
   "en/courses/motus/thank-you",
-  "cursos/combo/pay"
+  "cursos/combo/pay",
+  "cursos"
 ]);
 const failures = [];
 
@@ -21,7 +22,7 @@ if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
 if (release.version !== packageJson.version) failures.push("release and package versions must match");
-if (release.pages.length !== 7) failures.push("exactly seven native Pages are required");
+if (release.pages.length !== 8) failures.push("exactly eight native Pages are required");
 const servicePages = release.pages.filter(page => ["servicios", "services"].includes(page.route));
 if (servicePages.length !== 2 || servicePages.some(page => page.translation_key !== "trucking-services")) {
   failures.push("Spanish and English service pages must remain a linked translation pair");
@@ -99,6 +100,24 @@ for (const forbidden of ["checkout-bootstrap", "admin-ajax.php", "OPINFunnelHead
   if (paymentHtml.includes(forbidden)) failures.push(`Payment UI must not duplicate payment logic, customer storage or canonical prices: ${forbidden}`);
 }
 if (!paymentHtml.includes("Best-carriers-icon.png") || !paymentHtml.includes("OPINXLWCheckout.activate")) failures.push("Payment page requires the original logo and official component activation");
+
+const catalogPage = release.pages.find(page => page.route === "cursos");
+const catalogHtml = await readFile(path.join(root, catalogPage.entry), "utf8");
+const catalogComponent = components["best-carriers-course-catalog-es"];
+if (catalogComponent?.type !== "course_catalog" || catalogComponent.source !== "course_catalog" || catalogComponent.category !== "cursos" || catalogComponent.language !== "es") failures.push("Course catalog must use the category-driven canonical component");
+if (catalogPage.id !== "course-catalog-es" || !catalogPage.components.includes("best-carriers-social-proof-es")) failures.push("Catalog identity and shared Reviews Hub component must be preserved");
+for (const entry of catalogComponent.entries) {
+  if (["price", "date", "schedule", "course_start_date", "shortcode"].some(key => key in entry)) failures.push("Catalog editorial entries must not duplicate dates or prices");
+  if (!catalogHtml.includes(`href="https://best-carriers.com/cursos/${entry.course}/"`)) failures.push(`Missing crawlable landing fallback for ${entry.course}`);
+}
+for (const required of ["data-course-search", "data-view-button", "data-mode-filter", "Un año de acceso", "cantidad de cursos", "Certificado incluido", "CollectionPage", "BreadcrumbList", "prefers-reduced-motion", "youtube-nocookie.com/embed/LJ9DsCbuMXw"]) {
+  if (!catalogHtml.includes(required)) failures.push(`Catalog is missing ${required}`);
+}
+for (const forbidden of ["OPINFunnelHeadless", "stripe.com", "checkout-bootstrap", "lifetime_access", "opin_course_price"]) {
+  if (catalogHtml.includes(forbidden)) failures.push(`Catalog must not include payment functionality: ${forbidden}`);
+}
+if ((catalogHtml.match(/<h1[ >]/g)||[]).length !== 1) failures.push("Catalog must have one descriptive H1");
+if (/href="https:\/\/best-carriers\.com\/cursos\/[^" ]*\/(pay|gracias)\//.test(catalogHtml)) failures.push("Catalog must link to information landings");
 
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join("\n"));
