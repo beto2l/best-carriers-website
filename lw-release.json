@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.29",
+  "version": "1.3.30",
   "languages": [
     "es",
     "en"
@@ -307,17 +307,17 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "4524baa66223b581ddd2c5ebfc4624f2fccd8dc67024f797dd01fc99837457fa",
-    "pages/cursos/index.html": "6c067cf7b7108b81caee5d7d50fbeda29781e5eb9bddba28bc3b5b053704ccdc",
-    "pages/cursos/motus/gracias/index.html": "c2c1625ac9dadb5b5f6b15992f4df22a247049d175ba71b6b61cccea4c9da774",
-    "pages/cursos/motus/index.html": "c16829764adef34a71b32248735cbb8dc67edb57690c08477277efab55599659",
-    "pages/ebooks/index.html": "7710c888498c733e38d575bf3ed1aab1e2faf8f4525fb0b6953369e706c3d5d0",
-    "pages/en/courses/motus/index.html": "6e081a8a462260e86a0620dd6603ed8a4ffbfa6a6e4b24cc5d05d69bea8b5a93",
-    "pages/en/courses/motus/thank-you/index.html": "71e4970c272e67bc54d8052e30e2ac9716c3c4e187733f5996fdcb048695e644",
-    "pages/en/e-books/index.html": "5c5eadd04e8623f98bb14daa8be5543da1a44913cc6824c50d13293f24d9f48a",
-    "pages/services/data/services.json": "736f4047ff0cbaf246d7a57d69693f0c269a4e583901888cc6ebacc67e1333a7",
-    "pages/services/index.html": "c0b2465529fa9104d58ee6955c0928e2576e82ca98db18314ae936b21e9b5637",
-    "pages/servicios/data/services.json": "0cea9bb9c55c335f67033182d9af6712766c5984a5c566affc07079ba4030ec4",
-    "pages/servicios/index.html": "ccab423d8a2fa4c86b6672a36ec1029949ec94a9d7aab4a955fa187a3c6bfc89"
+    "pages/cursos/combo/pay/index.html": "6ee607db5460a740f6607277518431811c01182f6e84037bdbdac1bee53df581",
+    "pages/cursos/index.html": "0a5423b0189ab4cfd3367c849de8e13e5863560b49bba79b72a30e11e566fb6a",
+    "pages/cursos/motus/gracias/index.html": "a629cd631d4eb60f2a4ed678bc6388cb7a14cd0e479102ff2203ca5927cff2d1",
+    "pages/cursos/motus/index.html": "79142a4260f4f0d833ff158b7939a14830afdefd0926a0e7b457d106b544f524",
+    "pages/ebooks/index.html": "5d74cdf0d10320eee14c48d0eb34a40719187b50789496e76cf32b2d1bc4a133",
+    "pages/en/courses/motus/index.html": "4a6843c3887a08e6439009b9e9cbae5a3421354e3eb0c962c993468e7caebed3",
+    "pages/en/courses/motus/thank-you/index.html": "b5dad1a9adb33f6f42add5fd68b08f3df803a38682932217b750dc12dce31ba5",
+    "pages/en/e-books/index.html": "e8cbe2f93f2506ee6843fb6ff1a97e644a581ffb13bf8f97bcfd0edafdf7e47b",
+    "pages/services/data/services.json": "078eba4bdc92d25a3f4c107d144cfd21decf2744c18ae6e03982cf2b55e6b078",
+    "pages/services/index.html": "6d3d107af8c4e470c3507b69a58226483be2f2f06463ff770e8de5d75bb9fc9e",
+    "pages/servicios/data/services.json": "f5055870d4da917ce95b49909ca56e1645fea23c2dbf8b17be1da205e3aa4536",
+    "pages/servicios/index.html": "72795a0ebd34fad9be4d57cd827ebf012f15715001bc4efa4e94bb047145b8c7"
   }
 }

@@ -71,7 +71,8 @@
       "terms":"Términos y condiciones",
       "privacy":"Privacidad",
       "languageLabel":"Seleccionar idioma",
-      "home":"Inicio"
+      "home":"Inicio",
+      "whatsappMessage":"Hola, quiero información sobre los e-books de Best Carriers."
     },
     "en": {
       "title":"Trucking E-books | Glossary & IFTA + IRP | Best Carriers",
@@ -141,7 +142,8 @@
       "terms":"Terms and conditions",
       "privacy":"Privacy",
       "languageLabel":"Select language",
-      "home":"Home"
+      "home":"Home",
+      "whatsappMessage":"Hello, I would like information about Best Carriers e-books."
     }
   },
   "books":[

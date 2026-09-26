@@ -19,6 +19,8 @@ const expectedRoutes = new Set([
   "en/e-books"
 ]);
 const failures = [];
+const sharedChromeCss = await readFile(path.join(root, 'src/site-chrome.css'), 'utf8');
+const chromeByLanguage = new Map();
 
 if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
@@ -146,7 +148,7 @@ function checkServices(page, html) {
   if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
   if ((html.match(/<div class="card-visual"><img src="https:\/\/bc\.opin-x\.com\//g) || []).length !== 12) failures.push(`${page.entry} must use 12 authorized CDN service images`);
   if ((html.match(/loading="lazy" decoding="async" sizes="\(min-width: 1180px\)/g) || []).length !== 12) failures.push(`${page.entry} must lazy-load all service-card images`);
-  if (!html.includes('class="brand-logo" src="https://c.opin-x.com/best-carriers/Best-carriers-icon.png"')) failures.push(`${page.entry} must use the payment page logo`);
+  if (!html.includes('src="https://c.opin-x.com/best-carriers/Best-carriers-icon.png"')) failures.push(`${page.entry} must use the payment page logo`);
   if (!html.includes("data-static-catalog")) failures.push(`${page.entry} is missing the embedded service catalog`);
   if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);
   if (!html.includes(page.language === "es" ? "Fee de la Secretaría de Estado" : "Secretary of State filing fee")) failures.push(`${page.entry} is missing the LLC state-fee exclusion`);
@@ -173,15 +175,33 @@ function checkServices(page, html) {
 
 function checkSharedNavigation(page, html) {
   const locale = page.language || "es";
-  const courseHref = page.route === "cursos" ? 'href="#catalogo"' : 'href="/cursos/"';
+  if (!html.includes(sharedChromeCss)) failures.push(`${page.entry} must embed the exact shared header/footer styles`);
   const expected = locale === "en"
-    ? ['href="/services/"', courseHref, 'href="/cursos/#experiencias"', 'href="/en/e-books/"']
-    : ['href="/servicios/"', courseHref, 'href="/cursos/#experiencias"', 'href="/ebooks/"'];
-  if (!html.includes('class="main-nav bc-main-nav"')) failures.push(`${page.entry} is missing the shared Best Carriers navigation`);
-  for (const href of expected) {
-    if (!html.includes(href)) failures.push(`${page.entry} is missing navigation destination ${href}`);
+    ? ['/services/', '/en/courses/', '/en/e-books/']
+    : ['/servicios/', '/cursos/', '/ebooks/'];
+  const pair = page.route === 'cursos' ? ['cursos', 'en/courses'] : ['servicios', 'services'].includes(page.route) ? ['servicios', 'services'] : ['ebooks', 'en/e-books'];
+  for (const tag of ['header', 'footer']) {
+    const chrome = html.match(new RegExp(`<${tag} class="bc-chrome bc-site-${tag}"[\\s\\S]*?</${tag}>`))?.[0] || '';
+    if (!chrome) failures.push(`${page.entry} is missing the shared ${tag}`);
+    const normalized = chrome.replace(/ aria-current="page"/g, '').replace(/<nav class="bc-language-switch"[\s\S]*?<\/nav>/g, 'LANGUAGE_SWITCH').replace(/https:\/\/wa\.me\/12192396752\?text=[^"]+/g, 'PAGE_WHATSAPP');
+    const identity = `${locale}:${tag}`;
+    if (chromeByLanguage.has(identity) && chromeByLanguage.get(identity) !== normalized) failures.push(`${page.entry} ${tag} differs from the other catalogs`);
+    else chromeByLanguage.set(identity, normalized);
+    for (const href of expected) if (!chrome.includes(`href="${href}"`)) failures.push(`${page.entry} ${tag} is missing ${href}`);
+    for (const route of pair) if (!chrome.includes(`href="https://best-carriers.com/${route}/"`)) failures.push(`${page.entry} ${tag} has an incorrect language destination`);
+    for (const required of ['bc-language-switch', 'bc-whatsapp', 'Best-carriers-icon.png', 'width="44" height="44"', locale === 'es' ? 'Trucking · Formación · Negocios' : 'Trucking · Training · Business']) {
+      if (!chrome.includes(required)) failures.push(`${page.entry} ${tag} is missing ${required}`);
+    }
+    if (/Experiencias|Experiences|Hablemos/.test(chrome)) failures.push(`${page.entry} ${tag} retains a removed menu item`);
+    if ((chrome.match(/data-language-link/g) || []).length !== 2) failures.push(`${page.entry} ${tag} requires the ES/EN switch`);
+    const whatsapp = chrome.match(/class="bc-whatsapp" href="([^"]+)"/)?.[1];
+    if (!whatsapp || !whatsapp.startsWith('https://wa.me/12192396752?text=')) failures.push(`${page.entry} ${tag} requires the existing WhatsApp destination`);
+    const message = whatsapp ? new URL(whatsapp).searchParams.get('text') : '';
+    const subject = page.route.includes('ebook') || page.route.includes('e-book') ? 'e-books' : page.route === 'cursos' ? 'cursos' : locale === 'es' ? 'servicio' : 'services';
+    if (!message?.includes(subject)) failures.push(`${page.entry} ${tag} requires its own page-specific WhatsApp message`);
   }
-  if (!html.includes(".site-header .header-inner") || !html.includes('grid-template-areas: "brand actions" "nav nav"')) failures.push(`${page.entry} must keep the shared navigation visible and usable on mobile`);
+  if (!html.includes('.bc-site-header{position:relative;') || !html.includes('background:#071522;border-bottom:1px solid #ffffff20;opacity:1;backdrop-filter:none')) failures.push(`${page.entry} must use the shared opaque header`);
+  if (!html.includes('grid-template-areas:"brand language" "nav whatsapp"')) failures.push(`${page.entry} must retain the shared mobile layout`);
 }
 
 function checkEbooks(page, html) {

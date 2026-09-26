@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { courseSocialProof } from '../components/course-social-proof.mjs';
-import { renderSiteNavigation } from '../components/site-navigation.mjs';
+import { renderSiteHeader, renderSiteFooter } from '../components/site-chrome.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const json = value => JSON.stringify(value).replaceAll('<','\\u003c');
@@ -30,13 +30,13 @@ export async function buildEbooks({root,site,version}) {
     for(const lang of ['es','en'])for(const field of ['title','topic','summary','audience','imageAlt','contents'])if(!book[lang]?.[field]?.length)throw new Error(`${book.id}: missing ${lang}.${field}`);
   }
   const proof=await courseSocialProof(root);
-  const css=[await readFile(path.join(root,'src/ebooks.css'),'utf8'),await readFile(path.join(root,'src/site-navigation.css'),'utf8'),proof.css].join('\n').replaceAll('</style','<\\/style');
+  const css=[await readFile(path.join(root,'src/ebooks.css'),'utf8'),await readFile(path.join(root,'src/site-chrome.css'),'utf8'),proof.css].join('\n').replaceAll('</style','<\\/style');
   const js=[await readFile(path.join(root,'src/ebooks.js'),'utf8'),proof.js].join('\n').replaceAll('</script','<\\/script');
   const files=[],pages=[];
   for(const locale of ['es','en']){
     const t=content.locales[locale],canonical=content.routes[locale],route=new URL(canonical).pathname.replace(/^\/+|\/+$/g,'');
     const entry=`pages/${route}/index.html`;
-    const brand=`<a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers · ${escape(t.home)}"><img src="${escape(site.logo)}" alt="" width="45" height="45" decoding="async"><span><strong>Best Carriers</strong><small>${escape(t.tagline)}</small></span></a>`;
+    const whatsappUrl=`https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(t.whatsappMessage)}`;
     const cover=(book,hero=false)=>`<span class="book-object"><img src="${escape(book.image.url)}" alt="${escape(book[locale].imageAlt)}" width="${book.image.width}" height="${book.image.height}" decoding="async" ${hero?'fetchpriority="high"':'loading="lazy"'}></span>`;
     const specs=book=>`<span>${escape(book.format)}</span><span>${book.pages} ${escape(t.pages)}</span><span>${escape(t.spanish)}</span>`;
     const productLink=book=>`<a class="ebook-link" href="${escape(book.url)}" hreflang="${book.pageLanguage}"><span>${escape(t.bookLink)}</span>${icon('arrow')}</a>${t.productLanguage?`<p class="product-language">${escape(t.productLanguage)}</p>`:''}`;
@@ -57,7 +57,7 @@ export async function buildEbooks({root,site,version}) {
 </head>
 <body data-page="ebook-catalog" data-locale="${locale}" data-release="${version}">
 <a class="skip-link" href="#catalogo">${escape(t.skip)}</a>
-<header class="site-header"><div class="shell header-inner">${brand}${renderSiteNavigation({locale,current:'ebooks'})}<nav class="header-actions" aria-label="${escape(t.languageLabel)}"><a href="${content.routes.es}" hreflang="es" lang="es" data-language-link${locale==='es'?' aria-current="page"':''} aria-label="Español">ES</a><a href="${content.routes.en}" hreflang="en" lang="en" data-language-link${locale==='en'?' aria-current="page"':''} aria-label="English">EN</a></nav></div></header>
+${renderSiteHeader({site,locale,current:'ebooks',whatsappUrl})}
 <main>
 <section class="hero" aria-labelledby="hero-title"><div class="shell hero-layout"><div class="hero-copy"><p class="eyebrow">${escape(t.eyebrow)}</p><h1 id="hero-title">${escape(t.headline)}<br><em>${escape(t.accent)}</em></h1><p class="hero-description">${escape(t.intro)}</p><div class="hero-actions"><a class="button button-light" href="#catalogo">${escape(t.explore)} <span aria-hidden="true">↓</span></a><a class="text-link" href="#experiencias">${escape(t.experiences)} <span aria-hidden="true">↗</span></a></div><p class="hero-note">${escape(t.heroNote)}</p></div><div class="hero-books">${books.slice(0,2).map(book=>`<a class="book-object" href="#libro-${book.id}" data-select-book aria-label="${escape(book[locale].title)}"><img src="${escape(book.image.url)}" alt="${escape(book[locale].imageAlt)}" width="${book.image.width}" height="${book.image.height}" decoding="async" fetchpriority="high"></a>`).join('')}</div></div></section>
 <div class="promise-band"><div class="shell promise-items">${t.trust.map((text,i)=>`<span>${icon(['book','compass','library'][i])}${escape(text)}</span>`).join('')}</div></div>
@@ -72,7 +72,7 @@ ${books.length>4?`<div class="catalog-search" data-search-controls hidden><label
 <section class="section" aria-labelledby="faq-title"><div class="shell faq-layout"><div><p class="eyebrow">${escape(t.faqEyebrow)}</p><h2 id="faq-title">${lines(t.faqTitle)}</h2></div><div class="faq-list">${t.faqs.map(faq=>`<details><summary>${escape(faq.question)}</summary><p>${escape(faq.answer)}</p></details>`).join('')}</div></div></section>
 <section class="closing" aria-labelledby="closing-title"><div class="shell closing-inner"><div><h2 id="closing-title">${escape(t.closing)}</h2><p>${escape(t.closingBody)}</p></div><a class="button button-light" href="#catalogo">${escape(t.back)} <span aria-hidden="true">↑</span></a></div></section>
 </main>
-<footer class="site-footer"><div class="shell"><div class="footer-top">${brand}<nav class="footer-nav" aria-label="${locale==='es'?'Pie de página':'Footer'}"><a href="${locale==='es'?'/servicios/':'/services/'}">${locale==='es'?'Servicios':'Services'}</a><a href="/cursos/">${locale==='es'?'Cursos':'Courses'}</a><a href="#experiencias">${locale==='es'?'Experiencias':'Experiences'}</a><a href="#catalogo">E-books</a></nav></div><p class="footer-description">${escape(t.footer)}</p><div class="footer-bottom"><p>© <span data-current-year>2026</span> Best Carriers. ${escape(t.rights)}</p><div class="footer-legal"><a href="${locale==='es'?'https://best-carriers.com/terminos-y-condiciones/':'https://best-carriers.com/en/terms-and-conditions/'}">${escape(t.terms)}</a><a href="${locale==='es'?'https://best-carriers.com/politica-de-privacidad/':'https://best-carriers.com/en/privacy-policy/'}">${escape(t.privacy)}</a></div></div></div></footer>
+${renderSiteFooter({site,locale,current:'ebooks',whatsappUrl})}
 <script>${js}</script></body></html>`;
     await mkdir(path.dirname(path.join(root,entry)),{recursive:true});
     await writeFile(path.join(root,entry),html);

@@ -18,7 +18,9 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
 | Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
 
-The Services, Courses and E-books catalogs share the responsive header navigation component in `components/site-navigation.mjs`, including the localized e-book destinations. Reuse it for future Best Carriers pages to keep the menu and destinations consistent.
+The Services, Courses and E-books catalogs share their complete header and footer through `components/site-chrome.mjs` and `src/site-chrome.css`. These components own the opaque navy background, logo/tagline sizing, three-section navigation, ES/EN switch, WhatsApp button and legal footer. `components/site-navigation.mjs` owns the localized destinations. Reuse the shared components to keep all catalog pages consistent; only the active section, locale and WhatsApp message vary.
+
+The Courses language switch links to its existing English WordPress page at `/en/courses/` (Page 726). That English catalog is not yet managed by this release. The three Spanish catalogs and the English Services/E-books catalogs use the shared header/footer. Service price qualifications remain in the Services content immediately above the shared footer.
 
 All other routes remain controlled by WordPress and Divi. After publication, every managed route appears as a native entry under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 

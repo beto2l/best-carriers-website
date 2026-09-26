@@ -1444,3 +1444,5 @@ svg {
     transition-duration: .01ms !important;
   }
 }
+
+.service-disclaimer{font-size:12px;line-height:1.8;color:#63717b;padding-block:24px;margin-block:0}

@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { courseSocialProof } from '../components/course-social-proof.mjs';
-import { renderSiteNavigation } from '../components/site-navigation.mjs';
+import { renderSiteHeader, renderSiteFooter } from '../components/site-chrome.mjs';
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const json = value => JSON.stringify(value).replaceAll('<','\\u003c');
 const icons = {
@@ -17,13 +17,12 @@ export async function buildCourses({root,site,version}) {
   const content = JSON.parse(await readFile(path.join(root,'content/courses.json'),'utf8'));
   const motus = JSON.parse(await readFile(path.join(root,'content/motus.json'),'utf8'));
   const proof = await courseSocialProof(root);
-  const css = ((await readFile(path.join(root,'src/courses.css'),'utf8')) + '\n' + (await readFile(path.join(root,'src/site-navigation.css'),'utf8')) + '\n' + proof.css).replaceAll('</style','<\\/style');
+  const css = ((await readFile(path.join(root,'src/courses.css'),'utf8')) + '\n' + (await readFile(path.join(root,'src/site-chrome.css'),'utf8')) + '\n' + proof.css).replaceAll('</style','<\\/style');
   const js = ((await readFile(path.join(root,'src/courses.js'),'utf8')) + '\n' + proof.js).replaceAll('</script','<\\/script');
   const canonical = 'https://best-carriers.com/cursos/';
   // Keep the approved destination; this new course page prepares the requested course/package inquiry.
   const contact = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(content.whatsappMessages.information)}`;
   const bundleContact = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(content.whatsappMessages.bundle)}`;
-  const brand = `<a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers, inicio"><img src="${escape(site.logo)}" alt="" width="49" height="49"><span><strong>Best Carriers</strong><small>Trucking · Formación · Negocios</small></span></a>`;
   const fallback = content.entries.map((entry,index) => `<article class="course-card"><a class="course-art" href="${canonical}${escape(entry.course)}/" tabindex="-1" aria-hidden="true"><img src="${escape(entry.image)}" alt="" width="720" height="450" loading="lazy" decoding="async"><span class="course-number">BC / ${String(index+1).padStart(2,'0')}</span></a><div class="course-copy"><p class="course-topic">${escape(entry.topic)}</p><h3><a href="${canonical}${escape(entry.course)}/">${escape(entry.title)}</a></h3><p class="course-description">${escape(entry.summary)}</p><a class="course-link" href="${canonical}${escape(entry.course)}/"><span>Ver temario y disponibilidad</span><span aria-hidden="true">↗</span></a></div></article>`).join('');
   const schema = {'@context':'https://schema.org','@graph':[
     {'@type':'CollectionPage','@id':canonical+'#webpage',url:canonical,name:content.title,description:content.description,inLanguage:'es-US',publisher:{'@type':'Organization',name:'Best Carriers',url:'https://best-carriers.com/'}},
@@ -43,7 +42,7 @@ export async function buildCourses({root,site,version}) {
 </head>
 <body data-page="course-catalog" data-release="${version}">
 <a class="skip-link" href="#catalogo">Ir al catálogo de cursos</a>
-<header class="site-header"><div class="shell header-inner">${brand}${renderSiteNavigation({locale:'es',current:'courses'})}<a class="header-contact" href="${contact}" target="_blank" rel="noopener">Hablemos <span aria-hidden="true">↗</span></a></div></header>
+${renderSiteHeader({site,locale:'es',current:'courses',whatsappUrl:contact})}
 <main>
 <section class="hero" aria-labelledby="hero-title">
 <img class="hero-art" src="${escape(content.hero)}" alt="Camión de transporte en una carretera de Estados Unidos al amanecer" width="1672" height="941" fetchpriority="high" decoding="async">
@@ -79,7 +78,7 @@ export async function buildCourses({root,site,version}) {
 <section class="section" id="preguntas" aria-labelledby="faq-title"><div class="shell faq-layout"><div class="faq-intro"><p class="eyebrow">Antes de empezar</p><h2 id="faq-title">Resolvamos<br>tus dudas.</h2><p>Lo esencial para elegir tu capacitación y dar el siguiente paso con claridad.</p></div><div class="faq-list">${content.faqs.map(faq=>`<details><summary>${escape(faq.question)}</summary><p>${escape(faq.answer)}</p></details>`).join('')}</div></div></section>
 <section class="closing" aria-labelledby="closing-title"><div class="shell closing-inner"><div><h2 id="closing-title">Tu próxima etapa merece preparación.</h2><p>Encuentra el conocimiento que acompaña el crecimiento de tu empresa.</p></div><a class="button button-light" href="#catalogo">Elegir mi curso <span aria-hidden="true">↑</span></a></div></section>
 </main>
-<footer class="site-footer"><div class="shell"><div class="footer-top">${brand}<nav class="footer-nav" aria-label="Pie de página"><a href="#catalogo">Cursos</a><a href="https://best-carriers.com/servicios/">Servicios</a><a href="#paquetes">Paquetes</a><a href="${contact}" target="_blank" rel="noopener">Contacto ↗</a></nav></div><div class="footer-bottom"><p>© <span data-current-year>2026</span> Best Carriers. Todos los derechos reservados.</p><div class="footer-legal"><a href="https://best-carriers.com/terminos-y-condiciones/">Términos y condiciones</a><a href="https://best-carriers.com/politica-de-privacidad/">Privacidad</a></div></div></div></footer>
+${renderSiteFooter({site,locale:'es',current:'courses',whatsappUrl:contact})}
 <script>${js}</script>
 </body></html>`;
   const entry = 'pages/cursos/index.html';

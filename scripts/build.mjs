@@ -6,13 +6,13 @@ import { buildPayments } from "./build-payments.mjs";
 import { buildMotus } from "./build-motus.mjs";
 import { buildCourses } from "./build-courses.mjs";
 import { buildEbooks } from "./build-ebooks.mjs";
-import { renderSiteNavigation } from "../components/site-navigation.mjs";
+import { renderSiteHeader, renderSiteFooter } from "../components/site-chrome.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = JSON.parse(await readFile(path.join(root, "content/site.json"), "utf8"));
 const services = JSON.parse(await readFile(path.join(root, "content/services.json"), "utf8"));
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
-const inlineCss = ((await readFile(path.join(root, "src/services.css"), "utf8")) + "\n" + (await readFile(path.join(root, "src/site-navigation.css"), "utf8"))).replaceAll("</style", "<\\/style");
+const inlineCss = ((await readFile(path.join(root, "src/services.css"), "utf8")) + "\n" + (await readFile(path.join(root, "src/site-chrome.css"), "utf8"))).replaceAll("</style", "<\\/style");
 const inlineJs = (await readFile(path.join(root, "src/services.js"), "utf8")).replaceAll("</script", "<\\/script");
 const version = packageJson.version;
 const locales = ["es", "en"];
@@ -145,7 +145,6 @@ function localizedPayload(locale) {
 
 function renderPage(locale) {
   const t = site.locales[locale];
-  const alternateLocale = locale === "es" ? "en" : "es";
   const canonical = site.routes[locale];
   const lang = locale === "es" ? "es-US" : "en-US";
   const cards = services.map((service, index) => renderCard(service, locale, index)).join("\n");
@@ -198,19 +197,7 @@ function renderPage(locale) {
 <body data-locale="${locale}" data-release="${escapeHtml(version)}">
   <script type="application/json" data-static-catalog>${safeJson(localizedPayload(locale))}</script>
   <a class="skip-link" href="#services-grid">${escapeHtml(t.skipLink)}</a>
-  <header class="site-header" data-header>
-    <div class="shell header-inner">
-      <a class="brand" href="https://best-carriers.com/" aria-label="Best Carriers">
-        <img class="brand-logo" src="${escapeHtml(site.logo)}" width="44" height="44" alt="" aria-hidden="true" decoding="async">
-        <span class="brand-copy"><strong>${escapeHtml(site.brand)}</strong><small>${escapeHtml(t.brandTagline)}</small></span>
-      </a>
-      ${renderSiteNavigation({ locale, current: "services" })}
-      <nav class="header-actions" aria-label="${locale === "es" ? "Acciones principales" : "Primary actions"}">
-        <a class="language-link" href="${escapeHtml(site.routes[alternateLocale])}" hreflang="${alternateLocale}" aria-label="${escapeHtml(t.languageAria)}">${escapeHtml(t.languageLink)}</a>
-        <a class="button button-small button-primary" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}<span>${escapeHtml(t.navCta)}</span></a>
-      </nav>
-    </div>
-  </header>
+  ${renderSiteHeader({ site, locale, current: "services", whatsappUrl: whatsappUrl(locale) })}
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
@@ -287,17 +274,10 @@ function renderPage(locale) {
         <a class="button button-light" href="${escapeHtml(whatsappUrl(locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.ctaButton)}${icon("arrow")}</a>
       </div>
     </section>
+    <p class="shell service-disclaimer">${escapeHtml(t.disclaimer)}</p>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <div class="brand footer-brand"><img class="brand-logo" src="${escapeHtml(site.logo)}" width="44" height="44" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="brand-copy"><strong>${escapeHtml(site.brand)}</strong><small>${escapeHtml(t.footerText)}</small></span></div>
-      <div class="footer-meta">
-        <p>${escapeHtml(t.disclaimer)}</p>
-        <small>© <span data-current-year>${new Date().getUTCFullYear()}</span> ${escapeHtml(t.copyright)}</small>
-      </div>
-    </div>
-  </footer>
+  ${renderSiteFooter({ site, locale, current: "services", whatsappUrl: whatsappUrl(locale) })}
 
   <dialog class="service-dialog" data-service-dialog aria-labelledby="dialog-title">
     <div class="dialog-frame">

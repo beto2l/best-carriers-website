@@ -1,26 +1,11 @@
-const routes = {
-  es: {
-    services: { label: "Servicios", href: "/servicios/" },
-    courses: { label: "Cursos", href: "/cursos/" },
-    experiences: { label: "Experiencias", href: "/cursos/#experiencias" },
-    ebooks: { label: "E-books", href: "/ebooks/" },
-    aria: "Navegación principal"
-  },
-  en: {
-    services: { label: "Services", href: "/services/" },
-    courses: { label: "Courses", href: "/cursos/" },
-    experiences: { label: "Experiences", href: "/cursos/#experiencias" },
-    ebooks: { label: "E-books", href: "/en/e-books/" },
-    aria: "Main navigation"
-  }
+export const catalogRoutes = {
+  services: { es: '/servicios/', en: '/services/' },
+  courses: { es: '/cursos/', en: '/en/courses/' },
+  ebooks: { es: '/ebooks/', en: '/en/e-books/' }
 };
 
-export function renderSiteNavigation({ locale = "es", current = "" } = {}) {
-  const copy = routes[locale] || routes.es;
-  const links = [copy.services, copy.courses, copy.experiences, copy.ebooks];
-  return `<nav class="main-nav bc-main-nav" aria-label="${copy.aria}">${links.map((link, index) => {
-    const section = ["services", "courses", "experiences", "ebooks"][index];
-    const href = section === current && section === "courses" ? "#catalogo" : section === current && section === "experiences" ? "#experiencias" : link.href;
-    return `<a href="${href}"${section === current ? ' aria-current="page"' : ""}>${link.label}</a>`;
-  }).join("")}</nav>`;
+export function renderSiteNavigation({ locale = 'es', current = '', footer = false } = {}) {
+  const labels = locale === 'en' ? ['Services', 'Courses', 'E-books'] : ['Servicios', 'Cursos', 'E-books'];
+  const aria = footer ? (locale === 'en' ? 'Footer navigation' : 'Navegación del pie de página') : (locale === 'en' ? 'Main navigation' : 'Navegación principal');
+  return `<nav class="bc-main-nav" aria-label="${aria}">${Object.entries(catalogRoutes).map(([section, routes], i) => `<a href="${routes[locale]}"${section === current ? ' aria-current="page"' : ''}>${labels[i]}</a>`).join('')}</nav>`;
 }
