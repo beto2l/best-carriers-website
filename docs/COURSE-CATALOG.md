@@ -9,6 +9,7 @@ La ruta preparada es `/cursos/`, con identidad permanente `course-catalog-es`. R
 - El WebP fue importado por WordPress usando el cliente CDN autorizado del sitio. Attachment 1631; URL devuelta: `https://bc.opin-x.com/best-carriers-courses-hero-v1.webp`.
 - Seis cursos actuales; imágenes existentes del CDN de Best Carriers, una descripción breve y enlace a la landing informativa. Sin precios ni formularios de pago.
 - Tarjetas, tabla, búsqueda y filtros por modalidad. La tabla se convierte en filas apiladas con etiquetas en móvil.
+- Botones de WhatsApp al destino existente de Best Carriers, con mensajes preparados para información de cursos o cotización de paquetes. No se envía ningún mensaje automáticamente.
 - Grabaciones, certificado de participación y un año de acceso al curso comprado. Paquetes cotizados por cantidad de cursos.
 - Mismo componente Reviews Hub y mismo video de testimonios utilizados en MOTUS, adaptados a la identidad de este catálogo. Calificaciones de la marca, no de un curso específico.
 - FAQ, título/descripción SEO, enlaces HTML, canonical, alternates y `CollectionPage`/`BreadcrumbList`. El componente aporta `ItemList`/`Course` con los cursos incluidos realmente. Sin precios, estrellas de reseñas en schema ni promesas de resultados enriquecidos.

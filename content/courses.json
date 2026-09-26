@@ -88,5 +88,9 @@
       "answer": "Significa que la próxima fecha está por confirmar. Puedes visitar la página del curso o consultar a nuestro equipo para conocer su disponibilidad."
     }
   ],
-  "testimonialsPoster": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-15-at-10.52.16-AM-450x291.png"
+  "testimonialsPoster": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-15-at-10.52.16-AM-450x291.png",
+  "whatsappMessages": {
+    "information": "Hola, quiero información sobre los cursos de Best Carriers.",
+    "bundle": "Hola, quiero cotizar un paquete de cursos de Best Carriers."
+  }
 }
