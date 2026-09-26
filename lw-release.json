@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.23",
+  "version": "1.3.25",
   "languages": [
     "es",
     "en"
@@ -92,6 +92,18 @@
         "payments-safety-es",
         "payments-motus-es",
         "payments-consultoria-es"
+      ]
+    },
+    {
+      "id": "course-catalog-es",
+      "title": "Cursos de trucking en español",
+      "route": "cursos",
+      "entry": "pages/cursos/index.html",
+      "language": "es",
+      "translation_key": "course-catalog",
+      "components": [
+        "best-carriers-course-catalog-es",
+        "best-carriers-social-proof-es"
       ]
     }
   ],
@@ -207,14 +219,78 @@
       "activation": "on_select",
       "submit_label": "Continuar a Stripe →",
       "required_product_type": "consulting"
+    },
+    "best-carriers-course-catalog-es": {
+      "version": "1",
+      "type": "course_catalog",
+      "source": "course_catalog",
+      "category": "cursos",
+      "language": "es",
+      "entries": [
+        {
+          "page_id": 711,
+          "course": "tdc",
+          "title": "Trucking desde cero",
+          "topic": "Emprende con una base sólida",
+          "summary": "Conoce las bases para iniciar una empresa de transporte en Estados Unidos: estructura del negocio, registros y primeros pasos de tu operación.",
+          "image": "https://bc.opin-x.com/llc-authority.webp",
+          "order": 10
+        },
+        {
+          "page_id": 9,
+          "course": "ifta",
+          "title": "IFTA sin complicaciones",
+          "topic": "Impuestos sobre combustible",
+          "summary": "Aprende a organizar millas y combustible, entender los reportes de IFTA y preparar la información que necesita tu empresa para sus declaraciones.",
+          "image": "https://bc.opin-x.com/filing-ifta.webp",
+          "order": 20
+        },
+        {
+          "page_id": 774,
+          "course": "safety",
+          "title": "Safety & Compliance",
+          "topic": "Una operación mejor preparada",
+          "summary": "Fortalece tus conocimientos de seguridad y cumplimiento en trucking. Conoce los procesos y documentos que ayudan a mantener tu operación en orden.",
+          "image": "https://bc.opin-x.com/reinstate-mc-authority.webp",
+          "order": 30
+        },
+        {
+          "page_id": 991,
+          "course": "motus",
+          "title": "Domina FMCSA MOTUS",
+          "topic": "La nueva plataforma de registro",
+          "summary": "Aprende a utilizar MOTUS paso a paso: acceso a la plataforma, vinculación de USDOT y gestión de los procesos de registro de tu empresa.",
+          "image": "https://bc.opin-x.com/motus-course-device-scene-v4.webp",
+          "order": 40
+        },
+        {
+          "page_id": 153,
+          "course": "dispatch",
+          "title": "Dispatch de camiones",
+          "topic": "Conecta la carga con la operación",
+          "summary": "Descubre cómo funciona el dispatch en Estados Unidos y desarrolla conocimientos para coordinar cargas, rutas y la comunicación de una operación de transporte.",
+          "image": "https://bc.opin-x.com/state-permits.webp",
+          "order": 50
+        },
+        {
+          "page_id": 1166,
+          "course": "reclutamiento",
+          "title": "Reclutamiento de operadores",
+          "topic": "El equipo que mueve tu empresa",
+          "summary": "Conoce el proceso de reclutamiento de operadores para empresas de transporte. Explora los detalles de esta próxima capacitación de Best Carriers.",
+          "image": "https://bc.opin-x.com/best-carriers-consulting-card-v2.webp",
+          "order": 60
+        }
+      ]
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "d973f3cae29504c1e30e4523319a0e5e2ae3c0fe44c963a0dd59b94fca947cbb",
-    "pages/cursos/motus/gracias/index.html": "f8b423be61c12c164ae0bec92d3cd2e342cbe718df746ec1e62aa4c72a39e699",
-    "pages/cursos/motus/index.html": "a610627f73a7daa1823594c4b566f742a6b15b020880cfd16e28e4e93da06a61",
-    "pages/en/courses/motus/index.html": "f4a1356125dbbe364b076b6de89ad34f81b80fba91b34564f7b185e241713143",
-    "pages/en/courses/motus/thank-you/index.html": "2062988b3dbca2bbdeae796718f3f7099b1e8b18cf1bd5ac58c8f33ea47b596e",
+    "pages/cursos/combo/pay/index.html": "10df60f95d98f300b09a05a1d88c1eb30e3cc88a86372759e37a222a0dcc7244",
+    "pages/cursos/index.html": "2b83c9eb83f46d7a46fe49fcb1aca8d6f392e12c6c5f2e175060ca52d2f9a1de",
+    "pages/cursos/motus/gracias/index.html": "883027f04bad7a6e8be76689331b1effc593287a29e43869db201bccc140fe0a",
+    "pages/cursos/motus/index.html": "217fbdf8bf8af08d1c1b7d382281613519dbb0e79eac2f8d580bd2fc6c846c6b",
+    "pages/en/courses/motus/index.html": "0b2eda9180f0bbbc00909b73432c746a0c6ccd408613a9996e9d4fac8c10c6ed",
+    "pages/en/courses/motus/thank-you/index.html": "3f5c149203558362bff1d040c08697528e0b5fe0ce458b60c4f0fc4a7199f8db",
     "pages/services/data/services.json": "15c31960d9239363917626621ab91aa00ab38e9c97fbbeac18ea70923297bfcc",
     "pages/services/index.html": "0ee115a111d4fd36fb17e1219d33e3722387f358e9deae08aea32648a511453b",
     "pages/servicios/data/services.json": "a9cf6673fad7f949231ffcc60f7b940657b6ad2882ade099c52b3f66bd8069a5",

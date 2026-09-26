@@ -8,6 +8,7 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 
 | WordPress Page | Public route | Language | Permanent LuxWrap ID |
 | --- | --- | --- | --- |
+| Cursos de trucking en español | `/cursos/` | Spanish | `course-catalog-es` |
 | Servicios de Trucking | `/servicios/` | Spanish | `trucking-services-es` |
 | Trucking Services | `/services/` | English | `trucking-services-en` |
 | Curso grabado de FMCSA MOTUS | `/cursos/motus/` | Spanish | `motus-course-es` |
@@ -17,8 +18,12 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 
 All other routes remain controlled by WordPress and Divi. After publication, every managed route appears as a native entry under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 
+The new courses catalog is documented in [COURSE-CATALOG.md](docs/COURSE-CATALOG.md), including the LW Studio 0.9.15 dependency, preview checks and publication steps.
+
 ## Content editing
 
+- `content/courses.json`: price-free catalog copy and editorial mapping; scheduling remains in WordPress.
+- `src/courses.css` / `src/courses.js`: responsive catalog presentation and progressive filters.
 - `content/site.json`: brand, routes, labels, SEO metadata, WhatsApp and CDN hero image.
 - `content/services.json`: canonical bilingual service catalog.
 - `content/motus.json`: bilingual MOTUS sales, FAQ, social-proof fallback and post-purchase content.
