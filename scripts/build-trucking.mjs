@@ -12,7 +12,7 @@ export async function buildTrucking({root,site,version}) {
   for (const locale of ['es','en']) {
     const t=c.locales[locale], en=locale==='en', canonical='https://best-carriers.com'+c.routes[locale];
     const catalog='https://best-carriers.com'+(en?'/en/courses/':'/cursos/');
-    const chrome={site,locale,current:'courses',languageRoutes:c.routes,whatsappUrl:`https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(site.whatsapp.message[locale])}`};
+    const chrome={site,locale,current:'courses',showNavigation:false,languageRoutes:c.routes,whatsappUrl:`https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(site.whatsapp.message[locale])}`};
     const img=(key,alt,extra='')=>{const a=c.assets[key];return `<img src="${e(a.url)}" alt="${e(alt)}" width="${a.width}" height="${a.height}" decoding="async" ${extra}>`;};
     const cta=(gold=false)=>`<a class="button${gold?' button-gold':''}" href="${c.registrationUrl}" data-registration-link><span data-register-label>${e(t.cta)}</span><span aria-hidden="true">↗</span></a>`;
     const graph=[

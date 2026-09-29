@@ -31,7 +31,7 @@ Los beneficios comerciales del catálogo —grabación, certificado y acceso dur
 
 ## Diseño y conversión
 
-- Cabecera y pie reutilizan los componentes compartidos de LW Studio. La ampliación permite que ES/EN enlacen a la misma landing en el otro idioma, sin afectar los catálogos existentes.
+- Cabecera y pie reutilizan los componentes compartidos de LW Studio, con el menú de Servicios, Cursos y E-books desactivado para esta landing. Conservan marca, lema, ES/EN y WhatsApp. La tipografía ampliada y la distribución móvil se limitan a Trucking; los catálogos mantienen su navegación. ES/EN enlazan a la misma landing en el otro idioma.
 - Azul oscuro, marfil y dorado mantienen continuidad con Best Carriers. La composición combina tipografía sans serif con un acento editorial en serif y una fotografía protagonista en arco.
 - Fecha, horario, idioma, gratuidad y destino externo aparecen cerca del primer CTA.
 - Cuatro ubicaciones de registro: hero, cierre de temario, cierre principal y botón móvil que aparece al salir del hero. No hay ventanas emergentes, formularios ni pasos de pago.

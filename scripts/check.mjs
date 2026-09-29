@@ -145,6 +145,11 @@ for (const language of ['es','en']) {
  for(const route of Object.values(truckingContent.routes)) if((html.match(new RegExp(`href="https://best-carriers.com${route}"`,'g'))||[]).length<3) failures.push('Trucking language links must stay within the paired landing');
  for(const required of ['icLfupSYr_4','prefers-reduced-motion','data-event-end','data-event-status','Cargo van','Hotshot','Box truck','Dry van','Flatbed','Reefer','Dump truck','Towing truck','IRS','FMCSA','MOTUS','IFTA','IRP','UCR']) if(!html.includes(required)) failures.push('Trucking missing '+required);
  for(const match of html.matchAll(/<img\b[^>]*>/g)) if(!/alt="[^"]*"/.test(match[0]) || !/width="[0-9]+"/.test(match[0]) || !/height="[0-9]+"/.test(match[0])) failures.push('Image missing accessible text or dimensions');
+ if(/<nav[^>]*class="[^"]*bc-main-nav/.test(html)) failures.push('Trucking landing must omit the catalog menu');
+ for(const tag of ['header','footer']) {
+  const chrome=html.match(new RegExp(`<${tag}[^>]*>[\\s\\S]*?</${tag}>`))?.[0] || '';
+  if(!chrome.includes('class="bc-brand"') || !chrome.includes('class="bc-whatsapp"') || (chrome.match(/data-language-link/g)||[]).length!==2) failures.push('Trucking landing must retain brand, language links and WhatsApp in '+tag);
+ }
  if(!html.includes(sharedChromeCss)) failures.push('Trucking needs the shared navigation styles');
 }
 if(!catalogHtml.includes('href="https://best-carriers.com/cursos/trucking/"') || !catalogHtml.includes('El webinar de SBDC tiene sus propias condiciones.')) failures.push('Catalog must distinguish the external free webinar from paid course benefits');
