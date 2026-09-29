@@ -57,7 +57,7 @@
   window.addEventListener('popstate', () => {view=new URL(window.location.href).searchParams.get('view')==='table'?'table':'cards';renderView();});
   document.querySelector('[data-testimonial-play]')?.addEventListener('click', event => {
     const frame = document.createElement('iframe');
-    frame.src = 'https://www.youtube-nocookie.com/embed/LJ9DsCbuMXw?autoplay=1&rel=0';
+    frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(event.currentTarget.dataset.testimonialVideo || '')}?autoplay=1&rel=0`;
     frame.title = locale === 'es' ? 'Testimonios de participantes de Best Carriers' : 'Best Carriers participant testimonials';
     frame.allow = 'autoplay; encrypted-media; picture-in-picture';
     frame.allowFullscreen = true;

@@ -43,7 +43,7 @@
   const videoButton = document.querySelector('[data-testimonial-play]');
   videoButton?.addEventListener('click', () => {
     const frame = document.createElement('iframe');
-    frame.src = 'https://www.youtube-nocookie.com/embed/LJ9DsCbuMXw?autoplay=1&rel=0';
+    frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoButton.dataset.testimonialVideo || '')}?autoplay=1&rel=0`;
     frame.title = 'Experiencias de alumnos de Best Carriers';
     frame.allow = 'autoplay; encrypted-media; picture-in-picture';
     frame.allowFullscreen = true;

@@ -118,7 +118,7 @@ for (const entry of catalogComponent.entries) {
   if (["price", "date", "schedule", "course_start_date", "shortcode"].some(key => key in entry)) failures.push("Catalog editorial entries must not duplicate dates or prices");
   if (!catalogHtml.includes(`href="https://best-carriers.com/cursos/${entry.course}/"`)) failures.push(`Missing crawlable landing fallback for ${entry.course}`);
 }
-for (const required of ["data-course-search", "data-view-button", "data-mode-filter", "Un año de acceso", "cantidad de cursos", "Certificado incluido", "CollectionPage", "BreadcrumbList", "prefers-reduced-motion", "youtube-nocookie.com/embed/LJ9DsCbuMXw"]) {
+for (const required of ["data-course-search", "data-view-button", "data-mode-filter", "Un año de acceso", "cantidad de cursos", "Certificado incluido", "CollectionPage", "BreadcrumbList", "prefers-reduced-motion", "data-testimonial-video"]) {
   if (!catalogHtml.includes(required)) failures.push(`Catalog is missing ${required}`);
 }
 for (const forbidden of ["OPINFunnelHeadless", "stripe.com", "checkout-bootstrap", "lifetime_access", "opin_course_price"]) {
@@ -240,7 +240,7 @@ function checkEbooks(page, html) {
     'Best-carriers-icon.png', 'data-ebook-view="cards"', 'data-ebook-view="table" hidden',
     'data-view-button="cards"', 'data-view-button="table"', 'prefers-reduced-motion',
     'data-opinx-global-content="best-carriers-social-proof-' + locale + '"',
-    'data-testimonial-play', 'youtube-nocookie.com/embed/LJ9DsCbuMXw',
+    'data-testimonial-play', 'data-testimonial-video',
     '"@type":"CollectionPage"', '"@type":"Book"', '"inLanguage":"es"',
     '"numberOfPages":25', '"numberOfPages":138',
     'https://best-carriers.com/en/e-books/',
