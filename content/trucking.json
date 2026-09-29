@@ -1,0 +1,482 @@
+{
+  "routes": {
+    "es": "/cursos/trucking/",
+    "en": "/en/courses/trucking/"
+  },
+  "registrationUrl": "https://utsa.ecenterdirect.com/events/44558",
+  "event": {
+    "start": "2026-09-29T10:00:00-05:00",
+    "end": "2026-09-29T11:00:00-05:00",
+    "language": "es",
+    "organizer": "Sul Ross State University International SBDC",
+    "organizerUrl": "https://sbdc.sulross.edu/intl/"
+  },
+  "assets": {
+    "hero": {
+      "attachment_id": 1639,
+      "url": "https://bc.opin-x.com/bc-trucking-hero-20260929.webp",
+      "width": 1672,
+      "height": 941
+    },
+    "local": {
+      "attachment_id": 1640,
+      "url": "https://bc.opin-x.com/bc-trucking-local-20260929.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    "hotshot": {
+      "attachment_id": 1641,
+      "url": "https://bc.opin-x.com/bc-trucking-hotshot-20260929.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    "specialty": {
+      "attachment_id": 1642,
+      "url": "https://bc.opin-x.com/bc-trucking-specialty-20260929.webp",
+      "width": 1536,
+      "height": 1024
+    }
+  },
+  "locales": {
+    "es": {
+      "title": "Cómo iniciar una empresa de trucking | Webinar gratis SBDC",
+      "description": "Aprende cómo iniciar tu negocio de trucking en USA. Webinar gratuito de SBDC con Alberto Ibarra de Best Carriers. 29 de septiembre, 10 a. m. CDT. Regístrate.",
+      "eyebrow": "SBDC × BEST CARRIERS · WEBINAR GRATUITO",
+      "heading": "Tu empresa de trucking",
+      "accent": "empieza con una buena decisión.",
+      "intro": "Aprende cómo iniciar una empresa de transporte en Estados Unidos: entiende el negocio, los permisos y los costos antes de dar tu primer paso.",
+      "cta": "Registrarme gratis en SBDC",
+      "ctaShort": "Registro gratis ↗",
+      "secondary": "Explorar el temario",
+      "date": "29 de septiembre de 2026",
+      "weekday": "Martes",
+      "time": "10:00–11:00 a. m. CDT",
+      "timezone": "Hora de Texas y Chicago · UTC−5",
+      "free": "100% gratuito",
+      "format": "En vivo · Online",
+      "language": "Sesión en español",
+      "registrationNote": "Tu registro se realiza directamente con SBDC. Best Carriers no cobra ni solicita tus datos en esta página.",
+      "heroAlt": "Tractocamión azul con remolque dry van, cargo van y box truck en un patio de transporte al amanecer",
+      "visualCaption": "Una industria. Muchas formas de comenzar.",
+      "organizerLabel": "ORGANIZA",
+      "instructorLabel": "IMPARTE",
+      "organizerShort": "Sul Ross State University International SBDC",
+      "organizerCopy": "Una sesión de introducción al emprendimiento en trucking, organizada por SBDC e impartida por Alberto Ibarra, instructor de Best Carriers.",
+      "introEyebrow": "ANTES DE COMPRAR TU PRIMER CAMIÓN",
+      "introTitle": "Primero entiende el negocio. Después, elige tu ruta.",
+      "introBody": "Iniciar un negocio de trucking implica mucho más que elegir un vehículo. Necesitas tener claro qué vas a transportar, cómo organizar tu empresa y qué costos y responsabilidades acompañan tu operación. Este webinar gratuito te ayuda a ordenar esas primeras decisiones.",
+      "takeaways": [
+        [
+          "Tu modelo de negocio",
+          "Identifica el tipo de transporte que quieres ofrecer y las preguntas que debes resolver antes de invertir."
+        ],
+        [
+          "Tu punto de partida",
+          "Conoce los temas de empresa, permisos y presupuesto que conviene revisar desde el inicio."
+        ],
+        [
+          "Tu siguiente decisión",
+          "Llega con tus dudas y aprovecha la sesión de preguntas y respuestas."
+        ]
+      ],
+      "typesEyebrow": "EL TAMAÑO DEL VEHÍCULO NO DEFINE TU AMBICIÓN",
+      "typesTitle": "¿Qué negocio quieres poner en marcha?",
+      "typesBody": "Para emprendedores que están explorando su primera operación, futuros owner-operators y personas que quieren transformar su experiencia en el transporte en un negocio propio.",
+      "types": [
+        {
+          "asset": "local",
+          "title": "Entregas y carga en caja",
+          "tags": [
+            "Cargo van",
+            "Box truck"
+          ],
+          "text": "Explora tu idea de negocio en entregas, distribución y transporte de mercancías con vans o camiones de caja.",
+          "alt": "Cargo van blanca y box truck frente a una nave industrial, dos vehículos para negocios de entrega y distribución"
+        },
+        {
+          "asset": "hotshot",
+          "title": "Hotshot y carga abierta",
+          "tags": [
+            "Hotshot",
+            "Flatbed"
+          ],
+          "text": "Da contexto a tu proyecto de transporte con pickup y remolque o plataforma abierta para distintos tipos de carga.",
+          "alt": "Pickup de doble rodada conectada a un remolque gooseneck flatbed, equipo utilizado en transporte hotshot"
+        },
+        {
+          "asset": "hero",
+          "title": "Carga general y refrigerada",
+          "tags": [
+            "Dry van",
+            "Reefer"
+          ],
+          "text": "Si tu idea es transportar carga en caja seca o refrigerada, empieza por comprender la estructura de una empresa de trucking.",
+          "alt": "Tractocamión azul con remolque de caja seca en un patio logístico; ejemplo de equipo para carga general"
+        },
+        {
+          "asset": "specialty",
+          "title": "Materiales y servicios de grúa",
+          "tags": [
+            "Dump truck",
+            "Towing truck"
+          ],
+          "text": "También es un punto de partida para quienes consideran el transporte de materiales o un negocio de remolque de vehículos.",
+          "alt": "Camión de volteo y grúa de plataforma en un patio de equipos, ejemplos de dump truck y towing truck"
+        }
+      ],
+      "typesNote": "El webinar presenta fundamentos para iniciar. Los requisitos concretos cambian según el vehículo, la carga, el estado y el tipo de operación.",
+      "agendaEyebrow": "UNA HORA PARA VER EL PANORAMA COMPLETO",
+      "agendaTitle": "De la idea a tus primeros pasos.",
+      "agendaIntro": "Seis temas anunciados por SBDC para empezar a entender cómo crear y operar una empresa de trucking en USA.",
+      "agenda": [
+        [
+          "Introducción a la industria de trucking",
+          "Comprende el contexto del transporte y las distintas formas de participar como emprendedor."
+        ],
+        [
+          "Cómo crear tu empresa correctamente",
+          "Conoce las decisiones iniciales que dan forma a tu negocio de transporte."
+        ],
+        [
+          "Permisos necesarios para operar",
+          "Ubica los registros y permisos que debes investigar para el tipo de operación que tienes en mente."
+        ],
+        [
+          "Costos aproximados para iniciar",
+          "Identifica las categorías de inversión y gastos que debes considerar al preparar tu presupuesto."
+        ],
+        [
+          "Cómo operar correctamente desde el día uno",
+          "Entiende por qué la organización, la documentación y los procesos importan desde el inicio."
+        ],
+        [
+          "Preguntas y respuestas en vivo",
+          "Trae tus preguntas y aprovecha el espacio anunciado para resolver dudas."
+        ]
+      ],
+      "agendaCta": "Invierte una hora en entender tu próximo paso.",
+      "instructorEyebrow": "EXPERIENCIA APLICADA",
+      "instructorTitle": "Conoce a tu instructor.",
+      "instructorName": "Alberto Ibarra",
+      "instructorRole": "Instructor de Best Carriers",
+      "instructorBody": "Detrás de esta sesión hay una forma práctica de enseñar: conectar los conceptos con las decisiones que enfrentan las empresas de trucking. Conoce la experiencia de Alberto y el propósito de Best Carriers en este video.",
+      "play": "Reproducir: conoce a tu instructor",
+      "watch": "Ver el video en YouTube",
+      "videoNote": "Video de presentación del instructor · En español",
+      "brandEyebrow": "BEST CARRIERS · CONOCIMIENTO EN MOVIMIENTO",
+      "brandTitle": "Capacitación para quienes mueven Estados Unidos.",
+      "brandBody": "Somos una empresa especializada en capacitación para la industria del trucking en Estados Unidos. Ayudamos a emprendedores y profesionales a comprender el negocio, los procesos y las herramientas que acompañan una operación de transporte.",
+      "brandPillars": [
+        [
+          "Emprendimiento",
+          "Trucking desde cero y bases para iniciar tu empresa."
+        ],
+        [
+          "Operación y cumplimiento",
+          "Safety, compliance, dispatch y procesos de registro."
+        ],
+        [
+          "Impuestos y herramientas",
+          "IFTA, impuestos de trucking y uso de FMCSA MOTUS."
+        ]
+      ],
+      "irsTitle": "Proveedor de educación continua aprobado por el IRS",
+      "irsBody": "Best Carriers cuenta con aprobación como proveedor de educación continua del IRS. Este webinar se presenta como una sesión introductoria gratuita; no se anuncian créditos de educación continua para esta sesión.",
+      "resourcesTitle": "Herramientas que forman parte de nuestra capacitación.",
+      "resourcesBody": "En los cursos de Best Carriers trabajamos con plataformas y recursos del sector como FMCSA, MOTUS, IFTA, IRP y UCR.",
+      "resourcesNote": "Los logotipos identifican a sus respectivos organismos y sistemas. La capacitación de Best Carriers es independiente; su uso no implica aval de estas entidades al webinar.",
+      "platformTitle": "Así acercamos los procesos a nuestros alumnos.",
+      "platformBody": "Videos y ejemplos prácticos en nuestras capacitaciones de Best Carriers. Estas imágenes muestran otros cursos de nuestro catálogo.",
+      "platformCaptions": [
+        "Procesos de USDOT explicados paso a paso",
+        "Navegación y gestión dentro de MOTUS"
+      ],
+      "relatedTitle": "Cuando quieras profundizar, sigue aprendiendo.",
+      "relatedBody": "El webinar es tu introducción. Explora por separado los cursos completos de Best Carriers.",
+      "relatedLinks": [
+        [
+          "Trucking desde cero",
+          "/cursos/tdc/"
+        ],
+        [
+          "IFTA e impuestos",
+          "/cursos/ifta/"
+        ],
+        [
+          "Safety & Compliance",
+          "/cursos/safety/"
+        ],
+        [
+          "FMCSA MOTUS",
+          "/cursos/motus/"
+        ]
+      ],
+      "faqEyebrow": "ANTES DE REGISTRARTE",
+      "faqTitle": "Tus preguntas, con claridad.",
+      "faqs": [
+        [
+          "¿Este webinar de trucking es realmente gratuito?",
+          "Sí. La ficha oficial de SBDC indica que no tiene costo. El registro se realiza en su sitio. Best Carriers no procesa pagos para este evento."
+        ],
+        [
+          "¿Cuándo y dónde se realiza?",
+          "El martes 29 de septiembre de 2026, de 10:00 a 11:00 a. m. CDT, hora de Texas y Chicago. Es una sesión online en vivo. Consulta las indicaciones de acceso directamente con SBDC al registrarte."
+        ],
+        [
+          "¿Necesito tener un camión o una empresa?",
+          "Está dirigido a emprendedores que quieren iniciar su negocio de trucking. Puedes usar esta introducción para ordenar tus ideas, incluso si todavía estás explorando qué vehículo o tipo de operación te interesa."
+        ],
+        [
+          "¿Sirve si quiero empezar con cargo van, hotshot o box truck?",
+          "Sí: el enfoque es comprender las bases de un negocio de transporte. También está dirigido a quienes consideran dry van, flatbed, reefer, dump truck o towing truck. No se presenta como una capacitación técnica exhaustiva para cada modalidad."
+        ],
+        [
+          "¿Se imparte en inglés o en español?",
+          "La sesión anunciada es en español. Esta página también está disponible en inglés para facilitar la consulta; no representa una segunda sesión en inglés."
+        ],
+        [
+          "¿Qué aprenderé sobre permisos y costos para iniciar?",
+          "El temario anunciado incluye permisos necesarios y costos aproximados para iniciar. La aplicación a cada empresa depende de su operación. La sesión ayuda a identificar qué debes revisar, sin sustituir una evaluación individual."
+        ],
+        [
+          "¿Quién organiza y quién imparte la sesión?",
+          "La organiza Sul Ross State University International SBDC. Alberto Ibarra participa como instructor de Best Carriers. SBDC administra el registro y las instrucciones del evento."
+        ],
+        [
+          "¿Incluye grabación, certificado o acceso a los cursos de Best Carriers?",
+          "La información oficial consultada no confirma grabación ni certificado para este webinar. Consúltalo con SBDC. El registro gratuito no incluye acceso a los cursos de pago de Best Carriers."
+        ]
+      ],
+      "finalEyebrow": "TU PRIMER PASO PUEDE SER GRATUITO",
+      "finalTitle": "Tu idea merece una ruta clara.",
+      "finalBody": "Reserva un espacio para aprender, hacer preguntas y comenzar a darle forma a tu negocio de trucking.",
+      "official": "Consultar la ficha oficial de SBDC",
+      "breadcrumb": "Cursos",
+      "skip": "Ir al contenido",
+      "ended": "Esta sesión ya finalizó. Consulta la ficha de SBDC y explora nuestras próximas capacitaciones.",
+      "endedCta": "Consultar evento en SBDC",
+      "endedShort": "Ver evento en SBDC ↗",
+      "live": "La sesión está en su horario programado. Consulta el acceso con SBDC."
+    },
+    "en": {
+      "title": "How to Start a Trucking Business | Free SBDC Webinar",
+      "description": "Explore how to start a trucking business in the USA. Free SBDC webinar with Best Carriers instructor Alberto Ibarra. Sept. 29, 10 a.m. CDT. Session in Spanish.",
+      "eyebrow": "SBDC × BEST CARRIERS · FREE WEBINAR",
+      "heading": "Your trucking business",
+      "accent": "starts with a well-informed decision.",
+      "intro": "Learn how to start a transportation business in the United States: understand the business, permits and startup costs before taking your first step.",
+      "cta": "Register free with SBDC",
+      "ctaShort": "Free registration ↗",
+      "secondary": "Explore the agenda",
+      "date": "September 29, 2026",
+      "weekday": "Tuesday",
+      "time": "10:00–11:00 a.m. CDT",
+      "timezone": "Texas and Chicago time · UTC−5",
+      "free": "100% free",
+      "format": "Live · Online",
+      "language": "Session in Spanish",
+      "registrationNote": "Registration takes place directly with SBDC. Best Carriers does not charge you or collect your details on this page.",
+      "heroAlt": "Blue semi truck with a dry van trailer, cargo van and box truck at a transportation yard at sunrise",
+      "visualCaption": "One industry. Many ways to get started.",
+      "organizerLabel": "ORGANIZED BY",
+      "instructorLabel": "PRESENTED BY",
+      "organizerShort": "Sul Ross State University International SBDC",
+      "organizerCopy": "An introduction to trucking entrepreneurship, organized by SBDC and taught by Alberto Ibarra, an instructor at Best Carriers.",
+      "introEyebrow": "BEFORE YOU BUY YOUR FIRST TRUCK",
+      "introTitle": "Understand the business. Then choose your route.",
+      "introBody": "Starting a trucking business involves much more than choosing a vehicle. You need to understand what you will haul, how to organize your company, and the costs and responsibilities of your operation. This free webinar helps you put those first decisions in perspective.",
+      "takeaways": [
+        [
+          "Your business model",
+          "Identify the transportation service you want to offer and the questions to answer before investing."
+        ],
+        [
+          "Your starting point",
+          "Explore company formation, permits and budget topics to consider from the beginning."
+        ],
+        [
+          "Your next decision",
+          "Bring your questions and make the most of the live Q&A session."
+        ]
+      ],
+      "typesEyebrow": "YOUR VEHICLE SIZE DOES NOT DEFINE YOUR AMBITION",
+      "typesTitle": "What business do you want to build?",
+      "typesBody": "For entrepreneurs exploring their first operation, future owner-operators and people looking to turn their transportation experience into a business of their own.",
+      "types": [
+        {
+          "asset": "local",
+          "title": "Deliveries and box freight",
+          "tags": [
+            "Cargo van",
+            "Box truck"
+          ],
+          "text": "Explore a business idea in deliveries, distribution and freight transportation with vans or box trucks.",
+          "alt": "White cargo van and box truck outside an industrial building, vehicles used for deliveries and distribution"
+        },
+        {
+          "asset": "hotshot",
+          "title": "Hotshot and open-deck freight",
+          "tags": [
+            "Hotshot",
+            "Flatbed"
+          ],
+          "text": "Put your pickup-and-trailer or flatbed hauling idea into the broader context of running a transportation business.",
+          "alt": "Dually pickup connected to a gooseneck flatbed trailer, equipment used for hotshot hauling"
+        },
+        {
+          "asset": "hero",
+          "title": "General and refrigerated freight",
+          "tags": [
+            "Dry van",
+            "Reefer"
+          ],
+          "text": "If you are considering dry van or refrigerated freight, begin by understanding the structure of a trucking company.",
+          "alt": "Blue semi truck with a dry van trailer at a logistics yard, an example of general freight equipment"
+        },
+        {
+          "asset": "specialty",
+          "title": "Materials and vehicle recovery",
+          "tags": [
+            "Dump truck",
+            "Towing truck"
+          ],
+          "text": "A starting point for people considering a materials-hauling company or a towing and vehicle-recovery business.",
+          "alt": "Dump truck and flatbed tow truck at an equipment yard, examples of hauling and vehicle-recovery equipment"
+        }
+      ],
+      "typesNote": "The webinar introduces startup fundamentals. Specific requirements vary by vehicle, cargo, state and type of operation.",
+      "agendaEyebrow": "ONE HOUR TO SEE THE BIGGER PICTURE",
+      "agendaTitle": "From your idea to your first steps.",
+      "agendaIntro": "Six topics announced by SBDC to help you begin understanding how to create and operate a trucking company in the USA.",
+      "agenda": [
+        [
+          "Introduction to the trucking industry",
+          "Understand the transportation landscape and different ways to participate as an entrepreneur."
+        ],
+        [
+          "How to set up your company correctly",
+          "Explore the early decisions that shape your transportation business."
+        ],
+        [
+          "Permits needed to operate",
+          "Identify the registrations and permits to research for the operation you have in mind."
+        ],
+        [
+          "Approximate startup costs",
+          "Understand the investment and expense categories to consider when preparing your budget."
+        ],
+        [
+          "Operating correctly from day one",
+          "Learn why organization, documentation and processes matter from the beginning."
+        ],
+        [
+          "Live questions and answers",
+          "Bring your questions and use the scheduled Q&A time to clarify your next steps."
+        ]
+      ],
+      "agendaCta": "Invest one hour in understanding your next step.",
+      "instructorEyebrow": "APPLIED EXPERIENCE",
+      "instructorTitle": "Meet your instructor.",
+      "instructorName": "Alberto Ibarra",
+      "instructorRole": "Best Carriers instructor",
+      "instructorBody": "This session brings a practical approach to learning: connecting concepts with decisions trucking businesses face. Get to know Alberto’s experience and the purpose behind Best Carriers in this video.",
+      "play": "Play: meet your instructor",
+      "watch": "Watch the video on YouTube",
+      "videoNote": "Instructor introduction video · In Spanish",
+      "brandEyebrow": "BEST CARRIERS · KNOWLEDGE IN MOTION",
+      "brandTitle": "Training for the people who keep America moving.",
+      "brandBody": "We specialize in training for the U.S. trucking industry. We help entrepreneurs and professionals understand the business, processes and tools behind a transportation operation.",
+      "brandPillars": [
+        [
+          "Entrepreneurship",
+          "Trucking from scratch and the foundations of starting a company."
+        ],
+        [
+          "Operations and compliance",
+          "Safety, compliance, dispatch and registration processes."
+        ],
+        [
+          "Taxes and tools",
+          "IFTA, trucking taxes and practical use of FMCSA MOTUS."
+        ]
+      ],
+      "irsTitle": "IRS-approved continuing education provider",
+      "irsBody": "Best Carriers is an IRS-approved continuing education provider. This webinar is a free introductory session; continuing education credits are not advertised for this event.",
+      "resourcesTitle": "Tools that are part of our training.",
+      "resourcesBody": "Best Carriers courses work with industry platforms and resources such as FMCSA, MOTUS, IFTA, IRP and UCR.",
+      "resourcesNote": "Logos identify their respective organizations and systems. Best Carriers training is independent; their use does not imply endorsement of this webinar.",
+      "platformTitle": "Making real processes easier to understand.",
+      "platformBody": "Videos and practical examples in Best Carriers training. These images show other courses in our catalog.",
+      "platformCaptions": [
+        "USDOT processes explained step by step",
+        "Navigation and account management in MOTUS"
+      ],
+      "relatedTitle": "Keep learning when you are ready to go deeper.",
+      "relatedBody": "The webinar is your introduction. Explore the full Best Carriers courses separately.",
+      "relatedLinks": [
+        [
+          "Trucking from scratch · Spanish",
+          "/cursos/tdc/"
+        ],
+        [
+          "IFTA and taxes · Spanish",
+          "/cursos/ifta/"
+        ],
+        [
+          "Safety & Compliance · Spanish",
+          "/cursos/safety/"
+        ],
+        [
+          "FMCSA MOTUS",
+          "/en/courses/motus/"
+        ]
+      ],
+      "faqEyebrow": "BEFORE YOU REGISTER",
+      "faqTitle": "Clear answers to your questions.",
+      "faqs": [
+        [
+          "Is this trucking webinar really free?",
+          "Yes. The official SBDC listing states there is no fee. Registration takes place on its website. Best Carriers does not process payments for this event."
+        ],
+        [
+          "When and where does it take place?",
+          "Tuesday, September 29, 2026, from 10:00 to 11:00 a.m. CDT, Texas and Chicago time. It is a live online session. Check access instructions directly with SBDC when registering."
+        ],
+        [
+          "Do I need to own a truck or a company?",
+          "The webinar is intended for entrepreneurs who want to start a trucking business. Use this introduction to organize your ideas, even if you are still exploring which vehicle or type of operation interests you."
+        ],
+        [
+          "Is it relevant for a cargo van, hotshot or box truck business?",
+          "Yes: the focus is understanding the foundations of a transportation business. It also welcomes people considering dry van, flatbed, reefer, dump truck or towing truck operations. It is not an exhaustive technical course for each vehicle type."
+        ],
+        [
+          "Is the webinar in English or Spanish?",
+          "The advertised session is in Spanish. This English page helps you review the event; it does not represent a separate English-language session."
+        ],
+        [
+          "What will I learn about startup permits and costs?",
+          "The published agenda includes necessary permits and approximate startup costs. How they apply to a company depends on its operation. The session helps identify topics to review and does not replace an individual assessment."
+        ],
+        [
+          "Who organizes and teaches the session?",
+          "Sul Ross State University International SBDC organizes the event. Alberto Ibarra participates as a Best Carriers instructor. SBDC manages registration and event instructions."
+        ],
+        [
+          "Does it include a recording, certificate or Best Carriers course access?",
+          "The official information reviewed does not confirm a recording or certificate for this webinar. Check with SBDC. Free registration does not include access to paid Best Carriers courses."
+        ]
+      ],
+      "finalEyebrow": "YOUR FIRST STEP CAN BE FREE",
+      "finalTitle": "Give your business idea a clear direction.",
+      "finalBody": "Make time to learn, ask questions and start shaping your trucking business.",
+      "official": "View the official SBDC event listing",
+      "breadcrumb": "Courses",
+      "skip": "Skip to content",
+      "ended": "This session has ended. View the SBDC event listing and explore our upcoming training.",
+      "endedCta": "View event on SBDC",
+      "endedShort": "View SBDC event ↗",
+      "live": "The session is within its scheduled time. Check access with SBDC."
+    }
+  }
+}

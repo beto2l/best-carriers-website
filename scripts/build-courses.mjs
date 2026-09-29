@@ -15,6 +15,7 @@ const icons = {
 const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name]}</svg>`;
 export async function buildCourses({root,site,version}) {
   const content = JSON.parse(await readFile(path.join(root,'content/courses.json'),'utf8'));
+  const trucking = JSON.parse(await readFile(path.join(root,'content/trucking.json'),'utf8'));
   const motus = JSON.parse(await readFile(path.join(root,'content/motus.json'),'utf8'));
   const proof = await courseSocialProof(root);
   const css = ((await readFile(path.join(root,'src/courses.css'),'utf8')) + '\n' + (await readFile(path.join(root,'src/site-chrome.css'),'utf8')) + '\n' + proof.css).replaceAll('</style','<\\/style');
@@ -48,7 +49,8 @@ ${renderSiteHeader({site,locale:'es',current:'courses',whatsappUrl:contact})}
 <img class="hero-art" src="${escape(content.hero)}" alt="Camión de transporte en una carretera de Estados Unidos al amanecer" width="1672" height="941" fetchpriority="high" decoding="async">
 <div class="shell"><div class="hero-copy"><p class="eyebrow">Formación para la industria del transporte</p><h1 id="hero-title">Cursos de trucking.<br><em>Conocimiento que<br>mueve tu negocio.</em></h1><p class="hero-description">Aprende en español a iniciar, administrar y fortalecer tu operación de transporte en Estados Unidos. Tu siguiente paso empieza aquí.</p><div class="hero-actions"><a class="button button-light" href="#catalogo">Explorar cursos <span aria-hidden="true">↓</span></a><a class="text-link" href="#paquetes">Armar mi paquete <span aria-hidden="true">↗</span></a></div><p class="hero-note">Online · En español · Enfocados en el negocio del trucking</p></div></div><span class="hero-coordinate" aria-hidden="true">BEST CARRIERS / KNOWLEDGE IN MOTION</span>
 </section>
-<div class="promise-band"><div class="shell promise-items">
+<section class="webinar-feature" aria-labelledby="webinar-feature-title"><div class="shell webinar-feature-inner"><a class="webinar-feature-art" href="https://best-carriers.com/cursos/trucking/" aria-label="Ver webinar gratuito de Trucking"><img src="${escape(trucking.assets.hero.url)}" alt="Tractocamión, cargo van y box truck al amanecer" width="1672" height="941" loading="lazy" decoding="async"></a><div><p class="eyebrow">WEBINAR GRATUITO · SBDC × BEST CARRIERS</p><h2 id="webinar-feature-title">Trucking: cómo crear tu empresa.</h2><p>Una introducción para emprendedores: permisos, costos y primeros pasos en el transporte.</p><p class="webinar-feature-date">29 de septiembre de 2026 · 10:00–11:00 a. m. CDT · En español</p></div><a class="button" href="https://best-carriers.com/cursos/trucking/">Ver webinar gratuito <span aria-hidden="true">↗</span></a></div></section>
+<div class="promise-band"><p class="shell paid-course-note">Beneficios de los cursos de pago de Best Carriers. El webinar de SBDC tiene sus propias condiciones.</p><div class="shell promise-items">
 <div class="promise-item"><span class="promise-icon">${icon('play')}</span><div><strong>Todos los cursos se graban</strong><p>Repasa el contenido de tu capacitación.</p></div></div>
 <div class="promise-item"><span class="promise-icon">${icon('clock')}</span><div><strong>Un año de acceso</strong><p>Al curso que compras, a tu ritmo.</p></div></div>
 <div class="promise-item"><span class="promise-icon">${icon('award')}</span><div><strong>Certificado incluido</strong><p>Reconocimiento de tu participación.</p></div></div>

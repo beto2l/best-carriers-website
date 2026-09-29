@@ -9,6 +9,8 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | WordPress Page | Public route | Language | Permanent LuxWrap ID |
 | --- | --- | --- | --- |
 | Cursos de trucking en español | `/cursos/` | Spanish | `course-catalog-es` |
+| Trucking · Webinar gratuito SBDC | `/cursos/trucking/` | Spanish | `trucking-webinar-es` |
+| Trucking · Free SBDC webinar | `/en/courses/trucking/` | English | `trucking-webinar-en` |
 | E-books de trucking | `/ebooks/` | Spanish | `ebook-catalog-es` |
 | Trucking e-books | `/en/e-books/` | English | `ebook-catalog-en` |
 | Servicios de Trucking | `/servicios/` | Spanish | `trucking-services-es` |
@@ -25,6 +27,8 @@ The Courses language switch links to its existing English WordPress page at `/en
 All other routes remain controlled by WordPress and Divi. After publication, every managed route appears as a native entry under WordPress **Pages** with the `LuxWrap Studio` state and can be used in menus and taxonomies. The public design remains repository-managed.
 
 The new courses catalog is documented in [COURSE-CATALOG.md](docs/COURSE-CATALOG.md), including the LW Studio 0.9.15 dependency, preview checks and publication steps.
+
+The free SBDC webinar uses an external registration link only. Its bilingual copy, event facts, imagery and SEO strategy are documented in [TRUCKING-WEBINAR.md](docs/TRUCKING-WEBINAR.md). It has no checkout, registration form or course fulfillment integration.
 
 ## Content editing
 

@@ -7,8 +7,8 @@ function brand(site, locale) {
   return `<a class="bc-brand" href="https://best-carriers.com/${locale === 'en' ? 'en/' : ''}" aria-label="Best Carriers · ${locale === 'en' ? 'Home' : 'Inicio'}"><img src="${escape(site.logo)}" alt="" width="44" height="44" decoding="async"><span><strong>Best Carriers</strong><small>${locale === 'en' ? 'Trucking · Training · Business' : 'Trucking · Formación · Negocios'}</small></span></a>`;
 }
 
-function actions({ locale, current, whatsappUrl, footer }) {
-  const routes = catalogRoutes[current];
+function actions({ locale, current, whatsappUrl, footer, languageRoutes }) {
+  const routes = languageRoutes || catalogRoutes[current];
   if (!routes) throw new Error('A shared catalog header requires a valid section.');
   if (!/^https:\/\/wa\.me\/\d+\?text=/.test(whatsappUrl)) throw new Error('Use the configured WhatsApp destination and an explicit page message.');
   return `<div class="bc-chrome-actions"><nav class="bc-language-switch" aria-label="${locale === 'en' ? 'Select language' : 'Seleccionar idioma'}${footer ? (locale === 'en' ? ' · Footer' : ' · Pie de página') : ''}">${['es','en'].map(lang => `<a href="https://best-carriers.com${routes[lang]}" hreflang="${lang}" lang="${lang}" data-language-link aria-label="${lang === 'es' ? 'Español' : 'English'}"${locale === lang ? ' aria-current="page"' : ''}>${lang.toUpperCase()}</a>`).join('')}</nav><a class="bc-whatsapp" href="${escape(whatsappUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${locale === 'en' ? 'Contact us on WhatsApp' : 'Contactar por WhatsApp'}">${whatsappIcon}<span>WhatsApp</span></a></div>`;

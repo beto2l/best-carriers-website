@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { buildPayments } from "./build-payments.mjs";
 import { buildMotus } from "./build-motus.mjs";
 import { buildCourses } from "./build-courses.mjs";
+import { buildTrucking } from "./build-trucking.mjs";
 import { buildEbooks } from "./build-ebooks.mjs";
 import { renderSiteHeader, renderSiteFooter } from "../components/site-chrome.mjs";
 
@@ -53,7 +54,8 @@ const motusRelease = await buildMotus({ root, site, version });
 const paymentsRelease = await buildPayments({ root, version });
 const coursesRelease = await buildCourses({ root, site, version });
 const ebooksRelease = await buildEbooks({ root, site, version });
-files.push(...motusRelease.files, ...paymentsRelease.files, ...coursesRelease.files, ...ebooksRelease.files);
+const truckingRelease = await buildTrucking({ root, site, version });
+files.push(...motusRelease.files, ...paymentsRelease.files, ...coursesRelease.files, ...ebooksRelease.files, ...truckingRelease.files);
 
 const checksums = {};
 for (const file of files.sort()) {
@@ -79,7 +81,8 @@ const release = {
     ...motusRelease.pages,
     ...paymentsRelease.pages,
     ...coursesRelease.pages,
-    ...ebooksRelease.pages
+    ...ebooksRelease.pages,
+    ...truckingRelease.pages
   ],
   global_content: { ...motusRelease.globalContent, ...paymentsRelease.globalContent, ...coursesRelease.globalContent, ...ebooksRelease.globalContent },
   files_sha256: checksums

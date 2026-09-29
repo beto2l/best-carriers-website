@@ -16,7 +16,9 @@ const expectedRoutes = new Set([
   "cursos/combo/pay",
   "cursos",
   "ebooks",
-  "en/e-books"
+  "en/e-books",
+  "cursos/trucking",
+  "en/courses/trucking"
 ]);
 const failures = [];
 const sharedChromeCss = await readFile(path.join(root, 'src/site-chrome.css'), 'utf8');
@@ -26,7 +28,7 @@ if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
 if (release.version !== packageJson.version) failures.push("release and package versions must match");
-if (release.pages.length !== 10) failures.push("exactly ten native Pages are required");
+if (release.pages.length !== 12) failures.push("exactly twelve native Pages are required");
 const servicePages = release.pages.filter(page => ["servicios", "services"].includes(page.route));
 if (servicePages.length !== 2 || servicePages.some(page => page.translation_key !== "trucking-services")) {
   failures.push("Spanish and English service pages must remain a linked translation pair");
@@ -125,6 +127,27 @@ for (const forbidden of ["OPINFunnelHeadless", "stripe.com", "checkout-bootstrap
 if ((catalogHtml.match(/<h1[ >]/g)||[]).length !== 1) failures.push("Catalog must have one descriptive H1");
 if (/href="https:\/\/best-carriers\.com\/cursos\/[^" ]*\/(pay|gracias)\//.test(catalogHtml)) failures.push("Catalog must link to information landings");
 if (!catalogHtml.includes('data-opinx-global-content="best-carriers-social-proof-es"') || !catalogHtml.includes("Testimonios de alumnos de Best Carriers")) failures.push("Catalog social proof, group imagery fallback and testimonials must be preserved");
+
+const truckingContent = JSON.parse(await readFile(path.join(root,'content/trucking.json'),'utf8'));
+for (const language of ['es','en']) {
+ const page = release.pages.find(p=>p.id===`trucking-webinar-${language}`);
+ if(!page || page.translation_key!=='trucking-webinar') { failures.push('Missing paired Trucking webinar page'); continue; }
+ const html = await readFile(path.join(root,page.entry),'utf8');
+ if((html.match(/<h1[ >]/g)||[]).length!==1) failures.push('Trucking needs exactly one H1');
+ if(/<form\b|opinx-component|checkout-bootstrap|stripe.com|localStorage|sessionStorage|fbq\(/i.test(html)) failures.push('External webinar cannot implement registration, checkout or conversions');
+ if((html.match(/data-registration-link/g)||[]).length!==4) failures.push('Four external registration placements required');
+ for(const match of html.matchAll(/<a[^>]+href="([^"]+)"[^>]*data-registration-link/g)) if(match[1]!==truckingContent.registrationUrl) failures.push('Registration must go directly to official SBDC event');
+ const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+ const event=graph.find(x=>x['@type']==='EducationEvent');
+ if(event.startDate!==truckingContent.event.start || event.endDate!==truckingContent.event.end || event.inLanguage!=='es' || event.offers.price!=='0' || !event.isAccessibleForFree || event.organizer.name!==truckingContent.event.organizer) failures.push('Incorrect free SBDC event facts');
+ const faq=graph.find(x=>x['@type']==='FAQPage');
+ if(faq.mainEntity.length!==8 || (html.match(/<details>/g)||[]).length!==8) failures.push('Visible FAQ must match its structured content');
+ for(const route of Object.values(truckingContent.routes)) if((html.match(new RegExp(`href="https://best-carriers.com${route}"`,'g'))||[]).length<3) failures.push('Trucking language links must stay within the paired landing');
+ for(const required of ['icLfupSYr_4','prefers-reduced-motion','data-event-end','data-event-status','Cargo van','Hotshot','Box truck','Dry van','Flatbed','Reefer','Dump truck','Towing truck','IRS','FMCSA','MOTUS','IFTA','IRP','UCR']) if(!html.includes(required)) failures.push('Trucking missing '+required);
+ for(const match of html.matchAll(/<img\b[^>]*>/g)) if(!/alt="[^"]*"/.test(match[0]) || !/width="[0-9]+"/.test(match[0]) || !/height="[0-9]+"/.test(match[0])) failures.push('Image missing accessible text or dimensions');
+ if(!html.includes(sharedChromeCss)) failures.push('Trucking needs the shared navigation styles');
+}
+if(!catalogHtml.includes('href="https://best-carriers.com/cursos/trucking/"') || !catalogHtml.includes('El webinar de SBDC tiene sus propias condiciones.')) failures.push('Catalog must distinguish the external free webinar from paid course benefits');
 
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join("\n"));
