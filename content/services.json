@@ -222,6 +222,40 @@
     }
   },
   {
+    "id": "new-entrant-dot-audit",
+    "slugs": {
+      "es": "auditoria-new-entrant-dot",
+      "en": "new-entrant-dot-audit"
+    },
+    "category": "compliance",
+    "image": "https://bc.opin-x.com/reinstate-mc-authority.webp",
+    "icon": "shield",
+    "es": {
+      "name": "Preparación para Auditoría New Entrant DOT",
+      "price": "Solicitar cotización",
+      "priceNote": "Según el alcance y tamaño de la operación",
+      "summary": "Revisión y organización documental para preparar tu empresa de trucking para la auditoría New Entrant de FMCSA.",
+      "details": "Te ayudamos a revisar la documentación de tu operación, identificar información faltante y organizar tus expedientes para la auditoría New Entrant Safety Audit. El alcance y precio del servicio se confirman después de una evaluación inicial. La auditoría oficial la realiza un auditor certificado por FMCSA.",
+      "includes": [
+        "Evaluación inicial de la documentación de la empresa.",
+        "Revisión de expedientes de conductores, vehículos y registros de la operación según corresponda.",
+        "Identificación de información faltante y orientación para organizar el expediente de auditoría."
+      ]
+    },
+    "en": {
+      "name": "New Entrant DOT Audit Preparation",
+      "price": "Request a quote",
+      "priceNote": "Based on scope and operation size",
+      "summary": "Document review and organization to help your trucking company prepare for the FMCSA New Entrant Safety Audit.",
+      "details": "We help review your operation's documentation, identify missing information and organize your records for the New Entrant Safety Audit. Service scope and price are confirmed after an initial assessment. The official audit is conducted by an FMCSA-certified auditor.",
+      "includes": [
+        "Initial assessment of company documentation.",
+        "Review of driver files, vehicle records and operating records, as applicable.",
+        "Identification of missing information and guidance on organizing the audit file."
+      ]
+    }
+  },
+  {
     "id": "reinstate-mc-authority",
     "slugs": {"es": "reinstate-mc-authority", "en": "reinstate-mc-authority"},
     "category": "compliance",
