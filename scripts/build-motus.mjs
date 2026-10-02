@@ -15,21 +15,21 @@ export async function buildMotus({ root, site, version }) {
   const definitions = {
     es: {
       id: "motus-course-es",
-      title: "Curso grabado de FMCSA MOTUS",
+      title: "Curso FMCSA MOTUS grabado o en vivo",
       route: "cursos/motus",
       entry: "pages/cursos/motus/index.html",
       language: "es",
       translation_key: "motus-course",
-      components: ["best-carriers-social-proof-es", "motus-checkout-es"]
+      components: ["best-carriers-social-proof-es", "motus-checkout-es", "motus-live-checkout-es"]
     },
     en: {
       id: "motus-course-en",
-      title: "Recorded FMCSA MOTUS Course",
+      title: "Recorded or Live FMCSA MOTUS Course",
       route: "en/courses/motus",
       entry: "pages/en/courses/motus/index.html",
       language: "en",
       translation_key: "motus-course",
-      components: ["best-carriers-social-proof-en", "motus-checkout-en"]
+      components: ["best-carriers-social-proof-en", "motus-checkout-en", "motus-live-checkout-en"]
     },
     thanksEs: {
       id: "motus-thank-you-es",
@@ -53,13 +53,23 @@ export async function buildMotus({ root, site, version }) {
     }
   };
 
+  for (const locale of locales) {
+    const suffix = locale === "es" ? "Es" : "En";
+    const route = locale === "es" ? "cursos/motus/vivo/gracias" : "en/courses/motus/live/thank-you";
+    definitions[`thanksLive${suffix}`] = {
+      id: `motus-live-thank-you-${locale}`, title: locale === "es" ? "Confirmación MOTUS en vivo" : "Live MOTUS confirmation",
+      route, entry: `pages/${route}/index.html`, language: locale,
+      translation_key: "motus-live-thank-you", components: [`motus-live-payment-result-${locale}`], seo: { robots: "noindex,follow" }
+    };
+  }
   const files = [];
   for (const locale of locales) {
     const sale = definitions[locale];
     const thanks = definitions[locale === "es" ? "thanksEs" : "thanksEn"];
     for (const [definition, html] of [
       [sale, renderSalePage({ locale, content, site, version, css, js })],
-      [thanks, renderThanksPage({ locale, content, site, version, css, js })]
+      [thanks, renderThanksPage({ locale, content, site, version, css, js })],
+      [definitions[locale === "es" ? "thanksLiveEs" : "thanksLiveEn"], renderThanksPage({ locale, content, site, version, css, js, live: true })]
     ]) {
       const destination = path.join(root, path.dirname(definition.entry));
       const file = path.join(root, definition.entry);
@@ -77,7 +87,7 @@ export async function buildMotus({ root, site, version }) {
 
   return {
     files,
-    pages: [definitions.es, definitions.en, definitions.thanksEs, definitions.thanksEn],
+    pages: Object.values(definitions),
     globalContent: {
       "best-carriers-social-proof-es": {
         version: "1",
@@ -121,6 +131,10 @@ export async function buildMotus({ root, site, version }) {
         require_legal: false,
         legal_surface: "landing"
       },
+      ...Object.fromEntries(locales.flatMap((language) => [
+        [`motus-live-checkout-${language}`, {version: "1", type: "checkout", product: "motus-live", language, design_variant: "headless", required_product_type: "live_course", required_benefits: ["lifetime_access", "includes_updates", "includes_certificate"], require_legal: false, legal_surface: "landing"}],
+        [`motus-live-payment-result-${language}`, {version: "1", type: "payment_result", product: "motus-live", language}]
+      ])),
       "motus-payment-result-es": { version: "1", type: "payment_result", product: "motus", language: "es" },
       "motus-payment-result-en": { version: "1", type: "payment_result", product: "motus", language: "en" }
     }
@@ -128,7 +142,7 @@ export async function buildMotus({ root, site, version }) {
 }
 
 function validate(content) {
-  for (const key of ["es", "en", "thanksEs", "thanksEn"]) {
+  for (const key of ["es", "en", "thanksEs", "thanksEn", "thanksLiveEs", "thanksLiveEn"]) {
     if (!/^https:\/\/best-carriers\.com\//.test(content.routes[key])) throw new Error(`Invalid MOTUS route: ${key}`);
   }
   for (const locale of locales) {
@@ -220,12 +234,11 @@ function renderSalePage({ locale, content, site, version, css, js }) {
         <aside class="hero-opportunity" aria-label="${escapeHtml(t.heroOpportunityLabel)}">
           <div><p class="hero-opportunity-label">${escapeHtml(t.heroOpportunityLabel)}</p><p>${escapeHtml(t.heroOpportunity)}</p></div>
           <div class="hero-price-proof" aria-live="polite">
-            <span class="hero-price-was"><small>${escapeHtml(t.heroPreviousPriceLabel)}</small><s>${escapeHtml(t.heroPreviousPrice)}</s></span>
             <span class="hero-price-current"><small>${escapeHtml(t.heroCurrentPriceLabel)}</small><strong data-motus-current-price>${escapeHtml(t.heroCurrentPriceLoading)}</strong></span>
           </div>
         </aside>
         <div class="hero-actions hero-actions--centered">
-          <a class="button button-primary" href="#checkout-form">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
+          <a class="button button-primary" href="#offers">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a>
           <a class="button button-quiet" href="#curriculum">${escapeHtml(t.heroSecondary)}</a>
         </div>
         <p class="hero-note hero-note--centered">${icon("infinity")}<span>${escapeHtml(t.heroNote)}</span></p>
@@ -234,7 +247,10 @@ function renderSalePage({ locale, content, site, version, css, js }) {
 
     ${renderAuthorityLogos({ label: t.authorityLogosLabel, logos: content.assets.authorityLogos })}
 
+    ${renderOffers({ locale, t })}
+
     ${renderCheckout({ locale, content, site, t, terms, privacy })}
+    ${renderCheckout({ locale, content, site, t, terms, privacy, live: true })}
 
     <section class="trust-rail" aria-label="${escapeHtml(locale === "es" ? "Beneficios del curso" : "Course benefits")}">
       <div class="motus-shell trust-grid">
@@ -324,12 +340,12 @@ function renderSalePage({ locale, content, site, version, css, js }) {
     </section>
 
     <section class="final-cta">
-      <div class="motus-shell final-cta-inner"><div><p>${escapeHtml(t.finalCtaEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a class="button button-light" href="#checkout-form">${escapeHtml(t.finalCtaButton)}${icon("arrow")}</a></div>
+      <div class="motus-shell final-cta-inner"><div><p>${escapeHtml(t.finalCtaEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a class="button button-light" href="#offers">${escapeHtml(t.finalCtaButton)}${icon("arrow")}</a></div>
     </section>
   </main>
 
   ${renderFooter({ locale, content, site, t })}
-  <a class="mobile-purchase" href="#checkout-form" aria-hidden="true"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
+  <a class="mobile-purchase" href="#offers" aria-hidden="true"><span>${escapeHtml(t.mobileCta)}</span>${icon("arrow")}</a>
   <script>${js}</script>
 </body>
 </html>\n`;
@@ -350,13 +366,14 @@ function renderProductVisuals({ locale, content }) {
     </section>`;
 }
 
-function renderThanksPage({ locale, content, site, version, css, js }) {
+function renderThanksPage({ locale, content, site, version, css, js, live = false }) {
   const t = content.locales[locale];
   const alternate = locale === "es" ? "en" : "es";
-  const canonical = locale === "es" ? content.routes.thanksEs : content.routes.thanksEn;
-  const alternateUrl = alternate === "es" ? content.routes.thanksEs : content.routes.thanksEn;
+  const routeKeys = live ? ["thanksLiveEs", "thanksLiveEn"] : ["thanksEs", "thanksEn"];
+  const canonical = content.routes[routeKeys[locale === "es" ? 0 : 1]];
+  const alternateUrl = content.routes[routeKeys[alternate === "es" ? 0 : 1]];
   const lang = locale === "es" ? "es-US" : "en-US";
-  const componentKey = `motus-payment-result-${locale}`;
+  const componentKey = `motus-${live ? "live-" : ""}payment-result-${locale}`;
   return `<!doctype html>
 <html lang="${lang}" class="no-js">
 <head>
@@ -369,9 +386,9 @@ function renderThanksPage({ locale, content, site, version, css, js }) {
   <meta name="theme-color" content="#06111f">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚛</text></svg>">
   <link rel="canonical" href="${escapeHtml(canonical)}">
-  <link rel="alternate" hreflang="es" href="${escapeHtml(content.routes.thanksEs)}">
-  <link rel="alternate" hreflang="en" href="${escapeHtml(content.routes.thanksEn)}">
-  <link rel="alternate" hreflang="x-default" href="${escapeHtml(content.routes.thanksEs)}">
+  <link rel="alternate" hreflang="es" href="${escapeHtml(content.routes[routeKeys[0]])}">
+  <link rel="alternate" hreflang="en" href="${escapeHtml(content.routes[routeKeys[1]])}">
+  <link rel="alternate" hreflang="x-default" href="${escapeHtml(content.routes[routeKeys[0]])}">
   <style>${css}</style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
 </head>
@@ -388,10 +405,10 @@ function renderThanksPage({ locale, content, site, version, css, js }) {
       </section>
       <div class="payment-result"><opinx-component data-opinx-global-content="${componentKey}"><div data-component-fallback><div class="payment-result-status" role="status" aria-live="polite"><span class="status-pulse" aria-hidden="true"></span><p>${escapeHtml(t.thanksFallback)}</p></div></div></opinx-component></div>
       <section class="thanks-grid" aria-label="${escapeHtml(t.thanksStepsTitle)}">
-        <article class="next-steps"><p class="card-kicker">01 / ${locale === "es" ? "ACCESO" : "ACCESS"}</p><h2>${escapeHtml(t.thanksStepsTitle)}</h2><ol>${t.thanksSteps.map((item) => `<li><span>${icon("check")}</span><p>${escapeHtml(item)}</p></li>`).join("")}</ol><a class="button button-primary" href="https://learning.opin-x.com/" target="_blank" rel="noopener noreferrer">${escapeHtml(t.learningCta)}${icon("external")}</a></article>
+        <article class="next-steps"><p class="card-kicker">01 / ${locale === "es" ? "ACCESO" : "ACCESS"}</p><h2>${escapeHtml(t.thanksStepsTitle)}</h2><ol>${(live ? t.thanksLiveSteps : t.thanksSteps).map((item) => `<li><span>${icon("check")}</span><p>${escapeHtml(item)}</p></li>`).join("")}</ol><a class="button button-primary" href="https://learning.opin-x.com/library/" target="_blank" rel="noopener noreferrer">${escapeHtml(t.learningCta)}${icon("external")}</a></article>
         <div class="thanks-side">
           <article><p class="card-kicker">02 / ${locale === "es" ? "SOPORTE" : "SUPPORT"}</p><h2>${escapeHtml(t.helpTitle)}</h2><p>${escapeHtml(t.helpBody)}</p><a href="mailto:contact@best-carriers.com">${escapeHtml(t.helpCta)}${icon("arrow")}</a></article>
-          <article><p class="card-kicker">03 / ${locale === "es" ? "OPCIONAL" : "OPTIONAL"}</p><h2>${escapeHtml(t.consultingTitle)}</h2><p>${escapeHtml(t.consultingBody)}</p><a href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.consultingCta)}${icon("arrow")}</a></article>
+
         </div>
       </section>
     </div>
@@ -402,22 +419,34 @@ function renderThanksPage({ locale, content, site, version, css, js }) {
 </html>\n`;
 }
 
-function renderCheckout({ locale, content, site, t, terms, privacy }) {
-  return `<section class="section section-checkout" id="checkout" aria-labelledby="checkout-title">
+function renderOffers({ locale, t }) {
+  return `<section class="section section-offers" id="offers" aria-labelledby="offers-title"><div class="motus-shell">
+    <div class="section-heading centered"><h2 id="offers-title">${escapeHtml(t.offersTitle)}</h2></div>
+    <div class="motus-offer-grid">${Object.entries(t.offers).map(([mode, offer]) => `<article class="motus-offer-card"><h3>${escapeHtml(offer.title)}</h3><p class="motus-offer-price" data-motus-offer-price="${mode}" aria-live="polite">${escapeHtml(t.heroCurrentPriceLoading)}</p><ul>${offer.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul><a class="button button-primary" href="#checkout-form${mode === "live" ? "-live" : ""}">${escapeHtml(offer.cta)}${icon("arrow")}</a></article>`).join("")}</div>
+    <p class="motus-library-link"><a href="https://learning.opin-x.com/library/">${escapeHtml(t.libraryCta)}</a></p>
+  </div></section>`;
+}
+
+function renderCheckout({ locale, content, site, t, terms, privacy, live = false }) {
+  const offer = live ? t.offers.live : t.offers.recorded;
+  const suffix = live ? "-live" : "";
+  const title = live ? offer.title : t.checkoutTitle;
+  const body = live ? offer.items.join(" · ") : t.checkoutBody;
+  return `<section class="section section-checkout" id="checkout${suffix}" aria-labelledby="checkout-title${suffix}">
       <div class="motus-shell checkout-layout">
         <div class="checkout-copy">
           <p class="eyebrow eyebrow-light">${icon("lock")}<span>${escapeHtml(t.checkoutEyebrow)}</span></p>
-          <h2 id="checkout-title">${escapeHtml(t.checkoutTitle)}</h2>
-          <p>${escapeHtml(t.checkoutBody)}</p>
+          <h2 id="checkout-title${suffix}">${escapeHtml(title)}</h2>
+          <p>${escapeHtml(body)}</p>
           <ul>${t.checkoutGuarantees.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}</ul>
           <p class="checkout-legal"><span>${escapeHtml(t.legalPrefix)}</span> <a data-legal-terms href="${escapeHtml(terms)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.termsLabel)}</a> ${locale === "es" ? "y la" : "and the"} <a data-legal-privacy href="${escapeHtml(privacy)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.privacyLabel)}</a>.</p>
         </div>
-        <div class="checkout-card" id="checkout-form" data-motus-checkout data-language="${locale}">
+        <div class="checkout-card" id="checkout-form${suffix}" data-motus-checkout="${live ? "live" : "recorded"}" data-language="${locale}">
           <div class="checkout-card-head">
             <img src="${escapeHtml(content.assets.courseImage)}" alt="" width="1536" height="1024" loading="lazy" decoding="async">
-            <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(t.courseCardTitle)}</strong></div>
+            <div><span>${escapeHtml(t.courseCardEyebrow)}</span><strong>${escapeHtml(offer.title)}</strong></div>
           </div>
-          <opinx-component id="checkout-component" data-opinx-global-content="motus-checkout-${locale}">
+          <opinx-component id="checkout-component${suffix}" data-opinx-global-content="motus-${live ? "live-" : ""}checkout-${locale}">
             <div class="checkout-component-fallback" data-component-fallback>
               <p class="checkout-status" role="status">${escapeHtml(t.checkoutUnavailable)}</p>
               <a class="button button-whatsapp checkout-fallback" href="${escapeHtml(whatsappUrl(site, locale))}" target="_blank" rel="noopener noreferrer">${icon("whatsapp")}${escapeHtml(t.checkoutHelpCta)}</a>
@@ -430,7 +459,7 @@ function renderCheckout({ locale, content, site, t, terms, privacy }) {
 }
 
 function renderInlineCta({ t, id }) {
-  return `<section class="conversion-cta" aria-label="${escapeHtml(t.heroPrimary)}"><div class="motus-shell conversion-cta-inner"><div><p>${escapeHtml(t.courseCardEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a id="${escapeHtml(id)}" class="button button-primary" href="#checkout-form">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a></div></section>`;
+  return `<section class="conversion-cta" aria-label="${escapeHtml(t.heroPrimary)}"><div class="motus-shell conversion-cta-inner"><div><p>${escapeHtml(t.courseCardEyebrow)}</p><h2>${escapeHtml(t.finalCtaTitle)}</h2></div><a id="${escapeHtml(id)}" class="button button-primary" href="#offers">${escapeHtml(t.heroPrimary)}${icon("arrow")}</a></div></section>`;
 }
 
 function renderSocialProof({ locale, content, t }) {

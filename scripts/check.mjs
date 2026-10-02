@@ -13,6 +13,8 @@ const expectedRoutes = new Set([
   "en/courses/motus",
   "cursos/motus/gracias",
   "en/courses/motus/thank-you",
+  "cursos/motus/vivo/gracias",
+  "en/courses/motus/live/thank-you",
   "cursos/combo/pay",
   "cursos",
   "ebooks",
@@ -28,7 +30,7 @@ if (release.contract_version !== 5) failures.push("contract_version must be 5");
 if (release.runtime !== "static") failures.push("runtime must be static");
 if (release.scope !== "pages") failures.push("scope must be pages");
 if (release.version !== packageJson.version) failures.push("release and package versions must match");
-if (release.pages.length !== 12) failures.push("exactly twelve native Pages are required");
+if (release.pages.length !== 14) failures.push("exactly fourteen native Pages are required");
 const servicePages = release.pages.filter(page => ["servicios", "services"].includes(page.route));
 if (servicePages.length !== 2 || servicePages.some(page => page.translation_key !== "trucking-services")) {
   failures.push("Spanish and English service pages must remain a linked translation pair");
@@ -57,7 +59,7 @@ for (const page of release.pages) {
   if (["servicios", "services", "cursos", "ebooks", "en/e-books"].includes(page.route)) checkSharedNavigation(page, html);
   if (["ebooks", "en/e-books"].includes(page.route)) checkEbooks(page, html);
   if (["cursos/motus", "en/courses/motus"].includes(page.route)) checkMotusSale(page, html);
-  if (["cursos/motus/gracias", "en/courses/motus/thank-you"].includes(page.route)) checkMotusThanks(page, html);
+  if (["cursos/motus/gracias", "en/courses/motus/thank-you", "cursos/motus/vivo/gracias", "en/courses/motus/live/thank-you"].includes(page.route)) checkMotusThanks(page, html);
 }
 
 if (expectedRoutes.size) failures.push(`missing routes: ${[...expectedRoutes].join(", ")}`);
@@ -259,6 +261,9 @@ function checkEbooks(page, html) {
 
 function checkMotusSale(page, html) {
   const locale = page.language;
+  for (const text of [`data-opinx-global-content="motus-live-checkout-${locale}"`, 'id="checkout-form-live"', 'https://learning.opin-x.com/library/', 'data-motus-offer-price="live"', 'data-motus-offer-price="recorded"', locale === 'es' ? '17 de octubre de 2026' : 'October 17, 2026']) if (!html.includes(text)) failures.push(`${page.entry} missing two-format contract: ${text}`);
+  if (html.includes('hero-price-was') && html.includes('<s>')) failures.push(`${page.entry} has stale crossed-out price`);
+
   for (const required of [
     `data-opinx-global-content="best-carriers-social-proof-${locale}"`,
     `data-opinx-global-content="motus-checkout-${locale}"`,
@@ -298,7 +303,7 @@ function checkMotusSale(page, html) {
   ]) {
     if (!html.includes(`https://bc.opin-x.com/${visual}`)) failures.push(`${page.entry} is missing CDN visual ${visual}`);
   }
-  if (!html.includes('class="mobile-purchase" href="#checkout-form" aria-hidden="true"')) failures.push(`${page.entry} must send the mobile purchase CTA to the checkout form after the hero is passed`);
+  if (!html.includes('class="mobile-purchase" href="#offers" aria-hidden="true"')) failures.push(`${page.entry} must send the mobile purchase CTA to the checkout form after the hero is passed`);
   if (html.includes('<details class="curriculum-card"')) failures.push(`${page.entry} must show the complete curriculum without a disclosure control`);
   if ((html.match(/class="curriculum-card"/g) || []).length !== 5) failures.push(`${page.entry} must include all five curriculum modules`);
   if (!html.includes('class="conversion-cta"')) failures.push(`${page.entry} must include contextual conversion CTAs`);
@@ -308,7 +313,13 @@ function checkMotusSale(page, html) {
 function checkMotusThanks(page, html) {
   const locale = page.language;
   if (!html.includes('name="robots" content="noindex,follow,noarchive"')) failures.push(`${page.entry} must be noindex`);
-  if (!html.includes(`data-opinx-global-content="motus-payment-result-${locale}"`)) failures.push(`${page.entry} is missing the payment-result component`);
+  if (!html.includes(`data-opinx-global-content="motus-${page.route.includes("/vivo/") || page.route.includes("/live/") ? "live-" : ""}payment-result-${locale}"`)) failures.push(`${page.entry} is missing the payment-result component`);
   if (/cs_(?:live|test)_/i.test(html)) failures.push(`${page.entry} must not contain a payment session ID`);
   if (!html.includes("https://learning.opin-x.com/")) failures.push(`${page.entry} is missing the Learning next step`);
+}
+
+for (const locale of ["es", "en"]) {
+  const checkout = release.global_content[`motus-live-checkout-${locale}`];
+  const payment = release.global_content[`motus-live-payment-result-${locale}`];
+  if (checkout?.product !== "motus-live" || checkout?.required_product_type !== "live_course" || payment?.product !== "motus-live") throw new Error("Live checkout/result product mismatch");
 }

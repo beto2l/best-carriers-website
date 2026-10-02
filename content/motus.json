@@ -4,7 +4,9 @@
     "es": "https://best-carriers.com/cursos/motus/",
     "en": "https://best-carriers.com/en/courses/motus/",
     "thanksEs": "https://best-carriers.com/cursos/motus/gracias/",
-    "thanksEn": "https://best-carriers.com/en/courses/motus/thank-you/"
+    "thanksEn": "https://best-carriers.com/en/courses/motus/thank-you/",
+    "thanksLiveEs": "https://best-carriers.com/cursos/motus/vivo/gracias/",
+    "thanksLiveEn": "https://best-carriers.com/en/courses/motus/live/thank-you/"
   },
   "assets": {
     "logo": "https://c.opin-x.com/Logo-Best-Carriers-tm.png",
@@ -18,13 +20,48 @@
       "height": 862
     },
     "authorityLogos": [
-      { "url": "https://bc.opin-x.com/IRS-CE-Provider-3.png", "alt": "IRS Continuing Education Approved Provider", "width": 450, "height": 450 },
-      { "url": "https://c.opin-x.com/1-ico-fmcsa.png", "alt": "Federal Motor Carrier Safety Administration", "width": 450, "height": 450 },
-      { "url": "https://c.opin-x.com/best-carriers/Iconos-motus.png", "alt": "MOTUS USDOT Registration System", "width": 450, "height": 450 },
-      { "url": "https://c.opin-x.com/3-ico-ifta.png", "alt": "International Fuel Tax Association", "width": 450, "height": 450 },
-      { "url": "https://c.opin-x.com/4-ico-IRP.png", "alt": "International Registration Plan", "width": 450, "height": 450 },
-      { "url": "https://c.opin-x.com/5-ico-UCR.png", "alt": "Unified Carrier Registration Plan", "width": 450, "height": 450 },
-      { "url": "https://bc.opin-x.com/icono-sbdc.png", "alt": "America's Small Business Development Centers", "width": 450, "height": 450 }
+      {
+        "url": "https://bc.opin-x.com/IRS-CE-Provider-3.png",
+        "alt": "IRS Continuing Education Approved Provider",
+        "width": 450,
+        "height": 450
+      },
+      {
+        "url": "https://c.opin-x.com/1-ico-fmcsa.png",
+        "alt": "Federal Motor Carrier Safety Administration",
+        "width": 450,
+        "height": 450
+      },
+      {
+        "url": "https://c.opin-x.com/best-carriers/Iconos-motus.png",
+        "alt": "MOTUS USDOT Registration System",
+        "width": 450,
+        "height": 450
+      },
+      {
+        "url": "https://c.opin-x.com/3-ico-ifta.png",
+        "alt": "International Fuel Tax Association",
+        "width": 450,
+        "height": 450
+      },
+      {
+        "url": "https://c.opin-x.com/4-ico-IRP.png",
+        "alt": "International Registration Plan",
+        "width": 450,
+        "height": 450
+      },
+      {
+        "url": "https://c.opin-x.com/5-ico-UCR.png",
+        "alt": "Unified Carrier Registration Plan",
+        "width": 450,
+        "height": 450
+      },
+      {
+        "url": "https://bc.opin-x.com/icono-sbdc.png",
+        "alt": "America's Small Business Development Centers",
+        "width": 450,
+        "height": 450
+      }
     ],
     "instructorPhoto": {
       "url": "https://bc.opin-x.com/participantes-taller-motus-2-julio-26.jpg",
@@ -41,70 +78,130 @@
         "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.46.48-AM-scaled.png",
         "width": 2560,
         "height": 1578,
-        "title": { "es": "Plataforma del curso", "en": "Course platform" },
-        "alt": { "es": "Plataforma del curso MOTUS con una lección en video", "en": "MOTUS course platform with a video lesson" }
+        "title": {
+          "es": "Plataforma del curso",
+          "en": "Course platform"
+        },
+        "alt": {
+          "es": "Plataforma del curso MOTUS con una lección en video",
+          "en": "MOTUS course platform with a video lesson"
+        }
       },
       {
         "id": "lesson-usdot",
         "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.49.54-AM-scaled.png",
         "width": 2560,
         "height": 1489,
-        "title": { "es": "Lecciones en video", "en": "Video lessons" },
-        "alt": { "es": "Lección de MOTUS sobre vincular USDOT", "en": "MOTUS lesson about linking USDOT" }
+        "title": {
+          "es": "Lecciones en video",
+          "en": "Video lessons"
+        },
+        "alt": {
+          "es": "Lección de MOTUS sobre vincular USDOT",
+          "en": "MOTUS lesson about linking USDOT"
+        }
       },
       {
         "id": "lesson-tsp",
         "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.50.03-AM-scaled.png",
         "width": 2560,
         "height": 1473,
-        "title": { "es": "Procesos explicados paso a paso", "en": "Processes explained step by step" },
-        "alt": { "es": "Lección de MOTUS para designar un TSP", "en": "MOTUS lesson for designating a TSP" }
+        "title": {
+          "es": "Procesos explicados paso a paso",
+          "en": "Processes explained step by step"
+        },
+        "alt": {
+          "es": "Lección de MOTUS para designar un TSP",
+          "en": "MOTUS lesson for designating a TSP"
+        }
       },
       {
         "id": "curriculum",
         "url": "https://bc.opin-x.com/motus-curriculum-15-lessons.webp",
         "width": 900,
         "height": 1403,
-        "title": { "es": "Temario actualizado", "en": "Updated curriculum" },
-        "alt": { "es": "Temario actualizado del curso MOTUS con 15 lecciones", "en": "Updated MOTUS course curriculum with 15 lessons" }
+        "title": {
+          "es": "Temario actualizado",
+          "en": "Updated curriculum"
+        },
+        "alt": {
+          "es": "Temario actualizado del curso MOTUS con 15 lecciones",
+          "en": "Updated MOTUS course curriculum with 15 lessons"
+        }
       },
       {
         "id": "downloads",
         "url": "https://bc.opin-x.com/Screenshot-2026-09-14-at-11.48.25-AM-scaled.png",
         "width": 2560,
         "height": 1170,
-        "title": { "es": "Material descargable del curso", "en": "Downloadable course materials" },
-        "alt": { "es": "Recursos descargables disponibles para alumnos del curso MOTUS", "en": "Downloadable resources available to MOTUS course students" }
+        "title": {
+          "es": "Material descargable del curso",
+          "en": "Downloadable course materials"
+        },
+        "alt": {
+          "es": "Recursos descargables disponibles para alumnos del curso MOTUS",
+          "en": "Downloadable resources available to MOTUS course students"
+        }
       },
       {
         "id": "certificate",
         "url": "https://bc.opin-x.com/motus.jpg",
         "width": 1200,
         "height": 800,
-        "title": { "es": "Obtén tu certificado después de completar el taller", "en": "Get your certificate after completing the workshop" },
-        "alt": { "es": "Ejemplo de reconocimiento de participación del Taller de MOTUS", "en": "Example of a MOTUS Workshop participation recognition" }
+        "title": {
+          "es": "Obtén tu certificado después de completar el taller",
+          "en": "Get your certificate after completing the workshop"
+        },
+        "alt": {
+          "es": "Ejemplo de reconocimiento de participación del Taller de MOTUS",
+          "en": "Example of a MOTUS Workshop participation recognition"
+        }
       }
     ],
     "groupPhotos": [
       {
         "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-6.45.51-PM-450x263.png",
-        "course": { "es": "Taller de MOTUS", "en": "MOTUS Workshop" },
-        "date": { "es": "29 de agosto de 2026", "en": "August 29, 2026" }
+        "course": {
+          "es": "Taller de MOTUS",
+          "en": "MOTUS Workshop"
+        },
+        "date": {
+          "es": "29 de agosto de 2026",
+          "en": "August 29, 2026"
+        }
       },
       {
         "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-07-18-at-12.28.01-PM-450x291.png",
-        "course": { "es": "Taller de MOTUS", "en": "MOTUS Workshop" },
-        "date": { "es": "13 de junio de 2026", "en": "June 13, 2026" }
+        "course": {
+          "es": "Taller de MOTUS",
+          "en": "MOTUS Workshop"
+        },
+        "date": {
+          "es": "13 de junio de 2026",
+          "en": "June 13, 2026"
+        }
       },
       {
         "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-08-23-at-7.19.48-PM-450x276.png",
-        "course": { "es": "Taller de MOTUS", "en": "MOTUS Workshop" },
-        "date": { "es": "8 de agosto de 2026", "en": "August 8, 2026" }
+        "course": {
+          "es": "Taller de MOTUS",
+          "en": "MOTUS Workshop"
+        },
+        "date": {
+          "es": "8 de agosto de 2026",
+          "en": "August 8, 2026"
+        }
       },
       {
         "url": "https://best-carriers.com/wp-content/uploads/sites/5/Screenshot-2026-09-12-at-10.49.21-AM-450x266.png",
-        "course": { "es": "Cursos de Best Carriers", "en": "Best Carriers Courses" },
-        "date": { "es": "2026", "en": "2026" }
+        "course": {
+          "es": "Cursos de Best Carriers",
+          "en": "Best Carriers Courses"
+        },
+        "date": {
+          "es": "2026",
+          "en": "2026"
+        }
       }
     ]
   },
@@ -131,10 +228,10 @@
   },
   "locales": {
     "es": {
-      "metaTitle": "Curso grabado FMCSA MOTUS paso a paso | Best Carriers",
-      "metaDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo.",
+      "metaTitle": "Curso FMCSA MOTUS grabado o en vivo | Best Carriers",
+      "metaDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo. Elige curso grabado o clase en vivo el 17 de octubre de 2026 a las 09:00, Chicago.",
       "ogTitle": "Aprende FMCSA MOTUS paso a paso con Best Carriers",
-      "ogDescription": "Curso grabado con acceso inmediato, ruta práctica, actualizaciones, materiales descargables, certificado y soporte para alumnos.",
+      "ogDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo. Elige curso grabado o clase en vivo el 17 de octubre de 2026 a las 09:00, Chicago.",
       "skipLink": "Ir al contenido del curso",
       "languageLink": "English",
       "languageAria": "View the MOTUS course in English",
@@ -149,23 +246,33 @@
       "heroDescription": "Domina el acceso con Login.gov, la creación o reclamación de una cuenta USDOT, TSP, Biennial Updates, DataQs y procesos clave de MOTUS con una ruta práctica para profesionales de trucking, compliance y preparación de impuestos.",
       "heroOpportunityLabel": "Conocimiento que puedes aplicar como servicio",
       "heroOpportunity": "Los servicios para resolver incidencias de MOTUS suelen cotizarse aproximadamente entre $500 y $750 USD. Aprende el proceso para resolverlos con claridad y, si forma parte de tu actividad profesional, ofrecer ese servicio a tus propios clientes.",
-      "heroPreviousPriceLabel": "Antes",
-      "heroPreviousPrice": "$150",
-      "heroCurrentPriceLabel": "Precio actual",
+      "heroCurrentPriceLabel": "Curso grabado",
       "heroCurrentPriceLoading": "Ver precio vigente en el checkout",
-      "heroPrimary": "Obtener acceso inmediato",
+      "heroPrimary": "Elegir modalidad",
       "heroSecondary": "Ver el temario completo",
-      "heroNote": "Curso grabado · Acceso inmediato · Avanza a tu ritmo",
+      "heroNote": "Grabado a tu ritmo · En vivo el 17 de octubre, 09:00 Chicago",
       "authorityLogosLabel": "Instituciones y recursos de autoridad relacionados con la capacitación",
       "courseCardEyebrow": "Capacitación bajo demanda",
       "courseCardTitle": "Curso práctico de FMCSA MOTUS",
       "courseCardBody": "Una ruta organizada para trabajar con MOTUS, repetir cada proceso cuando lo necesites y reducir el tiempo perdido entre guías, videos y prueba/error.",
       "courseCardPill": "100% online",
       "trustItems": [
-        { "title": "Acceso inmediato", "text": "Comienza cuando quieras y vuelve a las lecciones para repasar cada proceso a tu ritmo." },
-        { "title": "Actualizaciones incluidas", "text": "Recibe las mejoras futuras incorporadas a esta capacitación cuando MOTUS evolucione." },
-        { "title": "Certificado", "text": "Completa la capacitación y recibe tu reconocimiento de participación." },
-        { "title": "Soporte para alumnos", "text": "Acceso a la comunidad privada de soporte después de comprar." }
+        {
+          "title": "Acceso inmediato",
+          "text": "Comienza cuando quieras y vuelve a las lecciones para repasar cada proceso a tu ritmo."
+        },
+        {
+          "title": "Actualizaciones incluidas",
+          "text": "Recibe las mejoras futuras incorporadas a esta capacitación cuando MOTUS evolucione."
+        },
+        {
+          "title": "Certificado",
+          "text": "Completa la capacitación y recibe tu reconocimiento de participación."
+        },
+        {
+          "title": "Soporte para alumnos",
+          "text": "Acceso a la comunidad privada de soporte después de comprar."
+        }
       ],
       "problemEyebrow": "Más que información dispersa",
       "problemTitle": "La información oficial existe. El reto es convertirla en una secuencia de trabajo que puedas ejecutar.",
@@ -186,41 +293,73 @@
           "number": "MÓDULO 1",
           "title": "Primeros pasos en Motus",
           "text": "01 · Introducción a Motus · 02 · Buscar correo registrado",
-          "lessons": ["01 · Introducción a Motus", "02 · Buscar correo registrado"]
+          "lessons": [
+            "01 · Introducción a Motus",
+            "02 · Buscar correo registrado"
+          ]
         },
         {
           "number": "MÓDULO 2",
           "title": "Configuración y gestión",
           "text": "03 · Portal FMCSA · 04 · Verificación de identidad · 05 · Vincular USDOT · 06 · Ticket Motus · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
-          "lessons": ["03 · Portal FMCSA", "04 · Verificación de identidad", "05 · Vincular USDOT", "06 · Ticket Motus", "07 · TSP Filing Number", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
+          "lessons": [
+            "03 · Portal FMCSA",
+            "04 · Verificación de identidad",
+            "05 · Vincular USDOT",
+            "06 · Ticket Motus",
+            "07 · TSP Filing Number",
+            "08 · Designate TSP",
+            "09 · Authorized Users",
+            "10 · Biennial Update"
+          ]
         },
         {
           "number": "MÓDULO 3",
           "title": "Tickets y consultoría",
           "text": "11 · Ticket DataQ · 12 · Carta FMCSA · Ayuda con agencia federal · 13 · Consultoría",
-          "lessons": ["11 · Ticket DataQ", "12 · Carta FMCSA · Ayuda con agencia federal", "13 · Consultoría"]
+          "lessons": [
+            "11 · Ticket DataQ",
+            "12 · Carta FMCSA · Ayuda con agencia federal",
+            "13 · Consultoría"
+          ]
         },
         {
           "number": "MÓDULO 4",
           "title": "Error de links en Motus",
           "text": "14 · Error de links en Motus",
-          "lessons": ["14 · Error de links en Motus"]
+          "lessons": [
+            "14 · Error de links en Motus"
+          ]
         },
         {
           "number": "MÓDULO 5",
           "title": "Grabación en vivo del último taller",
           "text": "15 · Grabación en vivo del último taller",
-          "lessons": ["15 · Grabación en vivo del último taller"]
+          "lessons": [
+            "15 · Grabación en vivo del último taller"
+          ]
         }
       ],
       "includesEyebrow": "Lo que recibes",
       "includesTitle": "Una herramienta de trabajo que permanece disponible",
       "includesBody": "No es una clase que desaparece al terminar. Conservas el acceso para consultar los procesos cuando los necesites.",
       "includes": [
-        { "title": "Curso grabado", "text": "15 lecciones para avanzar a tu ritmo y repetir los pasos importantes." },
-        { "title": "Material descargable", "text": "Guías y recursos de apoyo para acompañar los procesos explicados." },
-        { "title": "Actualizaciones futuras", "text": "Acceso a las mejoras incorporadas a esta capacitación cuando cambien los procesos." },
-        { "title": "Certificado", "text": "Reconocimiento de participación después de completar el contenido requerido." }
+        {
+          "title": "Curso grabado",
+          "text": "15 lecciones para avanzar a tu ritmo y repetir los pasos importantes."
+        },
+        {
+          "title": "Material descargable",
+          "text": "Guías y recursos de apoyo para acompañar los procesos explicados."
+        },
+        {
+          "title": "Actualizaciones futuras",
+          "text": "Acceso a las mejoras incorporadas a esta capacitación cuando cambien los procesos."
+        },
+        {
+          "title": "Certificado",
+          "text": "Reconocimiento de participación después de completar el contenido requerido."
+        }
       ],
       "audienceEyebrow": "Diseñado para trabajo real",
       "audienceTitle": "¿Para quién es este curso?",
@@ -252,12 +391,16 @@
       "moreReviews": "Ver más comentarios",
       "morePhotos": "Ver más fotos",
       "checkoutEyebrow": "Acceso seguro",
-      "checkoutTitle": "Obtén acceso inmediato al curso de MOTUS",
-      "checkoutBody": "El precio actual y la disponibilidad aparecen directamente en el checkout de Cursos y Ventas. Después del pago recibirás por correo los datos de acceso a la capacitación.",
+      "checkoutTitle": "Comprar el curso grabado de MOTUS",
+      "checkoutBody": "Acceso al curso grabado después de la aprobación del pago. Esta modalidad no incluye la clase en vivo del 17 de octubre.",
       "checkoutLoading": "Consultando precio y disponibilidad…",
       "checkoutUnavailable": "La compra está temporalmente en actualización. Puedes pedir información por WhatsApp.",
       "checkoutHelpCta": "Consultar por WhatsApp",
-      "checkoutGuarantees": ["Pago seguro procesado por Stripe", "Acceso digital enviado después del pago", "Pago único · Sin cargos recurrentes"],
+      "checkoutGuarantees": [
+        "Pago seguro procesado por Stripe",
+        "Acceso digital enviado después del pago",
+        "Pago único · Sin cargos recurrentes"
+      ],
       "paymentAlt": "Métodos de pago admitidos por Stripe",
       "legalPrefix": "Al comprar confirmas que revisaste los",
       "termsLabel": "Términos y condiciones",
@@ -265,17 +408,46 @@
       "faqEyebrow": "Preguntas frecuentes",
       "faqTitle": "Lo que debes saber antes de comenzar",
       "faqs": [
-        { "q": "¿El curso es en vivo?", "a": "No. Es una capacitación grabada con acceso inmediato para que puedas comenzar y avanzar a tu ritmo." },
-        { "q": "¿Necesito tener un USDOT para tomar el curso?", "a": "No necesariamente. El curso explica procesos para compañías existentes y también conceptos de configuración y acceso que son útiles para profesionales que trabajan con clientes." },
-        { "q": "¿El curso sirve si trabajo con clientes como preparador o TSP?", "a": "Sí. El temario incluye procesos relevantes para preparadores, personal de compliance y Transportation Service Providers, incluyendo TSP Filing Number, Designate TSP y Authorized Users." },
-        { "q": "¿Cuándo puedo comenzar?", "a": "Recibirás el acceso después de la aprobación del pago y podrás avanzar a tu ritmo." },
-        { "q": "¿Incluye ayuda individual para resolver mi caso?", "a": "No. La consultoría individual es opcional, se contrata por separado y tiene un costo adicional de $150." },
-        { "q": "¿Incluye un certificado?", "a": "Sí. Podrás recibir un certificado después de completar el contenido requerido del curso." },
-        { "q": "¿Dónde recibo soporte?", "a": "El soporte incluido se ofrece en un grupo privado de Facebook. El acceso se entrega a los alumnos después de la compra." },
-        { "q": "¿Qué necesito preparar antes de comenzar?", "a": "Conviene tener acceso al correo relacionado con tus registros y, si trabajarás con una compañía existente, la información de la empresa y su USDOT. Cada lección indica qué necesitas para el proceso correspondiente." },
-        { "q": "¿Qué sucede si FMCSA cambia MOTUS?", "a": "El acceso incluye las actualizaciones futuras que Best Carriers incorpore a esta capacitación para reflejar cambios relevantes del sistema." },
-        { "q": "¿Puedo solicitar un reembolso?", "a": "No. Al tratarse de acceso digital, todas las ventas son finales. Revisa los términos antes de comprar." },
-        { "q": "¿Best Carriers forma parte de la FMCSA?", "a": "No. Best Carriers es una marca educativa independiente. MOTUS, FMCSA, USDOT y Login.gov pertenecen a sus respectivos titulares." }
+        {
+          "q": "¿Qué modalidades puedo elegir?",
+          "a": "Puedes comprar el curso grabado para avanzar a tu ritmo o inscribirte a la clase en vivo del 17 de octubre de 2026, a las 09:00 de Chicago. La modalidad en vivo incluye el curso grabado y la grabación de la sesión. Comprar solo el grabado no incluye esta clase en vivo."
+        },
+        {
+          "q": "¿Necesito tener un USDOT para tomar el curso?",
+          "a": "No necesariamente. El curso explica procesos para compañías existentes y también conceptos de configuración y acceso que son útiles para profesionales que trabajan con clientes."
+        },
+        {
+          "q": "¿El curso sirve si trabajo con clientes como preparador o TSP?",
+          "a": "Sí. El temario incluye procesos relevantes para preparadores, personal de compliance y Transportation Service Providers, incluyendo TSP Filing Number, Designate TSP y Authorized Users."
+        },
+        {
+          "q": "¿Cuándo puedo comenzar?",
+          "a": "El grabado está disponible después de la aprobación del pago. La clase en vivo será el 17 de octubre de 2026 a las 09:00 de Chicago."
+        },
+        {
+          "q": "¿Incluye un certificado?",
+          "a": "Sí. Podrás recibir un certificado después de completar el contenido requerido del curso."
+        },
+        {
+          "q": "¿Dónde recibo soporte?",
+          "a": "El soporte incluido se ofrece en un grupo privado de Facebook. El acceso se entrega a los alumnos después de la compra."
+        },
+        {
+          "q": "¿Qué necesito preparar antes de comenzar?",
+          "a": "Conviene tener acceso al correo relacionado con tus registros y, si trabajarás con una compañía existente, la información de la empresa y su USDOT. Cada lección indica qué necesitas para el proceso correspondiente."
+        },
+        {
+          "q": "¿Qué sucede si FMCSA cambia MOTUS?",
+          "a": "El acceso incluye las actualizaciones futuras que Best Carriers incorpore a esta capacitación para reflejar cambios relevantes del sistema."
+        },
+        {
+          "q": "¿Puedo solicitar un reembolso?",
+          "a": "No. Al tratarse de acceso digital, todas las ventas son finales. Revisa los términos antes de comprar."
+        },
+        {
+          "q": "¿Best Carriers forma parte de la FMCSA?",
+          "a": "No. Best Carriers es una marca educativa independiente. MOTUS, FMCSA, USDOT y Login.gov pertenecen a sus respectivos titulares."
+        }
       ],
       "finalCtaEyebrow": "Deja de unir información por tu cuenta",
       "finalCtaTitle": "Ten una ruta práctica disponible cada vez que necesites trabajar en MOTUS.",
@@ -292,22 +464,46 @@
       "thanksStepsTitle": "Tus próximos pasos",
       "thanksSteps": [
         "Revisa el correo utilizado durante el pago, incluyendo Promociones y Spam.",
-        "Abre el mensaje de acceso y entra a la plataforma Learning de OPIN X.",
+        "Entra a Library con el correo de tu compra y abre el curso grabado de MOTUS.",
         "Sigue las indicaciones privadas para unirte al grupo de Facebook del curso."
       ],
-      "learningCta": "Abrir plataforma de cursos",
+      "learningCta": "Acceder a mis cursos",
       "helpTitle": "¿No recibiste el acceso?",
       "helpBody": "Espera unos minutos y revisa todas las carpetas de tu correo. Si el pago aparece completado y aún no recibes el acceso, escríbenos.",
       "helpCta": "Solicitar ayuda",
-      "consultingTitle": "¿Necesitas acompañamiento individual?",
-      "consultingBody": "La consultoría privada es un servicio adicional de $150 y no está incluida en el curso.",
-      "consultingCta": "Conocer la consultoría"
+      "offersTitle": "Elige cómo aprender MOTUS",
+      "libraryCta": "¿Ya compraste Motus? Accede a tus cursos",
+      "offers": {
+        "recorded": {
+          "title": "Curso grabado",
+          "cta": "Comprar curso grabado",
+          "items": [
+            "Acceso después de la aprobación del pago",
+            "Avanza a tu ritmo",
+            "No incluye la clase en vivo del 17 de octubre"
+          ]
+        },
+        "live": {
+          "title": "Clase en vivo + curso grabado",
+          "cta": "Inscribirme al vivo del 17 de octubre",
+          "items": [
+            "17 de octubre de 2026 · 09:00 Chicago",
+            "Incluye el curso grabado existente",
+            "Incluye la grabación de esta sesión en Bonus"
+          ]
+        }
+      },
+      "thanksLiveSteps": [
+        "Entra a Library con el correo utilizado para comprar.",
+        "Abre Classroom / Motus para la clase del 17 de octubre de 2026 a las 09:00 de Chicago.",
+        "Abre Library / Motus para el curso grabado. La grabación de esta sesión se añadirá a Bonus después de la clase."
+      ]
     },
     "en": {
-      "metaTitle": "Recorded FMCSA MOTUS Course Step by Step | Best Carriers",
-      "metaDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace.",
+      "metaTitle": "Recorded or Live FMCSA MOTUS Course | Best Carriers",
+      "metaDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace. Choose recorded training or the live class on October 17, 2026 at 09:00 Chicago time.",
       "ogTitle": "Learn FMCSA MOTUS step by step with Best Carriers",
-      "ogDescription": "Recorded course with immediate access, a practical workflow, updates, downloadable materials, certificate and student support.",
+      "ogDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace. Choose recorded training or the live class on October 17, 2026 at 09:00 Chicago time.",
       "skipLink": "Skip to course content",
       "languageLink": "Español",
       "languageAria": "Ver el curso MOTUS en español",
@@ -322,23 +518,33 @@
       "heroDescription": "Follow a practical path for Login.gov access, USDOT account claiming, TSP, Biennial Updates, DataQs and key MOTUS processes, built for trucking professionals, compliance staff and tax preparers.",
       "heroOpportunityLabel": "Knowledge you can apply as a service",
       "heroOpportunity": "MOTUS troubleshooting services are commonly quoted at approximately $500–$750 USD. Learn a clear process to solve them and, when it fits your professional practice, offer that service to your own clients.",
-      "heroPreviousPriceLabel": "Was",
-      "heroPreviousPrice": "$150",
-      "heroCurrentPriceLabel": "Current price",
+      "heroCurrentPriceLabel": "Recorded course",
       "heroCurrentPriceLoading": "See the current price in checkout",
-      "heroPrimary": "Get immediate access",
+      "heroPrimary": "Choose your format",
       "heroSecondary": "View the full curriculum",
-      "heroNote": "Recorded course · Immediate access · Learn at your own pace",
+      "heroNote": "Recorded at your pace · Live October 17, 09:00 Chicago",
       "authorityLogosLabel": "Authority institutions and resources related to the training",
       "courseCardEyebrow": "On-demand training",
       "courseCardTitle": "Practical FMCSA MOTUS Course",
       "courseCardBody": "An organized workflow for using MOTUS, repeating each process when needed and reducing time lost across scattered guides, videos and trial and error.",
       "courseCardPill": "100% online",
       "trustItems": [
-        { "title": "Immediate access", "text": "Start when you are ready and return to the lessons to review each process at your own pace." },
-        { "title": "Updates included", "text": "Receive future improvements added to this training as MOTUS evolves." },
-        { "title": "Certificate", "text": "Complete the training and receive your participation certificate." },
-        { "title": "Student support", "text": "Access to the private support community after purchase." }
+        {
+          "title": "Immediate access",
+          "text": "Start when you are ready and return to the lessons to review each process at your own pace."
+        },
+        {
+          "title": "Updates included",
+          "text": "Receive future improvements added to this training as MOTUS evolves."
+        },
+        {
+          "title": "Certificate",
+          "text": "Complete the training and receive your participation certificate."
+        },
+        {
+          "title": "Student support",
+          "text": "Access to the private support community after purchase."
+        }
       ],
       "problemEyebrow": "More than scattered information",
       "problemTitle": "Official information exists. The challenge is turning it into a workflow you can actually execute.",
@@ -359,41 +565,73 @@
           "number": "MODULE 1",
           "title": "First steps in MOTUS",
           "text": "01 · Introduction to MOTUS · 02 · Find registered email",
-          "lessons": ["01 · Introduction to MOTUS", "02 · Find registered email"]
+          "lessons": [
+            "01 · Introduction to MOTUS",
+            "02 · Find registered email"
+          ]
         },
         {
           "number": "MODULE 2",
           "title": "Configuration and management",
           "text": "03 · FMCSA Portal · 04 · Identity verification · 05 · Link USDOT · 06 · MOTUS ticket · 07 · TSP Filing Number · 08 · Designate TSP · 09 · Authorized Users · 10 · Biennial Update",
-          "lessons": ["03 · FMCSA Portal", "04 · Identity verification", "05 · Link USDOT", "06 · MOTUS ticket", "07 · TSP Filing Number", "08 · Designate TSP", "09 · Authorized Users", "10 · Biennial Update"]
+          "lessons": [
+            "03 · FMCSA Portal",
+            "04 · Identity verification",
+            "05 · Link USDOT",
+            "06 · MOTUS ticket",
+            "07 · TSP Filing Number",
+            "08 · Designate TSP",
+            "09 · Authorized Users",
+            "10 · Biennial Update"
+          ]
         },
         {
           "number": "MODULE 3",
           "title": "Tickets and consulting",
           "text": "11 · DataQ ticket · 12 · FMCSA letter · Federal agency assistance · 13 · Consulting",
-          "lessons": ["11 · DataQ ticket", "12 · FMCSA letter · Federal agency assistance", "13 · Consulting"]
+          "lessons": [
+            "11 · DataQ ticket",
+            "12 · FMCSA letter · Federal agency assistance",
+            "13 · Consulting"
+          ]
         },
         {
           "number": "MODULE 4",
           "title": "MOTUS link errors",
           "text": "14 · MOTUS link errors",
-          "lessons": ["14 · MOTUS link errors"]
+          "lessons": [
+            "14 · MOTUS link errors"
+          ]
         },
         {
           "number": "MODULE 5",
           "title": "Recording of the latest live workshop",
           "text": "15 · Recording of the latest live workshop",
-          "lessons": ["15 · Recording of the latest live workshop"]
+          "lessons": [
+            "15 · Recording of the latest live workshop"
+          ]
         }
       ],
       "includesEyebrow": "What you receive",
       "includesTitle": "A working resource that stays available",
       "includesBody": "This is not a class that disappears when it ends. Keep access and return whenever you need to review a process.",
       "includes": [
-        { "title": "Recorded course", "text": "15 lessons to learn at your own pace and replay important steps." },
-        { "title": "Downloadable materials", "text": "Guides and reference resources that support the processes explained." },
-        { "title": "Future updates", "text": "Access improvements added to this training when relevant processes change." },
-        { "title": "Certificate", "text": "Participation recognition after completing the required course content." }
+        {
+          "title": "Recorded course",
+          "text": "15 lessons to learn at your own pace and replay important steps."
+        },
+        {
+          "title": "Downloadable materials",
+          "text": "Guides and reference resources that support the processes explained."
+        },
+        {
+          "title": "Future updates",
+          "text": "Access improvements added to this training when relevant processes change."
+        },
+        {
+          "title": "Certificate",
+          "text": "Participation recognition after completing the required course content."
+        }
       ],
       "audienceEyebrow": "Built for real work",
       "audienceTitle": "Who is this course for?",
@@ -425,12 +663,16 @@
       "moreReviews": "View more reviews",
       "morePhotos": "View more photos",
       "checkoutEyebrow": "Secure access",
-      "checkoutTitle": "Get immediate access to the MOTUS course",
-      "checkoutBody": "Current price and availability appear directly in the Courses & Sales checkout. After payment, your training access details will be sent by email.",
+      "checkoutTitle": "Buy the recorded MOTUS course",
+      "checkoutBody": "Access the recorded course after payment approval. This format does not include the October 17 live class.",
       "checkoutLoading": "Checking price and availability…",
       "checkoutUnavailable": "Checkout is temporarily being updated. You can request information on WhatsApp.",
       "checkoutHelpCta": "Ask on WhatsApp",
-      "checkoutGuarantees": ["Secure payment processed by Stripe", "Digital access sent after payment", "One-time payment · No recurring charges"],
+      "checkoutGuarantees": [
+        "Secure payment processed by Stripe",
+        "Digital access sent after payment",
+        "One-time payment · No recurring charges"
+      ],
       "paymentAlt": "Payment methods accepted by Stripe",
       "legalPrefix": "By purchasing, you confirm that you reviewed the",
       "termsLabel": "Terms and Conditions",
@@ -438,17 +680,46 @@
       "faqEyebrow": "Frequently asked questions",
       "faqTitle": "What to know before you begin",
       "faqs": [
-        { "q": "Is the course live?", "a": "No. This is recorded training with immediate access, so you can start and learn at your own pace." },
-        { "q": "Do I need a USDOT number to take the course?", "a": "Not necessarily. The course explains processes for existing companies as well as setup and access concepts useful to professionals who work with clients." },
-        { "q": "Is the course useful if I work with clients as a tax preparer or TSP?", "a": "Yes. The curriculum includes processes relevant to preparers, compliance staff and Transportation Service Providers, including TSP Filing Number, Designate TSP and Authorized Users." },
-        { "q": "When can I start?", "a": "You receive access after payment approval and can learn at your own pace." },
-        { "q": "Does the course include individual help with my case?", "a": "No. Individual consulting is optional, purchased separately and costs an additional $150." },
-        { "q": "Does it include a certificate?", "a": "Yes. You may receive a certificate after completing the required course content." },
-        { "q": "Where do I receive support?", "a": "Included support is provided through a private Facebook group. Access is delivered to students after purchase." },
-        { "q": "What should I prepare before starting?", "a": "It is helpful to have access to the email related to your registrations and, if you are working with an existing company, its company information and USDOT number. Each lesson explains what is needed for that process." },
-        { "q": "What happens if FMCSA changes MOTUS?", "a": "Access includes future updates that Best Carriers adds to this training to reflect relevant system changes." },
-        { "q": "Can I request a refund?", "a": "No. Because this is digital access, all sales are final. Review the terms before purchasing." },
-        { "q": "Is Best Carriers part of FMCSA?", "a": "No. Best Carriers is an independent educational brand. MOTUS, FMCSA, USDOT and Login.gov belong to their respective owners." }
+        {
+          "q": "Which formats can I choose?",
+          "a": "Choose the recorded course at your own pace or the live class on October 17, 2026 at 09:00 Chicago time. Live registration includes the recorded course and the session recording. Buying only the recorded course does not include this live class."
+        },
+        {
+          "q": "Do I need a USDOT number to take the course?",
+          "a": "Not necessarily. The course explains processes for existing companies as well as setup and access concepts useful to professionals who work with clients."
+        },
+        {
+          "q": "Is the course useful if I work with clients as a tax preparer or TSP?",
+          "a": "Yes. The curriculum includes processes relevant to preparers, compliance staff and Transportation Service Providers, including TSP Filing Number, Designate TSP and Authorized Users."
+        },
+        {
+          "q": "When can I start?",
+          "a": "The recorded course is available after payment approval. The live class is on October 17, 2026 at 09:00 Chicago time."
+        },
+        {
+          "q": "Does it include a certificate?",
+          "a": "Yes. You may receive a certificate after completing the required course content."
+        },
+        {
+          "q": "Where do I receive support?",
+          "a": "Included support is provided through a private Facebook group. Access is delivered to students after purchase."
+        },
+        {
+          "q": "What should I prepare before starting?",
+          "a": "It is helpful to have access to the email related to your registrations and, if you are working with an existing company, its company information and USDOT number. Each lesson explains what is needed for that process."
+        },
+        {
+          "q": "What happens if FMCSA changes MOTUS?",
+          "a": "Access includes future updates that Best Carriers adds to this training to reflect relevant system changes."
+        },
+        {
+          "q": "Can I request a refund?",
+          "a": "No. Because this is digital access, all sales are final. Review the terms before purchasing."
+        },
+        {
+          "q": "Is Best Carriers part of FMCSA?",
+          "a": "No. Best Carriers is an independent educational brand. MOTUS, FMCSA, USDOT and Login.gov belong to their respective owners."
+        }
       ],
       "finalCtaEyebrow": "Stop piecing information together",
       "finalCtaTitle": "Keep a practical workflow available every time you need to work in MOTUS.",
@@ -465,16 +736,40 @@
       "thanksStepsTitle": "Your next steps",
       "thanksSteps": [
         "Check the email used during payment, including Promotions and Spam.",
-        "Open the access message and sign in to the OPIN X Learning platform.",
+        "Enter Library with your purchase email and open the recorded MOTUS course.",
         "Follow the private instructions to join the course's Facebook group."
       ],
-      "learningCta": "Open the course platform",
+      "learningCta": "Access my courses",
       "helpTitle": "Did not receive access?",
       "helpBody": "Wait a few minutes and check every email folder. If the payment is complete and access has not arrived, contact us.",
       "helpCta": "Request help",
-      "consultingTitle": "Need individual guidance?",
-      "consultingBody": "Private consulting is an additional $150 service and is not included with the course.",
-      "consultingCta": "Learn about consulting"
+      "offersTitle": "Choose how to learn MOTUS",
+      "libraryCta": "Already purchased Motus? Access your courses",
+      "offers": {
+        "recorded": {
+          "title": "Recorded course",
+          "cta": "Buy the recorded course",
+          "items": [
+            "Access after payment approval",
+            "Learn at your own pace",
+            "Does not include the October 17 live class"
+          ]
+        },
+        "live": {
+          "title": "Live class + recorded course",
+          "cta": "Register for the October 17 live class",
+          "items": [
+            "October 17, 2026 · 09:00 Chicago",
+            "Includes the existing recorded course",
+            "Includes this session recording in Bonus"
+          ]
+        }
+      },
+      "thanksLiveSteps": [
+        "Enter Library with the email used to purchase.",
+        "Open Classroom / Motus for the October 17, 2026 class at 09:00 Chicago time.",
+        "Open Library / Motus for the recorded course. This session recording will be added to Bonus after the class."
+      ]
     }
   }
 }

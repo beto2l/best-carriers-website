@@ -15,10 +15,12 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | Trucking e-books | `/en/e-books/` | English | `ebook-catalog-en` |
 | Servicios de Trucking | `/servicios/` | Spanish | `trucking-services-es` |
 | Trucking Services | `/services/` | English | `trucking-services-en` |
-| Curso grabado de FMCSA MOTUS | `/cursos/motus/` | Spanish | `motus-course-es` |
-| Recorded FMCSA MOTUS Course | `/en/courses/motus/` | English | `motus-course-en` |
+| Curso FMCSA MOTUS grabado o en vivo | `/cursos/motus/` | Spanish | `motus-course-es` |
+| Recorded or Live FMCSA MOTUS Course | `/en/courses/motus/` | English | `motus-course-en` |
 | Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
 | Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
+| Confirmación MOTUS en vivo | `/cursos/motus/vivo/gracias/` | Spanish | `motus-live-thank-you-es` |
+| Live MOTUS confirmation | `/en/courses/motus/live/thank-you/` | English | `motus-live-thank-you-en` |
 
 The Services, Courses and E-books catalogs share their complete header and footer through `components/site-chrome.mjs` and `src/site-chrome.css`. These components own the opaque navy background, logo/tagline sizing, three-section navigation, ES/EN switch, WhatsApp button and legal footer. `components/site-navigation.mjs` owns the localized destinations. Reuse the shared components to keep all catalog pages consistent; only the active section, locale and WhatsApp message vary.
 
@@ -75,3 +77,5 @@ Preview `http://127.0.0.1:8765/servicios/` and `http://127.0.0.1:8765/services/`
 7. Verify both routes, WordPress Page records, the WhatsApp destination and the CDN asset.
 
 The requirements shown in the initial release are intentionally provisional. They must be replaced only after the owner supplies and approves the exact document requirements for each service.
+
+MOTUS offers share one bilingual comparison page. Native Funnel components own pricing and checkout: `motus` is the recorded purchase, `motus-live` is the October 17, 2026 live session at 09:00 America/Chicago, including the existing recorded course and the session recording in Bonus. Recorded purchase alone does not grant that live session. Library uses the existing per-course purchase-email policy. Consultation upsells are absent from these two purchase flows.
