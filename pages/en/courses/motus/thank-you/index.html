@@ -804,10 +804,19 @@ opinx-component { display: block; }
   body, .motus-hero, .section-includes, .section-checkout, .site-footer { background: #fff !important; color: #000 !important; }
   .section { padding-block: 28px; }
 }
+
+.motus-offer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.motus-offer-card { padding:32px; border:1px solid #d8dee8; border-radius:20px; background:#fff; color:#132034; display:flex; flex-direction:column; align-items:flex-start; }
+.motus-offer-card h3 { font-size:26px; line-height:1.25; margin:0 0 16px; }
+.motus-offer-price { font-size:28px; font-weight:800; margin:0 0 16px; }
+.motus-offer-card ul { padding-left:22px; margin:0 0 24px; line-height:1.8; flex:1; }
+.motus-library-link { text-align:center; margin-top:28px; }
+.motus-library-link a { color:inherit; text-decoration:underline; font-weight:700; }
+@media(max-width:700px) { .motus-offer-grid { grid-template-columns:1fr; } .motus-offer-card { padding:24px; } }
 </style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
 </head>
-<body data-page="motus-thanks" data-locale="en" data-release="1.3.33">
+<body data-page="motus-thanks" data-locale="en" data-release="1.3.34">
   <header class="thanks-header"><div class="motus-shell"><a class="brand" href="https://best-carriers.com/"><img src="https://c.opin-x.com/Logo-Best-Carriers-tm.png" alt="Best Carriers"></a><a class="language-link" href="https://best-carriers.com/cursos/motus/gracias/" hreflang="es">Español</a></div></header>
   <main class="thanks-main">
     <div class="motus-grid" aria-hidden="true"></div>
@@ -820,10 +829,10 @@ opinx-component { display: block; }
       </section>
       <div class="payment-result"><opinx-component data-opinx-global-content="motus-payment-result-en"><div data-component-fallback><div class="payment-result-status" role="status" aria-live="polite"><span class="status-pulse" aria-hidden="true"></span><p>We are verifying your payment with Stripe…</p></div></div></opinx-component></div>
       <section class="thanks-grid" aria-label="Your next steps">
-        <article class="next-steps"><p class="card-kicker">01 / ACCESS</p><h2>Your next steps</h2><ol><li><span><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg></span><p>Check the email used during payment, including Promotions and Spam.</p></li><li><span><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg></span><p>Open the access message and sign in to the OPIN X Learning platform.</p></li><li><span><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg></span><p>Follow the private instructions to join the course&#039;s Facebook group.</p></li></ol><a class="button button-primary" href="https://learning.opin-x.com/" target="_blank" rel="noopener noreferrer">Open the course platform<svg class="icon icon-external" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6H5V6h6"/></svg></a></article>
+        <article class="next-steps"><p class="card-kicker">01 / ACCESS</p><h2>Your next steps</h2><ol><li><span><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg></span><p>Check the email used during payment, including Promotions and Spam.</p></li><li><span><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg></span><p>Enter Library with your purchase email and open the recorded MOTUS course.</p></li><li><span><svg class="icon icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg></span><p>Follow the private instructions to join the course&#039;s Facebook group.</p></li></ol><a class="button button-primary" href="https://learning.opin-x.com/library/" target="_blank" rel="noopener noreferrer">Access my courses<svg class="icon icon-external" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6H5V6h6"/></svg></a></article>
         <div class="thanks-side">
           <article><p class="card-kicker">02 / SUPPORT</p><h2>Did not receive access?</h2><p>Wait a few minutes and check every email folder. If the payment is complete and access has not arrived, contact us.</p><a href="mailto:contact@best-carriers.com">Request help<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
-          <article><p class="card-kicker">03 / OPTIONAL</p><h2>Need individual guidance?</h2><p>Private consulting is an additional $150 service and is not included with the course.</p><a href="https://wa.me/12192396752?text=I%20would%20like%20information%20about%20the%20recorded%20MOTUS%20course" target="_blank" rel="noopener noreferrer">Learn about consulting<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+
         </div>
       </section>
     </div>
@@ -889,21 +898,19 @@ opinx-component { display: block; }
   }
 
   function synchronizeHeroPrice() {
-    var targets = document.querySelectorAll("[data-motus-current-price]");
-    var checkout = document.querySelector("[data-motus-checkout]");
-    if (!targets.length || !checkout) return;
-
-    function update() {
-      var priceNode = checkout.querySelector(".opinx-checkout-model span");
-      var price = priceNode && priceNode.textContent ? priceNode.textContent.trim() : "";
-      if (!/\d/.test(price)) return;
-      targets.forEach(function (target) { target.textContent = price; });
-    }
-
-    update();
-    if (!("MutationObserver" in window)) return;
-    var observer = new MutationObserver(update);
-    observer.observe(checkout, { childList: true, subtree: true, characterData: true });
+    document.querySelectorAll("[data-motus-checkout]").forEach(function (checkout) {
+      var mode = checkout.getAttribute("data-motus-checkout");
+      var selector = '[data-motus-offer-price="' + mode + '"]' + (mode === "recorded" ? ", [data-motus-current-price]" : "");
+      var targets = document.querySelectorAll(selector);
+      function update() {
+        var priceNode = checkout.querySelector(".opinx-checkout-model span");
+        var price = priceNode && priceNode.textContent ? priceNode.textContent.trim() : "";
+        if (!/\d/.test(price)) return;
+        targets.forEach(function (target) { target.textContent = price; });
+      }
+      update();
+      if ("MutationObserver" in window) new MutationObserver(update).observe(checkout, {childList:true, subtree:true, characterData:true});
+    });
   }
 
   function enhanceSocialProof() {

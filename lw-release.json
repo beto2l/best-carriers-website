@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.34",
+  "version": "1.3.35",
   "languages": [
     "es",
     "en"
@@ -27,26 +27,28 @@
     },
     {
       "id": "motus-course-es",
-      "title": "Curso grabado de FMCSA MOTUS",
+      "title": "Curso FMCSA MOTUS grabado o en vivo",
       "route": "cursos/motus",
       "entry": "pages/cursos/motus/index.html",
       "language": "es",
       "translation_key": "motus-course",
       "components": [
         "best-carriers-social-proof-es",
-        "motus-checkout-es"
+        "motus-checkout-es",
+        "motus-live-checkout-es"
       ]
     },
     {
       "id": "motus-course-en",
-      "title": "Recorded FMCSA MOTUS Course",
+      "title": "Recorded or Live FMCSA MOTUS Course",
       "route": "en/courses/motus",
       "entry": "pages/en/courses/motus/index.html",
       "language": "en",
       "translation_key": "motus-course",
       "components": [
         "best-carriers-social-proof-en",
-        "motus-checkout-en"
+        "motus-checkout-en",
+        "motus-live-checkout-en"
       ]
     },
     {
@@ -72,6 +74,34 @@
       "translation_key": "motus-thank-you",
       "components": [
         "motus-payment-result-en"
+      ],
+      "seo": {
+        "robots": "noindex,follow"
+      }
+    },
+    {
+      "id": "motus-live-thank-you-es",
+      "title": "Confirmación MOTUS en vivo",
+      "route": "cursos/motus/vivo/gracias",
+      "entry": "pages/cursos/motus/vivo/gracias/index.html",
+      "language": "es",
+      "translation_key": "motus-live-thank-you",
+      "components": [
+        "motus-live-payment-result-es"
+      ],
+      "seo": {
+        "robots": "noindex,follow"
+      }
+    },
+    {
+      "id": "motus-live-thank-you-en",
+      "title": "Live MOTUS confirmation",
+      "route": "en/courses/motus/live/thank-you",
+      "entry": "pages/en/courses/motus/live/thank-you/index.html",
+      "language": "en",
+      "translation_key": "motus-live-thank-you",
+      "components": [
+        "motus-live-payment-result-en"
       ],
       "seo": {
         "robots": "noindex,follow"
@@ -195,6 +225,48 @@
       ],
       "require_legal": false,
       "legal_surface": "landing"
+    },
+    "motus-live-checkout-es": {
+      "version": "1",
+      "type": "checkout",
+      "product": "motus-live",
+      "language": "es",
+      "design_variant": "headless",
+      "required_product_type": "live_course",
+      "required_benefits": [
+        "lifetime_access",
+        "includes_updates",
+        "includes_certificate"
+      ],
+      "require_legal": false,
+      "legal_surface": "landing"
+    },
+    "motus-live-payment-result-es": {
+      "version": "1",
+      "type": "payment_result",
+      "product": "motus-live",
+      "language": "es"
+    },
+    "motus-live-checkout-en": {
+      "version": "1",
+      "type": "checkout",
+      "product": "motus-live",
+      "language": "en",
+      "design_variant": "headless",
+      "required_product_type": "live_course",
+      "required_benefits": [
+        "lifetime_access",
+        "includes_updates",
+        "includes_certificate"
+      ],
+      "require_legal": false,
+      "legal_surface": "landing"
+    },
+    "motus-live-payment-result-en": {
+      "version": "1",
+      "type": "payment_result",
+      "product": "motus-live",
+      "language": "en"
     },
     "motus-payment-result-es": {
       "version": "1",
@@ -323,19 +395,21 @@
     }
   },
   "files_sha256": {
-    "pages/cursos/combo/pay/index.html": "c1ee3175a80e30525ff997dfbd52d4d6a0aa221bffc27c194f9e83923dafefe5",
-    "pages/cursos/index.html": "b27b64df0d317788f29b9680eca6d58abbe90e39d5b261c8caeee83d7345221f",
-    "pages/cursos/motus/gracias/index.html": "114c1070b2a76c0c02730025f93834c8f74d25c1197a9d1104c303989ec4751c",
-    "pages/cursos/motus/index.html": "423d5681eec663516aa46c86b5cc5ab470e01bfb31f8097ec72747bd88e893c1",
-    "pages/cursos/trucking/index.html": "42d36eff83099f2c1f9ede4ed34e4e04144c75029846614ba6eb3d48e73a0379",
-    "pages/ebooks/index.html": "46911aa537ce916eb1dcb62cf55f3fa5b571ae0bd13e0eb81d4f9d6c673ae86b",
-    "pages/en/courses/motus/index.html": "193c7eba9b384ace2a65cefd1f53a6d3d3d1a86ff692f1c149235ff9535c74c3",
-    "pages/en/courses/motus/thank-you/index.html": "5b5375a72704b3a4be5628a6192492971f9e47320b95b7f18b5ff06c657e59e9",
-    "pages/en/courses/trucking/index.html": "713619531fee9e397e776ad0e1481ef97cb1239be612227ab7100d9588efb96f",
-    "pages/en/e-books/index.html": "0ff2abaac1dca6ae2ebc9053d0f239753c31cf8fd79ddcae38bff2822ee252df",
-    "pages/services/data/services.json": "9c9241be3f0b477e05b35ce17705571894e8c2726abfc69d87162e14951d8be9",
-    "pages/services/index.html": "9eb368dfde063660911ca124c7dfbfe27bbad64eaf82be96cf75add3a15034b6",
-    "pages/servicios/data/services.json": "d892a287c92744238a725fa73c5812e4ffc1af498d4a490ca55f7ed8bf4ab0db",
-    "pages/servicios/index.html": "9a37fb5df56dd25a758e5a73eebf1bf898e32c9e5fb672ff8a311c5c015e785e"
+    "pages/cursos/combo/pay/index.html": "475bc9817b3738a2e0aeff5b3c601d4f51481fe92c6bd42bfd679e22efcc46da",
+    "pages/cursos/index.html": "01f44b867cb41f20abe7a2bd505e4247d12103550c8bf5748cebb8c41a98e1e3",
+    "pages/cursos/motus/gracias/index.html": "5524d29679d23295047152a4c629b32f920c4334764a8476f15e925a0faf5013",
+    "pages/cursos/motus/index.html": "22f405d3281541b4edd18e0082bd38c6d4deb91573ed1cab1a06d41bdc8bb6fc",
+    "pages/cursos/motus/vivo/gracias/index.html": "4d58b1f6e2501221446fc7a1d34c00ed63df6ee2b349851b7f04ff14160aca20",
+    "pages/cursos/trucking/index.html": "4311440def91ddc0463aff99c0f8e62c78e481c147466a81cee7c9daa091226a",
+    "pages/ebooks/index.html": "a3eb089c627c6a851d558b487ecf4110db213d79fe45aad8e0276069ee2bf7f3",
+    "pages/en/courses/motus/index.html": "947d0fc69255a1528e5663ae87c60732787a88425d031d33daaa8b3100074308",
+    "pages/en/courses/motus/live/thank-you/index.html": "038863d86772a1edd67ac74b59187a5fb287fe9ea4f348aba995665cd19900a8",
+    "pages/en/courses/motus/thank-you/index.html": "c77099ccff6e721c0e84e0e1e5ec4adc28b9c6998c20abbb0b9b70fdd2ddbf44",
+    "pages/en/courses/trucking/index.html": "5cb1ff492f927f6883bbf278f9eaaf445137711fd27da8b60201ffed817bcc06",
+    "pages/en/e-books/index.html": "c8f92a72ceb1fc609b248d950e2285940bb2e6afb3c3dca692b4bf4c0867a84a",
+    "pages/services/data/services.json": "0b51000a0229ab1dbeaadb72441e5b3f5ce74457e9a02b8375f6b5588519904f",
+    "pages/services/index.html": "d21d59c5e460dd378e3cbcb679f46f14e0d5c4887daeed6d3415592087a6e61e",
+    "pages/servicios/data/services.json": "b09bcd30dda63544bab8b790eda410aa591e846351d3a8b067beae779c4f9620",
+    "pages/servicios/index.html": "e58814d4262c471eca9ea836834182f5e599425727da8711a7af8341b45d5f7b"
   }
 }

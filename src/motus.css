@@ -789,3 +789,12 @@ opinx-component { display: block; }
   body, .motus-hero, .section-includes, .section-checkout, .site-footer { background: #fff !important; color: #000 !important; }
   .section { padding-block: 28px; }
 }
+
+.motus-offer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.motus-offer-card { padding:32px; border:1px solid #d8dee8; border-radius:20px; background:#fff; color:#132034; display:flex; flex-direction:column; align-items:flex-start; }
+.motus-offer-card h3 { font-size:26px; line-height:1.25; margin:0 0 16px; }
+.motus-offer-price { font-size:28px; font-weight:800; margin:0 0 16px; }
+.motus-offer-card ul { padding-left:22px; margin:0 0 24px; line-height:1.8; flex:1; }
+.motus-library-link { text-align:center; margin-top:28px; }
+.motus-library-link a { color:inherit; text-decoration:underline; font-weight:700; }
+@media(max-width:700px) { .motus-offer-grid { grid-template-columns:1fr; } .motus-offer-card { padding:24px; } }

@@ -58,21 +58,19 @@
   }
 
   function synchronizeHeroPrice() {
-    var targets = document.querySelectorAll("[data-motus-current-price]");
-    var checkout = document.querySelector("[data-motus-checkout]");
-    if (!targets.length || !checkout) return;
-
-    function update() {
-      var priceNode = checkout.querySelector(".opinx-checkout-model span");
-      var price = priceNode && priceNode.textContent ? priceNode.textContent.trim() : "";
-      if (!/\d/.test(price)) return;
-      targets.forEach(function (target) { target.textContent = price; });
-    }
-
-    update();
-    if (!("MutationObserver" in window)) return;
-    var observer = new MutationObserver(update);
-    observer.observe(checkout, { childList: true, subtree: true, characterData: true });
+    document.querySelectorAll("[data-motus-checkout]").forEach(function (checkout) {
+      var mode = checkout.getAttribute("data-motus-checkout");
+      var selector = '[data-motus-offer-price="' + mode + '"]' + (mode === "recorded" ? ", [data-motus-current-price]" : "");
+      var targets = document.querySelectorAll(selector);
+      function update() {
+        var priceNode = checkout.querySelector(".opinx-checkout-model span");
+        var price = priceNode && priceNode.textContent ? priceNode.textContent.trim() : "";
+        if (!/\d/.test(price)) return;
+        targets.forEach(function (target) { target.textContent = price; });
+      }
+      update();
+      if ("MutationObserver" in window) new MutationObserver(update).observe(checkout, {childList:true, subtree:true, characterData:true});
+    });
   }
 
   function enhanceSocialProof() {
