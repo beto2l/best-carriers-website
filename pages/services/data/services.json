@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "version": "1.3.37",
+  "version": "1.3.38",
   "whatsappUrl": "https://wa.me/12192396752?text=I%20want%20trucking%20services",
   "requirements": "The exact documentation depends on your business structure, state and operating situation. We confirm the requirements after an initial evaluation.",
   "labels": {
@@ -246,10 +246,10 @@
       "category": "compliance",
       "icon": "shield",
       "name": "New Entrant DOT Audit Preparation",
-      "price": "Request a quote",
-      "priceNote": "Based on scope and operation size",
+      "price": "$299 USD",
+      "priceNote": "Service price",
       "summary": "Document review and organization to help your trucking company prepare for the FMCSA New Entrant Safety Audit.",
-      "details": "We help review your operation's documentation, identify missing information and organize your records for the New Entrant Safety Audit. Service scope and price are confirmed after an initial assessment. The official audit is conducted by an FMCSA-certified auditor.",
+      "details": "We help review your operation's documentation, identify missing information and organize your records for the New Entrant Safety Audit. Service scope is confirmed after an initial assessment. The official audit is conducted by an FMCSA-certified auditor.",
       "includes": [
         "Initial assessment of company documentation.",
         "Review of driver files, vehicle records and operating records, as applicable.",

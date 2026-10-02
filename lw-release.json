@@ -3,7 +3,7 @@
   "runtime": "static",
   "scope": "pages",
   "site": "best-carriers-website",
-  "version": "1.3.37",
+  "version": "1.3.38",
   "languages": [
     "es",
     "en"
@@ -407,9 +407,9 @@
     "pages/en/courses/motus/thank-you/index.html": "cd08e75c229fe5a99fab8e322a22c64a51e271d251df0dbef13e1fd92e93bb78",
     "pages/en/courses/trucking/index.html": "cccdb4d33ca99df51331d4dd01d31ec5412b9ae19e7152e08f59f4ecdc897b61",
     "pages/en/e-books/index.html": "9040ed4267b0c7a9842ad955155079e47501f3c39567af221ae531229e8fc4bd",
-    "pages/services/data/services.json": "ec6ba9db195d81aced212c1512890dd4c185841021ba9ea4f0d3345eb66aab27",
-    "pages/services/index.html": "bb59d148a218162e185b00cc0b9d90e32b95fbb1f18844709a44edadf8c2cf98",
-    "pages/servicios/data/services.json": "8e56d357721b591259d635a152aa37c8b1feb7b260ccb94378bc7f9f813f9333",
-    "pages/servicios/index.html": "3ac274d50d10e78a53e9ec17ffbeeab9bc1fb925eb7890d75b1b9f065308ad23"
+    "pages/services/data/services.json": "b9bf6976c4c58058f373a1e204476f9ecaa157fe03b626152f68f751cd3c6fc4",
+    "pages/services/index.html": "7f3f09ce62c818da003d5aba4709eeeca951a7abe9bcc608b1c8eb20102bbed4",
+    "pages/servicios/data/services.json": "4d2cad5096161e9ce778a343f483968af05fa3d6b4210a4ba456f3ab382e62e3",
+    "pages/servicios/index.html": "828bc1329f615bcd6b1341bc0c719602d45ce62c9a323cb36964bc3198c0b7c5"
   }
 }

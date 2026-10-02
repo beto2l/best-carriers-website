@@ -232,10 +232,10 @@
     "icon": "shield",
     "es": {
       "name": "Preparación para Auditoría New Entrant DOT",
-      "price": "Solicitar cotización",
-      "priceNote": "Según el alcance y tamaño de la operación",
+      "price": "$299 USD",
+      "priceNote": "Precio del servicio",
       "summary": "Revisión y organización documental para preparar tu empresa de trucking para la auditoría New Entrant de FMCSA.",
-      "details": "Te ayudamos a revisar la documentación de tu operación, identificar información faltante y organizar tus expedientes para la auditoría New Entrant Safety Audit. El alcance y precio del servicio se confirman después de una evaluación inicial. La auditoría oficial la realiza un auditor certificado por FMCSA.",
+      "details": "Te ayudamos a revisar la documentación de tu operación, identificar información faltante y organizar tus expedientes para la auditoría New Entrant Safety Audit. El alcance del servicio se confirma después de una evaluación inicial. La auditoría oficial la realiza un auditor certificado por FMCSA.",
       "includes": [
         "Evaluación inicial de la documentación de la empresa.",
         "Revisión de expedientes de conductores, vehículos y registros de la operación según corresponda.",
@@ -244,10 +244,10 @@
     },
     "en": {
       "name": "New Entrant DOT Audit Preparation",
-      "price": "Request a quote",
-      "priceNote": "Based on scope and operation size",
+      "price": "$299 USD",
+      "priceNote": "Service price",
       "summary": "Document review and organization to help your trucking company prepare for the FMCSA New Entrant Safety Audit.",
-      "details": "We help review your operation's documentation, identify missing information and organize your records for the New Entrant Safety Audit. Service scope and price are confirmed after an initial assessment. The official audit is conducted by an FMCSA-certified auditor.",
+      "details": "We help review your operation's documentation, identify missing information and organize your records for the New Entrant Safety Audit. Service scope is confirmed after an initial assessment. The official audit is conducted by an FMCSA-certified auditor.",
       "includes": [
         "Initial assessment of company documentation.",
         "Review of driver files, vehicle records and operating records, as applicable.",

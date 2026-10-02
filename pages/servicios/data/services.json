@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "version": "1.3.37",
+  "version": "1.3.38",
   "whatsappUrl": "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking",
   "requirements": "La documentación exacta depende de tu estructura, estado y situación operativa. La lista de requisitos se confirma después de una evaluación inicial.",
   "labels": {
@@ -246,10 +246,10 @@
       "category": "compliance",
       "icon": "shield",
       "name": "Preparación para Auditoría New Entrant DOT",
-      "price": "Solicitar cotización",
-      "priceNote": "Según el alcance y tamaño de la operación",
+      "price": "$299 USD",
+      "priceNote": "Precio del servicio",
       "summary": "Revisión y organización documental para preparar tu empresa de trucking para la auditoría New Entrant de FMCSA.",
-      "details": "Te ayudamos a revisar la documentación de tu operación, identificar información faltante y organizar tus expedientes para la auditoría New Entrant Safety Audit. El alcance y precio del servicio se confirman después de una evaluación inicial. La auditoría oficial la realiza un auditor certificado por FMCSA.",
+      "details": "Te ayudamos a revisar la documentación de tu operación, identificar información faltante y organizar tus expedientes para la auditoría New Entrant Safety Audit. El alcance del servicio se confirma después de una evaluación inicial. La auditoría oficial la realiza un auditor certificado por FMCSA.",
       "includes": [
         "Evaluación inicial de la documentación de la empresa.",
         "Revisión de expedientes de conductores, vehículos y registros de la operación según corresponda.",
