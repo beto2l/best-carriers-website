@@ -172,10 +172,10 @@ function checkServices(page, html) {
   ]) {
     if (!html.includes(required)) failures.push(`${page.entry} is missing ${required}`);
   }
-  if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 static service cards`);
-  if ((html.match(/<tr data-service-row/g) || []).length !== 12) failures.push(`${page.entry} must contain 12 table service rows`);
-  if ((html.match(/<div class="card-visual"><img src="https:\/\/bc\.opin-x\.com\//g) || []).length !== 12) failures.push(`${page.entry} must use 12 authorized CDN service images`);
-  if ((html.match(/loading="lazy" decoding="async" sizes="\(min-width: 1180px\)/g) || []).length !== 12) failures.push(`${page.entry} must lazy-load all service-card images`);
+  if ((html.match(/<article class="service-card" data-service-card/g) || []).length !== 13) failures.push(`${page.entry} must contain 13 static service cards`);
+  if ((html.match(/<tr data-service-row/g) || []).length !== 13) failures.push(`${page.entry} must contain 13 table service rows`);
+  if ((html.match(/<div class="card-visual"><img src="https:\/\/bc\.opin-x\.com\//g) || []).length !== 13) failures.push(`${page.entry} must use 13 authorized CDN service images`);
+  if ((html.match(/loading="lazy" decoding="async" sizes="\(min-width: 1180px\)/g) || []).length !== 13) failures.push(`${page.entry} must lazy-load all service-card images`);
   if (!html.includes('src="https://c.opin-x.com/best-carriers/Best-carriers-icon.png"')) failures.push(`${page.entry} must use the payment page logo`);
   if (!html.includes("data-static-catalog")) failures.push(`${page.entry} is missing the embedded service catalog`);
   if (!html.includes(page.language === "es" ? "Obtener USDOT" : "Obtain USDOT Number")) failures.push(`${page.entry} is missing the USDOT service`);

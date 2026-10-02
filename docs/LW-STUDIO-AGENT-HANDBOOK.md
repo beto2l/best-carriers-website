@@ -226,3 +226,7 @@ No purgues zonas genéricas ni cambies DNS desde una publicación de página. La
 - [ ] `npm test` pasó y los checksums coinciden.
 - [ ] El commit está en `main` y la versión fue publicada desde LW Studio.
 - [ ] Probé la ruta pública, sus componentes, Page nativa y caché.
+
+### Publicación exclusiva de servicios
+
+Para actualizar el catálogo de servicios ES/EN sin regenerar páginas ni contratos de cursos, usa `SERVICES_ONLY=1 npm test` después de incrementar la versión. Este modo genera ambas páginas de servicios y sus datos, conserva los IDs y contratos del manifiesto previo y recalcula los checksums publicados. Las demás páginas mantienen exactamente sus bytes. El catálogo incluye 13 servicios, incluyendo preparación New Entrant DOT con cotización tras evaluación.

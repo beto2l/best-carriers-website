@@ -17,7 +17,8 @@ const inlineCss = ((await readFile(path.join(root, "src/services.css"), "utf8"))
 const inlineJs = (await readFile(path.join(root, "src/services.js"), "utf8")).replaceAll("</script", "<\\/script");
 const version = packageJson.version;
 const locales = ["es", "en"];
-const buildServices = process.env.FULL_RELEASE === "1";
+const servicesOnly = process.env.SERVICES_ONLY === "1";
+const buildServices = process.env.FULL_RELEASE === "1" || servicesOnly;
 
 const pageDefinitions = {
   es: { id: "trucking-services-es", title: "Servicios de Trucking", route: "servicios" },
@@ -29,7 +30,7 @@ validateSource();
 const pagesRoot = path.join(root, "pages");
 const files = [];
 if (buildServices) {
-  await rm(pagesRoot, { recursive: true, force: true });
+  if (!servicesOnly) await rm(pagesRoot, { recursive: true, force: true });
   for (const locale of locales) {
     const definition = pageDefinitions[locale];
     const destination = path.join(pagesRoot, definition.route);
@@ -48,6 +49,19 @@ if (buildServices) {
     const route = pageDefinitions[locale].route;
     files.push(path.join(pagesRoot, route, "index.html"), path.join(pagesRoot, route, "data/services.json"));
   }
+}
+
+// A services update must preserve the published course bytes and contracts.
+if (servicesOnly) {
+  const previous = JSON.parse(await readFile(path.join(root, "lw-release.json"), "utf8"));
+  const checksums = {};
+  for (const file of Object.keys(previous.files_sha256).sort()) {
+    checksums[file] = createHash("sha256").update(await readFile(path.join(root, file))).digest("hex");
+  }
+  const release = { ...previous, version, files_sha256: checksums };
+  await writeFile(path.join(root, "lw-release.json"), `${JSON.stringify(release, null, 2)}\n`, "utf8");
+  console.log(`Built services release ${version}: refreshed ES/EN services; all other pages preserved.`);
+  process.exit(0);
 }
 
 const motusRelease = await buildMotus({ root, site, version });
