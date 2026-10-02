@@ -203,6 +203,28 @@
           "en": "2026"
         }
       }
+    ],
+    "messageTestimonials": [
+      {
+        "id": "whatsapp",
+        "url": "https://bc.opin-x.com/motus-testimonio-whatsapp-telefono-oculto.png",
+        "width": 852,
+        "height": 1846,
+        "alt": {
+          "es": "Captura de conversación de WhatsApp compartida con Best Carriers, con teléfono oculto.",
+          "en": "Screenshot of a WhatsApp conversation shared with Best Carriers, with the phone number hidden."
+        }
+      },
+      {
+        "id": "rcs",
+        "url": "https://bc.opin-x.com/motus-testimonio-rcs-telefono-oculto.png",
+        "width": 852,
+        "height": 1846,
+        "alt": {
+          "es": "Captura de conversación RCS compartida con Best Carriers, con teléfono oculto.",
+          "en": "Screenshot of an RCS conversation shared with Best Carriers, with the phone number hidden."
+        }
+      }
     ]
   },
   "ratingSnapshot": {
@@ -506,7 +528,10 @@
         "🌆 Chicago, Dallas, Houston → 9:00 a. m. CT",
         "🌴 Miami, Orlando, Nueva York → 10:00 a. m. ET"
       ],
-      "liveScheduleNote": "Phoenix → 7:00 a. m. MST. Arizona no cambia al horario de verano."
+      "liveScheduleNote": "Phoenix → 7:00 a. m. MST. Arizona no cambia al horario de verano.",
+      "messageTestimonialsTitle": "Mensajes compartidos con Best Carriers",
+      "messageTestimonialsNote": "Capturas de conversaciones compartidas por clientes. Los teléfonos están ocultos.",
+      "messageTestimonialsFull": "Ver captura completa"
     },
     "en": {
       "metaTitle": "Recorded or Live FMCSA MOTUS Course | Best Carriers",
@@ -787,7 +812,10 @@
         "🌆 Chicago, Dallas, Houston → 9:00 a.m. CT",
         "🌴 Miami, Orlando, New York → 10:00 a.m. ET"
       ],
-      "liveScheduleNote": "Phoenix → 7:00 a.m. MST. Arizona does not observe daylight saving time."
+      "liveScheduleNote": "Phoenix → 7:00 a.m. MST. Arizona does not observe daylight saving time.",
+      "messageTestimonialsTitle": "Messages shared with Best Carriers",
+      "messageTestimonialsNote": "Conversation screenshots shared by customers. Phone numbers are hidden.",
+      "messageTestimonialsFull": "View full screenshot"
     }
   }
 }

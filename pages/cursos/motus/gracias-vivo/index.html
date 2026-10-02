@@ -374,6 +374,12 @@ opinx-component { display: block; }
 .featured-comment { width: min(100%, 760px); margin: 30px auto 8px; padding: 18px; border: 1px solid #e8c75f; border-radius: 20px; background: linear-gradient(110deg, #fff9e8 0%, #fff 72%); box-shadow: 0 16px 38px rgba(4,18,32,.07); }
 .featured-comment__label { margin: 0 0 12px; color: var(--amber-dark); font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; text-align: center; }
 .featured-comment img { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 10px 28px rgba(4,18,32,.09); }
+.message-testimonials-heading { width:min(100%,960px); margin:36px auto 0; text-align:center; }
+.message-testimonials { width:min(100%,960px); margin:0 auto 28px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.message-testimonials .featured-comment { min-width:0; margin:18px 0 0; }
+.message-testimonials a { display:block; }
+.message-testimonials a:focus-visible { outline:3px solid var(--amber-dark); outline-offset:5px; border-radius:14px; }
+@media(max-width:700px) { .message-testimonials { grid-template-columns:1fr; gap:8px; } }
 .visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
 .proof-runtime .rating-chip { width: max-content; max-width: 100%; margin: 0 0 22px auto; }
 .fallback-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
@@ -820,7 +826,7 @@ opinx-component { display: block; }
 </style>
   <script>document.documentElement.classList.replace("no-js","js");</script>
 </head>
-<body data-page="motus-thanks" data-locale="es" data-release="1.3.39">
+<body data-page="motus-thanks" data-locale="es" data-release="1.3.40">
   <header class="thanks-header"><div class="motus-shell"><a class="brand" href="https://best-carriers.com/"><img src="https://c.opin-x.com/Logo-Best-Carriers-tm.png" alt="Best Carriers"></a><a class="language-link" href="https://best-carriers.com/en/courses/motus/live-thank-you/" hreflang="en">English</a></div></header>
   <main class="thanks-main">
     <div class="motus-grid" aria-hidden="true"></div>
