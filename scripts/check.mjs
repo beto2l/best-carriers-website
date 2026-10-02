@@ -13,8 +13,8 @@ const expectedRoutes = new Set([
   "en/courses/motus",
   "cursos/motus/gracias",
   "en/courses/motus/thank-you",
-  "cursos/motus/vivo/gracias",
-  "en/courses/motus/live/thank-you",
+  "cursos/motus/gracias-vivo",
+  "en/courses/motus/live-thank-you",
   "cursos/combo/pay",
   "cursos",
   "ebooks",
@@ -59,7 +59,7 @@ for (const page of release.pages) {
   if (["servicios", "services", "cursos", "ebooks", "en/e-books"].includes(page.route)) checkSharedNavigation(page, html);
   if (["ebooks", "en/e-books"].includes(page.route)) checkEbooks(page, html);
   if (["cursos/motus", "en/courses/motus"].includes(page.route)) checkMotusSale(page, html);
-  if (["cursos/motus/gracias", "en/courses/motus/thank-you", "cursos/motus/vivo/gracias", "en/courses/motus/live/thank-you"].includes(page.route)) checkMotusThanks(page, html);
+  if (["cursos/motus/gracias", "en/courses/motus/thank-you", "cursos/motus/gracias-vivo", "en/courses/motus/live-thank-you"].includes(page.route)) checkMotusThanks(page, html);
 }
 
 if (expectedRoutes.size) failures.push(`missing routes: ${[...expectedRoutes].join(", ")}`);
@@ -313,7 +313,7 @@ function checkMotusSale(page, html) {
 function checkMotusThanks(page, html) {
   const locale = page.language;
   if (!html.includes('name="robots" content="noindex,follow,noarchive"')) failures.push(`${page.entry} must be noindex`);
-  if (!html.includes(`data-opinx-global-content="motus-${page.route.includes("/vivo/") || page.route.includes("/live/") ? "live-" : ""}payment-result-${locale}"`)) failures.push(`${page.entry} is missing the payment-result component`);
+  if (!html.includes(`data-opinx-global-content="motus-${page.route.endsWith("gracias-vivo") || page.route.endsWith("live-thank-you") ? "live-" : ""}payment-result-${locale}"`)) failures.push(`${page.entry} is missing the payment-result component`);
   if (/cs_(?:live|test)_/i.test(html)) failures.push(`${page.entry} must not contain a payment session ID`);
   if (!html.includes("https://learning.opin-x.com/")) failures.push(`${page.entry} is missing the Learning next step`);
 }

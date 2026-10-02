@@ -19,8 +19,8 @@ For an AI or developer creating a new LW Studio page, start with the [LW Studio 
 | Recorded or Live FMCSA MOTUS Course | `/en/courses/motus/` | English | `motus-course-en` |
 | Gracias por comprar el curso MOTUS | `/cursos/motus/gracias/` | Spanish | `motus-thank-you-es` |
 | Thank you for purchasing the MOTUS course | `/en/courses/motus/thank-you/` | English | `motus-thank-you-en` |
-| Confirmación MOTUS en vivo | `/cursos/motus/vivo/gracias/` | Spanish | `motus-live-thank-you-es` |
-| Live MOTUS confirmation | `/en/courses/motus/live/thank-you/` | English | `motus-live-thank-you-en` |
+| Confirmación MOTUS en vivo | `/cursos/motus/gracias-vivo/` | Spanish | `motus-live-thank-you-es` |
+| Live MOTUS confirmation | `/en/courses/motus/live-thank-you/` | English | `motus-live-thank-you-en` |
 
 The Services, Courses and E-books catalogs share their complete header and footer through `components/site-chrome.mjs` and `src/site-chrome.css`. These components own the opaque navy background, logo/tagline sizing, three-section navigation, ES/EN switch, WhatsApp button and legal footer. `components/site-navigation.mjs` owns the localized destinations. Reuse the shared components to keep all catalog pages consistent; only the active section, locale and WhatsApp message vary.
 

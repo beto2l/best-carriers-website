@@ -55,7 +55,7 @@ export async function buildMotus({ root, site, version }) {
 
   for (const locale of locales) {
     const suffix = locale === "es" ? "Es" : "En";
-    const route = locale === "es" ? "cursos/motus/vivo/gracias" : "en/courses/motus/live/thank-you";
+    const route = locale === "es" ? "cursos/motus/gracias-vivo" : "en/courses/motus/live-thank-you";
     definitions[`thanksLive${suffix}`] = {
       id: `motus-live-thank-you-${locale}`, title: locale === "es" ? "Confirmación MOTUS en vivo" : "Live MOTUS confirmation",
       route, entry: `pages/${route}/index.html`, language: locale,
