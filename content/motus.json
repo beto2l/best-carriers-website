@@ -229,9 +229,9 @@
   "locales": {
     "es": {
       "metaTitle": "Curso FMCSA MOTUS grabado o en vivo | Best Carriers",
-      "metaDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo. Elige curso grabado o clase en vivo el 17 de octubre de 2026 a las 09:00, Chicago.",
+      "metaDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo. Elige curso grabado o curso virtual en vivo por Google Meet el 17 de octubre de 2026 a las 09:00, Chicago.",
       "ogTitle": "Aprende FMCSA MOTUS paso a paso con Best Carriers",
-      "ogDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo. Elige curso grabado o clase en vivo el 17 de octubre de 2026 a las 09:00, Chicago.",
+      "ogDescription": "Aprende a configurar y usar FMCSA MOTUS paso a paso: Login.gov, vinculación de USDOT, TSP, Biennial Update, DataQs y procesos clave. Acceso inmediato y aprendizaje a tu ritmo. Elige curso grabado o curso virtual en vivo por Google Meet el 17 de octubre de 2026 a las 09:00, Chicago.",
       "skipLink": "Ir al contenido del curso",
       "languageLink": "English",
       "languageAria": "View the MOTUS course in English",
@@ -250,7 +250,7 @@
       "heroCurrentPriceLoading": "Ver precio vigente en el checkout",
       "heroPrimary": "Elegir modalidad",
       "heroSecondary": "Ver el temario completo",
-      "heroNote": "Grabado a tu ritmo · En vivo el 17 de octubre, 09:00 Chicago",
+      "heroNote": "Grabado a tu ritmo · Curso virtual en vivo por Google Meet · Sábado 17 de octubre, 09:00 Chicago",
       "authorityLogosLabel": "Instituciones y recursos de autoridad relacionados con la capacitación",
       "courseCardEyebrow": "Capacitación bajo demanda",
       "courseCardTitle": "Curso práctico de FMCSA MOTUS",
@@ -392,7 +392,7 @@
       "morePhotos": "Ver más fotos",
       "checkoutEyebrow": "Acceso seguro",
       "checkoutTitle": "Comprar el curso grabado de MOTUS",
-      "checkoutBody": "Acceso al curso grabado después de la aprobación del pago. Esta modalidad no incluye la clase en vivo del 17 de octubre.",
+      "checkoutBody": "Acceso al curso grabado después de la aprobación del pago. Esta modalidad no incluye la curso virtual en vivo por Google Meet del 17 de octubre.",
       "checkoutLoading": "Consultando precio y disponibilidad…",
       "checkoutUnavailable": "La compra está temporalmente en actualización. Puedes pedir información por WhatsApp.",
       "checkoutHelpCta": "Consultar por WhatsApp",
@@ -410,7 +410,7 @@
       "faqs": [
         {
           "q": "¿Qué modalidades puedo elegir?",
-          "a": "Puedes comprar el curso grabado para avanzar a tu ritmo o inscribirte a la clase en vivo del 17 de octubre de 2026, a las 09:00 de Chicago. La modalidad en vivo incluye el curso grabado y la grabación de la sesión. Comprar solo el grabado no incluye esta clase en vivo."
+          "a": "Puedes comprar el curso grabado para avanzar a tu ritmo o inscribirte a la curso virtual en vivo por Google Meet del 17 de octubre de 2026, a las 09:00 de Chicago. La modalidad en vivo incluye el curso grabado y la grabación de la sesión. Comprar solo el grabado no incluye esta curso virtual en vivo por Google Meet."
         },
         {
           "q": "¿Necesito tener un USDOT para tomar el curso?",
@@ -422,7 +422,7 @@
         },
         {
           "q": "¿Cuándo puedo comenzar?",
-          "a": "El grabado está disponible después de la aprobación del pago. La clase en vivo será el 17 de octubre de 2026 a las 09:00 de Chicago."
+          "a": "El grabado está disponible después de la aprobación del pago. La curso virtual en vivo por Google Meet será el 17 de octubre de 2026 a las 09:00 de Chicago."
         },
         {
           "q": "¿Incluye un certificado?",
@@ -480,14 +480,14 @@
           "items": [
             "Acceso después de la aprobación del pago",
             "Avanza a tu ritmo",
-            "No incluye la clase en vivo del 17 de octubre"
+            "No incluye la curso virtual en vivo por Google Meet del 17 de octubre"
           ]
         },
         "live": {
-          "title": "Clase en vivo + curso grabado",
+          "title": "Curso virtual en vivo por Google Meet + curso grabado",
           "cta": "Inscribirme al vivo del 17 de octubre",
           "items": [
-            "17 de octubre de 2026 · 09:00 Chicago",
+            "Sábado 17 de octubre de 2026 · 09:00 Chicago",
             "Incluye el curso grabado existente",
             "Incluye la grabación de esta sesión en Bonus"
           ]
@@ -497,13 +497,22 @@
         "Entra a Library con el correo utilizado para comprar.",
         "Abre Classroom / Motus para la clase del 17 de octubre de 2026 a las 09:00 de Chicago.",
         "Abre Library / Motus para el curso grabado. La grabación de esta sesión se añadirá a Bonus después de la clase."
-      ]
+      ],
+      "liveScheduleTitle": "Fecha & Horario:",
+      "liveScheduleDate": "Sábado 17 de Octubre de 2026 · Curso virtual en vivo por Google Meet",
+      "liveScheduleLines": [
+        "🌴 Los Angeles, Seattle, Las Vegas → 7:00 a. m. PT",
+        "🏔️ Denver, Salt Lake City → 8:00 a. m. MT",
+        "🌆 Chicago, Dallas, Houston → 9:00 a. m. CT",
+        "🌴 Miami, Orlando, Nueva York → 10:00 a. m. ET"
+      ],
+      "liveScheduleNote": "Phoenix → 7:00 a. m. MST. Arizona no cambia al horario de verano."
     },
     "en": {
       "metaTitle": "Recorded or Live FMCSA MOTUS Course | Best Carriers",
-      "metaDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace. Choose recorded training or the live class on October 17, 2026 at 09:00 Chicago time.",
+      "metaDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace. Choose recorded training or the live virtual course on Google Meet on October 17, 2026 at 09:00 Chicago time.",
       "ogTitle": "Learn FMCSA MOTUS step by step with Best Carriers",
-      "ogDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace. Choose recorded training or the live class on October 17, 2026 at 09:00 Chicago time.",
+      "ogDescription": "Learn how to set up and use FMCSA MOTUS step by step: Login.gov, USDOT linking, TSP, Biennial Update, DataQs and key processes. Get immediate access and learn at your own pace. Choose recorded training or the live virtual course on Google Meet on October 17, 2026 at 09:00 Chicago time.",
       "skipLink": "Skip to course content",
       "languageLink": "Español",
       "languageAria": "Ver el curso MOTUS en español",
@@ -522,7 +531,7 @@
       "heroCurrentPriceLoading": "See the current price in checkout",
       "heroPrimary": "Choose your format",
       "heroSecondary": "View the full curriculum",
-      "heroNote": "Recorded at your pace · Live October 17, 09:00 Chicago",
+      "heroNote": "Recorded at your pace · Live virtual course on Google Meet · Saturday, October 17, 09:00 Chicago",
       "authorityLogosLabel": "Authority institutions and resources related to the training",
       "courseCardEyebrow": "On-demand training",
       "courseCardTitle": "Practical FMCSA MOTUS Course",
@@ -664,7 +673,7 @@
       "morePhotos": "View more photos",
       "checkoutEyebrow": "Secure access",
       "checkoutTitle": "Buy the recorded MOTUS course",
-      "checkoutBody": "Access the recorded course after payment approval. This format does not include the October 17 live class.",
+      "checkoutBody": "Access the recorded course after payment approval. This format does not include the October 17 live virtual course on Google Meet.",
       "checkoutLoading": "Checking price and availability…",
       "checkoutUnavailable": "Checkout is temporarily being updated. You can request information on WhatsApp.",
       "checkoutHelpCta": "Ask on WhatsApp",
@@ -682,7 +691,7 @@
       "faqs": [
         {
           "q": "Which formats can I choose?",
-          "a": "Choose the recorded course at your own pace or the live class on October 17, 2026 at 09:00 Chicago time. Live registration includes the recorded course and the session recording. Buying only the recorded course does not include this live class."
+          "a": "Choose the recorded course at your own pace or the live virtual course on Google Meet on October 17, 2026 at 09:00 Chicago time. Live registration includes the recorded course and the session recording. Buying only the recorded course does not include this live virtual course on Google Meet."
         },
         {
           "q": "Do I need a USDOT number to take the course?",
@@ -694,7 +703,7 @@
         },
         {
           "q": "When can I start?",
-          "a": "The recorded course is available after payment approval. The live class is on October 17, 2026 at 09:00 Chicago time."
+          "a": "The recorded course is available after payment approval. The live virtual course on Google Meet is on October 17, 2026 at 09:00 Chicago time."
         },
         {
           "q": "Does it include a certificate?",
@@ -752,14 +761,14 @@
           "items": [
             "Access after payment approval",
             "Learn at your own pace",
-            "Does not include the October 17 live class"
+            "Does not include the October 17 live virtual course on Google Meet"
           ]
         },
         "live": {
-          "title": "Live class + recorded course",
-          "cta": "Register for the October 17 live class",
+          "title": "Live virtual course on Google Meet + recorded course",
+          "cta": "Register for the October 17 live virtual course on Google Meet",
           "items": [
-            "October 17, 2026 · 09:00 Chicago",
+            "Saturday, October 17, 2026 · 09:00 Chicago",
             "Includes the existing recorded course",
             "Includes this session recording in Bonus"
           ]
@@ -769,7 +778,16 @@
         "Enter Library with the email used to purchase.",
         "Open Classroom / Motus for the October 17, 2026 class at 09:00 Chicago time.",
         "Open Library / Motus for the recorded course. This session recording will be added to Bonus after the class."
-      ]
+      ],
+      "liveScheduleTitle": "Date & Time:",
+      "liveScheduleDate": "Saturday, October 17, 2026 · Live virtual course on Google Meet",
+      "liveScheduleLines": [
+        "🌴 Los Angeles, Seattle, Las Vegas → 7:00 a.m. PT",
+        "🏔️ Denver, Salt Lake City → 8:00 a.m. MT",
+        "🌆 Chicago, Dallas, Houston → 9:00 a.m. CT",
+        "🌴 Miami, Orlando, New York → 10:00 a.m. ET"
+      ],
+      "liveScheduleNote": "Phoenix → 7:00 a.m. MST. Arizona does not observe daylight saving time."
     }
   }
 }

@@ -791,6 +791,10 @@ opinx-component { display: block; }
 }
 
 .motus-offer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.motus-live-schedule { margin:0 auto 28px; max-width:760px; color:var(--ink); }
+.motus-live-schedule h3 { margin-bottom:12px; }
+.motus-live-schedule p { margin:8px 0; line-height:1.6; }
+.motus-live-schedule small { display:block; margin-top:12px; }
 .motus-offer-card { padding:32px; border:1px solid #d8dee8; border-radius:20px; background:#fff; color:#132034; display:flex; flex-direction:column; align-items:flex-start; }
 .motus-offer-card h3 { font-size:26px; line-height:1.25; margin:0 0 16px; }
 .motus-offer-price { font-size:28px; font-weight:800; margin:0 0 16px; }

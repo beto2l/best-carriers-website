@@ -65,6 +65,16 @@ if (servicesOnly) {
 }
 
 const motusRelease = await buildMotus({ root, site, version });
+if (process.env.MOTUS_ONLY === "1") {
+  const previous = JSON.parse(await readFile(path.join(root, "lw-release.json"), "utf8"));
+  const checksums = {};
+  for (const file of Object.keys(previous.files_sha256).sort()) {
+    checksums[file] = createHash("sha256").update(await readFile(path.join(root, file))).digest("hex");
+  }
+  await writeFile(path.join(root, "lw-release.json"), `${JSON.stringify({ ...previous, version, files_sha256: checksums }, null, 2)}\n`, "utf8");
+  console.log(`Built MOTUS release ${version}; all other pages and contracts preserved.`);
+  process.exit(0);
+}
 const paymentsRelease = await buildPayments({ root, version });
 const coursesRelease = await buildCourses({ root, site, version });
 const ebooksRelease = await buildEbooks({ root, site, version });

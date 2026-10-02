@@ -422,6 +422,7 @@ function renderThanksPage({ locale, content, site, version, css, js, live = fals
 function renderOffers({ locale, t }) {
   return `<section class="section section-offers" id="offers" aria-labelledby="offers-title"><div class="motus-shell">
     <div class="section-heading centered"><h2 id="offers-title">${escapeHtml(t.offersTitle)}</h2></div>
+    <div class="motus-live-schedule"><h3>${escapeHtml(t.liveScheduleTitle)}</h3><p>${escapeHtml(t.liveScheduleDate)}</p>${t.liveScheduleLines.map((line) => `<p>${escapeHtml(line)}</p>`).join("")}<small>${escapeHtml(t.liveScheduleNote)}</small></div>
     <div class="motus-offer-grid">${Object.entries(t.offers).map(([mode, offer]) => `<article class="motus-offer-card"><h3>${escapeHtml(offer.title)}</h3><p class="motus-offer-price" data-motus-offer-price="${mode}" aria-live="polite">${escapeHtml(t.heroCurrentPriceLoading)}</p><ul>${offer.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul><a class="button button-primary" href="#checkout-form${mode === "live" ? "-live" : ""}">${escapeHtml(offer.cta)}${icon("arrow")}</a></article>`).join("")}</div>
     <p class="motus-library-link"><a href="https://learning.opin-x.com/library/">${escapeHtml(t.libraryCta)}</a></p>
   </div></section>`;

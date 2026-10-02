@@ -229,4 +229,6 @@ No purgues zonas genéricas ni cambies DNS desde una publicación de página. La
 
 ### Publicación exclusiva de servicios
 
+Para cambios editoriales exclusivos de MOTUS, usa `MOTUS_ONLY=1 npm test`. Regenera sus seis páginas bilingües y recalcula checksums, conservando las páginas ajenas y los contratos publicados. La modalidad en vivo de octubre es virtual por Google Meet; el horario se presenta con el formato PT/MT/CT/ET de los otros cursos, con Phoenix aclarado por separado según la fecha.
+
 Para actualizar el catálogo de servicios ES/EN sin regenerar páginas ni contratos de cursos, usa `SERVICES_ONLY=1 npm test` después de incrementar la versión. Este modo genera ambas páginas de servicios y sus datos, conserva los IDs y contratos del manifiesto previo y recalcula los checksums publicados. Las demás páginas mantienen exactamente sus bytes. El catálogo incluye 13 servicios, incluyendo preparación New Entrant DOT con cotización tras evaluación.
