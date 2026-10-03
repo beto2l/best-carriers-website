@@ -206,8 +206,8 @@
       "priceNote": "Precio fijo",
       "summary": "Obtención únicamente del número USDOT para tu empresa de trucking.",
       "details": "Este servicio se limita exclusivamente a obtener el número USDOT de la empresa.",
-      "requirements": ["La compañía de trucking debe estar creada.", "La LLC debe estar constituida.", "Debes tener lista la carta del IIN."],
-      "excludes": ["Motor Carrier o EMC", "BOC-3", "UCR"],
+      "requirements": ["La compañía de trucking debe estar creada.", "La LLC debe estar constituida.", "Debes tener lista la carta del EIN."],
+      "excludes": ["Motor Carrier o MC", "BOC-3", "UCR"],
       "clientProvides": ["El tipo de operación que van a tener.", "Qué tipo de camiones van a operar.", "Cuántos drivers van a manejar."]
     },
     "en": {

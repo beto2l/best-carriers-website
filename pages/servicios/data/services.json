@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "version": "1.3.38",
+  "version": "1.3.41",
   "whatsappUrl": "https://wa.me/12192396752?text=Quiero%20un%20servicio%20de%20trucking",
   "requirements": "La documentación exacta depende de tu estructura, estado y situación operativa. La lista de requisitos se confirma después de una evaluación inicial.",
   "labels": {
@@ -223,10 +223,10 @@
       "requirements": [
         "La compañía de trucking debe estar creada.",
         "La LLC debe estar constituida.",
-        "Debes tener lista la carta del IIN."
+        "Debes tener lista la carta del EIN."
       ],
       "excludes": [
-        "Motor Carrier o EMC",
+        "Motor Carrier o MC",
         "BOC-3",
         "UCR"
       ],
